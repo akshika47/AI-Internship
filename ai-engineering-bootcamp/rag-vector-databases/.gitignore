@@ -1,0 +1,40 @@
+# Environment variables
+.env
+
+# Vector databases
+chroma_db/
+chroma_demo_db/
+rag_vector_db/
+*.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Sample documents (if you add your own)
+sample_*.txt
+*.pdf
+
