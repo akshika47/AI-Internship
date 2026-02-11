@@ -15,15 +15,19 @@ This course is organized by weeks, with each week containing:
 
 ```
 multi-agent-systems/
-├── README.md          # This file
-├── week-1/            # LangGraph Foundations
+├── README.md              # This file
+├── week-1/                # LangGraph Foundations
 │   ├── README.md
 │   ├── requirements.txt
 │   ├── week1_notebook.ipynb
 │   └── .env.example
-├── week-2/            # Single-Agent Mastery (Coming Soon)
-├── week-3/            # Multi-Agent Orchestration (Coming Soon)
-└── week-4/            # Production & Capstone (Coming Soon)
+├── week-2/                # Single-Agent Mastery
+│   ├── requirements.txt
+│   ├── week2_notebook.ipynb
+│   ├── streamlit_app.py
+│   └── .env
+├── week-3/                # Multi-Agent Orchestration (Coming Soon)
+└── week-4/                # Production & Capstone (Coming Soon)
 ```
 
 ## 🎯 Course Overview
@@ -41,11 +45,14 @@ multi-agent-systems/
 ### Week 2: Single-Agent Mastery
 **ReAct Pattern & Persistence**
 
-- Master the ReAct (Reasoning + Acting) pattern
-- Add persistence and memory to agents
-- Build more sophisticated single-agent systems
+- Typed State with proper reducers (append vs overwrite)
+- Master the ReAct (Reason → Act → Observe → Repeat) pattern
+- Conditional edges and agent termination logic
+- Checkpointing — give agents memory and replay capabilities
+- Build a Meeting Prep Agent with real Tavily web search
+- Streamlit interactive UI (`streamlit_app.py`)
 
-**Status:** 🚧 Coming Soon
+**Status:** ✅ Available
 
 ### Week 3: Multi-Agent Orchestration
 **Subgraphs & Agent Coordination**
