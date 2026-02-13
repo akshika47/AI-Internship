@@ -1,0 +1,185 @@
+{
+  "name": "Demo 1 - AI Agent with Calculator and Web Search Chat",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "availableInChat": true,
+        "agentName": "Nathan",
+        "options": {}
+      },
+      "id": "c51d6245-2d71-4499-a5d0-d5ad8235f3cc",
+      "name": "Chat Interface",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        176,
+        288
+      ],
+      "webhookId": "257ed465-c897-4fff-a6c7-28689a3355fd"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.chatInput }}",
+        "options": {
+          "systemMessage": "You are a research and email assistant. When given a topic, you should: \n\n1) Use the web_search tool to perform comprehensive research on the topic, gathering multiple sources and perspectives. \n\n2) Analyze and synthesize the research findings. \n\n3) Use the Gmail Tool to compose and send a well-structured email containing your research findings. Always perform thorough research before sending emails, and make sure your emails are informative and well-organized with clear sections for different aspects of your research."
+        }
+      },
+      "id": "6d48643a-26da-4b69-a6dc-b85ede4c8d02",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        520,
+        288
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "f8359b5b-cd03-4c06-826d-44e16aa8c826",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        400,
+        512
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "QHmbt4lye4qol3kJ",
+          "name": "OpenAi account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ 'research_session_' + $('Chat Interface').item.json.sessionId }}",
+        "contextWindowLength": 10
+      },
+      "id": "29cb21f1-0a7b-4324-a1c7-77ab917f70a8",
+      "name": "Conversation Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        528,
+        512
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "2ad17e3c-2683-4662-94dc-6cc2703b3938",
+      "name": "calculator",
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        656,
+        512
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "d78b08a3-ecf6-45fc-8c65-f3d79ef5620f",
+      "name": "web_search",
+      "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
+      "typeVersion": 1,
+      "position": [
+        784,
+        512
+      ],
+      "credentials": {
+        "serpApi": {
+          "id": "fUkAibkcEarhekcW",
+          "name": "SerpAPI account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Chat Interface": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Conversation Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "web_search": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "f7160d76-cef7-4bc2-875b-4f189d9c0dc2",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "48cb5bdc1c87df57c2373853be13ccdb3aaa43e09ab06670569e7deb53f399a5"
+  },
+  "id": "cowa37Eq2TTUPUAk3qFvx",
+  "tags": []
+}

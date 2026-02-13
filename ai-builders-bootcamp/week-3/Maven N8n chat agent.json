@@ -1,0 +1,370 @@
+{
+  "name": "Maven N8n chat agent",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "initialMessages": "Hi there! 👋\nMy name is Aki. How can I assist you today?",
+        "availableInChat": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -112,
+        -256
+      ],
+      "id": "a18a1efa-777b-46b2-b924-c5a882104b63",
+      "name": "When chat message received",
+      "webhookId": "576c5bcd-b7b1-474c-bba9-8a97f2e71233"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "builtInTools": {},
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        112,
+        -32
+      ],
+      "id": "d4bb3b27-eb4c-4846-9a8d-dcb4a11a744e",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "QHmbt4lye4qol3kJ",
+          "name": "OpenAi account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        240,
+        -32
+      ],
+      "id": "cc9bc506-6caa-41de-876c-b109bef0a5a6",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are a Lead Enrichment Agent. Your job is to:\n1. Infer the name of the lead\n2. Automatically research and enrich the lead data\n3. AUTOMATICALLY save the results to Google Sheets WITHOUT asking for confirmation\n\nIMPORTANT: Never ask the user if they want to save. Always save automatically after enrichment is complete.\n\nBe concise and execute tasks without seeking permission for standard operations.",
+          "maxIterations": 10
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        272,
+        -256
+      ],
+      "id": "447aa788-778b-4a9a-9a99-905d324a20d1",
+      "name": "AI Agent [Orchestrator]"
+    },
+    {
+      "parameters": {
+        "toolDescription": "You are a deep research agent, that can do in-depth research about prospects.",
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', ``, 'string') }}",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 3,
+      "position": [
+        368,
+        -32
+      ],
+      "id": "ca009f7a-a622-4652-a25e-341616e42728",
+      "name": "Deep Research Agent"
+    },
+    {
+      "parameters": {
+        "toolDescription": "AI agent that will save data to Google Sheet",
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 3,
+      "position": [
+        656,
+        -32
+      ],
+      "id": "f8e57d1e-63b5-479a-812a-64e2a868c229",
+      "name": "Google Sheet Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        656,
+        176
+      ],
+      "id": "c4bf1add-c40f-436c-9450-2a93c739cd05",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "QHmbt4lye4qol3kJ",
+          "name": "OpenAi account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "builtInTools": {
+          "webSearch": {
+            "searchContextSize": "medium"
+          }
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        384,
+        176
+      ],
+      "id": "f1b4f0ed-6e9f-4c02-a04e-e8f4a423c142",
+      "name": "OpenAI Chat Model with websearch",
+      "credentials": {
+        "openAiApi": {
+          "id": "QHmbt4lye4qol3kJ",
+          "name": "OpenAi account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1QjrHktT4ZDth_4lHbPwphV1HzB4oluqLi7rdzCuDWN4",
+          "mode": "list",
+          "cachedResultName": "Maven",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1QjrHktT4ZDth_4lHbPwphV1HzB4oluqLi7rdzCuDWN4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 539980945,
+          "mode": "list",
+          "cachedResultName": "leads",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1QjrHktT4ZDth_4lHbPwphV1HzB4oluqLi7rdzCuDWN4/edit#gid=539980945"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "name": "={{ $fromAI('name', ``, 'string') }}",
+            "linkedin": "={{ $fromAI('linkedin', ``, 'string') }}",
+            "description": "={{ $fromAI('description', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "name",
+              "displayName": "name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "linkedin",
+              "displayName": "linkedin",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "description",
+              "displayName": "description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        800,
+        176
+      ],
+      "id": "06b30c48-5fdb-4616-ab22-65573a8a6df0",
+      "name": "Append row in sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "mjsldfbLwwwasR07",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\n      \"type\": \"string\",\n      \"description\": \"The full name of the person\"\n    },\n    \"linkedin\": {\n      \"type\": \"string\",\n      \"description\": \"The LinkedIn profile URL\"\n    },\n    \"description\": {\n      \"type\": \"string\",\n      \"description\": \"A brief description of the person\"\n    }\n  },\n  \"required\": [\"name\", \"linkedin\", \"description\"]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        528,
+        176
+      ],
+      "id": "b0592cbd-0f80-47f9-9b07-479579c76fdb",
+      "name": "Structured Output Parser"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent [Orchestrator]",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent [Orchestrator]",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent [Orchestrator]",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent [Orchestrator]": {
+      "main": [
+        []
+      ]
+    },
+    "Deep Research Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent [Orchestrator]",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheet Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent [Orchestrator]",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Google Sheet Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model with websearch": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Deep Research Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "Google Sheet Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Deep Research Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "52772e7b-d74d-487f-9c28-e96d2ddf4db7",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "48cb5bdc1c87df57c2373853be13ccdb3aaa43e09ab06670569e7deb53f399a5"
+  },
+  "id": "GlMgT7ZvFu9FK9TEHDdjt",
+  "tags": []
+}
