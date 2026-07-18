@@ -24,10 +24,15 @@ multi-agent-systems/
 ├── week-2/                # Single-Agent Mastery
 │   ├── requirements.txt
 │   ├── week2_notebook.ipynb
-│   ├── streamlit_app.py
-│   └── .env
-├── week-3/                # Multi-Agent Orchestration (Coming Soon)
-└── week-4/                # Production & Capstone (Coming Soon)
+│   └── streamlit_app.py
+├── week-3/                # Multi-Agent Orchestration
+│   ├── README.md
+│   ├── requirements.txt
+│   └── week3_notebook.ipynb
+└── week-4/                # Evaluation, Monitoring & Shipping
+    ├── README.md
+    ├── backend/           # FastAPI app with Langfuse tracing
+    └── frontend/          # Streamlit chat interface
 ```
 
 ## 🎯 Course Overview
@@ -55,22 +60,23 @@ multi-agent-systems/
 **Status:** ✅ Available
 
 ### Week 3: Multi-Agent Orchestration
-**Subgraphs & Agent Coordination**
+**Supervisor Pattern, Subgraphs & Shared State**
 
-- Learn subgraph patterns
-- Coordinate multiple specialized agents
-- Build complex multi-agent workflows
+- Learn the Supervisor Pattern for routing between specialist agents
+- Design shared vs. scoped state schemas
+- Build subgraphs and compose them into a parent graph
+- Build a Company Research Assistant with 3 agents (Supervisor, Research, Writer)
 
-**Status:** 🚧 Coming Soon
+**Status:** ✅ Available
 
-### Week 4: Production & Capstone
-**Deploy to Production**
+### Week 4: Evaluation, Monitoring & Shipping
+**Making Your Agent Production-Ready**
 
-- Deploy multi-agent systems
-- Add monitoring and observability
-- Complete capstone project
+- Add Langfuse tracing, sessions, and scoring to a FastAPI + Streamlit app
+- Track quality metrics like relevance and latency
+- Deploy the backend (Render) and frontend (Streamlit Cloud)
 
-**Status:** 🚧 Coming Soon
+**Status:** ✅ Available
 
 ## 🚀 Getting Started
 
