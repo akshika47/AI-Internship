@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Week 2 · Run review — Claude Architect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=JetBrains+Mono:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --canvas: #F7F6FB;
+    --surface: #FFFFFF;
+    --ink: #0B0E1A;
+    --ink-2: #2A2F45;
+    --muted: #5B6178;
+    --line: #E4E1F0;
+    --premium: #6C4CE0;
+    --premium-soft: #EFEAFF;
+    --action: #F0631E;
+    --ok: #1F8A5B;
+    --warn: #B45309;
+    --warn-soft: #FFF7ED;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+    --sans: "Manrope", system-ui, sans-serif;
+    --display: "Bricolage Grotesque", "Manrope", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--ink);
+    background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(108,76,224,0.12), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, rgba(240,99,30,0.08), transparent 55%),
+      var(--canvas);
+    line-height: 1.55;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 40px 24px 96px; }
+  .brand { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+  .brand img { height: 28px; width: auto; }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0 0 12px;
+  }
+  .hero .lede {
+    font-size: 1.05rem;
+    color: var(--ink-2);
+    max-width: 62ch;
+    margin: 0 0 20px;
+  }
+  .meta {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 36px;
+  }
+  .chip {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--muted);
+  }
+  .chip.warn { background: var(--warn-soft); color: var(--warn); border-color: #F6D7B0; }
+  .chip.ok { background: #E8F7F0; color: var(--ok); border-color: #B7E4CC; }
+  .note {
+    background: var(--premium-soft);
+    border: 1px solid #D9CFFA;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 40px;
+    color: var(--ink-2);
+    font-size: 0.95rem;
+  }
+  .note strong { color: var(--premium); }
+  nav.toc {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 48px;
+  }
+  nav.toc p {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+  nav.toc ol { margin: 0; padding-left: 1.2rem; }
+  nav.toc a { color: var(--ink); text-decoration: none; font-weight: 600; }
+  nav.toc a:hover { color: var(--premium); }
+  .demo {
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--premium);
+    margin: 0 0 8px;
+  }
+  .demo-head h2 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 1.65rem;
+    letter-spacing: -0.02em;
+    margin: 0 0 10px;
+  }
+  .intent { color: var(--ink-2); margin: 0 0 8px; }
+  .cell-tag {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 0 18px;
+  }
+  .response {
+    background: #0B0E1A;
+    color: #E8E9F0;
+    border-radius: 12px;
+    padding: 16px 18px 18px;
+    margin-bottom: 14px;
+    box-shadow: 0 12px 40px rgba(11,14,26,0.18);
+  }
+  .response-label, .teach-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+  .response-label { color: #A89BE8; }
+  .response pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: #E8E9F0;
+  }
+  .teach {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--premium);
+    border-radius: 0 12px 12px 0;
+    padding: 16px 18px;
+  }
+  .teach-label { color: var(--premium); }
+  .teach p { margin: 0; color: var(--ink-2); }
+  .planned-wrap {
+    display: grid;
+    gap: 14px;
+    margin-top: 12px;
+  }
+  .planned {
+    background: var(--surface);
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .planned h3 {
+    font-family: var(--display);
+    margin: 0 0 6px;
+    font-size: 1.15rem;
+  }
+  .planned p { margin: 0; color: var(--ink-2); }
+  footer {
+    margin-top: 40px;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  footer code { font-family: var(--mono); font-size: 0.85em; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">
+      <img src="assets/tai-horizontal-primary.png" alt="TAI Labs" />
+    </div>
+    <header class="hero">
+      <h1>Week 2 run review</h1>
+      <p class="lede">
+        Claude Architect — one agent becomes a system. Each block below is a real notebook
+        response from this run, followed by what to teach from it.
+      </p>
+      <div class="meta">
+        <span class="chip ok">Cells 1–26 executed</span>
+        <span class="chip warn">Subagent MCP permissions blocked</span>
+        <span class="chip">Demo 3+ not fully run</span>
+      </div>
+    </header>
+
+    <div class="note">
+      <strong>Runtime note.</strong> Demo 1 (single agent, <code>allowed_tools=["mcp__northwind__*"]</code>)
+      succeeded. From Demo 2 onward, subagents spawned correctly but
+      <code>mcp__northwind__*</code> calls inside them were denied by the Claude Code permission layer.
+      Fix for a live class: set <code>permission_mode="bypassPermissions"</code> on
+      <code>ClaudeAgentOptions</code> (or widen <code>allowed_tools</code> to include every
+      tool subagents need). The connector warning about <code>ANTHROPIC_API_KEY</code> is harmless.
+    </div>
+
+    <nav class="toc">
+      <p>On this page</p>
+      <ol>
+        <li><a href="#ticket">The four-concern ticket</a></li><li><a href="#demo0">Week 1 agent meets the ticket</a></li><li><a href="#mcp">In-process MCP tool names</a></li><li><a href="#demo1">The SDK owns the loop</a></li><li><a href="#demo2a">Spawn specialists from descriptions</a></li><li><a href="#demo2b">Assuming shared context</a></li><li><a href="#demo2c">Facts must travel in the prompt</a></li><li><a href="#demo2d">Parallel vs sequential spawn</a></li><li><a href="#demo3a">Prose finding — unverifiable</a></li>
+        <li><a href="#remaining">Remaining demos (not yet run)</a></li>
+      </ol>
+    </nav>
+
+    
+    <article class="demo" id="ticket">
+      <header class="demo-head">
+        <p class="eyebrow">Setup</p>
+        <h2>The four-concern ticket</h2>
+        <p class="intent">Alice’s message packs four distinct concerns into one turn: damaged refund, double charge, footwear return window, and a chargeback threat.</p>
+        <p class="cell-tag">Notebook cell 6</p>
+      </header>
+      <div class="response">
+        <p class="response-label">Response</p>
+        <pre>I&#x27;m alice@example.com. ORD-123 arrived damaged and I want a refund. ORD-456 got charged to my card twice. I bought shoes on ORD-789 forty days ago. Can I still return them? If this isn&#x27;t sorted today I&#x27;m filing a chargeback.</pre>
+      </div>
+      <aside class="teach">
+        <p class="teach-label">What this shows</p>
+        <p>This is the pressure test for the whole session. A single user message is not a single job. Everything after this cell is about whether the system can decompose and cover all four — not whether the model can sound helpful.</p>
+      </aside>
+    </article>
+    
+    <article class="demo" id="demo0">
+      <header class="demo-head">
+        <p class="eyebrow">Demo 0</p>
+        <h2>Week 1 agent meets the ticket</h2>
+        <p class="intent">Same Messages API loop as Week 1. No SDK, no subagents. Show that a clean end_turn can still be a wrong system answer.</p>
+        <p class="cell-tag">Notebook cell 10</p>
+      </header>
+      <div class="response">
+        <p class="response-label">Response</p>
+        <pre>assistant: [tool_use] get_customer {&#x27;email&#x27;: &#x27;alice@example.com&#x27;}
+assistant: [tool_use] lookup_order {&#x27;order_id&#x27;: &#x27;ORD-123&#x27;}
+assistant: [tool_use] lookup_order {&#x27;order_id&#x27;: &#x27;ORD-456&#x27;}
+assistant: [tool_use] lookup_order {&#x27;order_id&#x27;: &#x27;ORD-789&#x27;}
+assistant: [tool_use] process_refund {&#x27;order_id&#x27;: &#x27;ORD-123&#x27;, &#x27;amount&#x27;: 149.99}
+assistant: [tool_use] process_refund {&#x27;order_id&#x27;: &#x27;ORD-456&#x27;, &#x27;amount&#x27;: 89.0}
+assistant: [tool_use] escalate_to_human {&#x27;customer_id&#x27;: &#x27;CUST-001&#x27;, &#x27;root_cause&#x27;: &#x27;Gold-tier customer requesting return of shoes (ORD-789, $812.40) purchased 40 days ago — outside standard return window. Item is listed as unworn/unused.&#x27;, &#x27;recommended_action&#x27;: &#x27;Consider approving a late return exception given Gold-tier status, item condition (unworn), and high order value. Customer has also mentioned chargeback intent — prompt resolution advised.&#x27;}
+
+assistant: Here&#x27;s a full summary of where everything stands, Alice:
+
+---
+
+### ✅ ORD-123 — Damaged Item Refund
+- **Refund processed: $149.99** — this should appear back on your original payment method within 3–5 business days.
+
+---
+
+### ✅ ORD-456 — Duplicate Charge
+- **Refund processed: $89.00** for the duplicate charge — same 3–5 business day timeline.
+
+---
+
+### 🔄 ORD-789 — Shoe Return (40 Days)
+- Our standard return window is 30 days, so this falls outside the normal policy. However, since you&#x27;re a **Gold-tier member** and the shoes are recorded as **unworn**, I&#x27;ve escalated this to a senior agent with a strong recommendation to approve a late return exception.
+- **Escalation ticket: ESC-9001** — a human agent will reach out to you shortly today.
+
+---
+
+Regarding the chargeback concern — $238.99 in refunds are already in motion, and a specialist is actively reviewing your shoe return. Please hold off on the chargeback while we get that resolved, as it can slow down the process. We want to make this right for you today! 💛</pre>
+      </div>
+      <aside class="teach">
+        <p class="teach-label">What this shows</p>
+        <p>The loop worked — tools ran, stop_reason ended cleanly. But look carefully at what was missed or mishandled relative to written policy: the footwear clause is the 45-day rule (2.2), not a vague “outside 30 days” story, and a chargeback mention should trigger policy 3.4 escalation as its own concern. stop_reason tells you the turn finished, not that coverage held. A fluent summary can still be an incomplete system.</p>
+      </aside>
+    </article>
+    
+    <article class="demo" id="mcp">
+      <header class="demo-head">
+        <p class="eyebrow">Demo 1 · setup</p>
+        <h2>In-process MCP tool names</h2>
+        <p class="intent">Register the Northwind tools as an SDK MCP server. The server key becomes the middle segment of every tool name.</p>
+        <p class="cell-tag">Notebook cell 15</p>
+      </header>
+      <div class="response">
+        <p class="response-label">Response</p>
+        <pre>mcp__northwind__get_customer
+mcp__northwind__lookup_order
+mcp__northwind__read_policy
+mcp__northwind__process_refund
+mcp__northwind__escalate_to_human</pre>
+      </div>
+      <aside class="teach">
+        <p class="teach-label">What this shows</p>
+        <p>Naming is part of the contract: mcp__&lt;server&gt;__&lt;tool&gt;. Subagent tool lists and hooks match on these exact strings. Get the middle segment wrong and scoping silently fails.</p>
+      </aside>
+    </article>
+    
+    <article class="demo" id="demo1">
+      <header class="demo-head">
+        <p class="eyebrow">Demo 1</p>
+        <h2>The SDK owns the loop</h2>
+        <p class="intent">One query() call. No while loop. Agent should verify customer, look up ORD-789, read policy, and answer returnability.</p>
+        <p class="cell-tag">Notebook cell 18</p>
+      </header>
+      <div class="response">
+        <p class="response-label">Response</p>
+        <pre>tool: ToolSearch {&#x27;query&#x27;: &#x27;select:mcp__northwind__lookup_order,mcp__northwind__read_policy,mcp__northwind__get_customer&#x27;, &#x27;max_results&#x27;: 5}
+   tool: mcp__northwind__lookup_order {&#x27;order_id&#x27;: &#x27;ORD-789&#x27;}
+   tool: mcp__northwind__get_customer {&#x27;email&#x27;: &#x27;alice@example.com&#x27;}
+   tool: mcp__northwind__read_policy {&#x27;section&#x27;: &#x27;2&#x27;}
+   tool: mcp__northwind__read_policy {&#x27;section&#x27;: &#x27;2.1&#x27;}
+   tool: mcp__northwind__read_policy {&#x27;section&#x27;: &#x27;2.2&#x27;}
+   tool: mcp__northwind__read_policy {&#x27;section&#x27;: &#x27;2.3&#x27;}
+   tool: mcp__northwind__read_policy {&#x27;section&#x27;: &#x27;2.4&#x27;}
+
+RESULT
+ **Yes — but only just.** ORD-789 has about 5 days left.
+
+- **Order:** ORD-789, SKU FW-2201, $812.40, delivered **2026-07-26**, condition **unworn**, charged once. Belongs to CUST-001 = Alice Chen (Gold), so identity matches.
+- **Days elapsed:** 40 as of today.
+- **Policy 2.1** (standard, 30 days) would have expired on 2026-08-25.
+- **Policy 2.2** gives footwear/apparel **45 days if unworn with tags attached** → window closes **2026-09-09**.
+
+Two caveats worth confirming before you promise her anything:
+
+1. **The 45-day window depends on this being footwear.** I&#x27;m inferring that from the `FW-` SKU prefix, which the order record doesn&#x27;t state outright. If FW-2201 isn&#x27;t footwear/apparel, it falls under 2.1 and is already 10 days out of window.
+2. **Tags attached is unverified.** The record says `unworn`, but 2.2 requires unworn *and* tags. That&#x27;s a question for Alice.
+
+If both hold, she&#x27;s clear to return — worth telling her the deadline is 2026-09-09 so she ships in time. I haven&#x27;t initiated a refund, since she only asked about eligibility.</pre>
+      </div>
+      <aside class="teach">
+        <p class="teach-label">What this shows</p>
+        <p>This run succeeded: lookup + policy 2.2, correct “still returnable with caveats” answer, no refund. The SDK owned iteration — you owned tools and policy data. Note the connector warning is harmless here (API key auth). Claim 01: the SDK owns the loop so you can own the system.</p>
+      </aside>
+    </article>
+    
+    <article class="demo" id="demo2a">
+      <header class="demo-head">
+        <p class="eyebrow">Demo 2</p>
+        <h2>Spawn specialists from descriptions</h2>
+        <p class="intent">Coordinator should spawn order-investigator and policy-analyst from AgentDefinition.description alone.</p>
+        <p class="cell-tag">Notebook cell 21</p>
+      </header>
+      <div class="response">
+        <p class="response-label">Response</p>
+        <pre>spawned: order-investigator | Look up order ORD-789. Report all available details: status,
+      (inside a subagent)
+spawned: policy-analyst | Read Northwind policy and report the return policy in full: 
+      (inside a subagent)
+   tool: mcp__northwind__lookup_order {&#x27;order_id&#x27;: &#x27;ORD-789&#x27;}
+      (inside a subagent)
+      (inside a subagent)
+   tool: mcp__northwind__read_policy {&#x27;section&#x27;: &#x27;2.1&#x27;}
+      (inside a subagent)
+      (inside a subagent)
+   tool: mcp__northwind__read_policy {&#x27;section&#x27;: &#x27;2.2&#x27;}
+      (inside a subagent)
+      (inside a subagent)
+   tool: ToolSearch {&#x27;query&#x27;: &#x27;select:mcp__northwind__lookup_order,mcp__northwind__read_policy&#x27;, &#x27;max_results&#x27;: 2}
+   tool: mcp__northwind__lookup_order {&#x27;order_id&#x27;: &#x27;ORD-789&#x27;}
+   tool: mcp__northwind__read_policy {&#x27;section&#x27;: &#x27;2.2&#x27;}
+
+RESULT
+ I can&#x27;t answer this yet — and I don&#x27;t want to guess at it.
+
+**What&#x27;s blocking:** both Northwind tools are denied in this session. I dispatched the two subagents in parallel:
+
+- **order-investigator** → `mcp__northwind__lookup_order` denied. No status, delivery date, amount, condition, or charge count for ORD-789.
+- **policy-analyst** → `mcp__northwind__read_policy` denied on the sections it tried (2.1, 2.2). No return window, no measurement-date rule, no exceptions.
+
+I then retried both calls directly myself, in case the denial was scoped to subagents. Same result — the permission prompt isn&#x27;t being granted at any level.
+
+**Why I&#x27;m stopping rather than estimating:** returnability is entirely a function of two facts I don&#x27;t have — the delivery date for ORD-789 and the window length plus what date it runs from. Today&#x27;s date alone tells me nothing. A &quot;yes, you&#x27;re still within the window&quot; that turns out wrong is the expensive kind of wrong here: Alice acts on it, ships the item back, and we&#x27;ve committed to a return we may not honor. Guessing a common return window would be fabrication dressed as policy.
+
+**To unblock**, grant these two read-only tools:
+
+- `mcp__northwind__lookup_order`
+- `mcp__northwind__read_policy`
+
+Approve the prompts when they appear, or add both to the allowlist in settings. Once granted I&#x27;ll re-run both lookups in parallel and give you a straight returnable / not-returnable answer with the delivery date and the policy section cited.
+
+Two things worth flagging for when access opens up:
+
+- The policy tool returns **one clause per call**, so the full return rule may span several sections. If you know which section covers returns, tell me and I&#x27;ll start there instead of probing 2.1/2.2 blind. Condition requirements and category exceptions often sit in separate clauses from the main window, so I&#x27;ll follow cross-references outward.
+- Order lookup returns a **charge count**. If ORD-789 shows more than one charge, that&#x27;s a possible double-billing issue independent of the return question — I&#x27;ll surface it rather than fold it into the returnability answer.
+
+I have not contacted Alice or taken any action on the order.</pre>
+      </div>
+      <aside class="teach">
+        <p class="teach-label">What this shows</p>
+        <p>Spawns happened — that part of the lesson landed. Then MCP tools were denied inside the subagents because this session’s permission mode still gates tools not on the coordinator allowlist. When tools run: the coordinator picks agents from descriptions; each subagent starts empty. This run: spawn ≠ success. Permissions and allowed_tools are part of the system, not a footnote.</p>
+      </aside>
+    </article>
+    
+    <article class="demo" id="demo2b">
+      <header class="demo-head">
+        <p class="eyebrow">Demo 2 · wrong</p>
+        <h2>Assuming shared context</h2>
+        <p class="intent">WRONG pattern: ask policy-analyst about “that order” as if it can see the investigator’s result.</p>
+        <p class="cell-tag">Notebook cell 23</p>
+      </header>
+      <div class="response">
+        <p class="response-label">Response</p>
+        <pre>spawned: order-investigator | Look up order ORD-789 and report its full details: status, a
+      (inside a subagent)
+   tool: mcp__northwind__lookup_order {&#x27;order_id&#x27;: &#x27;ORD-789&#x27;}
+      (inside a subagent)
+      (inside a subagent)
+spawned: policy-analyst | Read the Northwind policy and report the rules governing the
+      (inside a subagent)
+   tool: mcp__northwind__read_policy {&#x27;section&#x27;: &#x27;1&#x27;}
+      (inside a subagent)
+      (inside a subagent)
+   tool: mcp__northwind__read_policy {&#x27;section&#x27;: &#x27;2&#x27;}
+      (inside a subagent)
+      (inside a subagent)
+
+RESULT
+ Both agents ran, and both were blocked on permissions. I have no answer for you yet, and I&#x27;m not going to guess at either half.
+
+**What happened**
+
+| Step | Agent | Tool | Result |
+|---|---|---|---|
+| Look up ORD-789 | order-investigator | `mcp__northwind__lookup_order` | Blocked — permission not granted |
+| Check return window rules | policy-analyst | `mcp__northwind__read_policy` | Blocked — permission not granted |
+
+Neither tool call executed, so:
+
+- I don&#x27;t know ORD-789&#x27;s status, dates, amount, condition, or charge count — I can&#x27;t even confirm the order exists.
+- I don&#x27;t know what the return window is, what date it runs from, or what voids it.
+
+Both are read-only tools, and both need to be approved by you through the permission prompt — an agent can&#x27;t self-approve, and neither can I.
+
+**To unblock:** approve `mcp__northwind__lookup_order` and `mcp__northwind__read_policy`, then tell me to retry. I still have both agents&#x27; contexts alive (`a7c6ec954109842f2` for the order, `a70055fc154f2379c` for the policy), so I can resume them directly rather than starting over.
+
+One note on sequencing once it&#x27;s unblocked: the return-window question depends on which date the policy measures from, so I&#x27;ll pull the policy rules and the order dates together, then do the comparison myself rather than asking either agent to judge the other&#x27;s half — policy-analyst can&#x27;t see the order, and order-investigator can&#x27;t see the policy.</pre>
+      </div>
+      <aside class="teach">
+        <p class="teach-label">What this shows</p>
+        <p>Even blocked, the coordinator itself articulates the lesson: policy-analyst cannot see the order, order-investigator cannot see policy. Subagents do not inherit the coordinator’s conversation. Every fact the next agent needs must be copied into its prompt.</p>
+      </aside>
+    </article>
+    
+    <article class="demo" id="demo2c">
+      <header class="demo-head">
+        <p class="eyebrow">Demo 2 · right</p>
+        <h2>Facts must travel in the prompt</h2>
+        <p class="intent">RIGHT pattern: after lookup, invoke policy-analyst with SKU, delivered_on, and today’s date stated explicitly.</p>
+        <p class="cell-tag">Notebook cell 24</p>
+      </header>
+      <div class="response">
+        <p class="response-label">Response</p>
+        <pre>spawned: order-investigator | Look up order ORD-789. Report all available details, especia
+      (inside a subagent)
+   tool: mcp__northwind__lookup_order {&#x27;order_id&#x27;: &#x27;ORD-789&#x27;}
+      (inside a subagent)
+      (inside a subagent)
+   tool: ToolSearch {&#x27;query&#x27;: &#x27;select:mcp__northwind__lookup_order&#x27;, &#x27;max_results&#x27;: 1}
+   tool: mcp__northwind__lookup_order {&#x27;order_id&#x27;: &#x27;ORD-789&#x27;}
+
+RESULT
+ I stopped before the second step — I can&#x27;t run it honestly without the order data.
+
+**What happened:**
+
+1. `order-investigator` couldn&#x27;t retrieve ORD-789: the `mcp__northwind__lookup_order` tool call was denied by the permission system.
+2. I retried the lookup directly from this session, hoping it would surface an approval prompt to you. Same result — permission not granted.
+
+**Why I didn&#x27;t continue to `policy-analyst`:** the prompt you specified requires a real SKU and a real `delivered_on` date. I have neither, and inventing them would produce a confident-looking return-window verdict built on fabricated facts — the worst possible failure mode for this chain, since the policy answer would look authoritative regardless of whether the underlying dates were real.
+
+**To unblock**, grant access to `mcp__northwind__lookup_order` — approve it when prompted, or add it to `permissions.allow` in `.claude/settings.json`. I can make that settings edit for you if you&#x27;d like. Once it&#x27;s granted, the rest is quick: one lookup, then the policy-analyst call with the actual SKU and delivery date filled in.
+
+One thing I could do in the meantime, if useful: ask `policy-analyst` to state Northwind&#x27;s return-window rules in general — how long the window is and what it&#x27;s measured from — without reference to this order. That&#x27;s answerable from policy alone, and it would leave only the date arithmetic once ORD-789&#x27;s data comes through. Say the word and I&#x27;ll fire it off.</pre>
+      </div>
+      <aside class="teach">
+        <p class="teach-label">What this shows</p>
+        <p>The coordinator refused to invent dates when lookup failed — good failure discipline. The design rule still stands: relay every fact the specialist needs. Claim 02: a subagent starts empty, so every fact goes in its prompt.</p>
+      </aside>
+    </article>
+    
+    <article class="demo" id="demo2d">
+      <header class="demo-head">
+        <p class="eyebrow">Demo 2 · parallel</p>
+        <h2>Parallel vs sequential spawn</h2>
+        <p class="intent">Three order-investigator spawns in one response vs one-at-a-time. Compare wall time.</p>
+        <p class="cell-tag">Notebook cell 26</p>
+      </header>
+      <div class="response">
+        <p class="response-label">Response</p>
+        <pre>spawned: order-investigator | Look up order ORD-123 and report its full details, especiall
+      (inside a subagent)
+spawned: order-investigator | Look up order ORD-456 and report its full details, especiall
+      (inside a subagent)
+spawned: order-investigator | Look up order ORD-789 and report its full details, especiall
+      (inside a subagent)
+   tool: mcp__northwind__lookup_order {&#x27;order_id&#x27;: &#x27;ORD-456&#x27;}
+      (inside a subagent)
+      (inside a subagent)
+   tool: mcp__northwind__lookup_order {&#x27;order_id&#x27;: &#x27;ORD-123&#x27;}
+      (inside a subagent)
+      (inside a subagent)
+   tool: mcp__northwind__lookup_order {&#x27;order_id&#x27;: &#x27;ORD-789&#x27;}
+      (inside a subagent)
+      (inside a subagent)
+   tool: ToolSearch {&#x27;query&#x27;: &#x27;select:mcp__northwind__lookup_order&#x27;, &#x27;max_results&#x27;: 1}
+   tool: mcp__northwind__lookup_order {&#x27;order_id&#x27;: &#x27;ORD-123&#x27;}
+   tool: mcp__northwind__lookup_order {&#x27;order_id&#x27;: &#x27;ORD-456&#x27;}
+   tool: mcp__northwind__lookup_order {&#x27;order_id&#x27;: &#x27;ORD-789&#x27;}
+
+RESULT
+ Blocked here too. So:
+
+**No amounts to report.** All four attempts (three subagents + a direct call from this session) failed for the same reason: `mcp__northwind__lookup_order` has not been granted permission. Zero order data was retrieved — no status, no dates, no amounts for any of the three orders.
+
+The parallelism part worked as you asked: all three `order-investigator` agents were dispatched in a single response and ran simultaneously. They just each hit the same wall.
+
+To proceed, you need to grant permission for `mcp__northwind__lookup_order` — that approval has to come from you, either by accepting the prompt or adding the tool to your allowed-tools config. It&#x27;s a read-only lookup, so it should be a low-risk grant. Once it&#x27;s approved, tell me and I&#x27;ll re-run all three lookups and give you the amounts.
+spawned: order-investigator | Look up order ORD-123 and report its amount, along with stat
+      (inside a subagent)
+   tool: mcp__northwind__lookup_order {&#x27;order_id&#x27;: &#x27;ORD-123&#x27;}
+      (inside a subagent)
+      (inside a subagent)
+
+RESULT
+ The first lookup came back blocked, so I stopped the chain there rather than firing off two more agents that would hit the same wall.
+
+**Status: blocked on tool permission**
+
+The `order-investigator` agent couldn&#x27;t run `mcp__northwind__lookup_order` for ORD-123 — the permission for that tool hasn&#x27;t been granted in this session. No data was retrieved, so I have no amount to report for ORD-123, and I haven&#x27;t started ORD-456 or ORD-789.
+
+I have no amounts for any of the three orders. I&#x27;m not going to guess at them.
+
+To unblock: approve `mcp__northwind__lookup_order` when the permission prompt appears, or pre-approve it in your permission settings. Once that&#x27;s done, tell me and I&#x27;ll re-run all three sequentially as you asked.
+
+parallel   34.0s
+sequential 17.0s</pre>
+      </div>
+      <aside class="teach">
+        <p class="teach-label">What this shows</p>
+        <p>Look at the first block: three spawned: lines together — parallel dispatch worked. Tools still denied, so amounts never came back. Timings printed parallel 34.0s / sequential 17.0s — with both failing early, wall-clock is not a fair speedup lesson yet. When tools are allowed, parallel should clearly win. parallelism is a coordinator emission pattern (multiple Agent tool calls in one turn), not something the subagent invents.</p>
+      </aside>
+    </article>
+    
+    <article class="demo" id="demo3a">
+      <header class="demo-head">
+        <p class="eyebrow">Demo 3</p>
+        <h2>Prose finding — unverifiable</h2>
+        <p class="intent">Ask policy-analyst for a free-text returnability answer. Show why prose is hard for a coordinator to check.</p>
+        <p class="cell-tag">Notebook cell 28</p>
+      </header>
+      <div class="response">
+        <p class="response-label">Response</p>
+        <pre>spawned: policy-analyst | Per written Northwind policy: can footwear that was delivere
+      (inside a subagent)
+   tool: mcp__northwind__read_policy {&#x27;section&#x27;: &#x27;2.2&#x27;}
+      (inside a subagent)
+      (inside a subagent)
+   tool: mcp__northwind__read_policy {&#x27;section&#x27;: &#x27;2.1&#x27;}
+      (inside a subagent)
+      (inside a subagent)
+
+RESULT
+ The policy-analyst couldn&#x27;t answer — it&#x27;s blocked on tool permissions. Here is exactly what it reported:
+
+---
+
+I can&#x27;t answer this yet — the policy tool is blocked.
+
+**What happened:** I attempted to read sections 2.1 and 2.2 via the `mcp__northwind__read_policy` tool. Both calls were rejected: &quot;Claude requested permissions to use `mcp__northwind__read_policy`, but you haven&#x27;t granted it yet.&quot;
+
+**Why I&#x27;m not answering anyway:** The question asks specifically for the *written* policy with a cited section. I have no policy text in hand. Any yes/no I gave — even a plausible-sounding &quot;30-day window, so no&quot; — would be invented, and a fabricated citation on a returns decision is worse than no answer. I also can&#x27;t grant myself access to the tool; that&#x27;s a permission-system decision, and nothing in my instructions changes that.
+
+**What&#x27;s needed to unblock:**
+- Approve the `mcp__northwind__read_policy` tool for this thread, and I&#x27;ll read the returns/footwear sections and give a cited yes/no; or
+- Paste the relevant policy text directly and I&#x27;ll reason from it.
+
+**One thing worth flagging for whoever unblocks this:** the answer likely hinges on details I should confirm rather than assume. Delivery was 2026-07-26 and today is 2026-09-04 — a 40-day gap. That falls outside a 30-day window but inside a 60-day one, so the standard return period is decisive. It&#x27;s also worth checking whether footwear carries a category-specific rule (worn/unworn condition, final-sale exclusions) that overrides the general window, and whether the clock runs from delivery or from purchase. I&#x27;ll check for all of these once I can read the policy.
+
+---
+
+The agent is still live (`a65ce32a065131abd`) — if you approve the `mcp__northwind__read_policy` permission, I can resume it with its context intact rather than starting over.</pre>
+      </div>
+      <aside class="teach">
+        <p class="teach-label">What this shows</p>
+        <p>Tools were still permission-blocked, so you don’t get the intended soft “shoes should still be returnable” sentence. The target pattern remains: a fluent prose answer is correct-looking and uncheckable. Next cells introduce a JSON finding contract (claim / evidence / source / concern_id) so coverage can be verified in code.</p>
+      </aside>
+    </article>
+    
+
+    <section id="remaining">
+      <p class="eyebrow">Not yet executed</p>
+      <h2 style="font-family:var(--display);font-weight:800;letter-spacing:-0.02em;margin:0 0 8px;">
+        What the rest of the notebook still teaches
+      </h2>
+      <p style="color:var(--ink-2);margin:0 0 18px;">
+        These cells had no captured response in this run. What each remaining demo is meant to show, once permissions are fixed:
+      </p>
+      <div class="planned-wrap">
+        <div class="planned">
+    <p class="eyebrow">Demo 3 · contract</p>
+    <h3>JSON findings with concern_id</h3>
+    <p>Force every specialist to return claim, evidence, source, concern_id. That is what makes coverage checkable later.</p>
+  </div>
+<div class="planned">
+    <p class="eyebrow">Demo 3 · tools field</p>
+    <h3>Prompt said never; tools said yes</h3>
+    <p>Omit tools= and the subagent inherits process_refund. A prompt is not a permission boundary — the tools list is.</p>
+  </div>
+<div class="planned">
+    <p class="eyebrow">Demo 4 · hook</p>
+    <h3>$500 ceiling via PreToolUse</h3>
+    <p>One hook registration denies $812.40 for every agent. Rules that span agents live in hooks, not four prompts.</p>
+  </div>
+<div class="planned">
+    <p class="eyebrow">Demo 5 · failure shape</p>
+    <h3>Lookup failed. vs structured err()</h3>
+    <p>Category, retryability, partialResults, and alternatives let the coordinator choose retry vs escalate.</p>
+  </div>
+<div class="planned">
+    <p class="eyebrow">Demo 6 · coverage</p>
+    <h3>Goal prompt + re-delegate gaps</h3>
+    <p>A clean run can still miss concerns. Decompose → run → compare concern_ids → re-send gaps until empty.</p>
+  </div>
+      </div>
+    </section>
+
+    <footer>
+      Source: <code>claude-architect-bootcamp/week-2/week2_coordinator.ipynb</code>
+      · Generated from cell outputs in this session.
+    </footer>
+  </div>
+</body>
+</html>
