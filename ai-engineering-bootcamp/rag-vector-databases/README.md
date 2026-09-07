@@ -1,5 +1,11 @@
 # RAG + Vector Databases - Live Session Notebook
 
+> **Note:** This folder mirrors the canonical version at
+> [`ai-engineering-bootcamp-v2/week-2/rag-vector-databases/`](../../ai-engineering-bootcamp-v2/week-2/rag-vector-databases/).
+> It is kept here for the v1 bootcamp layout; both copies contain the same
+> notebook content. `rag_vector_databases_live_session_updated.ipynb` is retained
+> only as a backup of the fully-executed run.
+
 This notebook contains a complete, self-contained guide to building Retrieval Augmented Generation (RAG) systems with LangChain and Vector Databases.
 
 ## 📚 Contents

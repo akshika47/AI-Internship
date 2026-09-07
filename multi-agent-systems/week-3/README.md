@@ -94,8 +94,8 @@ Extend the Company Research Assistant with a third agent:
 ## 🔗 Resources
 
 - [LangGraph Official Documentation](https://docs.langchain.com/oss/python/langgraph/overview)
-- [LangGraph Subgraphs](https://langchain-ai.github.io/langgraph/how-tos/subgraphs/)
-- [LangGraph State Management](https://langchain-ai.github.io/langgraph/concepts/low_level/#state)
+- [LangGraph Subgraphs](https://docs.langchain.com/oss/python/langgraph/use-subgraphs)
+- [LangGraph State Management](https://docs.langchain.com/oss/python/langgraph/graph-api#state)
 - [LangSmith](https://smith.langchain.com) — Debug & trace your graphs
 
 ## ✅ Next Steps

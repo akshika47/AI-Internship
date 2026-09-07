@@ -118,7 +118,7 @@ The notebook includes:
 
 ## 🔗 Resources
 
-- [LangGraph Documentation](https://langchain-ai.github.io/langgraph/)
+- [LangGraph Documentation](https://docs.langchain.com/oss/python/langgraph/overview)
 - [LangSmith](https://smith.langchain.com) — Debug & trace your graphs
 - [LangGraph Academy](https://academy.langchain.com/courses/intro-to-langgraph)
 

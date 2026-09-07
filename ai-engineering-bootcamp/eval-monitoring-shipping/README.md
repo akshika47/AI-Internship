@@ -1,5 +1,12 @@
 # Week 4: Evaluation, Monitoring & Shipping - Langfuse Examples
 
+> **⚠️ Superseded — not part of the current Week 4 material.**
+> This folder was last updated in February 2026 and is kept for reference only.
+> The current Week 4 (TRACE Evals) has **no dedicated code folder** — refer to the
+> syllabus's Week 4 page for the up-to-date tool links (Braintrust / Langfuse /
+> Promptfoo). The scripts here have a known SDK-version mismatch between
+> `main.py` and `simple_openai_langfuse.py` and are not maintained.
+
 Simple examples demonstrating Langfuse features: tracing, scoring, and session tracking.
 
 ## Simple Example

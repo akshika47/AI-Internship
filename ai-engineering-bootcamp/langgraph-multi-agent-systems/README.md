@@ -16,7 +16,7 @@ LangGraph re-implementation of the `adk-multi-agent-systems` demos. Same three p
 
 ```bash
 pip install -e .
-cp ../adk-multi-agent-systems/.env .env
+cp .env.example .env   # then fill in your keys (see Environment Variables below)
 ```
 
 ## Demos
@@ -48,6 +48,11 @@ python demo3_full_system.py
 uvicorn shipping_agent:app --port 8001   # Terminal 1
 streamlit run streamlit_app.py            # Terminal 2
 ```
+
+### Notebook
+
+`week3_langgraph_notebook.ipynb` walks through the same three demos step by step
+in notebook form — the LangGraph counterpart to `adk-multi-agent-systems/week3_notebook.ipynb`.
 
 ## Architecture
 

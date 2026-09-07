@@ -1,6 +1,6 @@
 # ADK Multi-Agent Systems
 
-Three progressive demos showing multi-agent system design using [Google's Agent Development Kit (ADK)](https://google.github.io/adk-docs/).
+Three progressive demos showing multi-agent system design using [Google's Agent Development Kit (ADK)](https://adk.dev).
 
 | Demo | What it shows | Protocol |
 |------|--------------|----------|
@@ -8,6 +8,7 @@ Three progressive demos showing multi-agent system design using [Google's Agent 
 | **Demo 2** — MCP | Agent queries a live Supabase database; tools are auto-discovered at runtime | MCP |
 | **Demo 3** — Full System | Combines routing + MCP + A2A with a remote shipping agent | MCP + A2A |
 | **Streamlit App** | Interactive UI that runs all three demos in the browser | All |
+| **Notebook** — `week3_notebook.ipynb` | "Building Multi-Agent AI Systems with ADK" — the same concepts walked through step by step in notebook form | All |
 
 ## Prerequisites
 

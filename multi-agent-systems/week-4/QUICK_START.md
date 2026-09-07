@@ -1,5 +1,9 @@
 # Quick Start - Deploy Your Research Assistant
 
+> **Note:** `https://your-app.onrender.com` and `https://your-app.streamlit.app`
+> below are `<placeholder — replace before use>` — swap in the URLs Render and
+> Streamlit Cloud give you.
+
 ## 🚀 Deploy in 10 Minutes
 
 ### Backend (Render)
@@ -16,7 +20,7 @@
    - Build: `pip install -r requirements.txt`
    - Start: `python -m uvicorn main:app --host 0.0.0.0 --port $PORT`
    - Add env vars (API keys)
-   - Deploy → get URL: `https://your-app.onrender.com`
+   - Deploy → get URL: `https://your-app.onrender.com`  _(`<placeholder — replace before use>`)_
 
 ### Frontend (Streamlit Cloud)
 
@@ -29,8 +33,8 @@
    - Go to share.streamlit.io → New app
    - Connect repo
    - Main file: `app.py`
-   - Add secret: `API_URL = "https://your-app.onrender.com"`
-   - Deploy → get URL: `https://your-app.streamlit.app`
+   - Add secret: `API_URL = "https://your-app.onrender.com"`  _(`<placeholder — replace before use>`)_
+   - Deploy → get URL: `https://your-app.streamlit.app`  _(`<placeholder — replace before use>`)_
 
 ## ✅ Done!
 

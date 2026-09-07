@@ -2,6 +2,11 @@
 
 Complete guide to deploy your Research Assistant to production.
 
+> **Note:** URLs like `https://your-app.onrender.com` and
+> `https://your-app.streamlit.app` in this guide are
+> `<placeholder — replace before use>`. Substitute the real URLs that Render and
+> Streamlit Cloud assign to your own deployments.
+
 ## Architecture
 
 ```
@@ -60,11 +65,12 @@ git push -u origin main
      - `LANGFUSE_HOST` = `https://cloud.langfuse.com`
 7. Click "Create Web Service"
 8. Wait 2-3 minutes for deployment
-9. Copy your URL: `https://your-app.onrender.com`
+9. Copy your URL: `https://your-app.onrender.com`  _(`<placeholder — replace before use>`)_
 
 ### Step 4: Test Your Backend
 
 ```bash
+# Replace your-app.onrender.com with your real Render URL — <placeholder — replace before use>
 # Test health endpoint
 curl https://your-app.onrender.com/health
 
@@ -109,10 +115,10 @@ git push -u origin main
 5. Click "Advanced settings"
 6. Add secret:
    - **Key:** `API_URL`
-   - **Value:** Your Render backend URL (e.g., `https://your-app.onrender.com`)
+   - **Value:** Your Render backend URL (e.g., `https://your-app.onrender.com` — `<placeholder — replace before use>`)
 7. Click "Deploy"
 8. Wait 1-2 minutes for deployment
-9. Get your URL: `https://your-app.streamlit.app`
+9. Get your URL: `https://your-app.streamlit.app`  _(`<placeholder — replace before use>`)_
 
 ### Step 4: Test Your Frontend
 

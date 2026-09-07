@@ -16,18 +16,33 @@ This course is organized by weeks, with each week containing:
 ```
 multi-agent-systems/
 ├── README.md              # This file
+├── image/                 # Diagrams used in the week READMEs
 ├── week-1/                # LangGraph Foundations
 │   ├── README.md
 │   ├── requirements.txt
 │   ├── week1_notebook.ipynb
-│   └── .env.example
+│   ├── .env.example
+│   └── .gitignore
 ├── week-2/                # Single-Agent Mastery
 │   ├── requirements.txt
 │   ├── week2_notebook.ipynb
 │   ├── streamlit_app.py
-│   └── .env
-├── week-3/                # Multi-Agent Orchestration (Coming Soon)
-└── week-4/                # Production & Capstone (Coming Soon)
+│   └── .gitignore
+├── week-3/                # Multi-Agent Orchestration
+│   ├── README.md
+│   ├── requirements.txt
+│   ├── week3_notebook.ipynb
+│   ├── .env.example
+│   └── .gitignore
+└── week-4/                # Production & Capstone
+    ├── README.md
+    ├── QUICK_START.md
+    ├── DEPLOYMENT_GUIDE.md
+    ├── RUN_LOCAL.md
+    ├── requirements.txt
+    ├── week4_notebook.ipynb
+    ├── backend/           # FastAPI service (Render/Railway deploy configs)
+    └── frontend/          # Streamlit chat UI
 ```
 
 ## 🎯 Course Overview
@@ -61,7 +76,7 @@ multi-agent-systems/
 - Coordinate multiple specialized agents
 - Build complex multi-agent workflows
 
-**Status:** 🚧 Coming Soon
+**Status:** ✅ Available
 
 ### Week 4: Production & Capstone
 **Deploy to Production**
@@ -70,7 +85,7 @@ multi-agent-systems/
 - Add monitoring and observability
 - Complete capstone project
 
-**Status:** 🚧 Coming Soon
+**Status:** ✅ Available
 
 ## 🚀 Getting Started
 
@@ -103,7 +118,7 @@ multi-agent-systems/
 
 ## 🔗 Resources
 
-- [LangGraph Documentation](https://langchain-ai.github.io/langgraph/)
+- [LangGraph Documentation](https://docs.langchain.com/oss/python/langgraph/overview)
 - [LangSmith](https://smith.langchain.com) — Debug & trace your graphs
 - [LangGraph Academy](https://academy.langchain.com/courses/intro-to-langgraph)
 

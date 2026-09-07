@@ -30,6 +30,20 @@ Earlier bootcamp modules — RAG, ADK/LangGraph agents, eval monitoring, and mor
 
 - **Location:** `ai-engineering-bootcamp/`
 
+### Claude Architect Bootcamp
+4-week live bootcamp for engineers and technical PMs building production agents with the Claude API (raw Anthropic Python SDK, no frameworks).
+
+- **Location:** `claude-architect-bootcamp/`
+- **Status:** Week 1 available
+- **Get Started:** See [claude-architect-bootcamp/README.md](claude-architect-bootcamp/README.md)
+
+### Lightning Lesson Demos
+Short, self-contained demos used in lightning lessons.
+
+- **Location:** `lightning-lesson-demos/`
+- **Status:** `refund-context-demo` (context vs. prompt) available
+- **Get Started:** See [lightning-lesson-demos/refund-context-demo/README.md](lightning-lesson-demos/refund-context-demo/README.md)
+
 ## 🗂️ Repository Structure
 
 ```
@@ -45,6 +59,10 @@ AI-Internship/
 ├── ai-engineering-bootcamp/          # AI Engineering Bootcamp v1 modules
 ├── multi-agent-systems/              # Multi-Agent Systems course
 │   └── week-1/ ... week-4/
+├── claude-architect-bootcamp/        # Claude Architect Bootcamp (Claude API)
+│   └── week-1/                       # Claude API Beyond Chat — demos + notebooks
+└── lightning-lesson-demos/           # Standalone lightning-lesson demos
+    └── refund-context-demo/          # Context > Prompt refund demo
 ```
 
 ## 🚀 Quick Start
@@ -63,7 +81,7 @@ AI-Internship/
 
 ## 🔗 Resources
 
-- [AI Internship Website](https://theaiinternship.com)
+- [AI Internship Website](https://tailabs.ai)
 - Course-specific resources are listed in each course's README
 
 ## 📝 How to Use This Repository
