@@ -29,6 +29,7 @@ Learn to build production-ready multi-agent systems using LangGraph.
 Earlier bootcamp modules — RAG, ADK/LangGraph agents, eval monitoring, and more.
 
 - **Location:** `ai-engineering-bootcamp/`
+- **Get Started:** See [ai-engineering-bootcamp/README.md](ai-engineering-bootcamp/README.md)
 
 ### Claude Architect Bootcamp
 4-week live bootcamp for engineers and technical PMs building production agents with the Claude API (raw Anthropic Python SDK, no frameworks).
