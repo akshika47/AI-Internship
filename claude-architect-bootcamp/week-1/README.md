@@ -38,6 +38,8 @@ python stream_demo.py "Explain in 3 sentences why streaming improves perceived l
 | `demo-ui/` | **Next.js live demo UI** — best for projecting to an audience |
 | `stream_demo.py` | Standalone streaming demo (terminal) |
 | `.env.example` | API key template |
+| `week1_support_agent.ipynb` | Support-agent walkthrough: tool descriptions, the loop, error categories, the prerequisite gate |
+| `assignment-resources/` | **Assignment 1 starter** - `customer-support-skeleton/`, the repo the assignment tells you to extend |
 
 ## Next.js demo UI (recommended for live teaching)
 

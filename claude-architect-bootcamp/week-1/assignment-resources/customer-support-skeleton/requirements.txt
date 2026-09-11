@@ -1,0 +1,2 @@
+# Needed for `run.py --live`. The `--demo` wiring check runs on the stdlib alone.
+anthropic>=1.4.0
