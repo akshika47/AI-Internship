@@ -6,7 +6,48 @@
 <title>J2i home</title>
 <style>
 /* J2i demo house style. Every HTML page in this folder links this file:
+   <style>
+/* J2i demo house style. Every HTML page in this folder links this file:
    <link rel="stylesheet" href="style/house.css">
+   Building blocks: .page  .eyebrow  h1  .lede  .strip  .grid  .card  .tag  .was/.now  table.compare  .src  .foot */
+:root{--bg:#f6f7f3;--surface:#fff;--ink:#17231d;--muted:#5f6d63;--line:#dfe5db;--accent:#2a4d3c;--soft:#e8f0e1;--warn:#9a4a1c;--warn-bg:#fbeee4;--ok:#2f6b47;--ok-bg:#e3f1e6}
+*{box-sizing:border-box}
+html{font-size:17px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+.page{max-width:1120px;margin:0 auto;padding:40px 28px 72px}
+.eyebrow{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-size:2.3rem;line-height:1.08;letter-spacing:-.03em;font-weight:650;margin:.3rem 0 .6rem;text-wrap:balance}
+h2{font-size:1.35rem;letter-spacing:-.02em;font-weight:650;margin:0}
+h3{font-size:.74rem;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:1.1rem 0 .35rem}
+.lede{color:var(--muted);max-width:66ch;font-size:1.05rem;margin:0 0 1.6rem}
+a{color:var(--accent);text-underline-offset:2px}
+p,ul,ol{margin:.3rem 0}
+ul,ol{padding-left:1.15rem}
+li{margin:.2rem 0}
+.strip{background:var(--accent);color:#fff;border-radius:16px;padding:22px 26px;margin:0 0 22px}
+.strip h2,.strip h3{color:#fff}
+.strip a{color:#d4edaf}
+.strip .eyebrow{color:#cfe0d4}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:20px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.card-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:4px}
+.card-head .date{font-size:.8rem;color:var(--muted)}
+.tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:2px 9px;background:var(--soft);color:var(--accent);vertical-align:middle}
+.tag.warn{background:var(--warn-bg);color:var(--warn)}
+.tag.ok{background:var(--ok-bg);color:var(--ok)}
+table.compare{width:100%;border-collapse:collapse;font-size:.95rem}
+table.compare th{text-align:left;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;font-weight:600;opacity:.8;padding:6px 12px 6px 0}
+table.compare td{padding:10px 12px 10px 0;border-top:1px solid rgba(255,255,255,.22);vertical-align:top}
+.card table.compare td{border-top:1px solid var(--line)}
+.was{opacity:.78}
+.now{font-weight:600}
+.src{font-size:.8rem;color:var(--muted);white-space:nowrap}
+.strip .src{color:#cfe0d4}
+.quote{border-left:3px solid var(--accent);padding:.15rem 0 .15rem .8rem;margin:.5rem 0}
+.foot{margin-top:28px;font-size:.82rem;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+</style>
    Building blocks: .page  .eyebrow  h1  .lede  .strip  .grid  .card  .tag  .was/.now  table.compare  .src  .foot */
 :root{--bg:#f6f7f3;--surface:#fff;--ink:#17231d;--muted:#5f6d63;--line:#dfe5db;--accent:#2a4d3c;--soft:#e8f0e1;--warn:#9a4a1c;--warn-bg:#fbeee4;--ok:#2f6b47;--ok-bg:#e3f1e6}
 *{box-sizing:border-box}
