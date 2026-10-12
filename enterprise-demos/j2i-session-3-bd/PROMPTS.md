@@ -1,4 +1,4 @@
-# Prompts · Session 3 (v6)
+# Prompts · Session 3 (v6.1)
 
 The folder is already set up: CLAUDE.md (who J2i is, the ideal client, the four checks, the house rules), the house style, the knowledge base, a fictional inbox and a fictional discovery call.
 
@@ -13,7 +13,7 @@ _Promise: competitor and market monitoring to sharpen pitch intelligence._
 
 **1.1 Battlecards for two competitors**
 
-> Build battlecards for GovDash (govdash.com) and Sweetspot (sweetspot.so). For each, get its homepage from about a year ago and the latest saved copy from the Wayback Machine, fetching web.archive.org/web/<timestamp>id_/<url> directly, keep the copies in watch/, and compare the wording. Then write battlecards.html. Start with a "What changed" table: old wording, new wording and a link to each archive copy. Then one card per vendor, short enough to fit a screen: what they say now, where they are strong, where J2i fits, three questions to ask a buyer who is considering them, and likely objections with an honest answer. No badmouthing. Why J2i wins stays [TO CONFIRM]. End with a short "Market" strip: two rules changing for these buyers this year, each with a source link, using at most 2 web searches, and say so when sources disagree. Check every claim against its source, remove what you cannot back up, and list what you removed at the bottom. Open the page.
+> Build battlecards for GovDash (govdash.com) and Sweetspot (sweetspot.so). For each, get its homepage from about a year ago and the latest saved copy from the Wayback Machine, fetching web.archive.org/web/<timestamp>id_/<url> directly, keep the copies in watch/ named <vendor>_<date of the copy>.html, and compare the wording. Then write battlecards.html. Start with a "What changed" table: old wording, new wording and a link to each archive copy. Then one card per vendor, short enough to fit a screen: what they say now, where they are strong, where J2i fits, three questions to ask a buyer who is considering them, and likely objections with an honest answer. No badmouthing. Why J2i wins stays [TO CONFIRM]. End with a short "Market" strip: two rules changing for these buyers this year, each with a source link, using at most 2 web searches, and say so when sources disagree. Check every claim against its source, remove what you cannot back up, and list what you removed at the bottom. Open the page.
 
 - Say: One prompt. Claude finds what each competitor changed, writes the cards and checks its own claims. It takes about seven minutes.
 - Look: battlecards.html. What changed at the top, then a card per competitor. Click an archive link to show the real page.
@@ -40,9 +40,10 @@ _Promise: LinkedIn lead intelligence and automated prospect scoring._
 
 **2.1 A scored list from public data**
 
-> Build the list of who J2i should call first. Pull federal contract awards from the USAspending API (no key needed) for veteran-owned and service-disabled veteran-owned businesses, NAICS 5415 and 5416, award activity Oct 2025 to Sep 2026, awards between $1M and $20M, up to 2,000 rows, and remove duplicates. Find the services firms, not resellers, with contracts ending by 30 April 2027, and take the top 15. Look the top 10 up in Apollo with the free lookup and mark any you cannot match UNRESOLVED. Then tell me the credit cost and wait for my yes before you enrich the 5 best matches in Apollo, find titles (no names) for capture, proposal, COO and IT security at the best 3, and get open jobs and recent news for those 3 from Clay. Add the leads in inbound/. Score everyone on the four checks. Check every claim against its source and remove what you cannot back up. Write targets.html: the five best real companies to call first at the top, then a table that sorts on a column click and has a filter box, then what you removed. Open the page.
+> Build the list of who J2i should call first. Pull federal contract awards from the USAspending API (no key needed) for veteran-owned and service-disabled veteran-owned businesses, NAICS 5415 and 5416, award activity Oct 2025 to Sep 2026, awards between $1M and $20M, up to 2,000 rows, and remove duplicates. Find the services firms, not resellers, with contracts ending by 30 April 2027, and take the top 15. Look the top 10 up in Apollo with the free organisation lookup only, never a paid search, and mark any you cannot match UNRESOLVED. Then stop once: tell me the total Apollo and Clay cost of the rest of this prompt and wait for my yes. After my yes, finish everything below without stopping again. Enrich the 5 best matches in Apollo, find titles (no names) for capture, proposal, COO and IT security at the best 3, and get open jobs and recent news for those 3 from Clay. Add the leads in inbound/. Score everyone on the four checks. Check every claim against its source and remove what you cannot back up. Write targets.html: the five best real companies to call first at the top, then a table that sorts on a column click and has a filter box, then what you removed. Open the page.
 
-- Say: One prompt again. It will stop once to tell us the credit cost. Read it out, then say yes. It takes about fifteen minutes.
+- Say: One prompt again. It stops once to tell us the credit cost. Read it out, then answer with a plain yes so it carries on to the page.
+- Point out: If you answer anything other than yes, it stops there and targets.html is not written.
 - Look: targets.html. The five to call first, then sort the table by end date.
 - Point out: Public data gets a company to "worth a call". A conversation is what makes it Qualified.
 - Point out: Government names rarely match a database. In testing, 4 of 10 matched cleanly.
@@ -50,7 +51,7 @@ _Promise: LinkedIn lead intelligence and automated prospect scoring._
 
 **2.2 Into Apollo** [writes to Apollo]
 
-> Put the three best real companies that have an Apollo match into Apollo: add them to a list called "J2i pipeline · contracts ending", and create a deal for each, named with "(J2i demo)" at the end, with the reason to call in the description and a task "Send personal note". Search for an existing deal first. Do not add anyone to a sequence.
+> Using targets.html, put the three best real companies that have an Apollo match into Apollo. Use only free lookups and record creation: this step must not spend credits, so do not run a paid search, and ask me first if anything would cost a credit. Add the three to a list called "J2i pipeline · contracts ending", and create a deal for each, named with "(J2i demo)" at the end, with the reason to call in the description and a task "Send personal note". Search existing deals first and skip any that exist. Do not add anyone to a sequence. If targets.html does not exist, stop and say so.
 
 - Look: Apollo. Saved records, Companies for the list; Win deals, Deals; Engage, Tasks.
 
@@ -101,7 +102,7 @@ _Promises: a private knowledge assistant on J2i's work and methods, and mining w
 
 **3.2 From a call to the Opportunity Map**
 
-> Read calls/discovery-call.md, which is fictional. Pull the pain points in the client's own words, every number and every objection, then draft the one-page Opportunity Map from the template in knowledge/templates/. Mark gaps ESTIMATE NEEDED or [VERIFY]. Save it as opportunity-map.html and open it.
+> Read calls/discovery-call.md, which is fictional. Pull the pain points in the client's own words, every number and every objection, then draft the one-page Opportunity Map from the template in knowledge/templates/. Mark gaps ESTIMATE NEEDED or [VERIFY]. It must fit one page: under 300 words, three opportunities at most. Save it as opportunity-map.html and open it.
 
 - Say: The call is fictional, written in J2i's own discovery method. This is the page J2i promises within 24 hours.
 - Look: opportunity-map.html.
@@ -109,7 +110,7 @@ _Promises: a private knowledge assistant on J2i's work and methods, and mining w
 
 **3.3 Start the win-loss log**
 
-> Start the win-loss log as win-loss.html. Log every objection from the discovery call and every lead in inbound/ that we would drop or park, each with an outcome (won, lost or no decision), the reason, and the competitor or alternative the buyer considered if one was named. Then say what patterns you see and what we should change in targeting or messages because of them. Save the call notes and the Opportunity Map into knowledge/deals/harborline/ so the assistant learns the deal. Open the page.
+> Start the win-loss log as win-loss.html. Log every objection from the discovery call and every lead in inbound/ that we would drop or park, each with an outcome (won, lost or no decision), the reason, and the competitor or alternative the buyer considered if one was named. Then say what patterns you see and what we should change in targeting or messages because of them. Save the call notes and the Opportunity Map into knowledge/deals/harborline/ so the assistant learns the deal. Keep the page short: one table and at most three patterns. Open the page.
 
 - Say: With one week of leads this is a starter log. After ten deals the same prompt finds real patterns.
 - Look: win-loss.html, then knowledge/deals/ now has its first deal.
