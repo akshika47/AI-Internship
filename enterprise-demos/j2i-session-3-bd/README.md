@@ -7,7 +7,7 @@ The presenter can run a build live or open the same page from `finished/`.
 ## Where to look
 
 - **`start/`** is everything the presenter works with: `CLAUDE.md`, the house style, the knowledge base, the inbox and the call. Copy this folder and run the prompts inside the copy.
-- **`finished/`** is everything to show without running it live. Open `finished/index.html`.
+- **`finished/`** is everything to show without running it live. Open **`finished/all-pages.html`**: one file with every page on a tab. It works in any browser, including sandboxed ones that cannot follow links between local files.
 - **`PROMPTS.md`** is what to paste, in order.
 
 Deck: https://claude.ai/artifact/66Ycaor6HCpxs6oQVZL8kS
@@ -21,7 +21,7 @@ Deck: https://claude.ai/artifact/66Ycaor6HCpxs6oQVZL8kS
 | `start/style/house.css` | The house style every result page uses |
 | `start/knowledge/` | The knowledge base structure. The files are added privately (needed for Build 4 only) |
 | `start/inbound/`, `start/calls/` | A fictional inbox and a fictional discovery call |
-| `finished/` | Pages from a tested run: the fallback. Open `finished/index.html` |
+| `finished/` | Pages from a tested run: the fallback. Open `finished/all-pages.html` |
 
 ## Run it
 
@@ -58,7 +58,15 @@ above produce today. They show the same results.
 
 ### Opening the tested pages
 
-Open `finished/index.html` in a browser. It is the home page, and each tile opens one page.
+Open `finished/all-pages.html` in a browser. Every page is a tab in that one file.
+
+If you prefer separate pages, serve the folder so links work in any browser:
+
+```
+cd finished && python3 -m http.server 8765
+```
+
+then open http://localhost:8765/index.html. The same command works inside a run folder during a live build.
 
 | Page | Build | What it shows |
 |---|---|---|
