@@ -47,10 +47,12 @@ Open `finished/index.html` in a browser. It is the home page, and each tile open
 | `call-prep.html` | 1 | A 30-second answer and three questions, built from the card |
 | `contracts-ending.html` | 2 | Veteran-owned firms with federal contracts ending soon (public USAspending data) |
 | `inbox.html` | 2 | Keep, park or drop for each inbound lead (all fictional) |
+| `targets.html` | 2 | Who to call first: the scored list, sortable, with a filter box |
 
-Not in this repo, because it is public: `targets.html` (the scored "who to call first" page, which uses Apollo and
-Clay results about real companies), the raw contract data, and the saved copies of competitor pages. Their tile and
-a few links therefore lead nowhere here. The presenter has the full set privately, and a fresh run recreates all of it.
+These pages are the fallback for the live session: if a step stalls, open the matching page here and carry on.
+Saved copies of competitor pages are not in the repo; `watch-changes.html` links to the Internet Archive instead.
+Company details on `targets.html` come from public federal data plus Apollo and Clay lookups on 12 Oct 2026.
+No personal names, emails or phone numbers are included.
 
 ## Rules
 
