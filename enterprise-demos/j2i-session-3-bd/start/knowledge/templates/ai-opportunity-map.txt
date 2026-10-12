@@ -1,0 +1,120 @@
+                                                                                 J2i
+                                                                  J2 INTELLIGENCE GROUP
+
+
+
+
+A I N AT I V E E N A B L E M E N T P R O G R A M M E
+
+
+
+
+AI Opportunity Map
+
+One page. In the client's hands within 24 hours of discovery.
+
+
+
+
+                                                                  28
+FOR                                 P R E PA R E D B Y
+
+
+J2 Intelligence Group               The AI Internship
+Engagement toolkit                  A programme of Snapdrum Ltd
+
+
+theaiinternship.com
+                                                                                                                                                     ENGAGEMENT TOOLKIT
+
+
+
+
+Client: [Client name]
+Prepared by: [Your name], J2 Intelligence Group
+Date: [Date, within 24 hours of the call]
+Source: Discovery call of [call date] + Discovery Call Brief
+
+
+
+
+Why this document exists
+
+This is the deliverable that turns a good conversation into a next step. It lands while the call is still fresh, it uses the client's own words, and
+it ends with exactly one recommendation. Hold the 24-hour line; a map that arrives on day three reads like an afterthought.
+
+Two rules carry over from the J2i standard. Every number comes from the call or reads ESTIMATE NEEDED. And this page goes through a
+named human review before it goes anywhere near the client.
+
+
+
+
+Situation summary
+
+[Two or three sentences, no more: what the client does, where they are in their growth, and the core operational challenge as THEY
+described it. Use their vocabulary, not consulting language.]
+
+
+Worked example: "Riverbend Health is an intensive outpatient clinic mid-way through federal credentialing, planning to
+launch in August. The front desk handles 40+ calls a day about credentialing status while billing re-keys the same patient
+data into two systems. The team's words: 'we are drowning in admin before we have even opened.'"
+
+
+
+
+Top 3 AI opportunities
+
+    #         USE CASE                                           PROBLEM IT SOLVES                                      ESTIMATED IMPACT                   COMPLEXITY
+
+
+    1         [Name the build, e.g. AI                           [The pain in their words, e.g. manual intake creates   [From their numbers, e.g. save     Low
+              intake assistant]                                  40+ minutes of admin per new patient]                  15+ hrs/week]
+
+
+    2         [Second use case]                                  [Problem it solves]                                    [Impact or ESTIMATE                Medium
+                                                                                                                        NEEDED]
+
+
+    3         [Third use case]                                   [Problem it solves]                                    [Impact or ESTIMATE                Low-Med
+                                                                                                                        NEEDED]
+
+
+
+Rank by speed to value, not by how impressive the build sounds. The first row should be buildable in weeks.
+
+
+
+
+Recommended first step
+
+[One clear recommendation with reasoning. Example: "We recommend starting with the AI intake assistant. It has the shortest build time (3
+to 4 weeks), the most immediate ROI, and the lowest integration risk. We can have a working prototype ready within 2 weeks of signing."]
+
+One recommendation. Not a menu. If you give a client three first steps, you have given them a reason to schedule another meeting instead
+of a decision.
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                                       theaiinternship.com · 2 / 3
+                                                                                                                              ENGAGEMENT TOOLKIT
+
+
+
+
+Proposed next step
+
+[Specific and time-bound. Example: "Reply to this email to confirm a 30-minute scoping call this week. We will prepare a draft Statement of
+Work before the call."]
+
+
+
+
+Owned by the J2i delivery team. v1.0, June 2026. Built from Template B of the AI-Native Consultancy Operating Kit; the P4
+prompt in the Shared Prompt Library drafts this page from your Discovery Call Brief in about ten minutes.
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                theaiinternship.com · 3 / 3
+

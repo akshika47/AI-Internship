@@ -19,7 +19,7 @@ Deck: https://claude.ai/artifact/DfmW9AqpZuyCapreW83JTG
 | `PROMPTS.md` | The prompts, in order, with what to say and what to point out |
 | `start/CLAUDE.md` | Who the client is, the ideal client, the four qualification checks, the house rules |
 | `start/style/house.css` | The house style every result page uses |
-| `start/knowledge/` | The knowledge base structure. The files are added privately (needed for Build 3 only) |
+| `start/knowledge/` | The knowledge base: method, templates and past deals. Build 3 answers from it |
 | `start/inbound/`, `start/calls/` | A fictional inbox and a fictional discovery call |
 | `finished/` | Pages from a tested run: the fallback. Open `finished/all-pages.html` |
 

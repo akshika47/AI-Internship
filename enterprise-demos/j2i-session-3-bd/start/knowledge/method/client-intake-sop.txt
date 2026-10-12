@@ -1,0 +1,277 @@
+A I N AT I V E E N A B L E M E N T P R O G R A M M E
+
+
+
+
+Client Intake SOP
+
+From signed to started: AI Native Enablement Programme
+
+
+
+
+FOR                                 P R E PA R E D B Y
+
+
+J2 Intelligence Group               The AI Internship
+Engagement toolkit                  A programme of Snapdrum Ltd
+
+
+theaiinternship.com
+                                                                                                                            ENGAGEMENT TOOLKIT
+
+
+
+
+Owner: Snapdrum programme operations
+Applies to: Every new client engagement under the AI Native Enablement Programme
+Last updated: [DATE]
+
+
+
+
+Overview
+
+This SOP covers every step from the moment a client signs the proposal through to the end of Session 1.
+
+Total window: approximately 3 weeks from signature to Session 1.
+
+
+
+
+Step 1: Confirm signed proposal received
+
+Owner: Snapdrum (programme lead)
+Timing: Same day as signature
+
+        Confirm the signed proposal or SOW is received and filed
+
+        Note the client legal entity name, billing contact, and nominated programme contact
+
+        Log the engagement in the pipeline tracker with status: Signed
+
+        Check payment terms: is this 50/50 or a custom split?
+
+Handover note: Pass the signed document and the client's key contacts to the delivery lead within 24 hours.
+
+
+
+
+Step 2: Issue the SOW for countersignature (if not already signed)
+
+Owner: Snapdrum (programme lead)
+Timing: Within 1 business day of verbal or proposal confirmation
+
+        Open the SOW template and fill in the client legal entity name, programme details, agreed fee, and dates
+
+        Review: no named deliverable counts, no outcome percentages, fees match the closed deal exactly
+
+        Send the SOW to the client's signing authority with a short covering note
+
+        Set a 3-day follow-up reminder if no countersignature received
+
+Do not proceed to Step 3 until the SOW is countersigned.
+
+
+
+
+Step 3: Issue the deposit invoice
+
+Owner: Snapdrum (finance / programme lead)
+Timing: Within 1 business day of SOW countersignature
+
+        Open the invoice template
+
+        Fill in: invoice number (INV-[YYYY]-[XXX]), invoice date, due date (14 days), SOW reference, client billing details, deposit amount
+        (50% of total fee)
+
+        Send to the client's billing contact with the engagement letter
+
+        Log invoice as Issued in the billing tracker
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                              theaiinternship.com · 2 / 5
+                                                                                                                                  ENGAGEMENT TOOLKIT
+
+
+
+
+Step 4: Send the engagement letter
+
+Owner: Snapdrum (programme lead)
+Timing: Same day as deposit invoice
+
+        Open the engagement letter template
+
+        Fill in: client contact name, SOW date, programme start window, next steps, deposit amount, nominated contact details
+
+        Send from [programme email] (or a named team member's address per agreed comms approach)
+
+        Attach or reference: SOW (if not already sent), invoice
+
+
+
+
+Step 5: Send the discovery questionnaire
+
+Owner: Snapdrum (programme lead / delivery lead)
+Timing: Within 2 business days of engagement letter
+
+        Open the discovery questionnaire template
+
+        Confirm: no changes needed based on what we already know about this client
+
+        Send to the nominated programme contact with a clear return deadline (2 weeks before Session 1)
+
+        Include a short note explaining why the questions matter and what we will do with the answers
+
+
+
+
+Step 6: Confirm deposit payment received
+
+Owner: Snapdrum (finance / programme lead)
+Timing: By the due date on the deposit invoice
+
+        Confirm payment has cleared
+
+        Update billing tracker: Deposit Received
+
+        If payment is late (past 14 days), send a polite payment reminder
+
+        Do not schedule sessions until deposit is confirmed (unless an exception is agreed with the programme lead)
+
+
+
+
+Step 7: Review the discovery questionnaire and build the tool audit
+
+Owner: Delivery lead (Aki)
+Timing: Within 2 business days of receiving the completed questionnaire
+
+        Read the questionnaire in full
+
+        Build a simple "tool audit" from Section B: list every person, every tool they use, how often, and what for
+
+        Note the gap: what tools are in use versus what standard the team claims to have
+
+        Highlight: which workflows the client wants to prioritise, any platform restrictions, any confidentiality constraints
+
+        Note their answer to "what would a working system look like" (Section A, Q6) and "what would Monday morning look like" (Section C,
+        Q6)
+
+        Flag any gaps or unusual requests to the programme lead for a quick call with the client if needed
+
+        Draft the session adaptation notes: which examples and exercises to use for each session, adapted to the client's specific workflows
+        and pain points
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                    theaiinternship.com · 3 / 5
+                                                                                                                              ENGAGEMENT TOOLKIT
+
+
+
+
+Step 8: Build and confirm the session schedule
+
+Owner: Programme lead (in collaboration with client's nominated contact)
+Timing: Within 1 week of receiving the discovery questionnaire
+
+        Propose a 6-week session schedule (one session per week, consistent day and time)
+
+        Confirm the schedule with the client's nominated contact in writing
+
+        Send calendar invites with Zoom links to all participants
+
+        Confirm: participants list is correct and invites have been accepted
+
+        Log confirmed dates in the programme tracker
+
+
+
+
+Step 9: Prepare and send pre-programme materials
+
+Owner: Delivery lead (Aki) + programme lead
+Timing: No later than 3 business days before Session 1
+
+        Confirm: discovery adaptation notes are incorporated into Session 1 materials
+
+        Send to participants: pre-session prep note (what to expect, what to bring to Session 1, any light reading if applicable)
+
+        Confirm: Zoom link is correct and working
+
+        Confirm: recordings process is set up (Zoom auto-record to cloud, or agreed equivalent)
+
+        Confirm: materials folder (shared drive / Notion / agreed channel) is created and accessible to the client's nominated contact
+
+
+
+
+Step 10: Deliver Session 1
+
+Owner: Delivery lead (Aki)
+Timing: Confirmed session date
+
+        Run the kickoff agenda (see 09 Kickoff Agenda) for the first 20 minutes
+
+        Confirm participants are all present before diving into content
+
+        Record the session
+
+        Deliver the session recording and materials within 24 hours
+
+        Send a short post-session note: what was covered, what to do before Session 2, any follow-up questions
+
+        Update programme tracker: Session 1 delivered
+
+After Session 1: Update the session plan if any adaptation is needed based on the group's level and responses.
+
+
+
+
+Escalation
+
+If any step is blocked (unsigned SOW after 5 days, late deposit, missing questionnaire, participant no-shows), escalate to the programme lead
+immediately. Do not let a block sit for more than 2 business days without a decision on next steps.
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                theaiinternship.com · 4 / 5
+                                                                                                                                                       ENGAGEMENT TOOLKIT
+
+
+
+
+Tracker fields (update after every step)
+
+    FIELD                                                   VALUES
+
+
+    Engagement status                                       Signed / Deposit Invoiced / Deposit Received / Session 1 Delivered / In Programme / Complete
+
+
+    SOW countersigned                                       Yes / No / Pending
+
+
+    Deposit status                                          Invoiced / Received / Overdue
+
+
+    Discovery questionnaire                                 Not Sent / Sent / Received / Reviewed
+
+
+    Session schedule                                        Not Confirmed / Confirmed
+
+
+    Pre-session materials                                   Not Sent / Sent
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                                         theaiinternship.com · 5 / 5
+

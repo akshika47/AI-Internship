@@ -1,0 +1,222 @@
+A I N AT I V E E N A B L E M E N T P R O G R A M M E
+
+
+
+
+Statement of Work
+
+Complete all fields in [BRACKETS] before sending.
+
+
+
+
+FOR                                 P R E PA R E D B Y
+
+
+J2 Intelligence Group               The AI Internship
+Engagement toolkit                  A programme of Snapdrum Ltd
+
+
+theaiinternship.com
+                                                                                                                                                     ENGAGEMENT TOOLKIT
+
+
+
+
+SOW reference: [J2I-SOW-YYYY-NNN]
+Client: [CLIENT LEGAL NAME]
+Prepared by: J2 Intelligence Group
+Engineering partner: Snapdrum Ltd
+Date: [DATE]
+Version: 1.0
+Status: Draft / Under Review / Signed
+
+
+
+
+1. Engagement overview
+
+[One paragraph, 4 to 6 sentences. Describe the client's business, the core problem being addressed, why this matters now, and what
+success looks like. Write this for a senior executive who has 30 seconds to read it.]
+
+
+Example: Deidre's Outpatient Clinic is a federal-credentialing-track healthcare provider preparing to launch in July 2026. The
+business currently manages patient intake, scheduling, and referral tracking through manual processes, creating significant
+administrative overhead and a high rate of scheduling errors. J2i and Snapdrum are engaged to design and build an AI-
+native intake and scheduling system that reduces administrative time by at least 40% and eliminates manual data re-entry.
+Success will be measured against the KPIs defined in Section 5.
+
+
+
+
+2. Objectives
+
+1        [Primary objective: the single most important outcome this engagement must deliver.]
+
+2        [Secondary objective: an important but subordinate outcome.]
+
+3        [Supporting objective: a process, capability, or knowledge transfer goal.]
+
+
+
+
+3. Scope of work
+
+The following deliverables are included in this engagement:
+
+
+    #         DELIVERABLE                              DESCRIPTION                                  ACCEPTANCE CRITERIA                                    OWNER
+
+
+    1         [DELIVERABLE                             Describe what will be built or produced in   How the client will confirm this is complete           Snapdrum /
+              NAME]                                    plain language.                              and correct.                                           J2i
+
+
+    2         [DELIVERABLE
+              NAME]
+
+
+    3         [DELIVERABLE
+              NAME]
+
+
+
+
+4. Exclusions
+
+The following are explicitly outside the scope of this engagement:
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                                       theaiinternship.com · 2 / 4
+                                                                                                                                                   ENGAGEMENT TOOLKIT
+
+
+
+
+    EXCLUDED                                                                                   REASON
+
+
+    Ongoing model maintenance beyond [X] months                                                Covered under a separate support retainer if required.
+
+
+    Data cleaning and preparation beyond the agreed dataset                                    Additional data work will be scoped separately.
+
+
+    Integration with systems not listed in Section 3                                           New integrations require a separate technical assessment.
+
+
+    Changes to scope after sign-off                                                            Managed via the change request process in Section 7.
+
+
+
+
+5. Success metrics
+
+This engagement will be considered successful when the following measurable outcomes are achieved:
+
+        [Metric 1: Quantitative. E.g. 'Administrative time per new patient intake reduced from X minutes to Y minutes.']
+
+        [Metric 2: Quantitative. E.g. 'Scheduling error rate reduced by Z%.']
+
+        [Metric 3: Qualitative or operational. E.g. 'All staff trained and able to operate the system independently within 2 weeks of handover.']
+
+
+
+
+6. Milestones and payment schedule
+
+    MILESTONE                             DESCRIPTION                                                                            DUE DATE         PAYMENT
+
+
+    Project kickoff                       SOW signed. Access to data and systems confirmed. Kickoff call complete.               Day 0            50% of project fee
+
+
+    Mid-point review                      Working prototype or first deliverable demonstrated to client.                         Week [X]         25% of project fee
+
+
+    Final delivery                        All deliverables accepted. Handover documentation provided.                            Week [Y]         25% of project fee
+
+
+
+
+7. Change request process
+
+Any request to change the scope, timeline, or deliverables of this engagement must be submitted as a written Change Request. J2i will
+assess the impact on timeline and cost within 3 business days and provide a revised estimate. No change will be implemented without
+written approval from both parties. Changes that materially alter the scope will be priced at the day rate specified in the Commercial Terms.
+
+
+
+
+8. Client responsibilities
+
+The client agrees to:
+
+        Provide timely access to the data, systems, and personnel required for delivery.
+
+        Designate a named point of contact who can make decisions or escalate within 24 hours.
+
+        Attend scheduled review calls and provide feedback within the agreed timeframes.
+
+        Notify J2i of any changes to the business context that may affect the engagement.
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                                     theaiinternship.com · 3 / 4
+                                                                                                                          ENGAGEMENT TOOLKIT
+
+
+
+
+9. Commercial terms
+
+Total project fee: [AMOUNT USD / GBP]
+Payment terms: Net 14 from invoice date.
+Late payment: 2% per month on overdue balances.
+Expenses: Travel and third-party tool costs billed at cost with prior approval.
+Day rate for change requests: [AMOUNT] per person-day.
+
+
+
+
+10. Intellectual property
+
+All custom code, models, workflows, and documentation produced under this SOW are the property of the client upon final payment. J2i
+and Snapdrum retain the right to reuse generic frameworks, templates, and non-client-specific components in future engagements.
+Proprietary client data remains the property of the client at all times.
+
+
+
+
+11. Confidentiality
+
+Both parties agree to treat all information exchanged under this engagement as confidential and not to disclose it to third parties without
+written consent. This obligation survives the termination of this agreement for a period of two years.
+
+
+
+
+12. Signatures
+
+    FOR J2 INTELLIGENCE GROUP                                                                  FOR [CLIENT NAME]
+
+
+    Name:                                                                                      Name:
+
+
+    Title:                                                                                     Title:
+
+
+    Date:                                                                                      Date:
+
+
+    Signature:                                                                                 Signature:
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                            theaiinternship.com · 4 / 4
+
