@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>J2i battlecards</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --ink:#1b2a2f; --muted:#5b6b70; --line:#d8e0e2; --bg:#f6f8f8; --accent:#0f5c4d; --warn:#9a5b00; }
+  * { box-sizing:border-box; }
+  body { font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); margin:0; padding:24px; }
+  main { max-width:960px; margin:0 auto; }
+  h1 { font-size:24px; margin:0 0 4px; }
+  h2 { font-size:19px; margin:0; }
+  h3 { font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:var(--accent); margin:18px 0 6px; }
+  p.sub { color:var(--muted); margin:0 0 16px; }
+  .strip { background:#fff; border:1px solid var(--line); border-left:4px solid var(--warn); border-radius:6px; padding:12px 16px; margin:16px 0 24px; }
+  .strip h2 { font-size:15px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:18px 22px; margin:0 0 22px; page-break-inside:avoid; }
+  .card header { display:flex; justify-content:space-between; align-items:baseline; gap:12px; border-bottom:1px solid var(--line); padding-bottom:8px; }
+  .date { color:var(--muted); font-size:13px; white-space:nowrap; }
+  ul, ol { margin:0; padding-left:20px; }
+  li { margin:3px 0; }
+  a { color:var(--accent); }
+  .tag { display:inline-block; font-size:11px; font-weight:700; padding:0 6px; border-radius:3px; background:#fdf0d5; color:var(--warn); }
+  .confirm { background:#e8eef0; color:#33454b; }
+  .obj { margin:6px 0; }
+  .obj b { display:block; }
+  .check { background:#fff; border:1px solid var(--line); border-radius:8px; padding:14px 22px; }
+  .check del { color:#8a2b2b; }
+  @media print { body { background:#fff; padding:0; } .card { border-color:#999; } }
+</style>
+</head>
+<body>
+<main>
+
+<h1>J2i battlecards</h1>
+<p class="sub">What a J2i buyer could choose instead. Built 2026-10-12 from <a href="watchlist.md">watchlist.md</a> and <a href="watch/changes.md">watch/changes.md</a>. Facts about J2i come from <a href="j2i_context.md">j2i_context.md</a>. Every claim line carries a link or is marked <span class="tag">ASSUMPTION</span>. Questions are not claims and are not checked.</p>
+
+<section class="strip" aria-label="Rules to watch">
+  <h2>Rules to watch</h2>
+  <ul>
+    <li><b>CMMC</b>: DFARS 252.204-7021 took effect 2025-11-10 (<a href="https://redriver.com/cybersecurity/cmmc-final-rule-what-changed-and-what-contractors-must-do">Red River summary</a>). Phase 2 start is unclear: most sources say 2026-11-10, one reports a suspension on 2026-07-13, unconfirmed from an official page. Official page: <span class="tag">ASSUMPTION</span> https://dodcio.defense.gov/cmmc/ (not opened).</li>
+    <li><b>Revolutionary FAR Overhaul</b>: four proposed rules published 2026-06-23, comments closed 2026-07-23 (<a href="https://www.wiley.law/FAR-Overhaul-Rulemaking">Wiley</a>, <a href="https://www.sheppard.com/insights/blogs/revolutionary-far-overhaul-update-rulemaking-phase-begins-with-the-issuance-of-four-proposed-rules">Sheppard Mullin</a>). Official page: <span class="tag">ASSUMPTION</span> https://www.acquisition.gov/far-overhaul (not opened).</li>
+  </ul>
+</section>
+
+<!-- GOVDASH -->
+<article class="card" id="govdash">
+  <header><h2>GovDash</h2><span class="date">Card date: 2026-10-12</span></header>
+
+  <h3>What they say now</h3>
+  <ul>
+    <li>Headline: "AI infrastructure to win government contracts." <a href="https://web.archive.org/web/20260914043812/https://www.govdash.com/">Archive, 2026-09-14</a></li>
+    <li>"Accelerate BD, capture, proposals, pricing, contracts, and more." and "300+ teams have won billions with GovDash." <a href="https://web.archive.org/web/20260914043812/https://www.govdash.com/">Archive, 2026-09-14</a></li>
+  </ul>
+
+  <h3>What changed, and when</h3>
+  <ul>
+    <li>Old headline: "Win contracts, advance missions." <a href="https://web.archive.org/web/20251012150732/https://www.govdash.com/">Archive, 2025-10-12</a></li>
+    <li>Pricing and CRM now appear in the page wording, and security wording moved from "NIST 800-171 and FedRAMP Moderate standards" to "FedRAMP Moderate Equivalent &amp; Ready", C3PAO audited, and DFARS 252.204-7012. <a href="watch/changes.md">Comparison</a></li>
+    <li>When: between the <a href="https://web.archive.org/web/20251012150732/https://www.govdash.com/">2025-10-12</a> and <a href="https://web.archive.org/web/20260914043812/https://www.govdash.com/">2026-09-14</a> captures. The date inside that window is not known.</li>
+  </ul>
+
+  <h3>Where they are strong</h3>
+  <ul>
+    <li>One platform for discovery, capture, pricing, proposals and contracts. <a href="https://web.archive.org/web/20260914043812/https://www.govdash.com/">Archive, 2026-09-14</a></li>
+    <li>Published security claims and a self-hosted option. These are the vendor's claims and have not been checked. <a href="https://web.archive.org/web/20260914043812/https://www.govdash.com/">Archive, 2026-09-14</a></li>
+    <li>Tiers named for Small Business, Mid-Market and Enterprise. <a href="https://web.archive.org/web/20260914043812/https://www.govdash.com/">Archive, 2026-09-14</a></li>
+  </ul>
+
+  <h3>Where J2i fits</h3>
+  <ul>
+    <li>J2i sells a discovery sprint that ends in an AI Opportunity Map within 24 hours of the call. <a href="j2i_context.md">j2i_context.md</a></li>
+    <li>J2i also sells training so a client's own team uses AI on real work. <a href="j2i_context.md">j2i_context.md</a></li>
+    <li>A buyer may need both a tool and a plan for using it. <span class="tag">ASSUMPTION</span></li>
+    <li>J2i has a build partner for implementation work. <a href="j2i_context.md">j2i_context.md</a></li>
+  </ul>
+
+  <h3>Why J2i wins</h3>
+  <ul><li><span class="tag confirm">TO CONFIRM</span> [TO CONFIRM] until there are real wins and losses against GovDash.</li></ul>
+
+  <h3>Three questions to ask a buyer who is considering them</h3>
+  <ol class="q">
+    <li>Which part of the bid process costs you the most time or lost bids today?</li>
+    <li>Who on your team would use it every week, and who signs off on buying it?</li>
+    <li>If you bought it next month, what would you want your team able to do in 90 days?</li>
+  </ol>
+
+  <h3>Likely objections, honest answers</h3>
+  <div class="obj"><b>"We can just buy the software."</b>
+    <ul><li>You can, and for proposal and capture work it may be the right call. J2i's offer is different: work out where AI helps first, then train your team. <a href="j2i_context.md">j2i_context.md</a></li></ul></div>
+  <div class="obj"><b>"They publish FedRAMP and DFARS claims. What do you have?"</b>
+    <ul><li>J2i's certifications are not in our records, so we do not claim any. <a href="j2i_context.md">j2i_context.md</a></li></ul></div>
+  <div class="obj"><b>"A consultancy costs more."</b>
+    <ul><li>J2i pricing is not in this folder. Quote: ESTIMATE NEEDED. <a href="j2i_context.md">j2i_context.md</a></li></ul></div>
+</article>
+
+<!-- SWEETSPOT -->
+<article class="card" id="sweetspot">
+  <header><h2>Sweetspot</h2><span class="date">Card date: 2026-10-12</span></header>
+
+  <h3>What they say now</h3>
+  <ul>
+    <li>"Sweetspot is AI for GovCon, bringing capture, pipeline management, and proposal writing into one secure platform." <a href="https://web.archive.org/web/20261007154804/https://www.sweetspot.so/">Archive, 2026-10-07</a></li>
+    <li>"Up and running in days, not months. No complex implementation. No consultants." <a href="https://web.archive.org/web/20261007154804/https://www.sweetspot.so/">Archive, 2026-10-07</a></li>
+    <li>Badges: CMMC L2, SOC 2 Type II, FedRAMP Moderate Authorization (In Progress). <a href="https://web.archive.org/web/20261007154804/https://www.sweetspot.so/">Archive, 2026-10-07</a></li>
+  </ul>
+
+  <h3>What changed, and when</h3>
+  <ul>
+    <li>Old wording: "Sweetspot leverages AI to help you find, manage, and bid on federal, state, local, and education government opportunities." <a href="https://web.archive.org/web/20251009075216/https://www.sweetspot.so/">Archive, 2025-10-09</a></li>
+    <li>New since then: Recompete Tracking, federal market intelligence, the "No consultants" line, and security badges. The old capture has none of these in its text. <a href="watch/changes.md">Comparison</a></li>
+    <li>When: between the <a href="https://web.archive.org/web/20251009075216/https://www.sweetspot.so/">2025-10-09</a> and <a href="https://web.archive.org/web/20261007154804/https://www.sweetspot.so/">2026-10-07</a> captures. The date inside that window is not known.</li>
+  </ul>
+
+  <h3>Where they are strong</h3>
+  <ul>
+    <li>Wide discovery: SAM.gov, USAspending, FPDS, DIBBS and state and local sources. <a href="https://web.archive.org/web/20261007154804/https://www.sweetspot.so/">Archive, 2026-10-07</a></li>
+    <li>Quick start: "Most teams are fully onboarded and live within a few days." <a href="https://web.archive.org/web/20261007154804/https://www.sweetspot.so/">Archive, 2026-10-07</a></li>
+    <li>Customer results on the page (for example "10x faster proposals"). These are vendor claims and have not been checked. <a href="https://web.archive.org/web/20261007154804/https://www.sweetspot.so/">Archive, 2026-10-07</a></li>
+  </ul>
+
+  <h3>Where J2i fits</h3>
+  <ul>
+    <li>J2i starts from the buyer's problem with a hypothesis-led discovery sprint, not from a tool. <a href="j2i_context.md">j2i_context.md</a></li>
+    <li>J2i offers training and enablement for the client's own team. <a href="j2i_context.md">j2i_context.md</a></li>
+    <li>Buyers who want a person to decide where AI belongs in their business may value this. <span class="tag">ASSUMPTION</span></li>
+    <li>J2i is veteran-led. <a href="j2i_context.md">j2i_context.md</a></li>
+  </ul>
+
+  <h3>Why J2i wins</h3>
+  <ul><li><span class="tag confirm">TO CONFIRM</span> [TO CONFIRM] until there are real wins and losses against Sweetspot.</li></ul>
+
+  <h3>Three questions to ask a buyer who is considering them</h3>
+  <ol class="q">
+    <li>What made you look at a platform instead of outside help, and what would change your mind?</li>
+    <li>If it goes live in a few days, who owns it afterwards and who trains the rest of the team?</li>
+    <li>Which of their results would you want to see proved on one of your own past bids?</li>
+  </ol>
+
+  <h3>Likely objections, honest answers</h3>
+  <div class="obj"><b>"Their site says no consultants and live in days."</b>
+    <ul><li>For a team ready to adopt a tool, that can be a fair pitch. J2i helps when the question is where AI fits first, or when the team needs training to use it. <a href="https://web.archive.org/web/20261007154804/https://www.sweetspot.so/">Their wording</a>; <a href="j2i_context.md">J2i offer</a></li></ul></div>
+  <div class="obj"><b>"They are CMMC L2 and SOC 2 certified."</b>
+    <ul><li>That is their claim, and it is worth asking to see the evidence. J2i's own certifications are not in our records, so we do not claim any. <a href="https://web.archive.org/web/20261007154804/https://www.sweetspot.so/">Their page</a>; <a href="j2i_context.md">j2i_context.md</a></li></ul></div>
+  <div class="obj"><b>"They track recompetes. Do you?"</b>
+    <ul><li>Recompete tracking is on their page. J2i has no recompete product in its context. A discovery sprint could look at it as one use case. <a href="https://web.archive.org/web/20261007154804/https://www.sweetspot.so/">Their page</a></li></ul></div>
+</article>
+
+<!-- APEX -->
+<article class="card" id="apex">
+  <header><h2>APEX Accelerators</h2><span class="date">Card date: 2026-10-12</span></header>
+
+  <h3>What they say now</h3>
+  <ul>
+    <li>Not captured. No APEX page was fetched for this card. <span class="tag">ASSUMPTION</span> The national site is https://www.apexaccelerators.us.</li>
+  </ul>
+
+  <h3>What changed, and when</h3>
+  <ul>
+    <li>No comparison exists. Add two Wayback captures of the APEX homepage to fill this in. <span class="tag">ASSUMPTION</span></li>
+  </ul>
+
+  <h3>Where they are strong</h3>
+  <ul>
+    <li>Free to the buyer. <span class="tag">ASSUMPTION</span></li>
+    <li>Trusted and local, with offices across regions. <span class="tag">ASSUMPTION</span></li>
+    <li>Helps with government contracting basics such as registration and finding bids. <span class="tag">ASSUMPTION</span></li>
+  </ul>
+
+  <h3>Where J2i fits</h3>
+  <ul>
+    <li>AI implementation and team training are J2i's offers. <a href="j2i_context.md">j2i_context.md</a></li>
+    <li>APEX may not cover AI work, so the two can sit side by side. <span class="tag">ASSUMPTION</span></li>
+  </ul>
+
+  <h3>Why J2i wins</h3>
+  <ul><li><span class="tag confirm">TO CONFIRM</span> [TO CONFIRM] until there are real wins and losses.</li></ul>
+
+  <h3>Three questions to ask a buyer who is considering them</h3>
+  <ol class="q">
+    <li>What have you already worked on with your local APEX office?</li>
+    <li>What is the one thing you still do not have help with?</li>
+    <li>Would an AI plan you could take back to them be useful?</li>
+  </ol>
+
+  <h3>Likely objections, honest answers</h3>
+  <div class="obj"><b>"Why pay when APEX is free?"</b>
+    <ul><li>Keep using it. J2i does not replace it. Ask what AI work APEX covers in your region. <span class="tag">ASSUMPTION</span></li></ul></div>
+</article>
+
+<!-- OTHER CONSULTANCIES -->
+<article class="card" id="consultancies">
+  <header><h2>Other consultancies</h2><span class="date">Card date: 2026-10-12</span></header>
+
+  <h3>What they say now</h3>
+  <ul>
+    <li>No firms are named in J2i's context. Nothing was captured. <a href="j2i_context.md">j2i_context.md</a></li>
+  </ul>
+
+  <h3>What changed, and when</h3>
+  <ul>
+    <li>Nothing to compare until 3 to 5 firms are named from real deals and lost leads. <a href="watchlist.md">watchlist.md</a></li>
+  </ul>
+
+  <h3>Where they are strong</h3>
+  <ul>
+    <li>Larger firms may have more staff and longer track records. <span class="tag">ASSUMPTION</span></li>
+    <li>Other firms may already hold the certifications J2i has not listed. <span class="tag">ASSUMPTION</span></li>
+  </ul>
+
+  <h3>Where J2i fits</h3>
+  <ul>
+    <li>J2i is AI-native and veteran-led, with a military and commercial background. <a href="j2i_context.md">j2i_context.md</a></li>
+    <li>The Opportunity Map is delivered within 24 hours of the call. <a href="j2i_context.md">j2i_context.md</a></li>
+    <li>A low-cost entry offer (a Map or workshop) is wanted but not yet built. <a href="j2i_context.md">j2i_context.md</a></li>
+  </ul>
+
+  <h3>Why J2i wins</h3>
+  <ul><li><span class="tag confirm">TO CONFIRM</span> [TO CONFIRM] until there are real wins and losses.</li></ul>
+
+  <h3>Three questions to ask a buyer who is considering them</h3>
+  <ol class="q">
+    <li>What would you want to have in hand within a week of the first call?</li>
+    <li>Who from the firm would be on your account, and what is their AI experience?</li>
+    <li>How do they handle your data, and who reviews what the AI produces?</li>
+  </ol>
+
+  <h3>Likely objections, honest answers</h3>
+  <div class="obj"><b>"They are bigger and better known."</b>
+    <ul><li>That may be true. J2i has no past performance details in its records, so we do not claim any. <a href="j2i_context.md">j2i_context.md</a></li></ul></div>
+  <div class="obj"><b>"How do you use AI on our work?"</b>
+    <ul><li>We answer honestly. Client data goes only into approved tools, and every AI output is a draft until a named person reviews it. <a href="CLAUDE.md">CLAUDE.md</a></li></ul></div>
+</article>
+
+<section class="check" id="checking-pass" aria-label="Checking pass">
+  <h2>Checking pass</h2>
+  <p>Run on 2026-10-12. Rule: every claim line needs a link or an ASSUMPTION mark. Questions are not claims and were not checked. The first run flagged 4 lines. After the fixes, 0 are left out of 54 claim lines; 13 of them are marked ASSUMPTION.</p>
+  <h3>Removed (no source)</h3>
+  <ul>
+    <li><del>GovDash, where they are strong: "Strong on speed of proposal work for teams that already know what they bid on."</del> No link and nothing on the page said this. Removed.</li>
+    <li><del>Sweetspot, where they are strong: "Sweetspot is probably cheaper than a consulting engagement."</del> No pricing was captured for either side, so this was a guess. Removed. Price comparison stays ESTIMATE NEEDED.</li>
+  </ul>
+  <h3>Fixed by adding a link</h3>
+  <ul>
+    <li>The two "When: between the … captures" lines (GovDash and Sweetspot) now link to both archive captures.</li>
+  </ul>
+  <h3>Kept, marked ASSUMPTION</h3>
+  <ul>
+    <li>All APEX Accelerators facts (free, local, scope), because no APEX page was fetched.</li>
+    <li>"A buyer may need both a tool and a plan" and "Buyers who want a person to decide where AI belongs may value this".</li>
+    <li>Strengths of other consultancies (size, certifications), because none are named.</li>
+    <li>The official CMMC and FAR page addresses, which were not opened.</li>
+  </ul>
+  <h3>Limits of this check</h3>
+  <ul>
+    <li>A link only shows where a claim comes from. It does not prove the claim. Vendor claims such as "10x faster proposals" and the security badges are marked as vendor claims.</li>
+    <li>The CMMC and FAR lines link to law-firm and vendor summaries, not official pages.</li>
+  </ul>
+</section>
+
+</main>
+</body>
+</html>
