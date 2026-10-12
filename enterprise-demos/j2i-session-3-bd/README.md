@@ -83,6 +83,10 @@ then open http://localhost:8765/index.html. The same command works inside a run 
 | `contracts-ending.html` | 2 | Veteran-owned firms with federal contracts ending soon (public USAspending data) |
 | `inbox.html` | 2 | Keep, park or drop for each inbound lead (all fictional) |
 | `targets.html` | 2 | Who to call first: the scored list, sortable, with a filter box |
+| `opportunity-map.html` | 3 | The one-page AI Opportunity Map from the fictional discovery call |
+| `win-loss.html` | 3 | The start of the win-loss log: outcomes, reasons and alternatives |
+| `offer.html` | Packaging | An example packaged offer, with the price left for the client to set |
+| `launch-plan.html` | Packaging | Three launch phases and the funnel worked back from ten clients |
 
 These pages are the fallback for the live session: if a step stalls, open the matching page here and carry on.
 Saved copies of competitor pages are not in the repo; `watch-changes.html` links to the Internet Archive instead.
