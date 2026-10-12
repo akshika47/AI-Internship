@@ -4,6 +4,16 @@ Live builds for the business development session of an AI enablement programme.
 The folder is already set up. Each build is one main prompt that produces one page.
 The presenter can run a build live or open the same page from `finished/`.
 
+## Where to look
+
+- **`start/`** is everything the presenter works with: `CLAUDE.md`, the house style, the knowledge base, the inbox and the call. Copy this folder and run the prompts inside the copy.
+- **`finished/`** is everything to show without running it live. Open `finished/index.html`.
+- **`PROMPTS.md`** is what to paste, in order.
+
+Deck: https://claude.ai/artifact/66Ycaor6HCpxs6oQVZL8kS
+
+## What is in the folder
+
 | Path | What it is |
 |---|---|
 | `PROMPTS.md` | The prompts, in order, with what to say and what to point out |
