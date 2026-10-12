@@ -35,10 +35,22 @@ Everything a person reads is an HTML page. `index.html` is the home page, with a
 Tested on Sonnet on 12 Oct 2026. Build 1 took about 8 minutes and Build 2 about 12, plus the Apollo and Clay steps
 (5 Apollo credits, 6 Clay runs). When a step asks for permission to write to `.claude/skills/`, approve it.
 
-`finished/` in this repo holds the Build 1 pages and the fictional inbox page only. The Build 2 pages that rank
-real companies (`targets.html`, `contracts-ending.html`) and the Apollo and Clay results are left out on purpose,
-because this repo is public. Their tiles on `index.html` and a few links on `watch-changes.html` therefore point at
-files that are not here. A fresh run recreates them.
+### Opening the tested pages
+
+Open `finished/index.html` in a browser. It is the home page, and each tile opens one page.
+
+| Page | Build | What it shows |
+|---|---|---|
+| `watchlist.html` | 1 | What a buyer could choose instead, and the pages to watch |
+| `watch-changes.html` | 1 | Each competitor's homepage a year ago and now |
+| `battlecards.html` | 1 | What changed, then one card per competitor |
+| `call-prep.html` | 1 | A 30-second answer and three questions, built from the card |
+| `contracts-ending.html` | 2 | Veteran-owned firms with federal contracts ending soon (public USAspending data) |
+| `inbox.html` | 2 | Keep, park or drop for each inbound lead (all fictional) |
+
+Not in this repo, because it is public: `targets.html` (the scored "who to call first" page, which uses Apollo and
+Clay results about real companies), the raw contract data, and the saved copies of competitor pages. Their tile and
+a few links therefore lead nowhere here. The presenter has the full set privately, and a fresh run recreates all of it.
 
 ## Rules
 
