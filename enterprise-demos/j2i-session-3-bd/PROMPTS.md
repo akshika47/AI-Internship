@@ -16,14 +16,14 @@ _Promise: competitor and market monitoring to sharpen pitch intelligence._
 
 > Create watchlist.md: what a J2i buyer could choose instead of J2i. Three groups: AI proposal software (GovDash at govdash.com and Sweetspot at sweetspot.so), free help (APEX Accelerators), and other consultancies. For each software vendor list the pages to watch: homepage and pricing. Add two rules that are changing for these buyers this year, each with its official page, using at most 2 web searches. Mark anything you are unsure of as ASSUMPTION.
 
-- Say: Larger sales teams buy software for this. The method is the same at any size: a short list, checked on a schedule.
+- Say: There is software built for this job. The method is the same with or without it: a short list, checked on a schedule.
 
 **1.3 What changed in a year**
 
 > For GovDash and Sweetspot, use the Wayback Machine (web.archive.org, free, no key) to get the homepage as it was about a year ago and the most recent saved copy. Save both to watch/ with the date in the file name. Compare the visible text and list what changed: headline, who it is for, what it covers, security claims, and anything about consultants or recompetes. Quote the old and new wording and give the archive link for each version. Do not guess when between the two dates a change happened.
 
 - Look: Open both archive links for one vendor side by side in the browser.
-- Point out: In testing (12 Oct), one vendor had added the line "No complex implementation. No consultants." and both had moved into recompetes, which is J2i's own way in.
+- Point out: In testing (12 Oct), one vendor had added the line "No complex implementation. No consultants." and a recompete tracking feature. What that means for J2i is for the room to judge.
 
 **1.4 Battlecards**
 
