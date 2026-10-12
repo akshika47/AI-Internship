@@ -1,4 +1,4 @@
-# Prompts · Session 3 (v5.2)
+# Prompts · Session 3 (v6)
 
 The folder is already set up: CLAUDE.md (who J2i is, the ideal client, the four checks, the house rules), the house style, the knowledge base, a fictional inbox and a fictional discovery call.
 
@@ -17,7 +17,7 @@ _Promise: competitor and market monitoring to sharpen pitch intelligence._
 
 - Say: One prompt. Claude finds what each competitor changed, writes the cards and checks its own claims. It takes about seven minutes.
 - Look: battlecards.html. What changed at the top, then a card per competitor. Click an archive link to show the real page.
-- Point out: "Why J2i wins" is [TO CONFIRM]. Real wins and losses fill it.
+- Point out: "Why J2i wins" is [TO CONFIRM]. Real wins and losses fill it. Build 3 starts that log.
 - If it stalls: open finished/battlecards.html.
 
 **1.2 Use it before a call**
@@ -61,6 +61,15 @@ _Promise: LinkedIn lead intelligence and automated prospect scoring._
 - Say: Next week this is one command, and the list is fresh.
 - Note: Claude asks permission to write to .claude/skills. Approve it.
 
+**2.4 A person sends it (by hand, no prompt needed)**
+
+> Optional draft: Draft a LinkedIn connection note under 300 characters for the top company on targets.html, using its reason to call. Do not open with the contract end date. Show it here; do not save or send it.
+
+- Look: Open LinkedIn in the browser, find that company's page, and check it is the right one. This is done by hand.
+- Say: Nothing here is automated. Claude finds who and why, and can draft the note. A person checks LinkedIn, edits the note and sends it.
+- Point out: No tool in this session connects to LinkedIn. Tools that automate it break LinkedIn's terms.
+
+
 ## Tool tour · How Apollo and Clay work on their own
 _Before Claude Code connects them: each tool now has its own AI agent. Show it once, inside the tool._
 
@@ -78,38 +87,10 @@ _Before Claude Code connects them: each tool now has its own AI agent. Show it o
 - Say: Clay builds agents from templates: prospecting, account scoring, contact scoring, copywriting. Same idea as our skills.
 - Point out: Why we still use Claude Code: it works across Apollo, Clay, public data and J2i's files, and the skills it leaves are files J2i owns, not settings inside one vendor.
 
-## Build 3 · Outreach a person sends
-_Turns the list into conversations. Supports the lead intelligence promise._
-
-**3.1 Messages and a follow-up plan**
-
-> For the qualified companies and the best fictional inbound leads (up to 5 in total): a LinkedIn connection note under 300 characters, a follow-up and a short email, each using that company's one verified reason to call. For inbound leads write a reply, since they contacted J2i first. For real companies, never open with "your contract ends": it is why we chose them, not the first line. Add a follow-up plan: three touches over two weeks, then a 90-day nurture if there is no reply. Then check every message against its source and remove anything you cannot back up.
-
-- Point out: Opening with public contract data reads as surveillance. It is why we chose them, not the first line.
-
-**3.2 Warm routes, including teaming**
-
-> For each company, the warm route in: a prime contractor they team with, an APEX Accelerator, a veteran business association, an event, or a shared contact. Mark guesses as guesses.
-
-- Say: In government work, a prime contractor that already works with them is often the best way in.
-
-**3.3 Capability statement**
-
-> Draft J2i's one-page capability statement from CLAUDE.md: core competencies, past performance, differentiators, company data (UEI, CAGE, NAICS, certifications). Anything we do not know: [TO CONFIRM].
-
-- Point out: [TO CONFIRM] instead of invented past performance.
-
-**3.4 One page, then a skill**
-
-> Put it all on outreach.html, one card per company, and open it. Then save as a skill called outreach.
-
-- Say: A person reads, edits and sends every one of these.
-- If it stalls: open finished/outreach.html.
-
-## Build 4 · The assistant and the win-loss log
+## Build 3 · The assistant and the win-loss log
 _Promises: a private knowledge assistant on J2i's work and methods, and mining win-loss patterns and client feedback._
 
-**4.1 Ask the assistant**
+**3.1 Ask the assistant**
 
 > Show me what is in knowledge/ as a tree, with one line on what each folder holds. Then answer three questions from knowledge/ only, naming the file each answer comes from. One: what goes in an Opportunity Map? Two: how do we qualify a lead, and if the files describe it in more than one way, say so plainly. Three: what did we charge our last client?
 
@@ -118,7 +99,7 @@ _Promises: a private knowledge assistant on J2i's work and methods, and mining w
 - Point out: The second answer finds two different qualification tools in the files and says so.
 - Point out: The third answer is "not in the files". It does not guess a price.
 
-**4.2 From a call to the Opportunity Map**
+**3.2 From a call to the Opportunity Map**
 
 > Read calls/discovery-call.md, which is fictional. Pull the pain points in the client's own words, every number and every objection, then draft the one-page Opportunity Map from the template in knowledge/templates/. Mark gaps ESTIMATE NEEDED or [VERIFY]. Save it as opportunity-map.html and open it.
 
@@ -126,7 +107,7 @@ _Promises: a private knowledge assistant on J2i's work and methods, and mining w
 - Look: opportunity-map.html.
 - If it stalls: open finished/opportunity-map.html.
 
-**4.3 Start the win-loss log**
+**3.3 Start the win-loss log**
 
 > Start the win-loss log as win-loss.html. Log every objection from the discovery call and every lead in inbound/ that we would drop or park, each with an outcome (won, lost or no decision), the reason, and the competitor or alternative the buyer considered if one was named. Then say what patterns you see and what we should change in targeting or messages because of them. Save the call notes and the Opportunity Map into knowledge/deals/harborline/ so the assistant learns the deal. Open the page.
 
@@ -135,49 +116,67 @@ _Promises: a private knowledge assistant on J2i's work and methods, and mining w
 - If it stalls: open finished/win-loss.html.
 
 ## After the session · further steps
-_Not needed for the session. They carry a deal on from the Opportunity Map to a signed engagement and the next one._
+_Not needed for the session. A.1 to A.6 carry a deal on from the Opportunity Map to a signed engagement and the next one. A.7 to A.9 prepare outreach a person sends._
 
-**4.4 Proposal, process map, stakeholder map**
+**A.1 Proposal, process map, stakeholder map**
 
 > Now draft the proposal for a discovery sprint (a short project, not a training programme): problem, approach, scope and what is not included, success measures, who signs off, and price left as [J2i to set]. Then the process map and the stakeholder map, using the buying committee from the call. Save to deals/harborline/ and open a one-page summary.
 
 - Point out: Scope and sign-off are named before any work starts.
 - If it stalls: open finished/deals/harborline/.
 
-**4.5 They said yes: close it**
+**A.2 They said yes: close it**
 
 > The client said yes to the discovery sprint. Draft the engagement letter and the statement of work from the templates in knowledge/, using the scope from the proposal. Leave price, dates and signatures as [J2i to set]. List anything a person must check before it is sent.
 
 - Say: Proposal to signature is where deals stall. The templates are J2i's own, from Session 4.
 
-**4.6 After delivery: expand**
+**A.3 After delivery: expand**
 
 > Imagine the sprint is delivered. From deals/harborline/, draft three things: a short case study (problem, what changed, a quote placeholder), a request asking the client to act as a reference, and a referral ask. Mark everything that needs the client's approval.
 
 - Point out: 56% of buyers talk to a firm's references before buying. This is how J2i gets them.
 
-**4.7 Win-loss: the first patterns**
+**A.4 Win-loss: the first patterns**
 
 > Create win-loss.md. Log every lead we dropped or parked today with its reason, and every objection from the call. Give each one an outcome: won, lost or no decision, and the competitor or alternative the buyer considered, if one was named. Then say what patterns you see and what we should change in our targeting or messages because of them. Save the Harborline deal into knowledge/deals/ so the assistant learns it.
 
 - Say: With one week of leads this is a starter log. After ten deals, the same prompt finds real patterns.
 
-**4.8 The packaged offer**
+**A.5 The packaged offer**
 
 > Two prospects had the same problem: a contract ending and a small proposal team. Write a one-page offer for a fixed-scope "Recompete Readiness Map": who it is for, what the client gets, how long it takes, how it leads into the discovery sprint, and price logic with the price left as [J2i to set]. Save offer.html and open it.
 
 - Say: This is the problem we kept seeing, turned into something J2i can sell.
 
-**4.9 Launch plan and the numbers**
+**A.6 Launch plan and the numbers**
 
 > Write a one-page launch plan for the Recompete Readiness Map in three phases (before launch, launch, after launch): the goal, one number to track and the channels for each. Then work back from J2i's goal of about ten clients this year to how many conversations, discovery calls and maps that needs, with every conversion rate marked ASSUMPTION. Save launch-plan.html and open it.
 
 - Say: The offer is not finished until there is a plan to sell it and a number that says whether it is working.
 
+**A.7 Messages and a follow-up plan**
+
+> For the qualified companies and the best fictional inbound leads (up to 5 in total): a LinkedIn connection note under 300 characters, a follow-up and a short email, each using that company's one verified reason to call. For inbound leads write a reply, since they contacted J2i first. For real companies, never open with "your contract ends": it is why we chose them, not the first line. Add a follow-up plan: three touches over two weeks, then a 90-day nurture if there is no reply. Then check every message against its source and remove anything you cannot back up.
+
+- Point out: Opening with public contract data reads as surveillance. It is why we chose them, not the first line.
+
+**A.8 Warm routes, including teaming**
+
+> For each company, the warm route in: a prime contractor they team with, an APEX Accelerator, a veteran business association, an event, or a shared contact. Mark guesses as guesses.
+
+- Say: In government work, a prime contractor that already works with them is often the best way in.
+
+**A.9 Capability statement**
+
+> Draft J2i's one-page capability statement from CLAUDE.md: core competencies, past performance, differentiators, company data (UEI, CAGE, NAICS, certifications). Anything we do not know: [TO CONFIRM].
+
+- Point out: [TO CONFIRM] instead of invented past performance.
+
 ## Packaging an offer · explained, not built
 _Promise: turning a recurring client problem into a productised, repeatable tool._
 
-No prompt here. The presenter explains it with slides 38 to 42: the three levels, the Recompete Readiness Map as an example, the five checks, the offer ladder and the numbers. Steps 4.8 and 4.9 (the offer page and the launch plan) are there if the room wants to see the example written up.
+No prompt here. The presenter explains it with slides 37 to 41: the three levels, the Recompete Readiness Map as an example, the five checks, the offer ladder and the numbers. Steps A.5 and A.6 (the offer page and the launch plan) are there if the room wants to see the example written up.
 
 ## Close · Handover and the system
 _What J2i keeps, and how a new consultant starts._
