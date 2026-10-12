@@ -7,7 +7,7 @@ The presenter starts from an almost empty folder and builds a sales system step 
 |---|---|
 | `PROMPTS.md` | The prompts, in order, with what to say and what to point out |
 | `start/` | What the client has before the session: context notes, a fictional inbox, a fictional discovery call |
-| `start/sprint-kit/` | Empty here. The client's templates are added privately (needed for Build 4 only) |
+| `start/knowledge/` | The knowledge base structure. The files are added privately (needed for Build 4 only) |
 | `start/style/house.css` | The house style every result page uses |
 | `finished/` | Pages from a tested run. Build 1 in full; Build 2 without the pages that rank real companies |
 

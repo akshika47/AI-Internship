@@ -1,4 +1,4 @@
-# Prompts · Session 3 live builds (v3.4)
+# Prompts · Session 3 live builds (v3.6)
 
 Run in a fresh copy of start/ with `claude`. Apollo and Clay connected (/mcp). Browser beside it.
 Nothing is ever sent to anyone. No personal names, emails or phone numbers on screen.
@@ -8,7 +8,7 @@ _Promise: competitor and market monitoring to sharpen pitch intelligence._
 
 **1.1 House rules and ideal client**
 
-> Read j2i_context.md. Create CLAUDE.md for this folder with two parts: J2i's house rules (the data rules) and J2i's ideal client: who they sell to, the buyer, the user, who approves, and what disqualifies a prospect. J2i qualifies leads on four checks (budget, authority, AI readiness, clarity), each 0 or 1, total 0 to 4, where 3 or 4 means Qualified; write that in. Add two more house rules. One: anything a person will read is saved as an HTML page that links style/house.css and uses its building blocks, with no other styling. Two: index.html is the home page; it has one tile for every page and every Apollo list we create, and it is updated whenever one is added. Mark anything you are unsure of as ASSUMPTION.
+> Read j2i_context.md. Create CLAUDE.md for this folder with two parts: J2i's house rules (the data rules) and J2i's ideal client: who they sell to, the buyer, the user, who approves, and what disqualifies a prospect. J2i qualifies leads on four checks (budget, authority, AI readiness, clarity), each 0 or 1, total 0 to 4, where 3 or 4 means Qualified; write that in. Add two more house rules. One: anything a person will read is saved as an HTML page in the house style: copy the contents of style/house.css into a style block in the page, so each page works on its own wherever it is opened, and use its building blocks with no other styling. Two: index.html is the home page; it has one tile for every page and every Apollo list we create, and it is updated whenever one is added. Mark anything you are unsure of as ASSUMPTION.
 
 - Say: The folder is empty. This file is the first thing J2i keeps: every later step reads it.
 
@@ -171,16 +171,19 @@ _Turns the list into conversations. Supports the lead intelligence promise._
 ## Build 4 · The J2i assistant, win-loss and the offer
 _Promises: a knowledge assistant on J2i's work, win-loss mining, and a packaged offer._
 
-**4.1 Create the assistant**
+**4.1 The knowledge base**
 
-> Move sprint-kit/ into knowledge/ and add a short index. From now on answer J2i questions from knowledge/ only, name the file each answer comes from, and add that rule to CLAUDE.md.
+> Show me what is in knowledge/ as a tree, with one line on what each folder holds. Then add this rule to CLAUDE.md: answer J2i questions from knowledge/ only, name the file each answer comes from, and say "not in the files" when the answer is not there.
 
+- Look: Open the knowledge/ folder and one file from method/ and one from templates/. This is what J2i already has.
+- Say: Nothing is trained. The assistant reads these files each time, which is why it can name its source.
 
-**4.2 Ask it**
+**4.2 Ask it three questions**
 
-> Two questions: what are J2i's lead qualification checks, and what goes in an Opportunity Map? If knowledge/ describes qualification in more than one way, say so plainly.
+> Three questions. One: what goes in an Opportunity Map? Two: how do we qualify a lead, and if knowledge/ describes it in more than one way, say so plainly. Three: what did we charge our last client?
 
-- Point out: Each answer names the file it came from. The kit has two qualification tools (the Session 1 four checks and an 8-line scorecard), and the assistant says so.
+- Point out: Each answer names its file. The kit has two qualification tools (the four checks and a longer scorecard), and the assistant says so.
+- Point out: The third answer is "not in the files". It does not guess a price.
 
 **4.3 From the call to the Opportunity Map**
 
