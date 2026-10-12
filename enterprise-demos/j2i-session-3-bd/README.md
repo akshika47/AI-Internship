@@ -10,7 +10,7 @@ The presenter can run a build live or open the same page from `finished/`.
 - **`finished/`** is everything to show without running it live. Open **`finished/all-pages.html`**: one file with every page on a tab. It works in any browser, including sandboxed ones that cannot follow links between local files.
 - **`PROMPTS.md`** is what to paste, in order.
 
-Deck: https://claude.ai/artifact/66Ycaor6HCpxs6oQVZL8kS
+Deck: https://claude.ai/artifact/DfmW9AqpZuyCapreW83JTG
 
 ## What is in the folder
 
@@ -19,7 +19,7 @@ Deck: https://claude.ai/artifact/66Ycaor6HCpxs6oQVZL8kS
 | `PROMPTS.md` | The prompts, in order, with what to say and what to point out |
 | `start/CLAUDE.md` | Who the client is, the ideal client, the four qualification checks, the house rules |
 | `start/style/house.css` | The house style every result page uses |
-| `start/knowledge/` | The knowledge base structure. The files are added privately (needed for Build 4 only) |
+| `start/knowledge/` | The knowledge base structure. The files are added privately (needed for Build 3 only) |
 | `start/inbound/`, `start/calls/` | A fictional inbox and a fictional discovery call |
 | `finished/` | Pages from a tested run: the fallback. Open `finished/all-pages.html` |
 
@@ -39,7 +39,7 @@ Then paste the prompts from `PROMPTS.md` one at a time. Always work in a copy so
 
 ## The builds
 
-| Build | Main prompt | Result |
+| Build | Step | Result |
 |---|---|---|
 | 1 · Battlecards | 1.1 | `battlecards.html`: what two competitors changed in a year, then a card for each |
 | | 1.2 | `call-prep.html`: a 30-second answer and three questions from the card |
@@ -47,6 +47,12 @@ Then paste the prompts from `PROMPTS.md` one at a time. Always work in a copy so
 | 2 · Who to call first | 2.1 | `targets.html`: a scored list from public contract data, sortable |
 | | 2.2 | An Apollo list, deals and tasks for the top three |
 | | 2.3 | A saved skill |
+| | 2.4 | By hand: a person checks the company on LinkedIn and sends the note. Nothing connects to LinkedIn |
+| 3 · The assistant and the win-loss log | 3.1 | Three questions answered from `knowledge/`, with the file named and one refusal |
+| | 3.2 | `opportunity-map.html` from the fictional discovery call |
+| | 3.3 | `win-loss.html`, and the deal saved into `knowledge/deals/` |
+
+Steps A.1 to A.9 in `PROMPTS.md` are for after the session.
 
 Build 2 stops once to state the Apollo and Clay credit cost and waits for a yes (about 5 Apollo credits and 6 Clay runs).
 When a step asks for permission to write to `.claude/skills/`, approve it.
