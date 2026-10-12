@@ -1,15 +1,17 @@
 # J2i Session 3 demo kit · business development with Claude Code
 
 Live builds for the business development session of an AI enablement programme.
-The presenter starts from an almost empty folder and builds a sales system step by step.
+The folder is already set up. Each build is one main prompt that produces one page.
+The presenter can run a build live or open the same page from `finished/`.
 
 | Path | What it is |
 |---|---|
 | `PROMPTS.md` | The prompts, in order, with what to say and what to point out |
-| `start/` | What the client has before the session: context notes, a fictional inbox, a fictional discovery call |
-| `start/knowledge/` | The knowledge base structure. The files are added privately (needed for Build 4 only) |
+| `start/CLAUDE.md` | Who the client is, the ideal client, the four qualification checks, the house rules |
 | `start/style/house.css` | The house style every result page uses |
-| `finished/` | Pages from a tested run. Build 1 in full; Build 2 without the pages that rank real companies |
+| `start/knowledge/` | The knowledge base structure. The files are added privately (needed for Build 4 only) |
+| `start/inbound/`, `start/calls/` | A fictional inbox and a fictional discovery call |
+| `finished/` | Pages from a tested run: the fallback. Open `finished/index.html` |
 
 ## Run it
 
@@ -22,18 +24,27 @@ Then paste the prompts from `PROMPTS.md` one at a time. Always work in a copy so
 ## What you need
 
 - Claude Code
-- Apollo and Clay connected as MCP servers (`/mcp` shows both). Build 1 needs Apollo only for step 1.5
+- Apollo and Clay connected as MCP servers (`/mcp` shows both). Only Build 2 uses them
 - A browser beside the terminal
 
-## What a run produces
+## The builds
 
-Everything a person reads is an HTML page. `index.html` is the home page, with a tile per page.
+| Build | Main prompt | Result |
+|---|---|---|
+| 1 · Battlecards | 1.1 | `battlecards.html`: what two competitors changed in a year, then a card for each |
+| | 1.2 | `call-prep.html`: a 30-second answer and three questions from the card |
+| | 1.3 | A saved skill, so it reruns monthly and reports only what changed |
+| 2 · Who to call first | 2.1 | `targets.html`: a scored list from public contract data, sortable |
+| | 2.2 | An Apollo list, deals and tasks for the top three |
+| | 2.3 | A saved skill |
 
-- Build 1 · Competitor watch: `watchlist.html`, `watch-changes.html`, `battlecards.html`, `call-prep.html`, and an Apollo list of competitors
-- Build 2 · Who to call: `contracts-ending.html`, `inbox.html`, `targets.html` (sortable, with a filter), and an Apollo list, deals and tasks
+Build 2 stops once to state the Apollo and Clay credit cost and waits for a yes (about 5 Apollo credits and 6 Clay runs).
+When a step asks for permission to write to `.claude/skills/`, approve it.
 
-Tested on Sonnet on 12 Oct 2026. Build 1 took about 8 minutes and Build 2 about 12, plus the Apollo and Clay steps
-(5 Apollo credits, 6 Clay runs). When a step asks for permission to write to `.claude/skills/`, approve it.
+## The fallback pages
+
+The pages in `finished/` come from a step-by-step run on 12 Oct 2026, so there are more of them than the builds
+above produce today. They show the same results.
 
 ### Opening the tested pages
 
