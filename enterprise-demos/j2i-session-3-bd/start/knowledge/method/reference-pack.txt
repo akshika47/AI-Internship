@@ -1,0 +1,184 @@
+A I N AT I V E E N A B L E M E N T P R O G R A M M E
+
+
+
+
+Reference Pack
+
+The standards, examples and frameworks the practice draws on
+
+
+
+
+FOR                                 P R E PA R E D B Y
+
+
+J2 Intelligence Group               The AI Internship
+Engagement toolkit                  A programme of Snapdrum Ltd
+
+
+theaiinternship.com
+                                                                                                                                                                    ENGAGEMENT TOOLKIT
+
+
+
+
+Owner: Practice knowledge base
+Applies to: Anyone running or building an engagement
+Last updated: [DATE]
+
+
+
+
+1. Start with the toolkit
+
+For most needs, the best example is already in this toolkit. These are the canonical internal references.
+
+
+    NEED                                                                               USE
+
+
+    A proposal                                                                         01 Consulting Proposal Template
+
+
+    A contract                                                                         02 Statement of Work, 03 Engagement Letter, 04 Change Order
+
+
+    Billing                                                                            05 Invoice Template, 20 Billing and Follow-Up SOP
+
+
+    Starting a client                                                                  06 Client Intake SOP, 08 Discovery Questionnaire, 09 Kickoff Agenda
+
+
+    Understanding a client's process                                                   07 Process Mapping Template, 10 Stakeholder Map
+
+
+    Running delivery                                                                   11 Project Plan, 14 Status Report, 16 RAID Log
+
+
+    Meetings                                                                           12 Meeting Agenda, 13 Meeting Notes
+
+
+    Quality                                                                            15 Deliverable Review Checklist
+
+
+    Working prompts                                                                    23 Starter Prompt Library
+
+
+    The whole lifecycle                                                                25 How to Run an Engagement, Start to Finish
+
+
+
+
+2. Frameworks worth knowing
+
+A short, plain glossary of the consulting frameworks this toolkit uses or references.
+
+
+    FRAMEWORK                                WHAT IT IS                                                                                                 WHERE IT SHOWS UP
+
+
+    RAID                                     Risks, Assumptions, Issues, Dependencies: the four things that affect delivery                             16 RAID Log
+
+
+    RACI                                     For each task, who is Responsible, Accountable, Consulted, Informed                                        Stakeholder maps, project
+                                                                                                                                                        plans
+
+
+    MoSCoW                                   Prioritisation: Must have, Should have, Could have, Will not have this time                                Scope and project planning
+
+
+    RAG status                               Red, Amber, Green health rating on a workstream                                                            Status reports
+
+
+    Triple-A                                 Snapdrum's delivery method: Anchor (reliable standards), Augment (AI on top),                              The shape of this whole
+                                             Automate (it runs itself)                                                                                  toolkit
+
+
+    Stakeholder                              Plotting people by influence and interest to plan how to engage them                                       10 Stakeholder Map
+    mapping
+
+
+    Process mapping                          Capturing how something is done today, step by step, before improving it                                   07 Process Mapping
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                                                      theaiinternship.com · 2 / 3
+                                                                                                                                                                 ENGAGEMENT TOOLKIT
+
+
+
+
+3. Reputable public sources for examples
+
+Credible, well-established places to look. Confirm the current page before use.
+
+
+    SOURCE                                                                                     GOOD FOR
+
+
+    Project Management Institute (pmi.org)                                                     Project management standards, terminology and templates
+
+
+    GOV.UK and Crown Commercial Service                                                        Real public-sector statements of work and procurement documents, useful as
+                                                                                               plain, contract-disciplined examples
+
+
+    SCORE (score.org) and the US Small Business                                                Free business document templates, including proposals and simple agreements
+    Administration (sba.gov)
+
+
+    Atlassian work-management and Confluence guides                                            Practical templates for project plans, meeting notes and SOPs
+
+
+    Recognised management publications (Harvard Business                                       Frameworks and thinking for strategy and client problems
+    Review and similar)
+
+
+
+A public template is a starting shape, not a finished document. Adapt it to the client and run it through the Deliverable Review Checklist (15)
+before anything goes out.
+
+
+
+
+4. Consulting glossary
+
+Plain definitions for terms that come up across the toolkit.
+
+
+    TERM                                         MEANS
+
+
+    Scope                                        What is, and is not, included in the work
+
+
+    Deliverable                                  A specific thing the client receives
+
+
+    Engagement                                   One complete piece of client work, start to finish
+
+
+    SOW                                          Statement of Work: the contract that defines the engagement
+
+
+    Change order                                 A signed agreement to add or alter scope
+
+
+    Discovery                                    The early phase of understanding how a client works
+
+
+    Kickoff                                      The first working session that starts delivery
+
+
+    Handover                                     Passing work, access and context to the client or to a colleague
+
+
+    Sponsor                                      The senior person on the client side who owns the relationship and the budget
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                                                   theaiinternship.com · 3 / 3
+

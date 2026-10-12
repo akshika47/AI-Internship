@@ -1,0 +1,293 @@
+                                                                                 J2i
+                                                                  J2 INTELLIGENCE GROUP
+
+
+
+
+A I N AT I V E E N A B L E M E N T P R O G R A M M E
+
+
+
+
+Pre-Programme Discovery
+Questionnaire
+AI Native Enablement Programme
+
+
+
+
+                                                                  08
+FOR                                 P R E PA R E D B Y
+
+
+J2 Intelligence Group               The AI Internship
+Engagement toolkit                  A programme of Snapdrum Ltd
+
+
+theaiinternship.com
+                                                                                                                         ENGAGEMENT TOOLKIT
+
+
+
+
+Completed by: [Client contact name and role]
+Return to: [programme email]
+Return by: [Date, 2 weeks before Session 1]
+
+
+
+
+A note before you start
+
+This questionnaire takes approximately 20 to 30 minutes. There are no right or wrong answers. The goal is to understand how your team
+works today: what tools are already in use, where the inconsistencies live, and what a proper working system would look like for your
+specific context. We use your answers to design every session around your real workflows. You do not need to prepare anything before
+filling this in.
+
+
+
+
+Section A: Your Organisation and Current AI Situation
+
+A1. How many people will be participating in this programme?
+
+[Answer]
+
+A2. What does your team primarily do? (Select all that apply)
+
+        Client advisory and consulting
+
+        AI strategy and enablement advisory for clients
+
+        Project delivery and implementation
+
+        Business development and sales
+
+        Operations and internal support
+
+        Leadership and management
+
+        Other: [specify]
+
+A3. What types of clients or industries does your team work with most frequently?
+
+[Answer]
+
+A4. Do you advise your own clients on AI adoption, AI tools, or AI implementation? If so, how does that typically show up in your
+engagements?
+
+[Answer]
+
+A5. Here is the honest question: how consistently does your team use AI in your own internal work, compared to what you recommend to
+your clients? Is there a gap?
+
+[Answer. There are no wrong answers here. A gap between what you recommend and what you do internally is extremely common and is
+exactly what this programme is designed to close.]
+
+A6. If you had to describe "a working AI system for our team" in 2 to 3 sentences, what would that look like? What does good look like to
+you?
+
+[Answer]
+
+
+
+
+Section B: AI Usage Today (the honest audit)
+
+B1. Which of the following best describes your team's current use of AI tools?
+
+        We are not currently using AI tools in any structured way
+
+        A few individuals use AI tools independently, but there is no shared approach
+
+        Most people use AI tools, but in different ways with no shared standard
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                           theaiinternship.com · 2 / 5
+                                                                                                                                         ENGAGEMENT TOOLKIT
+
+
+
+
+        We have an informal shared approach, but it is inconsistent in practice
+
+        We have a documented, agreed AI standard the whole team follows
+
+B2. Please list the AI tools each person on the team is currently using, including informal personal tools. (If you can do a quick poll of the
+team before sending this back, that would be very useful.)
+
+
+    PERSON / ROLE                                            TOOLS THEY USE                    HOW OFTEN      WHAT THEY USE IT FOR
+
+
+    [e.g. Senior Consultant]                                 [e.g. ChatGPT Plus, Perplexity]   [e.g. Daily]   [e.g. Research, first-draft proposals]
+
+
+
+
+B3. Which of the following tasks does your team currently use AI for? (Select all that apply)
+
+        Writing and editing (proposals, reports, client emails)
+
+        Research and competitive intelligence
+
+        Meeting notes, summaries and action plans
+
+        Building or improving your own client deliverables
+
+        Business development, prospecting or outreach
+
+        Scoping or briefing technical teams (e.g. engineers, developers)
+
+        Data analysis or working with client datasets
+
+        Internal knowledge management or documentation
+
+        None of the above
+
+B4. What is the single most time-consuming task your team does repeatedly that you suspect AI could handle faster or better?
+
+[Answer]
+
+B5. Where has AI disappointed or caused problems so far? What has not worked, or created more work than it saved?
+
+[Answer]
+
+B6. Does your team have any documented AI standards, prompt libraries, or usage guidelines today? If yes, describe them briefly. If no,
+what has stopped you from building them?
+
+[Answer]
+
+
+
+
+Section C: Priorities and the "Working System" Gap
+
+C1. Thinking about the programme sessions below, where would you most like to see improvement? Rank from 1 (most important) to 6 (least
+important).
+
+
+    SESSION AREA                                                                                                                                RANK
+
+
+    Foundations: building a shared AI standard and personal work assistant
+
+
+    Delivery: automating reports, documentation and client outputs
+
+
+    Business development: pipeline and proprietary knowledge systems
+
+
+    AI engineering: understanding technical AI concepts to work with engineers
+
+
+    AI product management: scoping and leading AI implementation for clients
+
+
+    Data and analytics: turning client data into insight and decisions
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                           theaiinternship.com · 3 / 5
+                                                                                                                           ENGAGEMENT TOOLKIT
+
+
+
+
+C2. Describe your current business development process in a few sentences. How does the team generate, qualify and convert new
+opportunities today? Where does it break down or slow down?
+
+[Answer]
+
+C3. When you win a new client engagement, what are the first 5 things that happen internally? Walk us through the steps from "signed" to
+"first client meeting."
+
+[Answer. This helps us understand where your current delivery system starts, and where the gaps are.]
+
+C4. Is there a piece of institutional knowledge (past frameworks, methodologies, case studies, successful approaches) that lives in one or
+two people's heads and has not been systematised? Describe it.
+
+[Answer]
+
+C5. When your team briefs or collaborates with a technical partner (e.g. an engineering team) on an AI build for a client, how does that
+currently work? What goes wrong most often?
+
+[Answer. Skip if not applicable.]
+
+C6. If your team had a complete, working AI system after this programme, what would be different about a typical Monday morning
+compared to now?
+
+[Answer. This is one of the most useful questions. Be specific if you can.]
+
+
+
+
+Section D: Working Context and Constraints
+
+D1. Are there any platforms, tools or AI models that your organisation either requires or prohibits for data security or policy reasons?
+
+[Answer, e.g. "We cannot use ChatGPT with client data", "We are required to use Microsoft Copilot"]
+
+D2. Do participants have individual access to AI tools (paid accounts, enterprise licences), or will they need to set up accounts during the
+programme?
+
+[Answer]
+
+D3. Do any participants have prior AI training or certifications? If so, please describe briefly.
+
+[Answer]
+
+D4. Is there any client work, project type, or context that should NOT be referenced in sessions (confidential engagements, sensitive
+industries, etc.)?
+
+[Answer]
+
+
+
+
+Section E: Logistics
+
+E1. Who is the best day and time slot for weekly sessions? (We will confirm a consistent slot based on majority availability)
+
+[Preferred days and times, including timezone]
+
+E2. Are there any dates in the proposed delivery window that are blocked for the team (conferences, internal events, holidays)?
+
+[Answer]
+
+E3. How many participants are likely to join live for each session vs. catching up via recording?
+
+[Answer]
+
+E4. Will participants be joining from the same location, or distributed across offices or timezones?
+
+[Answer]
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                             theaiinternship.com · 4 / 5
+                                                                                                                          ENGAGEMENT TOOLKIT
+
+
+
+
+Section F: Anything Else
+
+F1. Is there anything about how your team works that you think we should know before we design the sessions?
+
+[Answer]
+
+F2. Is there a specific outcome or result that would make this programme feel like a clear success to you personally?
+
+[Answer]
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                            theaiinternship.com · 5 / 5
+

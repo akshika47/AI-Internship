@@ -1,0 +1,166 @@
+Source: J2i Session 1 deck (Sprint Kit sections 2.1-2.3, 5.3)
+
+## P1 · Research brief
+P1 · Research brief
+Before every discovery call
+Copy
+Research this person and company:
+[URL]
+Return:
+What the company does in one sentence
+Their top 3 likely pain points given sector and size
+One recent public detail I can reference naturally
+Whether this person is likely the buyer or influencer
+Research this person and company: [URL]. Give me: (1) what the company does in one sentence, (2) their top 3 likely pain points given sector and size, (3) one recent public detail I can reference naturally, (4) whether this person is likely the buyer or influencer.
+P3 · Transcript extraction
+Within 2 hours of every call
+Copy
+You are an AI consulting analyst. Read this transcript and extract:
+Top 3 pain points with how the client described each
+Metrics and numbers mentioned
+Current tools and systems
+Implied success criteria
+Objections or constraints raised -flag uncertainty with [VERIFY]
+You are an AI consulting analyst. Read this transcript and extract: (1) top 3 pain points with how the client described each, (2) metrics and numbers mentioned, (3) current tools and systems, (4) implied success criteria, (5) objections or constraints raised. Flag anything uncertain with [VERIFY].
+P4 · Opportunity Map draft
+Same day as the call
+Copy
+Paste the P3 output, then instruct:
+<ol class="
+
+## P3 · Transcript extraction
+P3 · Transcript extraction
+Within 2 hours of every call
+Copy
+You are an AI consulting analyst. Read this transcript and extract:
+Top 3 pain points with how the client described each
+Metrics and numbers mentioned
+Current tools and systems
+Implied success criteria
+Objections or constraints raised -flag uncertainty with [VERIFY]
+You are an AI consulting analyst. Read this transcript and extract: (1) top 3 pain points with how the client described each, (2) metrics and numbers mentioned, (3) current tools and systems, (4) implied success criteria, (5) objections or constraints raised. Flag anything uncertain with [VERIFY].
+P4 · Opportunity Map draft
+Same day as the call
+Copy
+Paste the P3 output, then instruct:
+Draft a one-page AI Opportunity Map using the template
+Use the client's own vocabulary throughout
+Quantify impact where the brief contains numbers
+Write [ESTIMATE NEEDED] where numbers are missing
+Recommend exactly one first step with reasoning
+Using this discovery brief [PASTE P3 OUTPUT] and the Opportunity Map template, draft a one-page AI Opportunity Map. Use the client's own vocabulary. Quantify impact where the brief contains numbers; write [ESTIMATE NEEDED] where it does not. Recommend exactly one first step with reasoning.
+AI-augmented workflow · Kit section 5.2
+
+## P4 · Opportunity Map draft
+P4 · Opportunity Map draft
+Same day as the call
+Copy
+Paste the P3 output, then instruct:
+Draft a one-page AI Opportunity Map using the template
+Use the client's own vocabulary throughout
+Quantify impact where the brief contains numbers
+Write [ESTIMATE NEEDED] where numbers are missing
+Recommend exactly one first step with reasoning
+Using this discovery brief [PASTE P3 OUTPUT] and the Opportunity Map template, draft a one-page AI Opportunity Map. Use the client's own vocabulary. Quantify impact where the brief contains numbers; write [ESTIMATE NEEDED] where it does not. Recommend exactly one first step with reasoning.
+AI-augmented workflow · Kit section 5.2
+Every step mapped. Before AI, after AI.
+Workflow step
+Without AI
+With AI (target)
+Lead qualification
+Manual LinkedIn + gut feel
+AI scores on 5 dimensions
+· Clay + Claude
+Pre-discovery research
+30-60 min per prospect
+5-minute brief from URL + LinkedIn
+· P1
+Pre-discovery questions
+Written manually each time
+Generated from client context
+· P2
+Discovery call notes
+Manual notes, typed up after
+Otter.ai transcript, extraction
+· P3
+AI Opportunity Ma
+
+## Qualification gate
+Qualification gate · Kit section 2.2 · Template A
+Not every enquiry becomes a client. Score first.
+01
+Budget signal
+Have they paid for consulting or software before? Did they flinch at pricing?
+02
+Decision authority
+Can they say yes without a committee? Do they own the budget?
+03
+AI readiness
+Do they have structured data, digital tools, and a repeatable process?
+04
+Problem clarity
+Can they name one specific pain point AI could address, in one sentence?
+Score
+3-4
+Discovery Sprint ·
+1-2
+fit call first or nurture ·
+0
+helpful email + 90-day follow-up.
+Hypothesis-Led Discovery · J2i Sprint Kit 1.3
+Arrive with a point of view. Don't start from zero.
+Most teams
+✗
+Open every call with "tell me about your business"
+✗
+Spend the first 30 minutes gathering basic context
+✗
+Form a view after the call, from scratch
+✗
+Generic output that could apply to anyone
+The Snap Drum / J2i way
+✓
+Run the P1 research brief before the call (5 minutes)
+✓
+Arrive with a draft AI Opportunity Map
+✓
+Use the call to test and refine the hypothesis
+✓
+Output in the client's own words and numbers</
+
+## The discovery sprint
+The discovery sprint · Kit section 2.3
+The highest-leverage hour you spend with a client.
+Before the call
+P1: research brief from company URL + LinkedIn
+Form hypothesis: top 3 AI opportunities for this client
+P2: tailor the pre-discovery questions
+Send the discovery call agenda 24 hours in advance
+During the call
+Open with a 3-minute situation summary. Show homework.
+SPIN: Situation, Problem, Implication, Need-payoff
+Tag every pain point: save time / reduce cost / grow revenue
+Before the call ends, name the #1 priority use case
+After the call
+P3: extract pain points from the transcript within 2 hours
+P4: draft the AI Opportunity Map, human review pass
+Send the Opportunity Map within 24 hours with a next step
+Log in the pipeline tracker, stage 4: Discovery
+Tomorrow · 3:00pm Central · Deidre's clinic
+The first call, cast and rehearsed.
+Call lead
+Founder / business development lead
+Agenda · opening summary · the close
+Second chair
+CTO
+Catches missed threads · keeps time
+Recorder
+To assign
+Consent at start · transcript after
+S
+Situation
+How things run today
+P
+Problem
+Where it hurts
+<div cl

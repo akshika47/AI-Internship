@@ -1,0 +1,214 @@
+A I N AT I V E E N A B L E M E N T P R O G R A M M E
+
+
+
+
+Stakeholder Map
+
+AI Native Enablement Programme
+
+
+
+
+FOR                                 P R E PA R E D B Y
+
+
+J2 Intelligence Group               The AI Internship
+Engagement toolkit                  A programme of Snapdrum Ltd
+
+
+theaiinternship.com
+                                                                                                                                                               ENGAGEMENT TOOLKIT
+
+
+
+
+Client: [CLIENT NAME]
+Filled by: [DELIVERY LEAD]
+Date: [DATE]
+Last updated: [DATE]
+
+
+
+
+Stakeholder Map
+
+One row per person who has a stake in this programme. Update it as you learn more during kickoff and the early sessions.
+
+
+                                                                                                                     POTENTIAL         BEST
+                                                                   RELATIONSHIP TO             WHAT THEY                                                            HOW OFTEN
+    NAME                         ROLE                                                                                CONCERN OR        COMMUNICATION
+                                                                   PROGRAMME                   CARE ABOUT                                                           TO TOUCH
+                                                                                                                     RISK              CHANNEL
+
+
+    [e.g. James]                 [e.g. Managing                    Sponsor:                    Business              "Is this worth    Email or WhatsApp,           Once at
+                                 Director]                         approved the                outcomes: ROI,        what we           brief and outcome-           kickoff, once
+                                                                   budget and signed           team                  paid?"            focused                      at midpoint,
+                                                                   the SOW                     performance,                                                         once at close
+                                                                                               competitive edge
+                                                                                               from AI
+
+
+    [e.g. Sarah]                 [e.g. Head of                     Day-to-day                  Team capability       "Will this        Weekly email: what           After every
+                                 Delivery]                         champion:                   and consistency       disrupt current   happened in                  session
+                                                                   manages the                 of output             client work?"     sessions, what is
+                                                                   participants                                                        next
+
+
+    [e.g.                        Consultants,                      Learners:                   Practical tools       "Is this going    In-session; Slack/           Every session
+    Participants                 mixed seniority                   attending and               they actually use;    to be too basic   WhatsApp group if
+    (group)]                                                       building in every           not wasting their     or too            set up
+                                                                   session                     time                  technical?"
+
+
+    [e.g. Raj]                   [e.g. Senior                      Informal                    Professional          "Is using AI      Direct conversation          Session 1
+                                 Consultant]                       influencer: highly          credibility; does     going to          in Session 1; early          priority; check
+                                                                   respected,                  not want to look      undermine my      win by Session 2             in after
+                                                                   sceptical of AI             naive                 expertise?"                                    Session 3
+
+
+    [e.g.                        Implementation                    Downstream                  Quality and clarity   "Will the team    Internal only; the programme lead          Share Session
+    Snapdrum                     partner                           beneficiary:                of briefs; fewer      know enough       handles the                  4 and 5
+    engineering                                                    better-briefed              scoping back-         to brief us       relationship                 outcomes with
+    team]                                                          consultants mean            and-forths on AI      properly after                                 the
+                                                                   better, faster AI           projects              Session 4?"                                    engineering
+                                                                   builds                                                                                           team leads
+
+
+    [e.g. Future                 Future                            Not in the room;            Clear reusable        "Will             N/A during                   Review
+    hires]                       programme                         the onboarding              materials they can    recordings and    programme; ensure            materials
+                                 participants                      library is being            work through          templates         materials are                package at
+                                                                   built for them              independently         make sense        standalone                   programme
+                                                                                               before joining        without the                                    close for self-
+                                                                                               client work           live context?"                                 sufficiency
+
+
+    [Add rows
+    as needed]
+
+
+
+
+Influence and Interest Map
+
+Use this to prioritise where to spend relationship-building time.
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                                                 theaiinternship.com · 2 / 4
+                                                                                                                                                                ENGAGEMENT TOOLKIT
+
+
+
+
+        HIGH INTEREST
+                 |
+                 |     [Monitor]                          [Manage closely]
+        LOW      |----------------------|                         HIGH
+        INFLUENCE                                           |     INFLUENCE
+                 |     [Keep informed]                    [Keep satisfied]
+                 |
+        LOW INTEREST
+
+
+
+
+    STAKEHOLDER                                          INTEREST LEVEL (LOW / MED / HIGH)                      INFLUENCE LEVEL (LOW / MED / HIGH)                QUADRANT
+
+
+    [James, MD]                                          High                                                   High                                              Manage closely
+
+
+    [Sarah, Head of Delivery]                            High                                                   Medium                                            Manage closely
+
+
+    [Participants]                                       High                                                   Low                                               Keep informed
+
+
+    [Raj, Senior Consultant]                             Medium                                                 High                                              Keep satisfied
+
+
+    [Snapdrum engineering]                               Low                                                    Low                                               Monitor
+
+
+    [Add rows]
+
+
+
+
+Communication Plan
+
+    STAKEHOLDER OR
+                                           MESSAGE                                             CHANNEL                             FREQUENCY                       OWNER
+    GROUP
+
+
+    Sponsor (e.g. MD)                      Programme is running well;                          Short email or WhatsApp: 2 to 3     Kickoff, midpoint (after        Programme lead
+                                           business outcomes are on track                      sentences, outcome-first            Session 3), close               (the programme lead)
+
+
+    Day-to-day                             What happened in each session;                      Post-session summary email          After every session             Delivery lead
+    champion                               what comes next; any issues to                      (see intake SOP step 10)                                            (Aki)
+                                           flag
+
+
+    Participant group                      What to do before next session;                     Post-session note; in-session       After every session             Delivery lead
+                                           any relevant resources                              Zoom chat                                                           (Aki)
+
+
+    Sceptical                              Early win: personal relevance to                    Direct conversation in Session 1;   Sessions 1 and 2                Aki in-session
+    influencer                             their specific work                                 reference their work in Session 2
+
+
+    Future-hire                            Reusable onboarding library                         Final onboarding package            Once, at programme              Programme lead
+    audience                               packaged cleanly                                    delivery email                      close
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                                                  theaiinternship.com · 3 / 4
+                                                                                                                                                            ENGAGEMENT TOOLKIT
+
+
+
+
+Risk Register (stakeholder-related)
+
+    RISK                                                         STAKEHOLDER                   LIKELIHOOD   IMPACT   MITIGATION
+
+
+    Low attendance at sessions                                   Participants                  Medium       High     Confirm schedule 1 week before each session; remind
+                                                                                                                     nominated contact; offer recording as fallback
+
+
+    Sponsor loses interest mid-                                  Sponsor                       Low          High     Midpoint check-in email after Session 3 with 1 to 2
+    programme                                                                                                        specific results from the team
+
+
+    Sceptical influencer publicly                                Informal                      Low          High     Engage directly in Session 1; reference their specific
+    dismisses the programme                                      influencer                                          expertise as an asset, not a problem
+
+
+    Budget challenged internally                                 Sponsor                       Low          Medium   Deposit invoice paid before Session 1; SOW is signed;
+    after sign                                                                                                       maintain quality of delivery so value is visible
+
+
+    Scope creep requests from                                    Participants                  Medium       Medium   Refer to the SOW; log requests as change order
+    participants                                                                                                     candidates
+
+
+
+
+Notes
+
+[Free field for anything not captured above: interpersonal dynamics, organisational context, things to be careful about, context from
+discovery or informal conversations]
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                                              theaiinternship.com · 4 / 4
+

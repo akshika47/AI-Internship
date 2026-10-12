@@ -1,0 +1,230 @@
+A I N AT I V E E N A B L E M E N T P R O G R A M M E
+
+
+
+
+Process Mapping
+
+Capturing how a client does something today
+
+
+
+
+FOR                                 P R E PA R E D B Y
+
+
+J2 Intelligence Group               The AI Internship
+Engagement toolkit                  A programme of Snapdrum Ltd
+
+
+theaiinternship.com
+                                                                                                                                                          ENGAGEMENT TOOLKIT
+
+
+
+
+Used for: Discovery, Session 2 (Automating Delivery), or any AI use case scoping exercise
+Filled by: Delivery lead and client, collaboratively
+Format: One sheet per process
+
+
+
+
+Processes to map first
+
+If you are not sure where to start, pick the process that is most painful or most frequent:
+
+1        Post-meeting notes to client deliverable (e.g. Zoom call notes to action plan to first-draft proposal or report)
+
+2        New opportunity qualification and proposal writing (from inbound lead or referral to a sent proposal)
+
+3        Client status report or update (recurring; often the most manual)
+
+4        Research brief for a new client or sector (pre-engagement intelligence gathering)
+
+5        Scoping and briefing a technical build (from client problem to a brief an engineering team can act on)
+
+6        Onboarding a new consultant (what they need to learn and do in their first two weeks)
+
+
+
+
+Process Overview
+
+    FIELD                                              DETAIL
+
+
+    Process name                                       [e.g. "Post-Zoom call to client action plan", "New proposal writing", "Monthly status report"]
+
+
+    Process owner (client-                             [Name and role of the person who runs this process]
+    side)
+
+
+    Department or team                                 [e.g. Consulting, Business Development, Operations]
+
+
+    Frequency                                          [e.g. Weekly, Monthly, Per client engagement, Ad hoc]
+
+
+    Trigger                                            [What starts this process? e.g. "After any client call ends", "When a new lead is qualified", "End of month"]
+
+
+    End point                                          [What does done look like? e.g. "Action plan sent to client within 24 hours", "Proposal sent", "Report approved and
+                                                       sent"]
+
+
+    Typical duration                                   [How long does this take, end to end? e.g. "3 to 4 hours", "45 minutes", "a full day"]
+
+
+    People involved                                    [Who else, besides the owner, is involved?]
+
+
+    Tools used                                         [Every tool touched, e.g. Zoom, Word, Notion, email, spreadsheet, ChatGPT]
+
+
+
+
+Step-by-Step: What Happens Today
+
+Write each step as it actually happens, not as it is supposed to happen. Include informal steps, workarounds, and anything
+that feels manual or repetitive.
+
+
+
+Example filled in for a common consulting process (Post-call to client action plan). Replace with your own steps.
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                                            theaiinternship.com · 2 / 4
+                                                                                                                                                            ENGAGEMENT TOOLKIT
+
+
+
+
+                                                                                                                                  APPROX.
+    STEP #                           WHAT HAPPENS                                              WHO DOES IT   TOOL USED                       NOTES
+                                                                                                                                  TIME
+
+
+    1                                Zoom call ends; recording auto-                           Consultant    Zoom                 0 min      Sometimes recording fails if
+                                     saves to cloud                                                                                          host forgets to start it
+
+
+    2                                Download or open recording;                               Consultant    Zoom, Word /         30 to 60   No standard format; varies by
+                                     listen back and write notes                                             Notion               min        consultant
+
+
+    3                                Identify action items from notes                          Consultant    Word / email         15 min     Often missed items; depends
+                                     manually                                                                                                on note quality
+
+
+    4                                Write action plan or meeting                              Consultant    Word, email          30 to 45   Quality varies; no template in
+                                     summary email by hand                                                                        min        use
+
+
+    5                                Send to senior for a quick review                         Senior        email                15 min     Often skipped due to time
+                                     (if time permits)                                         consultant                                    pressure
+
+
+    6                                Send to client                                            Consultant    email                5 min      Often sent 24 to 48 hours after
+                                                                                                                                             the call
+
+
+    [Add rows as
+    needed]
+
+
+
+
+Pain Points
+
+What is frustrating, slow, inconsistent or risky about this process as it exists today?
+
+
+                                                                                                              HOW OFTEN IT CAUSES A           SEVERITY (LOW / MEDIUM /
+    #         PAIN POINT
+                                                                                                              PROBLEM                         HIGH)
+
+
+    1         [e.g. Writing the executive summary takes a long time and quality                               [e.g. Every time]               [e.g. High]
+              varies by consultant]
+
+
+    2         [e.g. No consistent format across the team]
+
+
+    3
+
+
+    4
+
+
+
+
+What Good Looks Like
+
+If this process worked exactly as it should, what would be different? What would the output look like?
+
+
+[2 to 4 sentences describing the ideal outcome: speed, quality, consistency, or reduced effort]
+
+
+
+
+AI Opportunity Assessment
+
+Filled in after the step-by-step is captured. Use this to identify which steps are good candidates for AI assistance.
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                                            theaiinternship.com · 3 / 4
+                                                                                                                                                              ENGAGEMENT TOOLKIT
+
+
+
+
+                                                                                                                                              CONFIDENCE (LOW /
+    STEP #               AI OPPORTUNITY                                                                           TYPE OF AI HELP
+                                                                                                                                              MEDIUM / HIGH)
+
+
+    [e.g.                [e.g. Summarise Zoom recording and extract action                                        [e.g. Transcription +       [e.g. High]
+    1-4]                 items automatically]                                                                     summarisation]
+
+
+    [e.g. 4]             [e.g. Draft the executive summary from the notes]                                        [e.g. LLM generation from   [e.g. Medium]
+                                                                                                                  structured input]
+
+
+
+
+Estimated time saving if AI handles the flagged steps:
+[e.g. "2 to 3 hours per report, across a team of 8 consultants producing 4 reports each per month = approximately 64 to 96 hours per
+month recovered"]
+
+Recommended action:
+[e.g. "Build a Zoom-to-report automation workflow in Session 2. Use this process map as the brief."]
+
+
+
+
+Sign-off
+
+    Mapped by                                                                                  [Delivery lead name]
+
+
+    Reviewed by (client)                                                                       [Client contact name]
+
+
+    Date                                                                                       [Date]
+
+
+    Version                                                                                    [v1.0]
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                                                theaiinternship.com · 4 / 4
+

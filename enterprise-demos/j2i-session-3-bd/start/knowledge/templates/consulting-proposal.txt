@@ -1,0 +1,228 @@
+A I N AT I V E E N A B L E M E N T P R O G R A M M E
+
+
+
+
+Consulting Proposal
+
+AI Native Enablement Programme
+
+
+
+
+FOR                                 P R E PA R E D B Y
+
+
+J2 Intelligence Group               The AI Internship
+Engagement toolkit                  A programme of Snapdrum Ltd
+
+
+theaiinternship.com
+                                                                                                                                                              ENGAGEMENT TOOLKIT
+
+
+
+
+Prepared for: [CLIENT NAME], [CLIENT DEPARTMENT OR FUNCTION]
+Prepared by: The AI Internship, Snapdrum Ltd
+Date: [MONTH YEAR]
+Validity: Valid for 30 days from the date of this proposal
+
+
+
+
+Executive Summary
+
+[Client Name] is a [industry] firm. AI tools are already part of how the team works. The question is whether they work consistently.
+
+Right now, different people use different tools in different ways with no shared standard. The result is uneven output quality, duplicated
+effort, and time lost to tasks that AI could handle in minutes. The gap is not access: it is knowing how to use these tools deliberately, at a
+professional standard, in [Client Name]'s specific context.
+
+We propose a [6]-session AI Native Enablement Programme built entirely around how [Client Name] works. Every session is live, practical,
+and ends with a working tool the team takes back to client work that same week. No generic curriculum. Every hour designed around
+[Client Name]'s actual workflows.
+
+The programme also becomes a reusable onboarding pathway for future hires. All recordings, templates, exercises and materials belong to
+[Client Name] permanently.
+
+Programme at a glance
+
+
+    Live sessions                                                                              [6] sessions, 2 hours each
+
+
+    Total instruction time                                                                     [12] hours
+
+
+    Working tools built                                                                        [6], one per session
+
+
+    Reusable assets                                                                            Recordings, templates, exercises retained by [Client Name]
+
+
+
+
+The Problem
+
+Most professional teams are already using AI tools. The problem is that each person uses different tools, in different ways, with no shared
+standard. For [Client Name], this creates three specific risks:
+
+Uneven delivery quality. When consultants use AI differently, the quality of outputs varies by person rather than by standard.
+
+Duplicated effort. Tasks that one person has automated, another still does manually. The team is not operating as a unit.
+
+Missed speed. Reports, status updates, research summaries, first-draft proposals: these can be produced in minutes with the right
+workflow. Without shared standards, the team is working at half capacity.
+
+The gap is not tools. It is the deliberate, professional use of those tools across the whole team, in a consulting context.
+
+
+
+
+Our Approach
+
+We do not run generic AI training. Every session in this programme is built around how [Client Name] actually works: its delivery processes,
+its client relationships, its business development motion, and its team structure.
+
+Before the programme: We send a short discovery questionnaire to understand the team's current AI usage, the workflows that matter
+most, and the client-facing contexts where AI will have the highest impact. Session content is adapted from that input.
+
+During the programme: Each session runs live, led by senior practitioners. Participants do not watch demonstrations: they build working
+tools themselves, using their own real work as the material. Every session ends with something the team uses from that day forward.
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                                                theaiinternship.com · 2 / 4
+                                                                                                                                                                        ENGAGEMENT TOOLKIT
+
+
+
+
+After the programme: All materials, recordings and exercises are packaged and delivered to [Client Name] within one week of the final
+session. These form a reusable onboarding library for future consultants joining the team.
+
+
+
+
+Scope
+
+What is included
+
+
+    SESSION               TITLE                                                                OUTCOME FOR [CLIENT NAME]
+
+
+    1                     AI Foundations and Personal Work                                     Every consultant leaves with a personal AI assistant configured to their role. [Client Name]
+                          Assistant                                                            has a shared AI usage standard for the team and for future onboarding.
+
+
+    2                     Automating Delivery and                                              Consultants recover hours previously spent on documentation and reporting. Reusable
+                          Strengthening Client Work                                            delivery workflows ready for immediate client use.
+
+
+    3                     Business Development and                                             An AI-powered BD pipeline. A private knowledge assistant trained on [Client Name]'s past
+                          Proprietary Systems                                                  work. A productised, repeatable tool built from a recurring client problem.
+
+
+    4                     AI Engineering Fluency                                               The technical grounding to collaborate confidently with engineering teams on AI-enabled
+                                                                                               client work, without needing to write code.
+
+
+    5                     AI Native Product Management and                                     Consultants who can lead the client-facing side of AI product work, from use case
+                          Client Implementation                                                identification through to handoff into engineering delivery.
+
+
+    6                     Data and Analytics for the AI-Native                                 A reusable analytical workflow across client engagements, from financial performance
+                          Team                                                                 reviews to operational diagnostics.
+
+
+
+
+Included in every session
+
+        Live, instructor-led delivery, recorded and delivered to [Client Name] within 24 hours
+
+        One working tool or workflow built from [Client Name]'s real use cases
+
+        All templates, prompts, exercises and supporting resources
+
+        Post-programme implementation support for questions as the team applies the workflows
+
+
+What is not included
+
+        Custom software development or engineering builds
+
+        Ongoing managed services or retainer support beyond the programme window
+
+        Individual coaching outside of group sessions
+
+        Licensing or subscription costs for third-party tools
+
+
+
+
+The Team
+
+Aki Wijesundara | Lead Instructor
+Aki has trained over 5,000 practitioners directly across AI, product and engineering contexts. He leads the live delivery of every session
+and designs the hands-on components around [Client Name]'s actual workflows. [Add 1 sentence of relevant background here.]
+
+[Programme Director name] | Programme Director
+The Programme Director oversees programme design, pre-work customisation and post-programme packaging. He ensures the materials [Client Name]
+retains are clean, reusable and ready for future-hire onboarding. [Add 1 sentence of relevant background here.]
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                                                          theaiinternship.com · 3 / 4
+                                                                                                                                    ENGAGEMENT TOOLKIT
+
+
+
+
+Timeline
+
+    PHASE                        ACTIVITY                                                                                TIMING
+
+
+    Preparation                  Discovery questionnaire sent and returned; session plan finalised; materials prepared   2 weeks before Session 1
+
+
+    Delivery                     6 live sessions, one per week                                                           [Start date] to [End date]
+
+
+    Wrap-up                      All recordings, templates and onboarding materials packaged and delivered               Within 1 week of Session 6
+
+
+
+Sessions are scheduled by mutual agreement. We recommend a consistent weekly slot to build momentum across the cohort. A 2-week
+gap between sessions is the maximum we recommend before continuity starts to break.
+
+
+
+
+Investment
+
+Full programme, all 6 sessions
+
+[Amount] [Currency]
+
+Fixed fee. Includes six live sessions, all templates, workflows, exercises and materials, one working tool from each session, full session
+recordings delivered within 24 hours, reusable onboarding materials for future hires, and post-programme implementation support.
+
+An alternative 5-session programme is available. Session 6 (Data and Analytics) can be added at any point.
+
+Optional: repeat cohort for a new intake
+Available at a discounted rate if [Client Name] runs a larger new hire intake or wishes to refresh the team as AI tools evolve. Pricing on
+request.
+
+Payment terms: 50% on signature, 50% on completion of the programme. Invoices payable within 14 days.
+
+
+
+
+J 2 I N T E L L I G E N C E G R O U P · E N G A G E M E N T O P E R AT I O N S T O O L K I T                                      theaiinternship.com · 4 / 4
+

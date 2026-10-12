@@ -1,5 +1,9 @@
-# knowledge/ (files not in this repo)
+# knowledge/
 
-The knowledge base is the client's own method and templates, so the files are not published here.
-`index.md` shows the structure: `method/`, `templates/` and `deals/`.
-Before running Build 3, copy the real files into those folders. Builds 1 and 2 run without them.
+The knowledge base the assistant answers from in Build 3.
+
+- `index.md` lists every file.
+- `method/` is how the practice works. `templates/` are documents it sends or fills in. `deals/` is past work, empty at the start.
+- `CLAUDE.md` holds the assistant's rules. `questions.md` has questions to try.
+
+These are working templates with blanks to fill. Team first names and the contact email address have been replaced with roles.

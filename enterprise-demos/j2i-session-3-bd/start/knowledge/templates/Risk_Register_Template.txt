@@ -1,0 +1,50 @@
+Risk Register Template · J2i Session 5 · TAI Labs
+Save as PDF: Ctrl/⌘+P → destination "Save as PDF" · landscape
+J2i ·  Risk Register
+Session 5 template Populated with Meridian · print landscape
+A risk without a named owner is a wish
+Five real risks. Owner. Mitigation. Tripwire.
+Meridian intake triage rows are populated as a worked example. Overwrite for your engagement. Keep the shape: every row has a name, every row has a tripwire, every row has a severity.
+#
+Severity
+Risk
+Owner
+Mitigation
+Tripwire (act if…)
+01
+Med
+Refusal rate too low; system over-confident on ambiguous inputs.
+Consultant lead + clinical governance lead
+Weekly refusal-set eval; force refuse if model confidence < 0.75; ambiguity classifier before the urgency classifier.
+Refusal rate under 4% of weekly volume, for two consecutive weeks.
+02
+High
+Urgent case misclassified as routine.  Bar-2 violation, unacceptable at any rate.
+Clinical governance lead
+100% human review of urgent-adjacent within one hour. Fairness cases run weekly. All refusal-category outputs sample-reviewed.
+Any Bar-2 miss in production, ever. Immediate rollback path activated.
+03
+Med
+Policy pack goes stale; system cites a superseded document with full confidence.
+Snapdrum engineering lead
+Document-change webhook triggers re-index within one hour. Every output shows "last updated" date on the cited chunk.
+Any document with edit timestamp > 30 days without re-index, or "last updated" older than the sponsor's tolerance.
+04
+High
+Bias in urgency assignment for a demographic group.
+Clinical governance lead
+Fairness eval cases run weekly. Sample audited monthly (10% urgent, 5% routine) stratified by protected characteristic.
+Any fairness case drifts across two weekly runs, or audit shows > 2% divergence between demographic slices.
+05
+Med
+Model provider changes behaviour without notice (silent version bump, capability drift).
+Snapdrum engineering lead
+Locked model version in production. Full regression eval on any planned bump. Contract requires 30-day notice on deprecation.
+Model retired notice received, or an unexpected regression > 3% on the 30-case eval set.
+06
+Low
+07
+Low
+The rule.  A risk without a named owner is a wish. If a row does not have an owner today, the row belongs to you (the consultant lead) until it does. Take it into the fortnightly checkpoint and get a real name against it.
+J2i · Risk Register Template  · v1.0 · Companion to the Handoff Pack Checklist
+TAI Labs
