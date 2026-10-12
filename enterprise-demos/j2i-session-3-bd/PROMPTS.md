@@ -1,43 +1,65 @@
-# Prompts · Session 3 live builds (v3.2)
+# Prompts · Session 3 (v5.2)
 
-Run in a fresh copy of start/ with `claude`. Apollo and Clay connected (/mcp). Browser beside it.
+The folder is already set up: CLAUDE.md (who J2i is, the ideal client, the four checks, the house rules), the house style, the knowledge base, a fictional inbox and a fictional discovery call.
+
+Each build is one prompt that produces one result. Run it live, or open the same page from finished/. That is the presenter's choice.
+
+    cp -r start run-1 && cd run-1 && claude
+
 Nothing is ever sent to anyone. No personal names, emails or phone numbers on screen.
 
-## Build 1 · Competitor watch
+## Build 1 · Battlecards
 _Promise: competitor and market monitoring to sharpen pitch intelligence._
 
-**1.1 House rules and ideal client**
+**1.1 Battlecards for two competitors**
 
-> Read j2i_context.md. Create CLAUDE.md for this folder with two parts: J2i's house rules (the data rules) and J2i's ideal client: who they sell to, the buyer, the user, who approves, and what disqualifies a prospect. J2i qualifies leads on four checks (budget, authority, AI readiness, clarity), each 0 or 1, total 0 to 4, where 3 or 4 means Qualified; write that in. Mark anything you are unsure of as ASSUMPTION.
+> Build battlecards for GovDash (govdash.com) and Sweetspot (sweetspot.so). For each, get its homepage from about a year ago and the latest saved copy from the Wayback Machine, fetching web.archive.org/web/<timestamp>id_/<url> directly, keep the copies in watch/, and compare the wording. Then write battlecards.html. Start with a "What changed" table: old wording, new wording and a link to each archive copy. Then one card per vendor, short enough to fit a screen: what they say now, where they are strong, where J2i fits, three questions to ask a buyer who is considering them, and likely objections with an honest answer. No badmouthing. Why J2i wins stays [TO CONFIRM]. End with a short "Market" strip: two rules changing for these buyers this year, each with a source link, using at most 2 web searches, and say so when sources disagree. Check every claim against its source, remove what you cannot back up, and list what you removed at the bottom. Open the page.
 
-- Say: The folder is empty. This file is the first thing J2i keeps: every later step reads it.
-
-**1.2 The watchlist**
-
-> Create watchlist.md: what a J2i buyer could choose instead of J2i. Three groups: AI proposal software (GovDash at govdash.com and Sweetspot at sweetspot.so), free help (APEX Accelerators), and other consultancies. For each software vendor list the pages to watch: homepage and pricing. Add two rules that are changing for these buyers this year, each with its official page, using at most 2 web searches. Mark anything you are unsure of as ASSUMPTION.
-
-- Say: There is software built for this job. The method is the same with or without it: a short list, checked on a schedule.
-
-**1.3 What changed in a year**
-
-> For GovDash and Sweetspot, use the Wayback Machine (web.archive.org, free, no key) to get the homepage as it was about a year ago and the most recent saved copy. Save both to watch/ with the date in the file name. Compare the visible text and list what changed: headline, who it is for, what it covers, security claims, and anything about consultants or recompetes. Quote the old and new wording and give the archive link for each version. Do not guess when between the two dates a change happened.
-
-- Look: Open both archive links for one vendor side by side in the browser.
-- Point out: In testing (12 Oct), one vendor had added the line "No complex implementation. No consultants." and a recompete tracking feature. What that means for J2i is for the room to judge.
-
-**1.4 Battlecards**
-
-> Write battlecards.html, one card per competitor on the watchlist: what they say now, what changed and when, where they are strong, where J2i fits, three questions to ask a buyer who is considering them, and likely objections with an honest answer. No badmouthing. Why J2i wins stays [TO CONFIRM] until there are real wins and losses. Add a short rules-to-watch strip from the watchlist. Then do a checking pass: remove any line without a link or mark it ASSUMPTION, and show what you removed. Put today's date on each card and open the page.
-
-- Look: The cards in the browser. This is the page to read before a call.
-- Point out: "Why J2i wins" is [TO CONFIRM]. Build 4's win-loss log is what fills it.
-
-**1.5 Into Apollo, then a skill** [writes to Apollo]
-
-> Add GovDash and Sweetspot to an Apollo list called "J2i · competitors", so nobody prospects them by mistake. Then save steps 1.2 to 1.4 as a skill called competitor-watch in .claude/skills: each run saves a new copy to watch/, compares it with the last copy in the folder, and updates a card only if something changed. Show me the skill file.
-
-- Say: Next month this is one command, and it only reports what changed.
+- Say: One prompt. Claude finds what each competitor changed, writes the cards and checks its own claims. It takes about seven minutes.
+- Look: battlecards.html. What changed at the top, then a card per competitor. Click an archive link to show the real page.
+- Point out: "Why J2i wins" is [TO CONFIRM]. Real wins and losses fill it.
 - If it stalls: open finished/battlecards.html.
+
+**1.2 Use it before a call**
+
+> I have a call tomorrow with the COO of a veteran-owned contractor who is also looking at Sweetspot. Using battlecards.html only, give me a 30-second answer to "why not just buy the software?" and the three questions I should ask. Name the line on the card each point comes from. Save it as call-prep.html and open it.
+
+- Say: This is the point of the watch: a sharper answer in the next conversation.
+- Look: call-prep.html.
+- If it stalls: open finished/call-prep.html.
+
+**1.3 Keep it running**
+
+> Save what you did in 1.1 as a skill called competitor-watch in .claude/skills. Each run saves a new copy to watch/, compares it with the last saved copy, and updates a card only if something changed. Show me the skill file.
+
+- Say: This is what makes it monitoring. Next month it is one command, and it reports only what changed.
+- Note: Claude asks permission to write to .claude/skills. Approve it.
+
+## Build 2 · Who to call first
+_Promise: LinkedIn lead intelligence and automated prospect scoring._
+
+**2.1 A scored list from public data**
+
+> Build the list of who J2i should call first. Pull federal contract awards from the USAspending API (no key needed) for veteran-owned and service-disabled veteran-owned businesses, NAICS 5415 and 5416, award activity Oct 2025 to Sep 2026, awards between $1M and $20M, up to 2,000 rows, and remove duplicates. Find the services firms, not resellers, with contracts ending by 30 April 2027, and take the top 15. Look the top 10 up in Apollo with the free lookup and mark any you cannot match UNRESOLVED. Then tell me the credit cost and wait for my yes before you enrich the 5 best matches in Apollo, find titles (no names) for capture, proposal, COO and IT security at the best 3, and get open jobs and recent news for those 3 from Clay. Add the leads in inbound/. Score everyone on the four checks. Check every claim against its source and remove what you cannot back up. Write targets.html: the five best real companies to call first at the top, then a table that sorts on a column click and has a filter box, then what you removed. Open the page.
+
+- Say: One prompt again. It will stop once to tell us the credit cost. Read it out, then say yes. It takes about fifteen minutes.
+- Look: targets.html. The five to call first, then sort the table by end date.
+- Point out: Public data gets a company to "worth a call". A conversation is what makes it Qualified.
+- Point out: Government names rarely match a database. In testing, 4 of 10 matched cleanly.
+- If it stalls: open finished/targets.html.
+
+**2.2 Into Apollo** [writes to Apollo]
+
+> Put the three best real companies that have an Apollo match into Apollo: add them to a list called "J2i pipeline · contracts ending", and create a deal for each, named with "(J2i demo)" at the end, with the reason to call in the description and a task "Send personal note". Search for an existing deal first. Do not add anyone to a sequence.
+
+- Look: Apollo. Saved records, Companies for the list; Win deals, Deals; Engage, Tasks.
+
+**2.3 Keep it running**
+
+> Save what you did in 2.1 as a skill called find-and-score in .claude/skills, including the reseller filter, the four checks and the checking pass. Show me the skill file.
+
+- Say: Next week this is one command, and the list is fresh.
+- Note: Claude asks permission to write to .claude/skills. Approve it.
 
 ## Tool tour · How Apollo and Clay work on their own
 _Before Claude Code connects them: each tool now has its own AI agent. Show it once, inside the tool._
@@ -55,78 +77,6 @@ _Before Claude Code connects them: each tool now has its own AI agent. Show it o
 
 - Say: Clay builds agents from templates: prospecting, account scoring, contact scoring, copywriting. Same idea as our skills.
 - Point out: Why we still use Claude Code: it works across Apollo, Clay, public data and J2i's files, and the skills it leaves are files J2i owns, not settings inside one vendor.
-
-## Build 2 · A scored list from public data
-_Promise: LinkedIn lead intelligence and automated prospect scoring._
-
-**2.1 Pull contract data**
-
-> Pull federal contract awards from the USAspending API (no key needed) for veteran-owned and service-disabled veteran-owned businesses, NAICS 5415 and 5416, award activity Oct 2025 to Sep 2026, awards between $1M and $20M. Page through the results, up to 2,000 rows, and tell me the total and whether there were more. Include the award description. Save the raw data to data/. Do not analyse it yet.
-
-- Say: Free, official government data. Anyone in this room can check it.
-
-**2.2 Check before trusting**
-
-> Check what you pulled before we trust it: duplicates, missing dates, anything that would double count a company. Tell me what you found, then fix it in code and show the before and after counts.
-
-- Point out: The same award comes back twice, because every service-disabled veteran firm is also a veteran firm.
-
-**2.3 Contracts ending, without the resellers**
-
-> Using the End Date field (the current end date), which companies have contracts ending between today and 30 April 2027? Group by company and rank by number of contracts ending, then soonest end date. Look at the award descriptions and flag companies whose awards are mostly hardware or software resale, because they are not J2i's ideal client. Show the top 15 services firms as a table: contracts ending, total value, earliest end date.
-
-- Say: When a contract ends, the work is usually bid again, and the firm holding it has to write a new proposal to keep it.
-- Look: Open usaspending.gov in the browser, search one company from the table, and show the real record.
-- Point out: In testing, 3 of the top 5 by contract count were large resellers. Ranking by count alone points at the wrong firms.
-
-**2.4 Add the inbox**
-
-> Add the inbound leads in inbound/. For each item say keep, park (a real business, not now) or drop (not a business lead), with one reason. Mark them as fictional.
-
-- Point out: Vendors, job seekers and recruiters dropped, each with a reason.
-
-**2.5 Find them in Apollo**
-
-> For the top 10 real companies, find each one in Apollo with the free lookup only. If there are several candidates, pick the one most likely to hold the federal contract and say why; if you cannot tell from name and domain, say UNRESOLVED. Do not spend credits.
-
-- Point out: Government names rarely match a database. In testing, 4 of 10 needed a human check.
-
-**2.6 Save the list into Apollo** [writes to Apollo]
-
-> Create Apollo accounts for the matched real companies and add them to a list called "J2i pipeline · contracts ending". Skip the fictional inbound leads. Give me the link.
-
-- Look: Switch to the Apollo tab and open the list. The companies are in the CRM.
-
-**2.7 Company details and the buying committee** [paid: Apollo, about 5 to 10 credits]
-
-> Enrich the top 5 companies in Apollo (size, revenue, location, what they sell). Tell me the credit cost before you start and stop if it would go over 10 credits. Then, for the best 3 fits, find the people J2i would need on its side: the capture or proposal lead, the COO or CEO, and IT security. Titles only, no names, emails or phone numbers.
-
-- Say: Read out the credit cost Claude shows before it runs.
-- Point out: A sale like this needs more than one person on the client side: a user, a buyer and an approver.
-
-**2.8 Signals from Clay, checked** [paid: Clay, 3 companies × 2 functions]
-
-> For the best 3 fits, get open job postings and recent company news from Clay. Flag hiring for capture, proposal or business development roles. Before using any result, check it is the same company (same website) and dated in the last six months; list what you discarded and why.
-
-- Point out: In testing, Clay returned news about a different company with a similar name, and stories from 2018 to 2022. The job post (a Proposal Manager) was the real signal.
-
-**2.9 Score, then check every claim**
-
-> Score every company, real and fictional, on J2i's four checks, each 0 or 1, total 0 to 4. Large resellers fail the ideal-client fit; say so. Write one line on why to call this month, with the source link. Then do a separate checking pass: compare every claim with its source and remove anything you cannot back up. Show how many claims you checked, how many you removed, and each removed claim. Save targets.html and open it.
-
-- Look: The ranked list in the browser, then the list of removed claims.
-
-**2.10 Into the pipeline** [writes to Apollo]
-
-> Create a deal in Apollo for each real company scoring 3 or 4, with a task "Send personal note" for its owner. Do not add anyone to a sequence.
-
-- Look: Apollo: Win deals, then Deals. The pipeline exists.
-
-**2.11 Save it as a skill**
-
-> Save steps 2.1 to 2.9 as a skill called find-and-score, including the reseller filter, the four checks and the checking pass.
-
-- If it stalls: open finished/targets.html; finished/scripts/ rebuilds the data.
 
 ## Build 3 · Outreach a person sends
 _Turns the list into conversations. Supports the lead intelligence promise._
@@ -156,25 +106,36 @@ _Turns the list into conversations. Supports the lead intelligence promise._
 - Say: A person reads, edits and sends every one of these.
 - If it stalls: open finished/outreach.html.
 
-## Build 4 · The J2i assistant, win-loss and the offer
-_Promises: a knowledge assistant on J2i's work, win-loss mining, and a packaged offer._
+## Build 4 · The assistant and the win-loss log
+_Promises: a private knowledge assistant on J2i's work and methods, and mining win-loss patterns and client feedback._
 
-**4.1 Create the assistant**
+**4.1 Ask the assistant**
 
-> Move sprint-kit/ into knowledge/ and add a short index. From now on answer J2i questions from knowledge/ only, name the file each answer comes from, and add that rule to CLAUDE.md.
+> Show me what is in knowledge/ as a tree, with one line on what each folder holds. Then answer three questions from knowledge/ only, naming the file each answer comes from. One: what goes in an Opportunity Map? Two: how do we qualify a lead, and if the files describe it in more than one way, say so plainly. Three: what did we charge our last client?
 
+- Look: Open the knowledge/ folder first, and one file from method/ and one from templates/. This is what J2i already has.
+- Say: Nothing is trained. The assistant reads these files each time, which is why it can name its source.
+- Point out: The second answer finds two different qualification tools in the files and says so.
+- Point out: The third answer is "not in the files". It does not guess a price.
 
-**4.2 Ask it**
+**4.2 From a call to the Opportunity Map**
 
-> Two questions: what are J2i's lead qualification checks, and what goes in an Opportunity Map? If knowledge/ describes qualification in more than one way, say so plainly.
+> Read calls/discovery-call.md, which is fictional. Pull the pain points in the client's own words, every number and every objection, then draft the one-page Opportunity Map from the template in knowledge/templates/. Mark gaps ESTIMATE NEEDED or [VERIFY]. Save it as opportunity-map.html and open it.
 
-- Point out: Each answer names the file it came from. The kit has two qualification tools (the Session 1 four checks and an 8-line scorecard), and the assistant says so.
+- Say: The call is fictional, written in J2i's own discovery method. This is the page J2i promises within 24 hours.
+- Look: opportunity-map.html.
+- If it stalls: open finished/opportunity-map.html.
 
-**4.3 From the call to the Opportunity Map**
+**4.3 Start the win-loss log**
 
-> Read calls/discovery-call.md. Pull the pain points in the client's own words, every number and every objection, then draft the one-page Opportunity Map from the template in knowledge/. Mark gaps ESTIMATE NEEDED or [VERIFY]. Save to deals/harborline/.
+> Start the win-loss log as win-loss.html. Log every objection from the discovery call and every lead in inbound/ that we would drop or park, each with an outcome (won, lost or no decision), the reason, and the competitor or alternative the buyer considered if one was named. Then say what patterns you see and what we should change in targeting or messages because of them. Save the call notes and the Opportunity Map into knowledge/deals/harborline/ so the assistant learns the deal. Open the page.
 
-- Say: The call is fictional, written in J2i's own discovery method. In Session 1 this took four prompts.
+- Say: With one week of leads this is a starter log. After ten deals the same prompt finds real patterns.
+- Look: win-loss.html, then knowledge/deals/ now has its first deal.
+- If it stalls: open finished/win-loss.html.
+
+## After the session · further steps
+_Not needed for the session. They carry a deal on from the Opportunity Map to a signed engagement and the next one._
 
 **4.4 Proposal, process map, stakeholder map**
 
@@ -213,15 +174,10 @@ _Promises: a knowledge assistant on J2i's work, win-loss mining, and a packaged 
 
 - Say: The offer is not finished until there is a plan to sell it and a number that says whether it is working.
 
-## Showcase · The Recompete Readiness Map tool
-_Promise: turning a recurring client problem into a productised, repeatable tool. Built before the session._
+## Packaging an offer · explained, not built
+_Promise: turning a recurring client problem into a productised, repeatable tool._
 
-**S.1 Run the packaged tool**
-
-> /recompete-readiness-map <a real company name from the list>
-
-- Look: The one-page map for that company in the browser.
-- If it stalls: open the saved map in finished/.
+No prompt here. The presenter explains it with slides 38 to 42: the three levels, the Recompete Readiness Map as an example, the five checks, the offer ladder and the numbers. Steps 4.8 and 4.9 (the offer page and the launch plan) are there if the room wants to see the example written up.
 
 ## Close · Handover and the system
 _What J2i keeps, and how a new consultant starts._

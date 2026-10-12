@@ -1,14 +1,27 @@
 # J2i Session 3 demo kit · business development with Claude Code
 
 Live builds for the business development session of an AI enablement programme.
-The presenter starts from an almost empty folder and builds a sales system step by step.
+The folder is already set up. Each build is one main prompt that produces one page.
+The presenter can run a build live or open the same page from `finished/`.
+
+## Where to look
+
+- **`start/`** is everything the presenter works with: `CLAUDE.md`, the house style, the knowledge base, the inbox and the call. Copy this folder and run the prompts inside the copy.
+- **`finished/`** is everything to show without running it live. Open `finished/index.html`.
+- **`PROMPTS.md`** is what to paste, in order.
+
+Deck: https://claude.ai/artifact/66Ycaor6HCpxs6oQVZL8kS
+
+## What is in the folder
 
 | Path | What it is |
 |---|---|
 | `PROMPTS.md` | The prompts, in order, with what to say and what to point out |
-| `start/` | What the client has before the session: context notes, a fictional inbox, a fictional discovery call |
-| `start/sprint-kit/` | Empty here. The client's templates are added privately (needed for Build 4 only) |
-| `finished/` | Results of a tested run of Build 1, as the fallback if a step stalls |
+| `start/CLAUDE.md` | Who the client is, the ideal client, the four qualification checks, the house rules |
+| `start/style/house.css` | The house style every result page uses |
+| `start/knowledge/` | The knowledge base structure. The files are added privately (needed for Build 4 only) |
+| `start/inbound/`, `start/calls/` | A fictional inbox and a fictional discovery call |
+| `finished/` | Pages from a tested run: the fallback. Open `finished/index.html` |
 
 ## Run it
 
@@ -21,19 +34,46 @@ Then paste the prompts from `PROMPTS.md` one at a time. Always work in a copy so
 ## What you need
 
 - Claude Code
-- Apollo and Clay connected as MCP servers (`/mcp` shows both). Build 1 needs Apollo only for step 1.5
+- Apollo and Clay connected as MCP servers (`/mcp` shows both). Only Build 2 uses them
 - A browser beside the terminal
 
-## Build 1 · Competitor watch (tested 12 Oct 2026)
+## The builds
 
-1. House rules and ideal client
-2. A watchlist of what a buyer could choose instead
-3. What each competitor changed on its homepage in a year, from Internet Archive copies
-4. A battlecard per competitor, with a checking pass
-5. An Apollo list of competitors, and a skill that reruns monthly
+| Build | Main prompt | Result |
+|---|---|---|
+| 1 · Battlecards | 1.1 | `battlecards.html`: what two competitors changed in a year, then a card for each |
+| | 1.2 | `call-prep.html`: a 30-second answer and three questions from the card |
+| | 1.3 | A saved skill, so it reruns monthly and reports only what changed |
+| 2 · Who to call first | 2.1 | `targets.html`: a scored list from public contract data, sortable |
+| | 2.2 | An Apollo list, deals and tasks for the top three |
+| | 2.3 | A saved skill |
 
-Steps 1 to 4 took about 7 minutes on Sonnet; step 3 is the slow one. When step 5 asks for
-permission to write to `.claude/skills/`, approve it.
+Build 2 stops once to state the Apollo and Clay credit cost and waits for a yes (about 5 Apollo credits and 6 Clay runs).
+When a step asks for permission to write to `.claude/skills/`, approve it.
+
+## The fallback pages
+
+The pages in `finished/` come from a step-by-step run on 12 Oct 2026, so there are more of them than the builds
+above produce today. They show the same results.
+
+### Opening the tested pages
+
+Open `finished/index.html` in a browser. It is the home page, and each tile opens one page.
+
+| Page | Build | What it shows |
+|---|---|---|
+| `watchlist.html` | 1 | What a buyer could choose instead, and the pages to watch |
+| `watch-changes.html` | 1 | Each competitor's homepage a year ago and now |
+| `battlecards.html` | 1 | What changed, then one card per competitor |
+| `call-prep.html` | 1 | A 30-second answer and three questions, built from the card |
+| `contracts-ending.html` | 2 | Veteran-owned firms with federal contracts ending soon (public USAspending data) |
+| `inbox.html` | 2 | Keep, park or drop for each inbound lead (all fictional) |
+| `targets.html` | 2 | Who to call first: the scored list, sortable, with a filter box |
+
+These pages are the fallback for the live session: if a step stalls, open the matching page here and carry on.
+Saved copies of competitor pages are not in the repo; `watch-changes.html` links to the Internet Archive instead.
+Company details on `targets.html` come from public federal data plus Apollo and Clay lookups on 12 Oct 2026.
+No personal names, emails or phone numbers are included.
 
 ## Rules
 

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Targets: who to call first</title>
+<style>
+/* J2i demo house style. Every HTML page in this folder links this file:
+   <link rel="stylesheet" href="style/house.css">
+   Building blocks: .page  .eyebrow  h1  .lede  .strip  .grid  .card  .tag  .was/.now  table.compare  .src  .foot */
+:root{--bg:#f6f7f3;--surface:#fff;--ink:#17231d;--muted:#5f6d63;--line:#dfe5db;--accent:#2a4d3c;--soft:#e8f0e1;--warn:#9a4a1c;--warn-bg:#fbeee4;--ok:#2f6b47;--ok-bg:#e3f1e6}
+*{box-sizing:border-box}
+html{font-size:17px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+.page{max-width:1120px;margin:0 auto;padding:40px 28px 72px}
+.eyebrow{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-size:2.3rem;line-height:1.08;letter-spacing:-.03em;font-weight:650;margin:.3rem 0 .6rem;text-wrap:balance}
+h2{font-size:1.35rem;letter-spacing:-.02em;font-weight:650;margin:0}
+h3{font-size:.74rem;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:1.1rem 0 .35rem}
+.lede{color:var(--muted);max-width:66ch;font-size:1.05rem;margin:0 0 1.6rem}
+a{color:var(--accent);text-underline-offset:2px}
+p,ul,ol{margin:.3rem 0}
+ul,ol{padding-left:1.15rem}
+li{margin:.2rem 0}
+.strip{background:var(--accent);color:#fff;border-radius:16px;padding:22px 26px;margin:0 0 22px}
+.strip h2,.strip h3{color:#fff}
+.strip a{color:#d4edaf}
+.strip .eyebrow{color:#cfe0d4}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:20px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.card-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:4px}
+.card-head .date{font-size:.8rem;color:var(--muted)}
+.tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:2px 9px;background:var(--soft);color:var(--accent);vertical-align:middle}
+.tag.warn{background:var(--warn-bg);color:var(--warn)}
+.tag.ok{background:var(--ok-bg);color:var(--ok)}
+table.compare{width:100%;border-collapse:collapse;font-size:.95rem}
+table.compare th{text-align:left;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;font-weight:600;opacity:.8;padding:6px 12px 6px 0}
+table.compare td{padding:10px 12px 10px 0;border-top:1px solid rgba(255,255,255,.22);vertical-align:top}
+.card table.compare td{border-top:1px solid var(--line)}
+.was{opacity:.78}
+.now{font-weight:600}
+.src{font-size:.8rem;color:var(--muted);white-space:nowrap}
+.strip .src{color:#cfe0d4}
+.quote{border-left:3px solid var(--accent);padding:.15rem 0 .15rem .8rem;margin:.5rem 0}
+.foot{margin-top:28px;font-size:.82rem;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="eyebrow">J2i · Targets · 2026-10-12 · DRAFT, needs a named reviewer</div>
+<h1>Who to call first</h1>
+<p class="lede">Fifteen real services firms with contracts ending soon, and seven inbound leads, scored on J2i's four checks: budget, authority, AI readiness and clarity, each 0 or 1. Inbound leads are <span class="tag warn">fictional</span> and are not eligible for the top five.</p>
+<div class="strip">
+  <div class="eyebrow">Read this first</div>
+  <h2>Public data cannot score most of the four checks</h2>
+  <p>Budget, AI readiness and clarity cannot be scored for any real firm from public data, so every real firm scores 0 on them and none can reach 3, the Qualified line. Authority scores 1 only for DecisionPoint, where a COO title was found; for the other real firms no signer title was found or no lookup was run. The top five below are therefore ordered by total, then by how much Apollo and Clay evidence exists, then by earliest contract end date (ASSUMPTION: my tie-break, not J2i's). Firms with no evidence cannot rank, which says nothing against them.</p>
+  <p class="src">Authority is scored 1 when the contact is a COO, CEO or founder (ASSUMPTION). Sources: <a href="data/apollo_clay_results_2026-10-12.md">Apollo and Clay results</a> · <a href="contracts-ending.html">contracts ending</a> · <a href="inbox.html">inbox decisions</a>.</p>
+</div>
+
+<h2>The five best real companies to call first</h2>
+<div class="grid">
+  <div class="card">
+    <div class="card-head"><h2>1. DecisionPoint Corporation</h2><span class="tag">1 of 4</span></div>
+    <p>First of 5 ends 2026-12-29; titles for capture manager, senior proposal manager, COO and VP of business development exist there, and it announced a $25.2M prime win on 16 Apr 2026.</p>
+    <p>Authority 1: a COO title was returned (title only, not a direct line; ASSUMPTION that a COO signs spend).</p>
+    <p class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_70RCSJ25FR0000045_7001_47QTCH18D0013_4732">USAspending award</a> · <a href="https://decisionpointcorp.com/press-releases/">press release</a> · <a href="data/apollo_clay_results_2026-10-12.md">Apollo and Clay results</a></p>
+  </div>
+  <div class="card">
+    <div class="card-head"><h2>2. Stellar Innovations &amp; Solutions Inc.</h2><span class="tag">0 of 4</span></div>
+    <p>First of 5 ends 2026-10-26 (this month); Apollo returned a Director of Business Development there.</p>
+    <p>Authority 0: only a Director of Business Development was returned.</p>
+    <p class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_SP470925F0005_9700_SP470917D0006_9700">USAspending award</a> · <a href="data/apollo_clay_results_2026-10-12.md">Apollo and Clay results</a></p>
+  </div>
+  <div class="card">
+    <div class="card-head"><h2>3. Forge Group, LLC</h2><span class="tag">0 of 4</span></div>
+    <p>First of 4 ends 2026-10-17 (this month); an SDVOSB with about 140 staff and $19.6M estimated revenue (Apollo).</p>
+    <p>No title or signal data pulled.</p>
+    <p class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_HC104723F4063_9700_47QTCA21D00D5_4732">USAspending award</a> · <a href="data/apollo_clay_results_2026-10-12.md">Apollo and Clay results</a></p>
+  </div>
+  <div class="card">
+    <div class="card-head"><h2>4. Appddictionstudio LLC</h2><span class="tag">0 of 4</span></div>
+    <p>First of 5 ends 2026-10-21 (this month); an SDVOSB with about 68 staff (Apollo).</p>
+    <p>No titles, jobs or news returned.</p>
+    <p class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_70FA3123F00000009_7022_70FA3021A00000006_7022">USAspending award</a> · <a href="data/apollo_clay_results_2026-10-12.md">Apollo and Clay results</a></p>
+  </div>
+  <div class="card">
+    <div class="card-head"><h2>5. Grant Leading Technology LLC</h2><span class="tag">0 of 4</span></div>
+    <p>No end date this month; first of 6 ends 2027-01-02. An SDVOSB with about 76 staff (Apollo).</p>
+    <p>No title or signal data pulled.</p>
+    <p class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_693KA925C00006_6920_-NONE-_-NONE-">USAspending award</a> · <a href="data/apollo_clay_results_2026-10-12.md">Apollo and Clay results</a></p>
+  </div>
+</div>
+
+<h2>Full table</h2>
+<p><label for="q">Filter: </label><input id="q" type="text" placeholder="type to filter rows"> <span class="src">Click a column heading to sort; click again to reverse.</span></p>
+<div class="card">
+<table class="compare" id="t">
+<thead><tr><th>Company</th><th>Total</th><th>Budget</th><th>Authority</th><th>AI readiness</th><th>Clarity</th><th>Contracts ending</th><th>Earliest end</th><th>Cannot be scored, and why</th><th>Evidence</th><th>Why call this month</th><th>Sources</th></tr></thead>
+<tbody>
+<tr><td>Dana Whitfield, Harborline Systems Group <span class="tag warn">fictional</span></td><td data-v="3">3</td><td>0</td><td>1</td><td>1</td><td>1</td><td data-v="0">-</td><td data-v="9999-99-99">-</td><td>Budget: not stated in the message</td><td>Authority: a COO wrote to us. AI readiness: asked &#x27;Do you do anything practical here&#x27;. Clarity: task order up for recompete in the spring, proposal team of three exhausted.</td><td>Recompete in the spring and she has asked twice, by DM and at the booth.</td><td class="src"><a href="inbound/linkedin_dms.md">LinkedIn DMs</a> · <a href="inbound/conference_scans.csv">conference scans</a></td></tr>
+<tr><td>Operations lead, veteran-owned logistics firm <span class="tag warn">fictional</span></td><td data-v="3">3</td><td>1</td><td>0</td><td>1</td><td>1</td><td data-v="0">-</td><td data-v="9999-99-99">-</td><td>Authority: an operations lead; whether they sign is not stated</td><td>Budget: &#x27;a few thousand dollars&#x27;. AI readiness and clarity: wants weekly ops reports summarised and customer updates drafted.</td><td>Wants it in two weeks, so the window is short.</td><td class="src"><a href="inbound/marketplace_post.md">marketplace post</a></td></tr>
+<tr><td>Angela Brooks, Northpoint Mission Services <span class="tag warn">fictional</span></td><td data-v="2">2</td><td>0</td><td>1</td><td>1</td><td>0</td><td data-v="0">-</td><td data-v="9999-99-99">-</td><td>Budget: not stated. Clarity: wants training but names no problem</td><td>Authority: the CEO (ASSUMPTION that a CEO signs spend). AI readiness: interested in training. SDVOSB, 90 staff.</td><td>An SDVOSB of 90 staff whose CEO asked about training, which J2i sells.</td><td class="src"><a href="inbound/conference_scans.csv">conference scans</a></td></tr>
+<tr><td>Laura Chen, Meridian Clinic Group <span class="tag warn">fictional</span></td><td data-v="2">2</td><td>0</td><td>0</td><td>1</td><td>1</td><td data-v="0">-</td><td data-v="9999-99-99">-</td><td>Budget: not stated. Authority: a Director of Operations; whether she signs is not stated</td><td>AI readiness and clarity: still interested in the intake triage idea.</td><td>No reason to call this month: she asked to pick it up in November. Reply now so it is in the diary.</td><td class="src"><a href="inbound/linkedin_dms.md">LinkedIn DMs</a></td></tr>
+<tr><td>DecisionPoint Corporation</td><td data-v="1">1</td><td>0</td><td>1</td><td>0</td><td>0</td><td data-v="5">5</td><td data-v="2026-12-29">2026-12-29</td><td>Budget, AI readiness and clarity: public data and the Apollo and Clay output do not show them</td><td>Authority 1: a COO title was returned (title only, not a direct line; ASSUMPTION that a COO signs spend).</td><td>First of 5 ends 2026-12-29; titles for capture manager, senior proposal manager, COO and VP of business development exist there, and it announced a $25.2M prime win on 16 Apr 2026.</td><td class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_70RCSJ25FR0000045_7001_47QTCH18D0013_4732">USAspending award</a> · <a href="https://decisionpointcorp.com/press-releases/">press release</a> · <a href="data/apollo_clay_results_2026-10-12.md">Apollo and Clay results</a></td></tr>
+<tr><td>James Okafor, Bluefield Federal Partners <span class="tag warn">fictional</span></td><td data-v="1">1</td><td>0</td><td>0</td><td>1</td><td>0</td><td data-v="0">-</td><td data-v="9999-99-99">-</td><td>Budget: not stated. Authority: a Capture Manager is a user, not a signer (ASSUMPTION). Clarity: names a deadline, not a problem</td><td>AI readiness: wants a demo. Recompete in Q1.</td><td>Recompete in Q1 and he asked for a demo. Ownership and size are not stated, so check them first.</td><td class="src"><a href="inbound/conference_scans.csv">conference scans</a></td></tr>
+<tr><td>Tom Kessler, Kessler Tactical Logistics <span class="tag warn">fictional</span></td><td data-v="1">1</td><td>0</td><td>1</td><td>0</td><td>0</td><td data-v="0">-</td><td data-v="9999-99-99">-</td><td>Budget: not stated. AI readiness: he says he is not sure AI is for them yet. Clarity: no problem named</td><td>Authority: the founder of a 25-person firm.</td><td>He offered coffee, so a short call is open, but nothing is time-bound.</td><td class="src"><a href="inbound/linkedin_dms.md">LinkedIn DMs</a></td></tr>
+<tr><td>C5MI Insight LLC</td><td data-v="0">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td data-v="3">3</td><td data-v="2026-10-15">2026-10-15</td><td>Budget, AI readiness and clarity: public data and the Apollo and Clay output do not show them; Authority: no Apollo lookup run</td><td>Nothing beyond the contract data.</td><td>First of 3 ends 2026-10-15 (this month); cannot be called yet: not looked up in Apollo.</td><td class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_SP470126F0107_9700_SP470123A0005_9700">USAspending award</a></td></tr>
+<tr><td>Forge Group, LLC</td><td data-v="0">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td data-v="4">4</td><td data-v="2026-10-17">2026-10-17</td><td>Budget, AI readiness and clarity: public data and the Apollo and Clay output do not show them; Authority: no title search run</td><td>No title or signal data pulled.</td><td>First of 4 ends 2026-10-17 (this month); an SDVOSB with about 140 staff and $19.6M estimated revenue (Apollo).</td><td class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_HC104723F4063_9700_47QTCA21D00D5_4732">USAspending award</a> · <a href="data/apollo_clay_results_2026-10-12.md">Apollo and Clay results</a></td></tr>
+<tr><td>Appddictionstudio LLC</td><td data-v="0">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td data-v="5">5</td><td data-v="2026-10-21">2026-10-21</td><td>Budget, AI readiness and clarity: public data and the Apollo and Clay output do not show them; Authority: no matching titles returned</td><td>No titles, jobs or news returned.</td><td>First of 5 ends 2026-10-21 (this month); an SDVOSB with about 68 staff (Apollo).</td><td class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_70FA3123F00000009_7022_70FA3021A00000006_7022">USAspending award</a> · <a href="data/apollo_clay_results_2026-10-12.md">Apollo and Clay results</a></td></tr>
+<tr><td>Stellar Innovations &amp; Solutions Inc.</td><td data-v="0">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td data-v="5">5</td><td data-v="2026-10-26">2026-10-26</td><td>Budget, AI readiness and clarity: public data and the Apollo and Clay output do not show them; Authority: only a Director of Business Development was found</td><td>Authority 0: only a Director of Business Development was returned.</td><td>First of 5 ends 2026-10-26 (this month); Apollo returned a Director of Business Development there.</td><td class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_SP470925F0005_9700_SP470917D0006_9700">USAspending award</a> · <a href="data/apollo_clay_results_2026-10-12.md">Apollo and Clay results</a></td></tr>
+<tr><td>2TECHJV, LLC</td><td data-v="0">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td data-v="3">3</td><td data-v="2026-10-28">2026-10-28</td><td>Budget, AI readiness and clarity: public data and the Apollo and Clay output do not show them; Authority: no Apollo lookup run</td><td>Nothing beyond the contract data.</td><td>First of 3 ends 2026-10-28 (this month); cannot be called yet: not looked up in Apollo.</td><td class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_47QFHA22F0001_4732_47QTCH18D0039_4732">USAspending award</a></td></tr>
+<tr><td>Oddcore JV, LLC</td><td data-v="0">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td data-v="5">5</td><td data-v="2026-11-01">2026-11-01</td><td>Budget, AI readiness and clarity: public data and the Apollo and Clay output do not show them; Authority: no Apollo match</td><td>Nothing beyond the contract data.</td><td>No end date this month; first of 5 ends 2026-11-01; cannot be called yet: no Apollo record.</td><td class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_36C10B25N00070008_3600_36C10B25D0007_3600">USAspending award</a></td></tr>
+<tr><td>Cynergy Professional Systems LLC</td><td data-v="0">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td data-v="6">6</td><td data-v="2026-11-15">2026-11-15</td><td>Budget, AI readiness and clarity: public data and the Apollo and Clay output do not show them; Authority: no Apollo lookup run</td><td>Nothing beyond the contract data.</td><td>No end date this month; first of 6 ends 2026-11-15; cannot be called yet: not looked up in Apollo.</td><td class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_W91RUS23F0148_9700_NNG15SD20B_8000">USAspending award</a></td></tr>
+<tr><td>Goldpath Communications JV LLC</td><td data-v="0">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td data-v="4">4</td><td data-v="2026-12-04">2026-12-04</td><td>Budget, AI readiness and clarity: public data and the Apollo and Clay output do not show them; Authority: no Apollo lookup run</td><td>Nothing beyond the contract data.</td><td>No end date this month; first of 4 ends 2026-12-04; cannot be called yet: not looked up in Apollo.</td><td class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_36C10G26N0016_3600_36C10G24D0022_3600">USAspending award</a></td></tr>
+<tr><td>Savvee Inc.</td><td data-v="0">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td data-v="6">6</td><td data-v="2026-12-19">2026-12-19</td><td>Budget, AI readiness and clarity: public data and the Apollo and Clay output do not show them; Authority: company unresolved in Apollo: two firms share the name</td><td>Nothing beyond the contract data.</td><td>No end date this month; first of 6 ends 2026-12-19; cannot be called yet: Apollo cannot tell which of two same-name firms it is.</td><td class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_1305M423FNWWA0074_1330_1305L420ANAAJ0052_1330">USAspending award</a></td></tr>
+<tr><td>Insignia Technology Services, LLC</td><td data-v="0">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td data-v="5">5</td><td data-v="2026-12-22">2026-12-22</td><td>Budget, AI readiness and clarity: public data and the Apollo and Clay output do not show them; Authority: no Apollo match</td><td>Nothing beyond the contract data.</td><td>No end date this month; first of 5 ends 2026-12-22; cannot be called yet: no Apollo match.</td><td class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_36C10B26N10250028_3600_VA11816D1025_3600">USAspending award</a></td></tr>
+<tr><td>ELB Services LLC</td><td data-v="0">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td data-v="5">5</td><td data-v="2026-12-31">2026-12-31</td><td>Budget, AI readiness and clarity: public data and the Apollo and Clay output do not show them; Authority: Apollo had only a German company and a record with no domain</td><td>Nothing beyond the contract data.</td><td>No end date this month; first of 5 ends 2026-12-31; cannot be called yet: Apollo had only a wrong-country record.</td><td class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_FA821726FB235_9700_FA821725DB004_9700">USAspending award</a></td></tr>
+<tr><td>Your Recruiting Company, Inc.</td><td data-v="0">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td data-v="5">5</td><td data-v="2026-12-31">2026-12-31</td><td>Budget, AI readiness and clarity: public data and the Apollo and Clay output do not show them; Authority: no Apollo match</td><td>Nothing beyond the contract data.</td><td>No end date this month; first of 5 ends 2026-12-31; cannot be called yet: no Apollo match.</td><td class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_12724522F0004_1205_47QREA20D001C_4732">USAspending award</a></td></tr>
+<tr><td>Grant Leading Technology LLC</td><td data-v="0">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td data-v="6">6</td><td data-v="2027-01-02">2027-01-02</td><td>Budget, AI readiness and clarity: public data and the Apollo and Clay output do not show them; Authority: no title search run</td><td>No title or signal data pulled.</td><td>No end date this month; first of 6 ends 2027-01-02. An SDVOSB with about 76 staff (Apollo).</td><td class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_693KA925C00006_6920_-NONE-_-NONE-">USAspending award</a> · <a href="data/apollo_clay_results_2026-10-12.md">Apollo and Clay results</a></td></tr>
+<tr><td>T3I, Inc.</td><td data-v="0">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td data-v="4">4</td><td data-v="2027-01-27">2027-01-27</td><td>Budget, AI readiness and clarity: public data and the Apollo and Clay output do not show them; Authority: no Apollo lookup run</td><td>Nothing beyond the contract data.</td><td>No end date this month; first of 4 ends 2027-01-27; cannot be called yet: not looked up in Apollo.</td><td class="src"><a href="https://www.usaspending.gov/award/CONT_AWD_FA300226F0024_9700_47QREA22D0015_4732">USAspending award</a></td></tr>
+<tr><td>Kevin Park, Ridgeback Engineering <span class="tag warn">fictional</span></td><td data-v="0">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td data-v="0">-</td><td data-v="9999-99-99">-</td><td>Authority: an IT manager. AI readiness and clarity: nothing stated</td><td>Budget 0: the scan says &#x27;no budget this year&#x27;.</td><td>No reason to call this month: no budget this year.</td><td class="src"><a href="inbound/conference_scans.csv">conference scans</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Checking pass: claims removed</h2>
+<div class="strip">
+  <div class="eyebrow">Result</div>
+  <h2>53 claims checked, 9 removed, 44 kept</h2>
+  <p>Each claim was drafted, then compared with its source: the Apollo and Clay file, the inbound files, the USAspending award record, or J2i's context file. A claim stays only if its source says it.</p>
+</div>
+<div class="card">
+<table class="compare">
+<tr><th>Removed claim</th><th>Why it was removed</th></tr>
+<tr><td>Harborline&#x27;s recompete is in spring 2027</td><td>the message says &#x27;in the spring&#x27; with no year</td></tr>
+<tr><td>Bluefield is veteran-owned</td><td>nothing in the inbound files says Bluefield&#x27;s ownership</td></tr>
+<tr><td>Meridian is the healthcare clinic prospect from earlier this year</td><td>j2i_context.md names no such clinic</td></tr>
+<tr><td>The ending contracts will be recompeted</td><td>USAspending gives an End Date; it does not say the contract will be recompeted</td></tr>
+<tr><td>DecisionPoint is building capture and proposal capacity</td><td>none of its 10 open posts is in capture, proposal or business development</td></tr>
+<tr><td>DecisionPoint&#x27;s $25.2M win means it has budget for outside help</td><td>the press release reports a contract win, not a budget for outside help</td></tr>
+<tr><td>Stellar has no capture or proposal staff</td><td>Apollo says no such title was returned, which does not show there are none</td></tr>
+<tr><td>Appddiction Studio has no business development team</td><td>Apollo returned no matching titles, which does not show there is no team</td></tr>
+<tr><td>Stellar&#x27;s revenue is $19.3M</td><td>Apollo&#x27;s revenue field says &#x27;not given&#x27;; $19.3M comes from the description text</td></tr>
+</table>
+</div>
+
+<div class="foot">Fictional leads come from the demo files in inbound/. Real-company scores use Apollo and Clay output from 12 Oct 2026 (titles only; no names or contacts were recorded) and USAspending data for the 2,000 largest awards. USAspending award links were confirmed against the API; the web page addresses were not opened. Draft until a named person reviews it.</div>
+
+</div>
+<script>
+(function () {
+  var t = document.getElementById('t'), body = t.tBodies[0], heads = t.tHead.rows[0].cells, dir = [];
+  function val(r, i) { var c = r.cells[i]; return c.getAttribute('data-v') !== null ? c.getAttribute('data-v') : c.textContent.trim(); }
+  Array.prototype.forEach.call(heads, function (h, i) {
+    h.addEventListener('click', function () {
+      dir[i] = !dir[i];
+      var rows = Array.prototype.slice.call(body.rows);
+      rows.sort(function (a, b) {
+        var x = val(a, i), y = val(b, i), nx = parseFloat(x), ny = parseFloat(y);
+        var c = (!isNaN(nx) && !isNaN(ny) && /^-?[0-9.]+$/.test(x) && /^-?[0-9.]+$/.test(y)) ? nx - ny : x.localeCompare(y);
+        return dir[i] ? c : -c;
+      });
+      rows.forEach(function (r) { body.appendChild(r); });
+    });
+  });
+  document.getElementById('q').addEventListener('input', function () {
+    var q = this.value.toLowerCase();
+    Array.prototype.forEach.call(body.rows, function (r) { r.hidden = r.textContent.toLowerCase().indexOf(q) < 0; });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,55 +1,64 @@
-# CLAUDE.md
+# J2i house rules and ideal client
 
-Working rules for J2 Intelligence Group (J2i) in this folder. Source: `j2i_context.md`. Anything not stated there is marked ASSUMPTION. Do not invent facts about J2i.
+Source: `j2i_context.md`. Anything not stated there is marked **ASSUMPTION**: confirm it with J2i before relying on it.
 
-## Part 1: House rules (data rules)
+## Part 1: House rules
 
-1. Client data goes only into approved tools. If a tool is not approved, do not put client data in it.
-2. Every AI output is a draft until a named person reviews it. Say who reviewed it before it goes to a client.
+### Data rules (from J2i's method)
+1. Client data goes only into approved tools. ASSUMPTION: the approved-tools list is not written down yet. Ask which tools are approved before using client data anywhere new.
+2. Every AI output is a draft until a named person reviews it. Say who the reviewer is; do not mark anything final yourself.
 3. AI never invents a number. Where a figure is missing, write `ESTIMATE NEEDED`.
-4. If a client asks how J2i works, answer honestly, including where AI is used.
-5. Never invent: past performance details, certifications, company codes (UEI, CAGE, NAICS), headcount or revenue. Write `UNKNOWN` instead.
-6. Keep pricing, contracts and partner terms out of this folder and out of drafts. They are not in the public-safe context.
-7. ASSUMPTION: the list of "approved tools" is not in the context file. Ask the user which tools are approved if it matters.
+4. If a client asks how J2i works, answer honestly, including that AI is used.
+5. Do not invent facts J2i has not given us: past performance, certifications held, company codes (UEI, CAGE, NAICS), headcount, revenue. Write `UNKNOWN` or `ASSUMPTION` instead.
+6. Never put pricing, contracts or partner terms in the demo files; they are not in the public-safe context.
+7. Inbound data in `inbound/` is fictional demo data. Treat it that way in outputs, but handle it with the rules above as if it were real.
+
+### Output rules
+8. **Anything a person will read is saved as an HTML page.** It links `style/house.css` (`<link rel="stylesheet" href="style/house.css">`, with the path adjusted for subfolders) and uses only its building blocks: `.page`, `.eyebrow`, `h1`, `.lede`, `.strip`, `.grid`, `.card`, `.tag`, `.was`/`.now`, `table.compare`, `.src`, `.foot`. No `<style>` blocks, no inline `style=` attributes, no other stylesheets or fonts. If a block is missing, ask before adding one to `house.css`.
+9. **`index.html` is the home page.** It has one tile (`.card`) for every page and every Apollo list we create, each linking to its page, or for an Apollo list naming it and where it lives. Update `index.html` in the same step whenever a page or list is added. Never finish a task that adds one without updating it. ASSUMPTION: an Apollo list has no local file, so its tile carries the list name and a short note rather than a link.
 
 ## Part 2: Ideal client
 
 ### Who J2i sells to
-- Mid-sized and larger veteran-owned businesses, including VA-approved vendors and government contractors. Larger firms give steadier work. Small firms tend to "kick the tires".
-- Commercial clients too, to build a track record (for example a healthcare clinic prospect earlier this year).
-- ASSUMPTION: "mid-sized and larger" has no stated size band. No headcount or revenue cut-off is defined.
+- Mid-sized and larger veteran-owned businesses, including VA-approved vendors and government contractors. Larger firms give steadier work; small firms tend to "kick the tires".
+- Commercial clients too, to build a track record (for example a healthcare clinic).
+- ASSUMPTION: "mid-sized" means roughly 50 to 500 staff. J2i has not given a number.
+- ASSUMPTION: the sectors with the most proof are healthcare and logistics, matching the consultant bench (data, healthcare, AI engineering, logistics, UX).
 
-### The roles
-- **Buyer:** the person who owns the budget and the problem. ASSUMPTION: an owner, executive or department head. The context does not name a title.
-- **User:** the client's own team who will use AI on real work. This follows from J2i's training and enablement offer. ASSUMPTION: the exact roles vary by client.
-- **Approver:** the person with decision authority. This is the "decision authority" check below. ASSUMPTION: in an owner-run veteran business, this is often the owner or founder.
+### Buyer, user, approver
+Not stated in `j2i_context.md`. All three are ASSUMPTION:
+- **Buyer** (the one who wants the outcome and holds the budget): owner, founder or president of a veteran-owned firm; a COO or operations head in a larger one.
+- **User** (the one whose work changes): the operations, delivery, intake or back-office team that will use AI on real work. This ties to J2i's training offer.
+- **Approver** (signs the spend): the owner or CEO in a mid-sized firm; in a larger one, an executive sponsor, with finance or contracts sign-off. Often the same person as the buyer in a small firm.
 
-### What disqualifies a prospect
-The context file does not list disqualifiers. Everything below is ASSUMPTION, derived from the four checks and the stated direction:
-- No budget signal at all.
-- Contact cannot reach or influence the decision maker.
-- No clear problem the prospect can describe.
-- Small firm only exploring ("kicking the tires") with no budget and no named problem.
-- Not willing to have client data handled under J2i's data rules (Part 1).
+### Disqualifiers
+Stated or implied by the method:
+- Score 0 on the four checks.
+- No budget signal and no one with authority after the first conversation.
 
-A prospect who fails these checks is not dropped rudely. They get the lower-score path below.
+All of these are ASSUMPTION, borrowed from the sprint-kit scorecard's "stop and re-think" list and J2i's direction:
+- No budget owner after two conversations.
+- They want the outcome but will not give access to the people whose work changes.
+- Success depends on data or systems they cannot or will not let J2i near.
+- No real problem and no trigger: "we should do something with AI."
+- Wants only a build with no discovery. ASSUMPTION: J2i's one commitment is the 24-hour Map, and the offer is never solutioned on the call.
 
-### Lead qualification: four checks
-Score each check 0 or 1. Total is 0 to 4.
+## Qualification: four checks, scored 0 or 1
 
-| Check | 1 means |
+| Check | Score 1 when |
 |---|---|
-| Budget | There is a budget signal. |
-| Authority | The contact has, or is tied to, decision authority. |
-| AI readiness | The client is ready to use AI. |
-| Clarity | The client can state the problem clearly. |
+| Budget | There is a budget signal: a number, an approved line, or a named owner of the spend. |
+| Authority | The person we are talking to decides, or we have a direct line to who does. |
+| AI readiness | They already use AI or have data and a team willing to adopt it. |
+| Clarity | They can name the problem or outcome they want. |
 
+The "Score 1 when" wording is ASSUMPTION; `j2i_context.md` names the four signals but not their anchors. Score only what is true today.
+
+Total 0 to 4:
 - **3 or 4 = Qualified.** Next step: discovery sprint.
-- 1 or 2 = not Qualified. Next step: fit call or nurture.
-- 0 = not Qualified. Next step: helpful email and a 90 day follow-up.
+- **1 or 2** (not Qualified): fit call or nurture.
+- **0** (not Qualified): helpful email and a 90 day follow-up.
 
-ASSUMPTION: the exact test for a "1" on each check (what counts as a budget signal, as AI readiness) is not defined in the context. Mark the evidence for each score and do not guess.
+Always show the four scores and the total, not just the label. If a check cannot be judged from what we have, score it 0 and say it is unknown, not a guess.
 
-### Discovery rules (from J2i's method)
-- Never solution on the call.
-- One commitment only: the Opportunity Map within 24 hours of the call.
+Note: `sprint-kit/lead-qualification-scorecard.txt` uses a different 8-line, 0 to 3 scale (total 24). The four-check, 0 to 4 gate above is the one J2i uses for qualification. ASSUMPTION: the sprint-kit scorecard is background only and is not used for the Qualified decision.
