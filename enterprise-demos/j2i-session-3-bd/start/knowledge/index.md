@@ -2,6 +2,12 @@
 
 What J2i already has, in one place. The assistant answers from these files only and names the file it used.
 
+## Start here
+| File | What it is |
+|---|---|
+| CLAUDE.md | The assistant's rules: answer from these files only, name the file, say "not in the files" |
+| questions.md | Questions to try |
+
 ## method/ · how J2i works
 | File | What it is |
 |---|---|
