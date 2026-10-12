@@ -8,7 +8,8 @@ The presenter starts from an almost empty folder and builds a sales system step 
 | `PROMPTS.md` | The prompts, in order, with what to say and what to point out |
 | `start/` | What the client has before the session: context notes, a fictional inbox, a fictional discovery call |
 | `start/sprint-kit/` | Empty here. The client's templates are added privately (needed for Build 4 only) |
-| `finished/` | Results of a tested run of Build 1, as the fallback if a step stalls |
+| `start/style/house.css` | The house style every result page uses |
+| `finished/` | Pages from a tested run. Build 1 in full; Build 2 without the pages that rank real companies |
 
 ## Run it
 
@@ -24,16 +25,20 @@ Then paste the prompts from `PROMPTS.md` one at a time. Always work in a copy so
 - Apollo and Clay connected as MCP servers (`/mcp` shows both). Build 1 needs Apollo only for step 1.5
 - A browser beside the terminal
 
-## Build 1 · Competitor watch (tested 12 Oct 2026)
+## What a run produces
 
-1. House rules and ideal client
-2. A watchlist of what a buyer could choose instead
-3. What each competitor changed on its homepage in a year, from Internet Archive copies
-4. A battlecard per competitor, with a checking pass
-5. An Apollo list of competitors, and a skill that reruns monthly
+Everything a person reads is an HTML page. `index.html` is the home page, with a tile per page.
 
-Steps 1 to 4 took about 7 minutes on Sonnet; step 3 is the slow one. When step 5 asks for
-permission to write to `.claude/skills/`, approve it.
+- Build 1 · Competitor watch: `watchlist.html`, `watch-changes.html`, `battlecards.html`, `call-prep.html`, and an Apollo list of competitors
+- Build 2 · Who to call: `contracts-ending.html`, `inbox.html`, `targets.html` (sortable, with a filter), and an Apollo list, deals and tasks
+
+Tested on Sonnet on 12 Oct 2026. Build 1 took about 8 minutes and Build 2 about 12, plus the Apollo and Clay steps
+(5 Apollo credits, 6 Clay runs). When a step asks for permission to write to `.claude/skills/`, approve it.
+
+`finished/` in this repo holds the Build 1 pages and the fictional inbox page only. The Build 2 pages that rank
+real companies (`targets.html`, `contracts-ending.html`) and the Apollo and Clay results are left out on purpose,
+because this repo is public. Their tiles on `index.html` and a few links on `watch-changes.html` therefore point at
+files that are not here. A fresh run recreates them.
 
 ## Rules
 

@@ -1,4 +1,4 @@
-# Prompts · Session 3 live builds (v3.2)
+# Prompts · Session 3 live builds (v3.4)
 
 Run in a fresh copy of start/ with `claude`. Apollo and Clay connected (/mcp). Browser beside it.
 Nothing is ever sent to anyone. No personal names, emails or phone numbers on screen.
@@ -8,13 +8,13 @@ _Promise: competitor and market monitoring to sharpen pitch intelligence._
 
 **1.1 House rules and ideal client**
 
-> Read j2i_context.md. Create CLAUDE.md for this folder with two parts: J2i's house rules (the data rules) and J2i's ideal client: who they sell to, the buyer, the user, who approves, and what disqualifies a prospect. J2i qualifies leads on four checks (budget, authority, AI readiness, clarity), each 0 or 1, total 0 to 4, where 3 or 4 means Qualified; write that in. Mark anything you are unsure of as ASSUMPTION.
+> Read j2i_context.md. Create CLAUDE.md for this folder with two parts: J2i's house rules (the data rules) and J2i's ideal client: who they sell to, the buyer, the user, who approves, and what disqualifies a prospect. J2i qualifies leads on four checks (budget, authority, AI readiness, clarity), each 0 or 1, total 0 to 4, where 3 or 4 means Qualified; write that in. Add two more house rules. One: anything a person will read is saved as an HTML page that links style/house.css and uses its building blocks, with no other styling. Two: index.html is the home page; it has one tile for every page and every Apollo list we create, and it is updated whenever one is added. Mark anything you are unsure of as ASSUMPTION.
 
 - Say: The folder is empty. This file is the first thing J2i keeps: every later step reads it.
 
 **1.2 The watchlist**
 
-> Create watchlist.md: what a J2i buyer could choose instead of J2i. Three groups: AI proposal software (GovDash at govdash.com and Sweetspot at sweetspot.so), free help (APEX Accelerators), and other consultancies. For each software vendor list the pages to watch: homepage and pricing. Add two rules that are changing for these buyers this year, each with its official page, using at most 2 web searches. Mark anything you are unsure of as ASSUMPTION.
+> Create watchlist.html: what a J2i buyer could choose instead of J2i. Three groups: AI proposal software (GovDash at govdash.com and Sweetspot at sweetspot.so), free help (APEX Accelerators), and other consultancies. For each software vendor list the pages to watch: homepage and pricing. Add two rules that are changing for these buyers this year, each with its official page, using at most 2 web searches. Mark anything you are unsure of as ASSUMPTION.
 
 - Say: There is software built for this job. The method is the same with or without it: a short list, checked on a schedule.
 
@@ -27,17 +27,26 @@ _Promise: competitor and market monitoring to sharpen pitch intelligence._
 
 **1.4 Battlecards**
 
-> Write battlecards.html, one card per competitor on the watchlist: what they say now, what changed and when, where they are strong, where J2i fits, three questions to ask a buyer who is considering them, and likely objections with an honest answer. No badmouthing. Why J2i wins stays [TO CONFIRM] until there are real wins and losses. Add a short rules-to-watch strip from the watchlist. Then do a checking pass: remove any line without a link or mark it ASSUMPTION, and show what you removed. Put today's date on each card and open the page.
+> Write battlecards.html using style/house.css. Start with a "What changed" strip: one table for GovDash and Sweetspot with the old wording, the new wording, and a link to each archive copy. Then one card per software vendor, short enough to fit one screen: what they say now, where they are strong, where J2i fits, three questions to ask a buyer who is considering them, and likely objections with an honest answer. No badmouthing. Why J2i wins stays [TO CONFIRM] until there are real wins and losses. Leave out anything on the watchlist that has no saved pages. End with a short rules-to-watch line. Then do a checking pass: remove any claim without a link or mark it ASSUMPTION, and show what you removed. Put today's date on each card and open the page.
 
-- Look: The cards in the browser. This is the page to read before a call.
+- Look: The page in the browser: what changed at the top, then one card per competitor.
 - Point out: "Why J2i wins" is [TO CONFIRM]. Build 4's win-loss log is what fills it.
+- If it stalls: open finished/battlecards.html.
 
-**1.5 Into Apollo, then a skill** [writes to Apollo]
+**1.5 Use it before a call**
+
+> I have a call tomorrow with the COO of a veteran-owned contractor who is also looking at Sweetspot. Using battlecards.html only, give me a 30-second answer to "why not just buy the software?" and the three questions I should ask. Name the line on the card each point comes from. Save it as call-prep.html using style/house.css and open it.
+
+- Say: This is the point of the watch: a sharper answer in the next conversation.
+- Point out: Every point traces back to a line on the card, and every card line traces back to a dated page.
+
+**1.6 Into Apollo, then a skill** [writes to Apollo]
 
 > Add GovDash and Sweetspot to an Apollo list called "J2i · competitors", so nobody prospects them by mistake. Then save steps 1.2 to 1.4 as a skill called competitor-watch in .claude/skills: each run saves a new copy to watch/, compares it with the last copy in the folder, and updates a card only if something changed. Show me the skill file.
 
+- Look: Apollo, the list "J2i · competitors".
 - Say: Next month this is one command, and it only reports what changed.
-- If it stalls: open finished/battlecards.html.
+- Note: Claude asks permission to write to .claude/skills. Approve it.
 
 ## Tool tour · How Apollo and Clay work on their own
 _Before Claude Code connects them: each tool now has its own AI agent. Show it once, inside the tool._
@@ -81,7 +90,7 @@ _Promise: LinkedIn lead intelligence and automated prospect scoring._
 
 **2.4 Add the inbox**
 
-> Add the inbound leads in inbound/. For each item say keep, park (a real business, not now) or drop (not a business lead), with one reason. Mark them as fictional.
+> Add the inbound leads in inbound/ and save the decisions as inbox.html. For each item say keep, park (a real business, not now) or drop (not a business lead), with one reason. Mark them as fictional.
 
 - Point out: Vendors, job seekers and recruiters dropped, each with a reason.
 
@@ -89,7 +98,7 @@ _Promise: LinkedIn lead intelligence and automated prospect scoring._
 
 > For the top 10 real companies, find each one in Apollo with the free lookup only. If there are several candidates, pick the one most likely to hold the federal contract and say why; if you cannot tell from name and domain, say UNRESOLVED. Do not spend credits.
 
-- Point out: Government names rarely match a database. In testing, 4 of 10 needed a human check.
+- Point out: Government names rarely match a database. In testing (12 Oct), 4 of 10 matched cleanly, 1 had two candidates and 5 had no usable match.
 
 **2.6 Save the list into Apollo** [writes to Apollo]
 
@@ -108,19 +117,22 @@ _Promise: LinkedIn lead intelligence and automated prospect scoring._
 
 > For the best 3 fits, get open job postings and recent company news from Clay. Flag hiring for capture, proposal or business development roles. Before using any result, check it is the same company (same website) and dated in the last six months; list what you discarded and why.
 
-- Point out: In testing, Clay returned news about a different company with a similar name, and stories from 2018 to 2022. The job post (a Proposal Manager) was the real signal.
+- Point out: In testing (12 Oct), none of the three was hiring for capture or proposals, and Clay added sales advice of its own to the news. Claude discarded the advice and kept one dated press release.
 
 **2.9 Score, then check every claim**
 
-> Score every company, real and fictional, on J2i's four checks, each 0 or 1, total 0 to 4. Large resellers fail the ideal-client fit; say so. Write one line on why to call this month, with the source link. Then do a separate checking pass: compare every claim with its source and remove anything you cannot back up. Show how many claims you checked, how many you removed, and each removed claim. Save targets.html and open it.
+> Score the top 15 services firms from step 2.3 and the inbound leads you kept or parked, on J2i's four checks, each 0 or 1, total 0 to 4. Use what Apollo and Clay returned as evidence where it applies, and say plainly when a check cannot be scored from public data. Write one line on why to call this month, with the source link. Then do a separate checking pass: compare every claim with its source and remove anything you cannot back up. Show how many claims you checked, how many you removed, and each removed claim. Save targets.html using style/house.css, with the five best real companies to call first at the top, then the full table, then the removed claims. The table sorts when a column heading is clicked and has a filter box. Open it.
 
-- Look: The ranked list in the browser, then the list of removed claims.
+- Look: The five to call first, then the list of removed claims.
+- Point out: In testing (12 Oct), one real company reached 3 of 4, and two of its points were marked ASSUMPTION. Public data gets a company to "worth a call". A conversation confirms it.
+- Point out: The checker caught a location mismatch between Apollo and USAspending for one firm and removed its Apollo details.
 
 **2.10 Into the pipeline** [writes to Apollo]
 
-> Create a deal in Apollo for each real company scoring 3 or 4, with a task "Send personal note" for its owner. Do not add anyone to a sequence.
+> Create a deal in Apollo for the three best real companies, at the first pipeline stage, each named with "(J2i demo)" at the end. Put the reason to call and its source link in the description. Add a task "Send personal note" for each. Search for an existing deal first and skip any that already exists. Do not add anyone to a sequence, and skip the fictional leads.
 
-- Look: Apollo: Win deals, then Deals. The pipeline exists.
+- Look: Apollo, Deals. Three deals at the first stage, each with a task.
+- Say: The deal starts as a lead. It moves to Qualified after a real conversation, not before.
 
 **2.11 Save it as a skill**
 
