@@ -47,6 +47,7 @@ From J2i's Session 1 method. Score 1 only when the answer is yes and there is ev
 7. Nothing is ever sent to anyone, and nobody is added to a sequence. A person sends every message.
 8. State the credit cost and wait for a yes before any paid step in Apollo or Clay.
 9. Files in inbound/ and calls/ are fictional. Label them as fictional wherever they appear.
+10. Answer questions about how J2i works from knowledge/ only. Name the file each answer comes from. If the answer is not there, say "not in the files" and do not guess.
 
 ## How results are saved
 - Anything a person will read is an HTML page. Copy the contents of style/house.css into a style block in the page, so the page works on its own, and use only its building blocks.

@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Win-loss log · J2i (fictional data)</title>
+<style>
+/* J2i demo house style. Every HTML page in this folder links this file:
+   <link rel="stylesheet" href="style/house.css">
+   Building blocks: .page  .eyebrow  h1  .lede  .strip  .grid  .card  .tag  .was/.now  table.compare  .src  .foot */
+:root{--bg:#f6f7f3;--surface:#fff;--ink:#17231d;--muted:#5f6d63;--line:#dfe5db;--accent:#2a4d3c;--soft:#e8f0e1;--warn:#9a4a1c;--warn-bg:#fbeee4;--ok:#2f6b47;--ok-bg:#e3f1e6}
+*{box-sizing:border-box}
+html{font-size:17px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+.page{max-width:1120px;margin:0 auto;padding:40px 28px 72px}
+.eyebrow{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-size:2.3rem;line-height:1.08;letter-spacing:-.03em;font-weight:650;margin:.3rem 0 .6rem;text-wrap:balance}
+h2{font-size:1.35rem;letter-spacing:-.02em;font-weight:650;margin:0}
+h3{font-size:.74rem;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:1.1rem 0 .35rem}
+.lede{color:var(--muted);max-width:66ch;font-size:1.05rem;margin:0 0 1.6rem}
+a{color:var(--accent);text-underline-offset:2px}
+p,ul,ol{margin:.3rem 0}
+ul,ol{padding-left:1.15rem}
+li{margin:.2rem 0}
+.strip{background:var(--accent);color:#fff;border-radius:16px;padding:22px 26px;margin:0 0 22px}
+.strip h2,.strip h3{color:#fff}
+.strip a{color:#d4edaf}
+.strip .eyebrow{color:#cfe0d4}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:20px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.card-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:4px}
+.card-head .date{font-size:.8rem;color:var(--muted)}
+.tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:2px 9px;background:var(--soft);color:var(--accent);vertical-align:middle}
+.tag.warn{background:var(--warn-bg);color:var(--warn)}
+.tag.ok{background:var(--ok-bg);color:var(--ok)}
+table.compare{width:100%;border-collapse:collapse;font-size:.95rem}
+table.compare th{text-align:left;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;font-weight:600;opacity:.8;padding:6px 12px 6px 0}
+table.compare td{padding:10px 12px 10px 0;border-top:1px solid rgba(255,255,255,.22);vertical-align:top}
+.card table.compare td{border-top:1px solid var(--line)}
+.was{opacity:.78}
+.now{font-weight:600}
+.src{font-size:.8rem;color:var(--muted);white-space:nowrap}
+.strip .src{color:#cfe0d4}
+.quote{border-left:3px solid var(--accent);padding:.15rem 0 .15rem .8rem;margin:.5rem 0}
+.foot{margin-top:28px;font-size:.82rem;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+
+</style>
+</head>
+<body>
+<main class="page">
+
+<div class="eyebrow">J2 Intelligence Group · Win-loss log · started 12 October 2026 · <span class="tag warn">Fictional data</span> <span class="tag warn">Draft, not reviewed</span></div>
+<h1>Win-loss log: what the first call and the first inbound week tell us</h1>
+<p class="lede">Sources: calls/discovery-call.md and the files in inbound/ (week of 5 October 2026). All fictional. Titles only, no personal names. Reviewer: [TO CONFIRM: a named person].</p>
+
+<section class="strip">
+  <div class="eyebrow">Where the log stands</div>
+  <h2>0 won · 0 lost · 14 no decision</h2>
+  <p>Nobody has said yes or no to a J2i proposal yet. Every entry below is "no decision". For leads we would drop or park, "no decision" means the buyer never reached a choice and we made the call ourselves. The log shows that call in its own column, so these are not counted as losses. The patterns further down are hypotheses from a very small sample.</p>
+</section>
+
+<section class="card" style="margin-bottom:22px">
+  <div class="card-head"><h2>A. Objections from the discovery call</h2><span class="date">Harborline Systems Group (fictional) · call "last week" [VERIFY date]</span></div>
+  <table class="compare">
+    <tr><th>#</th><th>Objection, in their words</th><th>Said by</th><th>Outcome</th><th>Reason</th><th>Alternative the buyer considered</th></tr>
+    <tr>
+      <td>1</td>
+      <td>"…if we're buying another tool nobody opens."</td>
+      <td>COO [00:30]</td>
+      <td><span class="tag">No decision</span></td>
+      <td>Fear of shelfware. Nothing proposed yet, so the deal is open.</td>
+      <td>An unnamed AI proposal tool trialled last year [VERIFY name]. ChatGPT on personal accounts is in use today, and the Capture and Proposal Lead says it isn't allowed.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>"It wrote confident nonsense about our past performance, made up a contract number. After that nobody trusted it."</td>
+      <td>Capture and Proposal Lead [16:20]</td>
+      <td><span class="tag">No decision</span></td>
+      <td>A bad earlier experience with fabricated facts. Trust has to be rebuilt.</td>
+      <td>The same unnamed AI proposal tool [VERIFY name]. It was dropped after the trial.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>"I'm not putting something in front of a contracting officer that invents facts."</td>
+      <td>COO [16:20]</td>
+      <td><span class="tag">No decision</span></td>
+      <td>A hard requirement: nothing invented may reach the customer.</td>
+      <td>None named.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>"…it has to work on our own data. Some of it is controlled, so it can't go into just any tool."</td>
+      <td>COO [24:50]</td>
+      <td><span class="tag">No decision</span></td>
+      <td>Controlled contract data limits which tools can be used.</td>
+      <td>None named.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>"Me for anything under fifty thousand. Our CEO signs above that. Our IT security lead has to approve any tool touching contract data."</td>
+      <td>COO [31:15]</td>
+      <td><span class="tag">No decision</span></td>
+      <td>Approval gates: the CEO above the spend line, IT security for any tool. Currency not stated [VERIFY USD]. Whether the spend crosses the line: ESTIMATE NEEDED.</td>
+      <td>None named.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>"The draft solicitation is expected in December. Final in January." Later: "December is close."</td>
+      <td>Capture and Proposal Lead [31:15]; COO [38:00]</td>
+      <td><span class="tag">No decision</span></td>
+      <td>Time pressure rather than a refusal. Dates are expected, not confirmed [VERIFY].</td>
+      <td>None named.</td>
+    </tr>
+  </table>
+  <p class="src">Not raised on the call: price, or whether AI is needed at all. Price was not discussed, so its absence is not evidence either way.</p>
+</section>
+
+<section class="card" style="margin-bottom:22px">
+  <div class="card-head"><h2>B. Inbound leads we would drop or park</h2><span class="date">inbound/ · week of 5 October 2026</span></div>
+  <table class="compare">
+    <tr><th>#</th><th>Lead (title, company)</th><th>Source</th><th>Our call</th><th>Outcome</th><th>Reason</th><th>Alternative considered</th><th>Scores B·A·R·C = total</th></tr>
+    <tr>
+      <td>7</td>
+      <td>Account Executive, and a Sales contact, CloudVantage Data (fictional)</td>
+      <td>LinkedIn DM; conference scan</td>
+      <td><span class="tag warn">Drop</span></td>
+      <td><span class="tag">No decision</span></td>
+      <td>A vendor pitching to us, not a buyer. Vendors are not a fit. One company, two contacts.</td>
+      <td>n/a</td>
+      <td>0·0·0·0 = 0</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Recent graduate</td>
+      <td>LinkedIn DM</td>
+      <td><span class="tag warn">Drop</span></td>
+      <td><span class="tag">No decision</span></td>
+      <td>Wants an internship and attached a CV. Not a buyer.</td>
+      <td>n/a</td>
+      <td>0·0·0·0 = 0</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Recruiter, Apex Talent Partners (fictional)</td>
+      <td>LinkedIn DM</td>
+      <td><span class="tag warn">Drop</span></td>
+      <td><span class="tag">No decision</span></td>
+      <td>Recruiting for a "VP of AI" role. Recruiters are not a fit.</td>
+      <td>n/a</td>
+      <td>0·0·0·0 = 0</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Student, State University</td>
+      <td>Conference scan</td>
+      <td><span class="tag warn">Drop</span></td>
+      <td><span class="tag">No decision</span></td>
+      <td>"Collecting swag." Students are not a fit. No email domain captured.</td>
+      <td>n/a</td>
+      <td>0·0·0·0 = 0</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Founder, Kessler Tactical Logistics (fictional), 25 staff, DLA subcontracts</td>
+      <td>LinkedIn DM</td>
+      <td><span class="tag">Park: nurture</span></td>
+      <td><span class="tag">No decision</span></td>
+      <td>"Not sure AI is for us yet." Small firm, no named pain. Likely kicking the tires. Below the assumed 50 to 500 staff.</td>
+      <td>None named.</td>
+      <td>0 (unknown) · 1 (Founder title) · 0 (unknown) · 0 = 1</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Director of Operations, Meridian Clinic Group (fictional)</td>
+      <td>LinkedIn DM</td>
+      <td><span class="tag">Park: until November</span></td>
+      <td><span class="tag">No decision</span></td>
+      <td>They asked to pick it up in November. They named an "intake triage idea" rather than a pain, so clarity is borderline. Veteran ownership: unknown [VERIFY].</td>
+      <td>None named.</td>
+      <td>0 (unknown) · 0 (unknown) · 0 (unknown) · 1 (borderline) = 1</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>IT Manager, Ridgeback Engineering (fictional)</td>
+      <td>Conference scan</td>
+      <td><span class="tag">Park: helpful email, 90-day follow-up</span></td>
+      <td><span class="tag">No decision</span></td>
+      <td>Notes say "no budget this year". An IT manager is probably not the signer [VERIFY].</td>
+      <td>None named.</td>
+      <td>0 (no budget) · 0 (unknown) · 0 (unknown) · 0 (unknown) = 0</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Operations lead at a veteran-owned logistics firm, 60 staff (fictional)</td>
+      <td>Marketplace post</td>
+      <td><span class="tag">Park: fit call</span></td>
+      <td><span class="tag">No decision</span></td>
+      <td>Wants weekly ops reports summarised and customer updates drafted, "a few thousand dollars", in two weeks. The pain is clear, but the budget and timeline may not match a discovery sprint. J2i pricing: [TO CONFIRM].</td>
+      <td>None named. It is a marketplace post, so other providers may also be bidding [VERIFY].</td>
+      <td>0 (unknown) · 0 (unknown) · 0 (unknown) · 1 (specific ask) = 1</td>
+    </tr>
+  </table>
+  <p class="src">Not logged because we would pursue them: the COO of Harborline, the Capture Manager at Bluefield Federal Partners (recompete in Q1, wants a demo; scanned twice, so one is a duplicate row) and the CEO of Northpoint Mission Services (90 staff, interested in training). Scores: B = budget, A = authority, R = AI readiness, C = clarity, each 0 or 1.</p>
+</section>
+
+<section class="card" style="margin-bottom:22px">
+  <div class="card-head"><h2>What we see</h2><span class="tag warn">Small sample: one call, eleven inbound leads</span></div>
+
+  <h3>1. Half the dropped leads were never buyers</h3>
+  <p>Four of the eight (a vendor, a graduate, a recruiter and a student) fall outside the ideal client, and all four came through open channels (LinkedIn DMs and the conference scan). Two of the seven conference rows were non-buyers.</p>
+
+  <h3>2. The rest are small, early or not yet</h3>
+  <p>Kessler (25 staff, unsure about AI), Ridgeback (no budget), Meridian (asked for November) and the marketplace post (a few thousand dollars, two weeks) each lack size, budget or timing. This matches the CLAUDE.md note that small firms "kick the tires".</p>
+
+  <h3>3. The strong leads share one trigger: a dated recompete</h3>
+  <p>Harborline (March recompete, December solicitation) and Bluefield (recompete in Q1) are federal contractors with a deadline. Both came with proposal pain. The three leads we would pursue are all in the federal market.</p>
+
+  <h3>4. Every objection is about trust and control, none is about price</h3>
+  <p>All six objections concern invented facts, controlled data, approval gates, an unused tool or timing. Price never came up, but it was also never discussed. The earlier tool's fabricated contract number is the single most important fact on the call.</p>
+
+  <h3>5. No competitor was named</h3>
+  <p>The buyer named none. The only alternatives were an unnamed AI proposal tool they had dropped and personal ChatGPT use. GovDash, Sweetspot and APEX Accelerators, from CLAUDE.md, were not mentioned by anyone. Nothing here supports a claim about any of them.</p>
+
+  <h3>6. The first read of a lead was off</h3>
+  <p>The LinkedIn DM said "about 140 people" and a single task order. On the call the COO corrected this to 138 people and two task orders. The playback step caught it.</p>
+</section>
+
+<section class="card" style="margin-bottom:22px">
+  <div class="card-head"><h2>What we should change</h2><span class="tag">Suggestions for J2i to confirm</span></div>
+
+  <h3>Targeting</h3>
+  <ul>
+    <li><strong>Aim at one trigger.</strong> Put veteran-owned federal contractors with a recompete or solicitation date in the next six months at the front. Where those dates come from: [TO CONFIRM source].</li>
+    <li><strong>Ask for company type before booking.</strong> A single check on the conference form, and a quick look at each DM, would remove the four non-buyers before anyone spends time on them.</li>
+    <li><strong>Nurture the small and early ones, don't run discovery.</strong> Kessler, Ridgeback and Meridian each get a helpful email drafted for a person to send, with a calendar reminder: November for Meridian, 90 days for Ridgeback.</li>
+    <li><strong>Decide the marketplace post deliberately.</strong> Reply only if J2i has a small fixed-scope offer. Whether it does: [TO CONFIRM].</li>
+  </ul>
+
+  <h3>Messages</h3>
+  <ul>
+    <li><strong>Lead with "nothing invented".</strong> Say that every line points back to the source page or document, and that a person checks it. This answers objections 2 and 3 directly. Don't claim it until the build partner confirms it can do this: [TO CONFIRM].</li>
+    <li><strong>Raise data handling in the first conversation.</strong> Say plainly that we work only in tools the client's IT security approves, and invite the IT security lead to the scoping call (objections 4 and 5).</li>
+    <li><strong>Describe the work as finding and checking, not writing.</strong> "AI writes your proposal" is the claim the earlier tool made and broke.</li>
+    <li><strong>Tie the offer to their calendar.</strong> Quote the solicitation date back to them (objection 6) and show what is possible before it lands.</li>
+    <li><strong>Use shadow AI as an opening.</strong> Personal ChatGPT use is a risk the client already knows about. A short training-and-policy offer would answer it. Whether J2i wants to offer that: [TO CONFIRM].</li>
+  </ul>
+
+  <h3>The log itself</h3>
+  <ul>
+    <li><strong>Ask "what else have you looked at?" on every call</strong>, and get the name of the earlier tool from Harborline. Add a competitor only once a buyer names it.</li>
+    <li><strong>Record real won and lost outcomes</strong> as deals close. Until then, treat these patterns as hypotheses.</li>
+  </ul>
+</section>
+
+<p class="foot">FICTIONAL: every company and person in these files is invented. AI draft: not reviewed. Nothing has been sent and nobody has been added to a sequence. Scores follow the four checks in CLAUDE.md; "unknown" means it could not be judged from the file, so it scored 0. Related: opportunity-map.html; the deal folder is knowledge/deals/harborline/.</p>
+
+</main>
+</body>
+</html>

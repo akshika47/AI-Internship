@@ -1,4 +1,4 @@
-# Prompts · Session 3 (v5.1)
+# Prompts · Session 3 (v5.2)
 
 The folder is already set up: CLAUDE.md (who J2i is, the ideal client, the four checks, the house rules), the house style, the knowledge base, a fictional inbox and a fictional discovery call.
 
@@ -106,28 +106,36 @@ _Turns the list into conversations. Supports the lead intelligence promise._
 - Say: A person reads, edits and sends every one of these.
 - If it stalls: open finished/outreach.html.
 
-## Build 4 · The J2i assistant, win-loss and the offer
-_Promises: a knowledge assistant on J2i's work, win-loss mining, and a packaged offer._
+## Build 4 · The assistant and the win-loss log
+_Promises: a private knowledge assistant on J2i's work and methods, and mining win-loss patterns and client feedback._
 
-**4.1 The knowledge base**
+**4.1 Ask the assistant**
 
-> Show me what is in knowledge/ as a tree, with one line on what each folder holds. Then add this rule to CLAUDE.md: answer J2i questions from knowledge/ only, name the file each answer comes from, and say "not in the files" when the answer is not there.
+> Show me what is in knowledge/ as a tree, with one line on what each folder holds. Then answer three questions from knowledge/ only, naming the file each answer comes from. One: what goes in an Opportunity Map? Two: how do we qualify a lead, and if the files describe it in more than one way, say so plainly. Three: what did we charge our last client?
 
-- Look: Open the knowledge/ folder and one file from method/ and one from templates/. This is what J2i already has.
+- Look: Open the knowledge/ folder first, and one file from method/ and one from templates/. This is what J2i already has.
 - Say: Nothing is trained. The assistant reads these files each time, which is why it can name its source.
-
-**4.2 Ask it three questions**
-
-> Three questions. One: what goes in an Opportunity Map? Two: how do we qualify a lead, and if knowledge/ describes it in more than one way, say so plainly. Three: what did we charge our last client?
-
-- Point out: Each answer names its file. The kit has two qualification tools (the four checks and a longer scorecard), and the assistant says so.
+- Point out: The second answer finds two different qualification tools in the files and says so.
 - Point out: The third answer is "not in the files". It does not guess a price.
 
-**4.3 From the call to the Opportunity Map**
+**4.2 From a call to the Opportunity Map**
 
-> Read calls/discovery-call.md. Pull the pain points in the client's own words, every number and every objection, then draft the one-page Opportunity Map from the template in knowledge/. Mark gaps ESTIMATE NEEDED or [VERIFY]. Save to deals/harborline/.
+> Read calls/discovery-call.md, which is fictional. Pull the pain points in the client's own words, every number and every objection, then draft the one-page Opportunity Map from the template in knowledge/templates/. Mark gaps ESTIMATE NEEDED or [VERIFY]. Save it as opportunity-map.html and open it.
 
-- Say: The call is fictional, written in J2i's own discovery method. In Session 1 this took four prompts.
+- Say: The call is fictional, written in J2i's own discovery method. This is the page J2i promises within 24 hours.
+- Look: opportunity-map.html.
+- If it stalls: open finished/opportunity-map.html.
+
+**4.3 Start the win-loss log**
+
+> Start the win-loss log as win-loss.html. Log every objection from the discovery call and every lead in inbound/ that we would drop or park, each with an outcome (won, lost or no decision), the reason, and the competitor or alternative the buyer considered if one was named. Then say what patterns you see and what we should change in targeting or messages because of them. Save the call notes and the Opportunity Map into knowledge/deals/harborline/ so the assistant learns the deal. Open the page.
+
+- Say: With one week of leads this is a starter log. After ten deals the same prompt finds real patterns.
+- Look: win-loss.html, then knowledge/deals/ now has its first deal.
+- If it stalls: open finished/win-loss.html.
+
+## After the session · further steps
+_Not needed for the session. They carry a deal on from the Opportunity Map to a signed engagement and the next one._
 
 **4.4 Proposal, process map, stakeholder map**
 
