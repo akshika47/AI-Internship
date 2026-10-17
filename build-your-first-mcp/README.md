@@ -6,18 +6,18 @@ Code for the TAI Labs live workshop (19 October 2026). You build an MCP server t
 
 | Folder | What it is |
 |---|---|
-| `shop-data/` | The participant kit: pre-work README, `PROMPTS.md`, the data, the setup test server, and finished code for every stage |
-| `debug-demo/` | Three deliberately broken servers for the debugging block |
-| `hosted/` | A read-only copy that runs over HTTP, deployed for anyone whose laptop setup fails (no `save_note`) |
+| `demo/shop-data/` | **Demo:** the participant kit you build live on your laptop. Pre-work README, `PROMPTS.md`, the data, the setup test server, and finished code for every stage. Runs locally over stdio. |
+| `demo/debug-demo/` | Three deliberately broken servers for the debugging block |
+| `prod/` | **Production:** a read-only copy that runs over HTTP and is hosted on Render, for anyone whose laptop setup fails or who uses a web app like claude.ai. No `save_note`. |
 
 **Stack:** Python 3.11+, [uv](https://docs.astral.sh/uv/), [FastMCP](https://gofastmcp.com) 4.1.0, and SQLite.
 
-**Start here:** `shop-data/README.md`.
+**Start here:** `demo/shop-data/README.md`.
 
 ## Run it
 
 ```bash
-cd shop-data
+cd demo/shop-data
 uv sync
 uv run finished/stage3_server.py   # waits silently for an app to connect: that's correct
 ```
