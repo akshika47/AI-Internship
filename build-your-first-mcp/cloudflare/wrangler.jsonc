@@ -8,7 +8,7 @@
   // Create the database with: npx wrangler d1 create shop-data
   // then replace database_id below with the id it prints. Local dev works with the placeholder.
   "d1_databases": [
-    { "binding": "DB", "database_name": "shop-data", "database_id": "00000000-0000-0000-0000-000000000000" }
+    { "binding": "DB", "database_name": "shop-data", "database_id": "fd7e4702-4a5d-4a92-bbda-47e6e4c6f1d6" }
   ],
   // Workers Rate Limiting: 60 requests per minute per client IP. period must be 10 or 60 seconds.
   // namespace_id is any number you choose, unique within your account.
