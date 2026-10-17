@@ -1,4 +1,4 @@
-"""Northwind Home - BROKEN 2 (no run call): one tool, sales by month."""
+"""Northwind Home (a fictional store) - stage 1: one tool, sales by month."""
 
 import logging
 import sqlite3
@@ -13,9 +13,9 @@ logging.basicConfig(stream=sys.stderr, level=logging.INFO)
 log = logging.getLogger("shop")
 
 # Absolute path: Claude Desktop does not start the server in our folder.
-# This file lives next to shop.db, so copy it to server.py in shop-data/.
+# This file is in workshop/stages/, two folders below the repo, and the data is in data/.
 # The 'file:...?mode=ro' form opens the database READ-ONLY.
-DB_PATH = Path(__file__).resolve().parent / "shop.db"
+DB_PATH = Path(__file__).resolve().parents[2] / "data" / "shop.db"
 
 mcp = FastMCP("shop-data")
 
@@ -64,4 +64,5 @@ def sales_by_month(category: str | None = None, months: int = 6) -> list[dict]:
     return [dict(r) for r in reversed(rows)]
 
 
-# BUG: nothing ever starts the server, so the file just ends.
+if __name__ == "__main__":
+    mcp.run()

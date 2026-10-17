@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# Local settings (copy .env.example to .env)
+.env
+
+# Cloudflare Worker: dependencies, local state and generated files
+cloudflare/node_modules/
+cloudflare/.wrangler/
+cloudflare/seed.sql
+cloudflare/worker-configuration.d.ts
+cloudflare/.dev.vars
+
+# SQLite side files
+*.db-journal
+*.db-wal
+*.db-shm

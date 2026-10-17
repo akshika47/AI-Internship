@@ -1,0 +1,24 @@
+{
+  "name": "shop-data-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "seed": "python3 scripts/export_d1.py",
+    "db:local": "wrangler d1 execute shop-data --local --file seed.sql",
+    "db:remote": "wrangler d1 execute shop-data --remote --file seed.sql",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "cf-typegen": "wrangler types",
+    "type-check": "wrangler types && tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.0.0",
+    "agents": "^0.20.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3",
+    "wrangler": "^4.105.0"
+  }
+}

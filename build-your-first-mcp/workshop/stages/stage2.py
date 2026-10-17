@@ -1,4 +1,4 @@
-"""Hosted, read-only copy of the workshop server: no save_note. Northwind Home (a fictional store) - stage 3: a ready-made prompt, the weekly business review."""
+"""Northwind Home (a fictional store) - stage 2: more tools, plus one that writes."""
 
 import logging
 import re
@@ -14,9 +14,9 @@ logging.basicConfig(stream=sys.stderr, level=logging.INFO)
 log = logging.getLogger("shop")
 
 # Absolute path: Claude Desktop does not start the server in our folder.
-# This file lives next to shop.db, so copy it to server.py in shop-data/.
+# This file is in workshop/stages/, two folders below the repo, and the data is in data/.
 # The 'file:...?mode=ro' form opens the database READ-ONLY.
-DB_PATH = Path(__file__).resolve().parent / "shop.db"
+DB_PATH = Path(__file__).resolve().parents[2] / "data" / "shop.db"
 
 mcp = FastMCP("shop-data")
 
@@ -25,6 +25,11 @@ def read_db() -> sqlite3.Connection:
     db = sqlite3.connect(f"file:{DB_PATH}?mode=ro", uri=True)
     db.row_factory = sqlite3.Row
     return db
+
+
+def writable_db() -> sqlite3.Connection:
+    """The only read-write connection. Only save_note uses it."""
+    return sqlite3.connect(DB_PATH)
 
 
 def check_category(db: sqlite3.Connection, category: str) -> str:
@@ -186,23 +191,27 @@ def return_rates(quarter: str) -> list[dict]:
     return sorted(result, key=lambda r: -(r["change_pts"] if r["change_pts"] is not None else 0))
 
 
-@mcp.prompt
-def weekly_business_review(quarter: str) -> str:
-    """Weekly business review: find the return spike, trace it to a product, save a 5-line note.
+@mcp.tool(annotations={"readOnlyHint": False, "destructiveHint": False})
+def save_note(title: str, text: str) -> str:
+    """WRITES to the database: saves a note in the notes table. Only call it when the user asks to save something.
 
-    quarter: year, dash, Q and 1 to 4. Example: "2026-Q3".
+    title: a short heading. Example: "Lighting returns, Q3 2026".
+    text: the note itself. Example: "Lighting returns rose to 29% because one pendant lamp arrives damaged."
     """
-    return f"""Run the weekly business review for Northwind Home (a fictional homeware store) for {quarter}.
-
-1. Call sales_by_month for the last 6 months to see whether revenue is growing overall.
-2. Call return_rates for {quarter} and identify the categories whose return rate rose the most.
-3. For each category with a big rise, call top_products for that category in {quarter} and in the quarter before it. Find the product behind the rise and explain it in plain English: its return rate, its share of the category's returns, and the most common reason.
-4. Draft a note of exactly 5 lines: the headline number, the category, the product, the reason, and one suggested next step.
-5. Show me the draft. (This hosted copy is read-only, so it cannot save notes.)
-Use only numbers returned by the tools. If a tool returns an error, tell me what it said instead of guessing."""
+    title, text = title.strip(), text.strip()
+    if not title or not text:
+        raise ToolError("Both a title and some text are needed to save a note.")
+    if len(title) > 120 or len(text) > 2000:
+        raise ToolError("That note is too long: keep the title under 120 characters and the text under 2000.")
+    db = writable_db()
+    try:
+        with db:
+            cur = db.execute("INSERT INTO notes (title, text) VALUES (?, ?)", (title, text))
+    finally:
+        db.close()
+    log.info("save_note id=%s title=%s", cur.lastrowid, title)
+    return f"Saved note #{cur.lastrowid}: {title}"
 
 
 if __name__ == "__main__":
-    # Hosted copy: read-only tools over Streamable HTTP. Render sets PORT.
-    import os
-    mcp.run(transport="http", host="0.0.0.0", port=int(os.environ.get("PORT", "8000")))
+    mcp.run()

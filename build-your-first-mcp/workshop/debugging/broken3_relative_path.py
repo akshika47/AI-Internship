@@ -12,9 +12,10 @@ from fastmcp.exceptions import ToolError
 logging.basicConfig(stream=sys.stderr, level=logging.INFO)
 log = logging.getLogger("shop")
 
-# Absolute path: Claude Desktop does not start the server in our folder.
-# This file lives next to shop.db, so copy it to server.py in shop-data/.
 # The 'file:...?mode=ro' form opens the database READ-ONLY.
+# BUG: a relative path is looked up in whatever folder the app started the server in,
+# not next to this file. The tool list still loads; the first tool call fails with
+# "unable to open database file". Fix: Path(__file__).resolve().parents[2] / "data" / "shop.db".
 DB_PATH = Path("shop.db")  # BUG: relative path
 
 mcp = FastMCP("shop-data")

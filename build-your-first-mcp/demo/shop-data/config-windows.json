@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "shop-data": {
-      "command": "C:\\Users\\YOU\\.local\\bin\\uv.exe",
-      "args": ["--directory", "C:\\Users\\YOU\\mcp-workshop\\shop-data", "run", "server.py"]
-    }
-  }
-}

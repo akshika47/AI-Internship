@@ -1,6 +1,6 @@
 """Make the Northwind Home sample data: shop.db (SQLite) and orders.csv.
 
-Northwind Home is a FICTIONAL online homeware store. Run it with:  uv run make_data.py
+Northwind Home is a FICTIONAL online homeware store. Run it from the project folder with:  uv run data/make_data.py
 It uses a fixed random seed, so everyone gets exactly the same data.
 
 The story hidden in the data: in Q3 2026 Lighting revenue holds up, but its return
