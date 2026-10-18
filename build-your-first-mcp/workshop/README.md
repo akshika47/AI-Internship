@@ -4,6 +4,8 @@ By the end of the workshop, you can ask Claude plain-English questions about the
 
 Everything below happens inside the `build-your-first-mcp` folder (the "project folder"). The data lives in `data/`; you work in `workshop/`.
 
+> **No time for setup, or stuck?** Use the online copy instead: add `https://shop-data-mcp.empty-dream-9630.workers.dev/mcp` as a custom connector in claude.ai or ChatGPT. Steps are at the top of the [project README](../README.md#try-it-now-nothing-to-install-2-minutes).
+
 ## Before the workshop (20 minutes)
 
 1. **Claude Desktop:** install it from https://claude.ai/download, sign in and update it.

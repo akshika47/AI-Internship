@@ -4,6 +4,13 @@ This repository contains code snippets, notebooks, and exercises for various AI 
 
 ## 📚 Available Courses
 
+### Build Your First MCP in 3 Hours
+Build an MCP server that lets Claude or ChatGPT answer questions about a shop's sales and returns. Try the hosted copy with nothing to install, or build your own with the prompt pack.
+
+- **Location:** `build-your-first-mcp/`
+- **Status:** Workshop code, prompt pack, and a hosted copy
+- **Get Started:** See [build-your-first-mcp/README.md](build-your-first-mcp/README.md)
+
 ### AI Engineering Bootcamp v2
 Build typed LLM APIs with FastAPI, OpenAI structured output, guardrails, and cost visibility.
 
