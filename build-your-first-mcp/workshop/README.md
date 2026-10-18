@@ -28,7 +28,7 @@ If a step fails, send us a screenshot of the terminal and tell us your operating
 | File | What it is for |
 |---|---|
 | `hello_server.py` | The setup test: one tool. |
-| `PROMPTS.md` | The prompts you paste into your AI assistant, one per stage. |
+| `../prompts/` | The prompts you paste into your AI assistant, one file per stage (start with `1-build-first-tool.md`). |
 | `config-mac.json`, `config-windows.json` | Templates for connecting your server to Claude Desktop. |
 | `stages/stage1.py` to `stage3.py` | Working code for each stage, each one a single file. If you fall behind, point your Claude Desktop config at the current stage's file (for example `workshop/stages/stage2.py` instead of `workshop/server.py`) and restart Claude Desktop. |
 | `debugging/` | Three deliberately broken servers for the debugging block. |

@@ -18,6 +18,7 @@ Code for the TAI Labs live workshop (19 October 2026). It is an MCP server, `sho
 | `data/` | The only copy of the data: `shop.db` (SQLite), `orders.csv` (the same data for a spreadsheet) and `make_data.py` (rebuilds both). |
 | `tests/` | Pytest suite using FastMCP's in-memory client: every tool, the story numbers, the error messages, the prompt, and the read-only mode. |
 | `cloudflare/` | The three read-only tools as a Cloudflare Worker on D1, with rate limiting. See [`cloudflare/README.md`](cloudflare/README.md). |
+| `prompts/` | **Start here for the workshop.** The prompt pack: one file per stage to paste into your AI assistant, plus questions to ask your server. |
 | `workshop/` | Teaching material: pre-work, prompts, single-file servers for each stage, and three broken servers for the debugging block. |
 | `pyproject.toml`, `uv.lock` | One environment for everything, pinned to FastMCP 4.1.0. |
 | `.env.example` | The settings, with their defaults. |
