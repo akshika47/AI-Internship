@@ -1,6 +1,6 @@
 # Prompt pack
 
-Copy one file at a time into your AI assistant. Each one builds on the last.
+Open one file at a time and copy the text inside its box into your AI assistant (on GitHub, the box has a copy button at its top right). Each one builds on the last. You work in the `build-your-first-mcp` folder, and your server is `workshop/server.py`.
 
 | File | When |
 |---|---|

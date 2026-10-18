@@ -197,8 +197,10 @@ async def test_return_rates_no_orders(server):
 async def test_save_note_writes_a_row(server, db_copy):
     msg = await call(server, "save_note", {"title": "Test note", "text": "Written by pytest"})
     assert msg.startswith("Saved note #")
+    note_id = int(msg.split("#", 1)[1].split(":", 1)[0])  # notes saved earlier may already be in shop.db
     with sqlite3.connect(db_copy) as db:
-        assert db.execute("SELECT title, text FROM notes").fetchall() == [("Test note", "Written by pytest")]
+        row = db.execute("SELECT title, text FROM notes WHERE note_id = ?", (note_id,)).fetchone()
+    assert row == ("Test note", "Written by pytest")
 
 
 async def test_save_note_refuses_empty_title(server):

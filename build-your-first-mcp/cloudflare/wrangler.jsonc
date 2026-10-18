@@ -6,7 +6,7 @@
   "compatibility_flags": ["nodejs_compat"],
   "observability": { "enabled": true },
   // Create the database with: npx wrangler d1 create shop-data
-  // then replace database_id below with the id it prints. Local dev works with the placeholder.
+  // then replace database_id below with the id it prints. Local dev works with any id.
   "d1_databases": [
     { "binding": "DB", "database_name": "shop-data", "database_id": "fd7e4702-4a5d-4a92-bbda-47e6e4c6f1d6" }
   ],

@@ -5,8 +5,8 @@ DROP + CREATE + INSERT statements, parents before children so foreign keys resol
 Re-running the seed replaces the tables, so it is safe to apply twice.
 The notes table is left out: the Worker is read-only.
 
-Usage (from cloudflare/):  python3 scripts/export_d1.py
-                           python3 scripts/export_d1.py --db ../data/shop.db --out seed.sql
+Usage (from cloudflare/):  uv run scripts/export_d1.py
+                           uv run scripts/export_d1.py --db ../data/shop.db --out seed.sql
 """
 
 from __future__ import annotations
