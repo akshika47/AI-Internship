@@ -24,20 +24,20 @@ https://shop-data-mcp.empty-dream-9630.workers.dev/mcp
 
 **Then ask:**
 - "Which category had a problem with returns in Q3 2026?"
-- "Which product is causing it?"
+- "Which Lighting product is causing it?"
 - "How have Lighting sales changed over the last 6 months?"
 
 When the app asks permission to use a tool, click **Allow**. Every number in the answer comes from the server, not from the AI's memory.
 
-Opening the address in a web browser shows "Method not allowed". That's normal: it only talks to AI apps.
+Opening the address in a web browser shows a short error mentioning "Method not allowed". That's normal: it only talks to AI apps.
 
 ## Build your own (the workshop)
 
-1. **Set up your laptop:** follow [`workshop/README.md`](workshop/README.md). It takes about 20 minutes.
+1. **Set up your laptop:** follow [`workshop/README.md`](workshop/README.md). It takes about 20 minutes. You work in this folder, `build-your-first-mcp`, and your server is `workshop/server.py`.
 2. **Build it with your AI assistant:** open [`prompts/`](prompts/) and paste the files in order, starting with [`prompts/1-build-first-tool.md`](prompts/1-build-first-tool.md).
 3. **Test it:** questions and the answers you should see are in [`prompts/ask-your-server.md`](prompts/ask-your-server.md).
 
-Stuck on a stage? Each one has a finished version in [`workshop/stages/`](workshop/stages/).
+Stuck on a stage? Each one has a finished version in [`workshop/stages/`](workshop/stages/). Point Claude Desktop at it, as [`workshop/README.md`](workshop/README.md#if-you-fall-behind) explains; don't copy it over your `server.py`.
 
 ---
 
@@ -58,7 +58,7 @@ The rest of this page covers the code, settings, tests and deployment.
 | `tests/` | Pytest suite using FastMCP's in-memory client: every tool, the story numbers, the error messages, the prompt, and the read-only mode. |
 | `cloudflare/` | The three read-only tools as a Cloudflare Worker on D1, with rate limiting. See [`cloudflare/README.md`](cloudflare/README.md). |
 | `prompts/` | **Start here for the workshop.** The prompt pack: one file per stage to paste into your AI assistant, plus questions to ask your server. |
-| `workshop/` | Teaching material: pre-work, prompts, single-file servers for each stage, and three broken servers for the debugging block. |
+| `workshop/` | Teaching material: pre-work, Claude Desktop config templates, single-file servers for each stage, and three broken servers for the debugging block. |
 | `pyproject.toml`, `uv.lock` | One environment for everything, pinned to FastMCP 4.1.0. |
 | `.env.example` | The settings, with their defaults. |
 
@@ -78,7 +78,7 @@ Prompt: `weekly_business_review(quarter)` walks Claude through the review and en
 ```bash
 cd build-your-first-mcp
 uv sync
-uv run shop-data          # stdio: waits silently for an app to connect, which is correct
+uv run shop-data          # stdio: prints a few log lines, then waits for an app to connect, which is correct
 ```
 
 Settings come from environment variables (see `.env.example`):
@@ -100,14 +100,16 @@ MCP_TRANSPORT=http PORT=8000 ALLOW_WRITES=false uv run shop-data
 # MCP endpoint: http://127.0.0.1:8000/mcp
 ```
 
-Claude Desktop (`claude_desktop_config.json`), using the full path to uv and to this folder:
+In Windows PowerShell, set the variables first: `$env:MCP_TRANSPORT="http"; $env:PORT="8000"; $env:ALLOW_WRITES="false"; uv run shop-data`.
+
+Claude Desktop (`claude_desktop_config.json`) for the packaged server, using the full path to uv (`which uv`, or `where.exe uv` on Windows) and to this folder (`pwd`). **Workshop participants:** use [`workshop/config-mac.json`](workshop/config-mac.json) or [`workshop/config-windows.json`](workshop/config-windows.json) instead; they run `workshop/server.py`.
 
 ```json
 {
   "mcpServers": {
     "shop-data": {
-      "command": "/Users/YOU/.local/bin/uv",
-      "args": ["--directory", "/Users/YOU/mcp-workshop/build-your-first-mcp", "run", "shop-data"],
+      "command": "PASTE THE PATH THAT which uv PRINTED",
+      "args": ["--directory", "PASTE THE PATH THAT pwd PRINTED", "run", "shop-data"],
       "env": { "ALLOW_WRITES": "true" }
     }
   }
@@ -120,29 +122,27 @@ Claude Desktop (`claude_desktop_config.json`), using the full path to uv and to 
 uv run pytest -q
 ```
 
-The tests copy `data/shop.db` to a temporary folder, so `save_note` never changes the real file.
+The tests copy `data/shop.db` to a temporary folder, so `save_note` never changes the real file. To reset `data/shop.db` after saving notes by hand, run `uv run data/make_data.py`; it rebuilds the same data.
 
 Check it end to end with the MCP Inspector (needs Node 22.19 or newer). The Inspector passes only a few environment variables to the server, so set them with `-e`:
 
 ```bash
 npx -y @modelcontextprotocol/inspector@2.11.0 --cli uv --directory . run shop-data --method tools/list
 npx -y @modelcontextprotocol/inspector@2.11.0 --cli -e ALLOW_WRITES=false uv --directory . run shop-data --method tools/list
-npx -y @modelcontextprotocol/inspector@2.11.0 --cli uv --directory . run shop-data \
-  --method tools/call --tool-name return_rates --tool-arg quarter=2026-Q3
+npx -y @modelcontextprotocol/inspector@2.11.0 --cli uv --directory . run shop-data --method tools/call --tool-name return_rates --tool-arg quarter=2026-Q3
 ```
 
 Over HTTP, with the server from the HTTP example running:
 
 ```bash
-npx -y @modelcontextprotocol/inspector@2.11.0 --cli http://127.0.0.1:8000/mcp --transport http \
-  --method tools/call --tool-name return_rates --tool-arg quarter=2026-Q3
+npx -y @modelcontextprotocol/inspector@2.11.0 --cli http://127.0.0.1:8000/mcp --transport http --method tools/call --tool-name return_rates --tool-arg quarter=2026-Q3
 ```
 
 Lighting should come first, at 28.9%.
 
 ## Deploy
 
-- **Python, anywhere that runs a container or a process** (Render, Fly.io, a VM): run `uv sync --no-dev` then `uv run shop-data` with `MCP_TRANSPORT=http`, `HOST=0.0.0.0`, the platform's `PORT`, and `ALLOW_WRITES=false`. The server has no authentication, so keep it read-only when it is public.
+- **Python, anywhere that runs a container or a process** (Fly.io, a VM, any container host): run `uv sync --no-dev` then `uv run shop-data` with `MCP_TRANSPORT=http`, `HOST=0.0.0.0`, the platform's `PORT`, and `ALLOW_WRITES=false`. The server has no authentication, so keep it read-only when it is public.
 - **Cloudflare Workers:** the read-only tools on D1. Exact commands are in [`cloudflare/README.md`](cloudflare/README.md).
 
 ## Safety

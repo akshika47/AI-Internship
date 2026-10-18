@@ -8,7 +8,7 @@ Once your server is connected (in Claude Desktop, claude.ai or ChatGPT), try the
 | "Which category had a problem with returns in Q3 2026?" | `return_rates` | Lighting: 5.2% in Q2, 28.9% in Q3. Most returns say "damaged". |
 | "Which Lighting product is causing it?" | `top_products` | The Aurora Glass Pendant: 77 of the 92 Lighting returns. |
 | "Save a five-line note about this for the team." | `save_note` | Claude asks your permission first, because this tool writes. Laptop version only. |
-| Open **+**, pick `weekly_business_review`, type `2026-Q3` | the prompt | The whole chain, a five-line draft, then a request to save it. |
+| Open **+**, pick `weekly_business_review`, type `2026-Q3` | the prompt | The whole chain, a five-line draft, then a request to save it. The hosted copy shows the draft but can't save it. |
 
 ## Your own questions
 
@@ -18,6 +18,6 @@ Once your server is connected (in Claude Desktop, claude.ai or ChatGPT), try the
 
 ## The hosted copy
 
-No laptop setup? Add `https://shop-data-mcp.empty-dream-9630.workers.dev/mcp` as a custom connector in claude.ai or ChatGPT. It has the three read-only tools, so the first three questions work; saving notes and the weekly review prompt need the laptop version.
+No laptop setup? Add `https://shop-data-mcp.empty-dream-9630.workers.dev/mcp` as a custom connector in claude.ai or ChatGPT. It has the three read-only tools and the `weekly_business_review` prompt, so the first three questions and the weekly review work. Its version of the prompt drafts the five-line note but can't save it: saving notes needs the laptop version.
 
 Northwind Home is a fictional store. Its data is generated with a fixed seed, with one problem hidden in it on purpose.

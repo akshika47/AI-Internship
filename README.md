@@ -10,6 +10,7 @@ Build an MCP server that lets Claude or ChatGPT answer questions about a shop's 
 - **Location:** `build-your-first-mcp/`
 - **Status:** Workshop code, prompt pack, and a hosted copy
 - **Get Started:** See [build-your-first-mcp/README.md](build-your-first-mcp/README.md)
+- **Setup:** this workshop uses [uv](https://docs.astral.sh/uv/) (which installs Python 3.11+ for you) instead of the general prerequisites below; you don't need pip or Jupyter.
 
 ### AI Engineering Bootcamp v2
 Build typed LLM APIs with FastAPI, OpenAI structured output, guardrails, and cost visibility.
@@ -42,6 +43,7 @@ Earlier bootcamp modules — RAG, ADK/LangGraph agents, eval monitoring, and mor
 ```
 AI-Internship/
 ├── README.md                         # This file
+├── build-your-first-mcp/             # Build Your First MCP workshop
 ├── ai-engineering-bootcamp-v2/       # AI Engineering Bootcamp v2
 │   ├── week-1/                       # Original FastAPI /ask demo
 │   ├── week-1v2/                     # Simplified class-ready /ask demo
@@ -77,7 +79,7 @@ AI-Internship/
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/akshika47/AI-Internship.git
    cd AI-Internship
    ```
 

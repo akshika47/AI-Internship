@@ -1,8 +1,8 @@
 {
   "mcpServers": {
     "shop-data": {
-      "command": "/Users/YOU/.local/bin/uv",
-      "args": ["--directory", "/Users/YOU/mcp-workshop/build-your-first-mcp", "run", "workshop/server.py"]
+      "command": "PASTE THE PATH THAT which uv PRINTED",
+      "args": ["--directory", "PASTE THE PATH THAT pwd PRINTED", "run", "workshop/server.py"]
     }
   }
 }
