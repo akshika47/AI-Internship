@@ -74,7 +74,8 @@ Saved job-fit-junior-ai-automation-analyst-fernhill-health-cv.md · 5 turns · $
 ```
 
 Open that file. `examples/cv.md` and `examples/job.md` are made up, so have a look at
-both to see what the agent was given.
+both to see what the agent was given. `examples/cv.pdf` is the same CV as a PDF, if you
+want to see it read one: `uv run job_fit.py examples/job.md examples/cv.pdf`
 
 ## 4. Run it on your own CV
 
