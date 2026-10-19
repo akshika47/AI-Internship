@@ -1,0 +1,7 @@
+# Your CV, job ads and reports stay on your machine
+/*cv*.*
+/*CV*.*
+/job.md
+/job-fit-*.md
+.env
+.venv/

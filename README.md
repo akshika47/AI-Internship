@@ -11,6 +11,13 @@ Build an MCP server that lets Claude or ChatGPT answer questions about a shop's 
 - **Status:** Workshop code, prompt pack, and a hosted copy
 - **Get Started:** See [build-your-first-mcp/README.md](build-your-first-mcp/README.md)
 
+### Claude Agent SDK Challenge
+A 5-day community challenge: build your first AI agent with the Claude Agent SDK.
+
+- **Location:** `claude-agent-sdk-challenge/`
+- **Status:** Day 1 available (a job-fit agent)
+- **Get Started:** See [claude-agent-sdk-challenge/README.md](claude-agent-sdk-challenge/README.md)
+
 ### AI Engineering Bootcamp v2
 Build typed LLM APIs with FastAPI, OpenAI structured output, guardrails, and cost visibility.
 
@@ -42,6 +49,8 @@ Earlier bootcamp modules — RAG, ADK/LangGraph agents, eval monitoring, and mor
 ```
 AI-Internship/
 ├── README.md                         # This file
+├── claude-agent-sdk-challenge/       # 5-day Claude Agent SDK challenge
+│   └── day-1/                        # Job-fit agent (Python with uv, plus TypeScript)
 ├── ai-engineering-bootcamp-v2/       # AI Engineering Bootcamp v2
 │   ├── week-1/                       # Original FastAPI /ask demo
 │   ├── week-1v2/                     # Simplified class-ready /ask demo
