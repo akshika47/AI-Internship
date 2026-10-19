@@ -1,6 +1,9 @@
 # Day 1: a job-fit agent
 
-Give it your CV and a job ad. It reads both and writes you a short report:
+This is Dr Aki's build for the week, shared as a working example. Your own agent can do
+anything you like; use this one to learn the pattern, copy from it, or skip it.
+
+Give it a CV and a job ad, and it writes a short report:
 
 - **Apply now, apply after closing a gap, or skip**, with a fit score out of 10
 - where you're strong, quoting your own CV as proof
