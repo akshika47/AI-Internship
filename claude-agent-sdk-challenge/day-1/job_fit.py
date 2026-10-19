@@ -17,7 +17,7 @@ import sys
 from pathlib import Path
 
 from dotenv import load_dotenv
-from claude_agent_sdk import ClaudeAgentOptions, HookMatcher, ResultMessage, query
+from claude_agent_sdk import ClaudeAgentOptions, ClaudeSDKError, HookMatcher, ResultMessage, query
 
 load_dotenv()  # picks up ANTHROPIC_API_KEY from a .env file next to this script
 
@@ -144,9 +144,12 @@ async def main():
     prompt = f"My CV is the file {Path(cv).resolve()}. The job ad is at {job}. How well do I fit?"
 
     result = None
-    async for message in query(prompt=prompt, options=OPTIONS):
-        if isinstance(message, ResultMessage):
-            result = message  # the agent's final answer; everything before it is the work
+    try:
+        async for message in query(prompt=prompt, options=OPTIONS):
+            if isinstance(message, ResultMessage):
+                result = message  # the agent's final answer; everything before it is the work
+    except ClaudeSDKError as error:
+        sys.exit(f"\nThe agent couldn't run: {error}\nThe Stuck? table in README.md has the usual fixes.")
 
     cost = f"{result.num_turns} turns · ${result.total_cost_usd or 0:.3f}" if result else ""
     if result is None or result.structured_output is None:

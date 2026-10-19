@@ -165,10 +165,15 @@ async function main() {
   const prompt = `My CV is the file ${resolve(cv)}. The job ad is at ${job}. How well do I fit?`;
 
   let result: SDKResultMessage | undefined;
-  for await (const message of query({ prompt, options: OPTIONS })) {
-    if (message.type === "result") {
-      result = message; // the agent's final answer; everything before it is the work
+  try {
+    for await (const message of query({ prompt, options: OPTIONS })) {
+      if (message.type === "result") {
+        result = message; // the agent's final answer; everything before it is the work
+      }
     }
+  } catch (error) {
+    const reason = error instanceof Error ? error.message : String(error);
+    stop(`\nThe agent couldn't run: ${reason}\nThe Stuck? table in ../README.md has the usual fixes.`);
   }
 
   const cost = result ? `${result.num_turns} turns · $${(result.total_cost_usd ?? 0).toFixed(3)}` : "";
