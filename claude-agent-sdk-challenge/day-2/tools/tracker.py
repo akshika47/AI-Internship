@@ -1,14 +1,10 @@
-"""Day 2: two tools we write ourselves, for an applications tracker in applications.csv.
-
-A tool is a normal Python function plus a name, a description and the inputs it takes.
-The agent reads the description to decide when to call it; your code does the work.
-"""
+"""Two tools for an applications tracker, kept in applications.csv next to job_fit.py."""
 import csv
 from datetime import date
 from pathlib import Path
 from typing import Any
 
-from claude_agent_sdk import ToolAnnotations, create_sdk_mcp_server, tool
+from claude_agent_sdk import ToolAnnotations, tool
 
 TRACKER = Path("applications.csv")
 COLUMNS = ["date", "role", "fit_score", "decision", "job_ad"]
@@ -62,8 +58,3 @@ async def save_to_tracker(args: dict[str, Any]) -> dict[str, Any]:
         writer.writerows(rows)
     return {"content": [{"type": "text", "text": f"Saved. The tracker now has {len(rows)} jobs."}]}
 
-
-# The agent gets the tools through a small server that runs inside this script.
-# Their full names are mcp__tracker__check_tracker and mcp__tracker__save_to_tracker.
-tracker_server = create_sdk_mcp_server(name="tracker", tools=[check_tracker, save_to_tracker])
-TRACKER_TOOLS = ["mcp__tracker__check_tracker", "mcp__tracker__save_to_tracker"]

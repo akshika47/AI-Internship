@@ -18,7 +18,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 from claude_agent_sdk import (
     ClaudeAgentOptions,
     ClaudeSDKError,
@@ -28,7 +28,7 @@ from claude_agent_sdk import (
     tool,
 )
 
-load_dotenv()
+load_dotenv(find_dotenv())  # finds the .env in the claude-agent-sdk-challenge folder
 
 SYSTEM_PROMPT = "You are a helpful assistant. When you find something worth keeping, save it with save_note."
 

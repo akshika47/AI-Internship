@@ -1,0 +1,39 @@
+"""The exact shape of the agent's answer. The SDK makes it fill in every field."""
+
+REPORT_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "ad_was_read": {"type": "boolean", "description": "False if the job ad couldn't be read in full"},
+        "role": {"type": "string", "description": "Job title and company only, e.g. \"Data Analyst, Monzo\". No notes."},
+        "fit_score": {"type": "integer", "minimum": 0, "maximum": 10},
+        "decision": {"type": "string", "enum": ["Apply now", "Apply after closing a gap", "Skip this one"]},
+        "verdict": {"type": "string", "description": "Two sentences explaining the decision"},
+        "strengths": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "requirement": {"type": "string"},
+                    "evidence_from_cv": {"type": "string"},
+                },
+                "required": ["requirement", "evidence_from_cv"],
+            },
+        },
+        "gaps": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "requirement": {"type": "string"},
+                    "how_to_close_it": {"type": "string"},
+                },
+                "required": ["requirement", "how_to_close_it"],
+            },
+        },
+        "cv_bullets": {"type": "array", "items": {"type": "string"}, "maxItems": 3},
+        "opening_line": {"type": "string", "description": "First line of a cover note"},
+        "tracker_note": {"type": "string", "description": "One sentence comparing this job with the tracker"},
+    },
+    "required": ["ad_was_read", "role", "fit_score", "decision", "verdict", "strengths", "gaps", "cv_bullets",
+                 "opening_line", "tracker_note"],
+}

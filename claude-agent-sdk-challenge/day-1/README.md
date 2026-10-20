@@ -39,11 +39,14 @@ Close the terminal and open a new one so it picks up `uv`.
 
 ```bash
 git clone https://github.com/akshika47/AI-Internship.git
-cd AI-Internship/claude-agent-sdk-challenge/day-1
+cd AI-Internship/claude-agent-sdk-challenge
 cp .env.example .env
+cd day-1
 ```
 
-Open `.env` in any text editor and replace `sk-ant-...` with your API key.
+Open `.env` (in the `claude-agent-sdk-challenge` folder) in any text editor and replace
+`sk-ant-...` with your API key. It's one key for every day of the challenge, so you only
+do this once.
 Get one at [platform.claude.com](https://platform.claude.com/) under **API keys**, and add a
 little credit under **Billing**. A Claude Pro or Max plan doesn't cover the API.
 (If you already use Claude Code, the SDK may fall back to that login when no key is set.
@@ -106,7 +109,6 @@ The same agent is in [`typescript/`](typescript/). From this folder:
 ```bash
 cd typescript
 npm install
-cp ../.env .env
 npx tsx job_fit.ts ../examples/job.md ../examples/cv.md
 ```
 
@@ -133,7 +135,7 @@ on three jobs and compare the scores.
 | You see | Try this |
 |---|---|
 | `uv: command not found` | Close the terminal, open a new one, try again. |
-| `✗ No .env file yet` or `✗ .env still has the placeholder` | Make sure `.env` is in the day-1 folder and has your real key after `ANTHROPIC_API_KEY=`, with no spaces or quotes. |
+| `✗ No .env file yet` or `✗ .env still has the placeholder` | Make sure `.env` is in the `claude-agent-sdk-challenge` folder and has your real key after `ANTHROPIC_API_KEY=`, with no spaces or quotes. |
 | `Invalid API key` | Copy the key again from platform.claude.com. Keys are only shown once, so you may need a new one. |
 | A credit or billing error | Add credit under Billing at platform.claude.com. |
 | `Can't find your CV at 'cv.md'` | Your CV isn't in this folder, or has a different name. Use the name it really has: `uv run job_fit.py job.md my-cv.pdf` |

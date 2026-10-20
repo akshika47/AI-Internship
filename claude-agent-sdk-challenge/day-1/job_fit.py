@@ -16,10 +16,10 @@ import re
 import sys
 from pathlib import Path
 
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 from claude_agent_sdk import ClaudeAgentOptions, ClaudeSDKError, HookMatcher, ResultMessage, query
 
-load_dotenv()  # picks up ANTHROPIC_API_KEY from a .env file next to this script
+load_dotenv(find_dotenv())  # finds the .env in the claude-agent-sdk-challenge folder
 
 SYSTEM_PROMPT = """You are a blunt, kind career coach who has hired for the role
 being applied to. You compare a candidate's CV with a job ad.
