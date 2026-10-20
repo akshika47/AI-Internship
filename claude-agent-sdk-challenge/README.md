@@ -25,7 +25,7 @@ already write TypeScript, every day has a `typescript/` folder with the same age
 | Day | Goal | Folder |
 |---|---|---|
 | 1 | Set up and run your first agent | [`day-1/`](day-1/) |
-| 2 | Give it tools | soon |
+| 2 | Give it tools: write your own and hand them to the agent | [`day-2/`](day-2/) |
 | 3 | Make it useful for a real task of yours | soon |
 | 4 | Break it, fix it, add guardrails | soon |
 | 5 | Ship it and show us | soon |
