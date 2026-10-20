@@ -49,7 +49,7 @@ const REPORT_SCHEMA = {
   type: "object",
   properties: {
     ad_was_read: { type: "boolean", description: "False if the job ad couldn't be read in full" },
-    role: { type: "string", description: "Job title and company" },
+    role: { type: "string", description: "Job title and company only, e.g. \"Data Analyst, Monzo\". No notes." },
     fit_score: { type: "integer", minimum: 0, maximum: 10 },
     decision: { type: "string", enum: ["Apply now", "Apply after closing a gap", "Skip this one"] },
     verdict: { type: "string", description: "Two sentences explaining the decision" },
