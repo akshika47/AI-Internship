@@ -1,8 +1,11 @@
 // Starter: the smallest agent with one tool you write yourself. Copy it for your own idea.
-import "dotenv/config";
 import { appendFileSync } from "node:fs";
 import { createSdkMcpServer, query, tool, type Options } from "@anthropic-ai/claude-agent-sdk";
 import { z } from "zod";
+
+import { loadEnv } from "./agent/env.js"; // ".js" here still finds env.ts
+
+loadEnv(import.meta.url); // finds the .env in the claude-agent-sdk-challenge folder
 
 const USAGE = `Starter: the smallest agent with one tool you write yourself. Copy it for your own idea.
 

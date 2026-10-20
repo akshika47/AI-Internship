@@ -1,54 +1,71 @@
 """Checks your setup before you spend anything. Run: uv run check_setup.py
 
-It doesn't test your API key against the API; your first real run does that.
+Each check returns a Result. It doesn't test your API key against the API; your first
+real run does that.
 """
+import importlib.metadata
 import os
 import sys
+from dataclasses import dataclass
 from pathlib import Path
 
-problems = 0
+PLACEHOLDER = "sk-ant-..."
+ICONS = {True: "✓", False: "✗", None: "·"}  # None is a note, not a problem
 
 
-def check(passed: bool, good: str, fix: str) -> None:
-    global problems
-    print(f"  ✓ {good}" if passed else f"  ✗ {fix}")
-    problems += not passed
+@dataclass(frozen=True)
+class Result:
+    ok: bool | None
+    message: str
 
 
-print("Checking your Day 1 setup...\n")
+def python_version() -> Result:
+    version = sys.version.split()[0]
+    ok = sys.version_info >= (3, 10)
+    return Result(ok, f"Python {version}" if ok else f"Python {version} is too old. Run this with: uv run check_setup.py")
 
-check(sys.version_info >= (3, 10),
-      f"Python {sys.version.split()[0]}",
-      f"Python {sys.version.split()[0]} is too old. Run this with: uv run check_setup.py")
 
-try:
-    import claude_agent_sdk
-    check(True, f"Claude Agent SDK {claude_agent_sdk.__version__} installed", "")
-except ImportError:
-    check(False, "", "Claude Agent SDK not found. Run this with: uv run check_setup.py")
+def sdk_installed() -> Result:
+    try:
+        return Result(True, f"Claude Agent SDK {importlib.metadata.version('claude-agent-sdk')} installed")
+    except importlib.metadata.PackageNotFoundError:
+        return Result(False, "Claude Agent SDK not found. Run this with: uv run check_setup.py")
 
-try:
-    from dotenv import load_dotenv
-    load_dotenv()
-except ImportError:
-    pass
 
-key = os.environ.get("ANTHROPIC_API_KEY", "")
-if not Path(".env").is_file() and not key:
-    check(False, "", "No .env file yet. Run: cp .env.example .env  then put your key in it.")
-elif key in ("", "sk-ant-..."):
-    check(False, "", ".env still has the placeholder. Open .env and replace sk-ant-... with your real key.")
-else:
-    check(key.startswith("sk-ant-"), "API key found",
-          "That doesn't look like an Anthropic key (they start with sk-ant-). Copy it again.")
+def api_key() -> Result:
+    from dotenv import find_dotenv, load_dotenv
 
-cvs = sorted(p.name for p in Path(".").glob("cv.*"))
-print(f"  ✓ Your CV: {', '.join(cvs)}" if cvs
-      else "  · No CV yet. Save yours here as cv.md or cv.pdf when you're ready.")
+    env_file = find_dotenv(usecwd=True)  # looks here, then in each folder above
+    load_dotenv(env_file)
+    key = os.environ.get("ANTHROPIC_API_KEY", "")
+    old_env = next((f"{p.parent.name}/.env" for p in Path("..").glob("day-*/.env")), "")  # Day 1 used day-1/.env
+    problems = [
+        (not env_file and not key and bool(old_env),
+         f"Your key is in {old_env}, but it now lives one folder up. "
+         f"From claude-agent-sdk-challenge, run: mv {old_env} .env"),
+        (not env_file and not key, "No .env file yet. In the claude-agent-sdk-challenge folder, run: "
+                                   "cp .env.example .env  then put your key in it."),
+        (key in ("", PLACEHOLDER), f".env still has the placeholder. Open {env_file} and replace {PLACEHOLDER} with your key."),
+        (not key.startswith("sk-ant-"), "That doesn't look like an Anthropic key (they start with sk-ant-). Copy it again."),
+    ]
+    first_problem = next((message for failed, message in problems if failed), None)
+    return Result(first_problem is None, first_problem or f"API key found in {env_file}")
 
-if problems:
-    sys.exit(f"\nFix the ✗ line{'s' if problems > 1 else ''} above, then run this again.")
-if Path("job_fit.py").is_file():
+
+def cv_found() -> Result:
+    cvs = sorted(p.name for p in Path(".").glob("cv.*"))
+    return Result(True, f"Your CV: {', '.join(cvs)}") if cvs else \
+        Result(None, "No CV yet. Save yours here as cv.md or cv.pdf when you're ready.")
+
+
+CHECKS = [python_version, sdk_installed, api_key, cv_found]
+
+if __name__ == "__main__":
+    print(f"Checking your setup in {Path.cwd().name}...\n")
+    results = [check() for check in CHECKS]
+    for result in results:
+        print(f"  {ICONS[result.ok]} {result.message}")
+    problems = sum(result.ok is False for result in results)
+    if problems:
+        sys.exit(f"\nFix the ✗ line{'s' * (problems > 1)} above, then run this again.")
     print("\nAll set. Try: uv run job_fit.py examples/job.md examples/cv.md")
-else:
-    print("\nAll set. You're ready for tonight's code drop.")

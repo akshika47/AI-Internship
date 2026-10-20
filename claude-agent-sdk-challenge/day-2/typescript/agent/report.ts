@@ -1,0 +1,32 @@
+// Turns the agent's answer into the Markdown report you open.
+import { basename, extname } from "node:path";
+
+import type { Report } from "./schema.js";
+
+type Section = {
+  heading: string;
+  lines: (report: Report) => string[]; // an empty list leaves the section out
+};
+
+const SECTIONS: Section[] = [
+  { heading: "Where you're strong", lines: (r) => r.strengths.map((s) => `- **${s.requirement}**: ${s.evidence_from_cv}`) },
+  { heading: "Gaps", lines: (r) => r.gaps.map((g) => `- **${g.requirement}**: ${g.how_to_close_it}`) },
+  { heading: "CV bullets for this role", lines: (r) => r.cv_bullets.map((b) => `- ${b}`) },
+  { heading: "Cover note opener", lines: (r) => (r.opening_line ? [`> ${r.opening_line}`] : []) },
+  { heading: "Compared with your tracker", lines: (r) => [r.tracker_note] },
+];
+
+export function toMarkdown(report: Report): string {
+  const header = `# ${report.role}\n\n**${report.decision} · fit ${report.fit_score}/10.** ${report.verdict}\n`;
+  const body = SECTIONS.map((s) => ({ heading: s.heading, lines: s.lines(report) }))
+    .filter((s) => s.lines.length > 0)
+    .map((s) => `## ${s.heading}\n\n${s.lines.join("\n")}\n`);
+  return [header, ...body].join("\n");
+}
+
+// job-fit-fernhill-health-junior-ai-automation-analyst-cv.md: one report per job and CV.
+export function reportPath(role: string, cv: string): string {
+  const cvName = basename(cv, extname(cv)); // "../examples/cv.md" becomes "cv"
+  const slug = `${role} ${cvName}`.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
+  return `job-fit-${slug || "report"}.md`;
+}

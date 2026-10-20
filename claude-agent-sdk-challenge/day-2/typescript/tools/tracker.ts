@@ -1,10 +1,7 @@
-// Day 2: two tools we write ourselves, for an applications tracker in applications.csv.
-//
-// A tool is a normal TypeScript function plus a name, a description and the inputs it takes.
-// The agent reads the description to decide when to call it; your code does the work.
+// Two tools for an applications tracker, kept in applications.csv next to job_fit.ts.
 import { existsSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { basename } from "node:path";
-import { createSdkMcpServer, tool } from "@anthropic-ai/claude-agent-sdk";
+import { tool } from "@anthropic-ai/claude-agent-sdk";
 import { z } from "zod";
 
 const TRACKER = "applications.csv";
@@ -64,13 +61,13 @@ function csvField(value: string): string {
   return /[",\r\n]/.test(value) ? `"${value.replaceAll('"', '""')}"` : value;
 }
 
-function readRows(): Row[] {
+export function readRows(): Row[] {
   if (!existsSync(TRACKER) || !statSync(TRACKER).isFile()) return [];
   const [header = [], ...lines] = parseCsv(readFileSync(TRACKER, "utf8"));
   return lines.map((cells) => Object.fromEntries(header.map((name, i) => [name, cells[i] ?? ""])));
 }
 
-const checkTracker = tool(
+export const checkTracker = tool(
   "check_tracker",
   "List every job already assessed: date, role, fit score, decision and where the ad came from. " +
     "Call this before writing the report so you can compare this job with earlier ones.",
@@ -86,7 +83,7 @@ const checkTracker = tool(
   { annotations: { readOnlyHint: true } }, // it only looks, so it's safe to run any time
 );
 
-const saveToTracker = tool(
+export const saveToTracker = tool(
   "save_to_tracker",
   "Save this job's result to the applications tracker. Call it once, after you've decided, " +
     "and only if you read the job ad in full. Saving the same job ad again updates its row.",
@@ -115,7 +112,3 @@ const saveToTracker = tool(
   },
 );
 
-// The agent gets the tools through a small server that runs inside this script.
-// Their full names are mcp__tracker__check_tracker and mcp__tracker__save_to_tracker.
-export const trackerServer = createSdkMcpServer({ name: "tracker", tools: [checkTracker, saveToTracker] });
-export const TRACKER_TOOLS = ["mcp__tracker__check_tracker", "mcp__tracker__save_to_tracker"];

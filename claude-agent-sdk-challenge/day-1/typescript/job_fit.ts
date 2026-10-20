@@ -1,8 +1,10 @@
 // Job-fit agent: compares your CV with a job ad and tells you how to apply.
-import "dotenv/config"; // picks up ANTHROPIC_API_KEY from a .env file in this folder
 import { existsSync, statSync, writeFileSync } from "node:fs";
 import { basename, resolve } from "node:path";
 import { query, type HookCallback, type Options, type SDKResultMessage } from "@anthropic-ai/claude-agent-sdk";
+import { loadEnv } from "./env.js";
+
+loadEnv(import.meta.url); // finds the .env in the claude-agent-sdk-challenge folder
 
 const USAGE = `Job-fit agent: compares your CV with a job ad and tells you how to apply.
 

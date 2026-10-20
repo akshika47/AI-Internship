@@ -34,6 +34,8 @@ already write TypeScript, every day has a `typescript/` folder with the same age
 
 - An API key from [platform.claude.com](https://platform.claude.com/) with a little credit.
   The SDK is billed through the API, so a Claude Pro or Max plan doesn't cover it.
+- Put it in **one** `.env` file in this folder: `cp .env.example .env`, then paste your key.
+  Every day's code finds it, so you set it once.
 - Every agent here has a spending cap per run (`max_budget_usd`), so a mistake can't run up a bill.
 
 ## Share your progress
