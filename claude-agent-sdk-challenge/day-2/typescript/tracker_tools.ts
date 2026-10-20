@@ -1,0 +1,121 @@
+// Day 2: two tools we write ourselves, for an applications tracker in applications.csv.
+//
+// A tool is a normal TypeScript function plus a name, a description and the inputs it takes.
+// The agent reads the description to decide when to call it; your code does the work.
+import { existsSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { basename } from "node:path";
+import { createSdkMcpServer, tool } from "@anthropic-ai/claude-agent-sdk";
+import { z } from "zod";
+
+const TRACKER = "applications.csv";
+const COLUMNS = ["date", "role", "fit_score", "decision", "job_ad"];
+
+type Row = Record<string, string>;
+
+// Today's date as 2026-10-20, in your own time zone.
+function today(): string {
+  const now = new Date();
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+}
+
+// A tiny CSV reader. A field in "double quotes" can hold commas and line breaks,
+// and "" inside it stands for one " (so roles like "Analyst, Fernhill Health" survive).
+function parseCsv(text: string): string[][] {
+  const rows: string[][] = [];
+  let row: string[] = [];
+  let field = "";
+  let inQuotes = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (inQuotes) {
+      if (c === '"' && text[i + 1] === '"') {
+        field += '"';
+        i++;
+      } else if (c === '"') {
+        inQuotes = false;
+      } else {
+        field += c;
+      }
+    } else if (c === '"') {
+      inQuotes = true;
+    } else if (c === ",") {
+      row.push(field);
+      field = "";
+    } else if (c === "\n" || c === "\r") {
+      if (c === "\r" && text[i + 1] === "\n") i++;
+      row.push(field);
+      rows.push(row);
+      row = [];
+      field = "";
+    } else {
+      field += c;
+    }
+  }
+  if (field !== "" || row.length > 0) {
+    row.push(field);
+    rows.push(row);
+  }
+  return rows.filter((r) => r.length > 1 || r[0] !== ""); // skip blank lines
+}
+
+// The writing side: quote a field only if it needs it, as Python's csv module does.
+function csvField(value: string): string {
+  return /[",\r\n]/.test(value) ? `"${value.replaceAll('"', '""')}"` : value;
+}
+
+function readRows(): Row[] {
+  if (!existsSync(TRACKER) || !statSync(TRACKER).isFile()) return [];
+  const [header = [], ...lines] = parseCsv(readFileSync(TRACKER, "utf8"));
+  return lines.map((cells) => Object.fromEntries(header.map((name, i) => [name, cells[i] ?? ""])));
+}
+
+const checkTracker = tool(
+  "check_tracker",
+  "List every job already assessed: date, role, fit score, decision and where the ad came from. " +
+    "Call this before writing the report so you can compare this job with earlier ones.",
+  {}, // it takes no inputs
+  async () => {
+    const rows = readRows();
+    if (rows.length === 0) {
+      return { content: [{ type: "text", text: "The tracker is empty. This is the first job assessed." }] };
+    }
+    const lines = rows.map((r) => `${r.date} | ${r.role} | ${r.fit_score}/10 | ${r.decision} | ${r.job_ad}`);
+    return { content: [{ type: "text", text: `${rows.length} jobs assessed so far:\n` + lines.join("\n") }] };
+  },
+  { annotations: { readOnlyHint: true } }, // it only looks, so it's safe to run any time
+);
+
+const saveToTracker = tool(
+  "save_to_tracker",
+  "Save this job's result to the applications tracker. Call it once, after you've decided, " +
+    "and only if you read the job ad in full. Saving the same job ad again updates its row.",
+  {
+    role: z.string().describe("Job title and company"),
+    fit_score: z.number().int().min(0).max(10),
+    decision: z.enum(["Apply now", "Apply after closing a gap", "Skip this one"]),
+    job_ad: z.string().describe("The job ad's link, or its file name"),
+  },
+  async (args) => {
+    const row: Row = {
+      date: today(),
+      role: args.role,
+      fit_score: String(args.fit_score),
+      decision: args.decision,
+      job_ad: args.job_ad,
+    };
+    if (!row.job_ad.startsWith("http://") && !row.job_ad.startsWith("https://")) {
+      row.job_ad = basename(row.job_ad); // a file name reads better than a full path
+    }
+    const rows = [...readRows().filter((r) => r.job_ad !== row.job_ad), row];
+    const lines = [COLUMNS, ...rows.map((r) => COLUMNS.map((c) => r[c] ?? ""))];
+    // "\r\n" ends each line, the same as Python's csv module, so both versions write the same file.
+    writeFileSync(TRACKER, lines.map((cells) => cells.map(csvField).join(",") + "\r\n").join(""));
+    return { content: [{ type: "text", text: `Saved. The tracker now has ${rows.length} jobs.` }] };
+  },
+);
+
+// The agent gets the tools through a small server that runs inside this script.
+// Their full names are mcp__tracker__check_tracker and mcp__tracker__save_to_tracker.
+export const trackerServer = createSdkMcpServer({ name: "tracker", tools: [checkTracker, saveToTracker] });
+export const TRACKER_TOOLS = ["mcp__tracker__check_tracker", "mcp__tracker__save_to_tracker"];
