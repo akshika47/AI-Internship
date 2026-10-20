@@ -12,17 +12,46 @@ This folder has two things:
 - **`starter_tool.py`**: the smallest agent with one tool of your own. Copy it for
   whatever you're building.
 
+## What the job-fit agent can do now
+
+| Tool | What it does | Changes anything? |
+|---|---|---|
+| `check_tracker` | Reads `applications.csv`: every job checked so far, with date, role, score, decision and link | No, it only looks |
+| `save_to_tracker` | Adds this job's result to `applications.csv`. Checking the same ad again updates its row | Yes, it writes that one file |
+
+So on top of Day 1's report, it can now:
+
+- **remember** every job across runs, instead of starting from nothing each time
+- **compare**: each report ends with how this job ranks against the earlier ones
+- **build you a list**: `applications.csv` opens in Excel or Google Sheets
+
+What it still can't do: send anything, apply for jobs, or touch files other than your CV,
+the job ad and `applications.csv`. That's on purpose until Day 4, when we add guardrails.
+
+## Files
+
+| File | What it is |
+|---|---|
+| `job_fit.py` | The job-fit agent, with the tracker tools plugged in |
+| `tracker_tools.py` | The two tools, written with `@tool` |
+| `starter_tool.py` | A one-tool agent to copy for your own idea |
+| `examples/` | A fictional CV (`cv.md`, `cv.pdf`) and two job ads (`job.md`, `job-2.md`) |
+| `check_setup.py` | Checks your setup without spending anything |
+| `typescript/` | The same three scripts in TypeScript |
+
 ## 1. Set up (two minutes if you did Day 1)
 
+From the `AI-Internship` folder you downloaded on Day 1:
+
 ```bash
-cd AI-Internship
 git pull
 cd claude-agent-sdk-challenge/day-2
 cp ../day-1/.env .env
 uv run check_setup.py
 ```
 
-New here? Do steps 1 and 2 of the [Day 1 README](../day-1/README.md) first, then come back.
+New here? Do steps 1 and 2 of the [Day 1 README](../day-1/README.md) first (they include
+downloading the repo with `git clone`), then come back.
 
 ## 2. Run the job-fit agent twice
 
@@ -43,6 +72,14 @@ You'll see the two new steps:
 
 Open `applications.csv`: one row per job. The second report ends with a line comparing
 the job with the first one. Run it on more job ads and the tracker grows.
+
+With your own CV and a real job link, it works the same as Day 1:
+
+```bash
+uv run job_fit.py https://link-to-the-job-ad cv.pdf
+```
+
+Your CV, the reports and `applications.csv` are in `.gitignore`, so they stay on your machine.
 
 ## 3. How the tools work
 
@@ -92,9 +129,9 @@ What tool does your agent need? Think about the one thing it can't do yet:
 | helps with your inbox | `draft_reply`: write a reply into a drafts file for you to send |
 | tracks prices, news or jobs | `compare_with_last_time`: read yesterday's results and say what changed |
 
-Two rules worth keeping from day one: give each tool a description that says **when** to
-use it, and keep anything that changes things (sends, deletes, pays) out until Day 4,
-when we add guardrails.
+Two rules worth keeping: give each tool a description that says **when** to use it, and
+keep anything that changes things (sends, deletes, pays) out until Day 4, when we add
+guardrails.
 
 ## TypeScript instead?
 
