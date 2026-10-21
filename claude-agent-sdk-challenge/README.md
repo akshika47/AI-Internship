@@ -26,7 +26,7 @@ already write TypeScript, every day has a `typescript/` folder with the same age
 |---|---|---|---|
 | 1 | Set up and run your first agent | An agent runs on your machine: Dr Aki's, the official quickstart, or your own | [`day-1/`](day-1/) |
 | 2 | Give it tools | Your agent calls one tool you wrote yourself | [`day-2/`](day-2/) |
-| 3 | Make it useful for a real task of yours | It does one real task from your week, the way you like it done | soon |
+| 3 | Make it useful for a real task of yours | It does one real task from your week, the way you like it done | [`day-3/`](day-3/) |
 | 4 | Break it, fix it, add guardrails | You've found one way it goes wrong and stopped it | soon |
 | 5 | Ship it and show us | You've posted a demo in the challenge thread | soon |
 
