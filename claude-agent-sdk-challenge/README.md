@@ -22,13 +22,16 @@ already write TypeScript, every day has a `typescript/` folder with the same age
 
 ## The five days
 
-| Day | Goal | Folder |
-|---|---|---|
-| 1 | Set up and run your first agent | [`day-1/`](day-1/) |
-| 2 | Give it tools: write your own and hand them to the agent | [`day-2/`](day-2/) |
-| 3 | Make it useful for a real task of yours | soon |
-| 4 | Break it, fix it, add guardrails | soon |
-| 5 | Ship it and show us | soon |
+| Day | Goal | You're done when | Folder |
+|---|---|---|---|
+| 1 | Set up and run your first agent | An agent runs on your machine: Dr Aki's, the official quickstart, or your own | [`day-1/`](day-1/) |
+| 2 | Give it tools | Your agent calls one tool you wrote yourself | [`day-2/`](day-2/) |
+| 3 | Make it useful for a real task of yours | It does one real task from your week, the way you like it done | [`day-3/`](day-3/) |
+| 4 | Break it, fix it, add guardrails | You've found one way it goes wrong and stopped it | soon |
+| 5 | Ship it and show us | You've posted a demo in the challenge thread | soon |
+
+Each folder has Dr Aki's worked example and, from Day 2, a small starter you can copy.
+Both are optional: any route that gets you to "done" counts.
 
 ## Before you start
 
