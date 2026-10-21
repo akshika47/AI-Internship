@@ -1,5 +1,5 @@
 [
-  {"name": "Ops coordinator → automation analyst", "job": "job.md", "cv": "cv.md"},
-  {"name": "Ops coordinator → ops & AI associate", "job": "job-3.md", "cv": "cv.md"},
-  {"name": "Marketing analyst (career changer) → automation analyst", "job": "job.md", "cv": "cv-2.md"}
+  {"name": "Ops coordinator → automation analyst", "job": "job.md", "cv": "cv.pdf", "cv_text": "cv.md"},
+  {"name": "Ops coordinator → ops & AI associate", "job": "job-3.md", "cv": "cv.pdf", "cv_text": "cv.md"},
+  {"name": "Marketing analyst (career changer) → automation analyst", "job": "job.md", "cv": "cv-2.pdf", "cv_text": "cv-2.md"}
 ]

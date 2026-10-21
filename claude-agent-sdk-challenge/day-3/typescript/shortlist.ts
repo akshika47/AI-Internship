@@ -18,7 +18,7 @@ Usage:
     CV          your CV (defaults to cv.md)
 
 Example:
-    npx tsx shortlist.ts ../examples/jobs.txt ../examples/cv.md
+    npx tsx shortlist.ts ../examples/jobs.txt ../examples/cv.pdf
 
 It writes shortlist.md (ranked), one report per job, and updates applications.csv.
 `;

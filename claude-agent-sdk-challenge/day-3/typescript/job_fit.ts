@@ -19,8 +19,8 @@ Usage:
     --no-skill  run Day 2's agent instead, to compare
 
 Examples:
-    npx tsx job_fit.ts ../examples/job.md ../examples/cv.md
-    npx tsx job_fit.ts ../examples/job.md ../examples/cv.md --no-skill
+    npx tsx job_fit.ts ../examples/job.md ../examples/cv-2.pdf
+    npx tsx job_fit.ts ../examples/job.md ../examples/cv-2.pdf --no-skill
 
 Where things live:
     ../.claude/skills/reviewing-cvs/   the skill: SKILL.md plus reference/ files it reads when needed

@@ -48,28 +48,29 @@ Your key is already in `claude-agent-sdk-challenge/.env`. New here? Do steps 1 a
 ## 2. See the skill at work
 
 ```bash
-uv run job_fit.py examples/job.md examples/cv.md
+uv run job_fit.py examples/job.md examples/cv-2.pdf
 ```
 
 ```
   · opening your skill: reviewing-cvs
-  · reading cv.md
+  · reading cv-2.pdf
   · reading job.md
   · checking your tracker
   · checking 3 CV bullets
   · checking 3 CV bullets
-  · saving to your tracker: Junior AI Automation Analyst, Fernhill Health, 8/10
+  · saving to your tracker: Junior AI Automation Analyst, Fernhill Health, 7/10
   · writing up the report
 ```
 
-It opens the skill, drafts three CV bullets, runs `check_cv_bullets`, fixes what the
+`cv-2.pdf` is a two-column PDF CV from a marketing analyst moving into AI, with the kind of
+lines most CVs have ("Responsible for…", "Helped…"). It opens the skill, drafts three CV bullets, runs `check_cv_bullets`, fixes what the
 checker flagged, and checks again. The report shows each rewrite with the CV line it came
 from, so you can see nothing was invented.
 
 Now the same job without the skill (this is Day 2's agent):
 
 ```bash
-uv run job_fit.py examples/job.md examples/cv.md --no-skill
+uv run job_fit.py examples/job.md examples/cv-2.pdf --no-skill
 ```
 
 Open both reports side by side.
@@ -80,7 +81,7 @@ Put this week's job ads in a text file, one link (or saved file) per line, like
 `examples/jobs.txt`. Then:
 
 ```bash
-uv run shortlist.py examples/jobs.txt examples/cv.md
+uv run shortlist.py examples/jobs.txt examples/cv.pdf
 ```
 
 It assesses three ads at a time, writes a report for each, adds them all to
@@ -92,7 +93,7 @@ It assesses three ads at a time, writes a report for each, adds them all to
 | 2 | Junior AI Automation Analyst, Fernhill Health | 8/10 | Apply now |
 | 3 | AI Product Analyst, Ledgerly | 3/10 | Skip this one |
 
-In our test that was three jobs in 25 seconds for 11 cents. With your own CV and real links:
+In our tests that was three jobs in about 25 seconds for 11 to 13 cents. With your own CV and real links:
 `uv run shortlist.py my-jobs.txt cv.pdf`.
 
 ## 4. Measure it: does the skill actually help?
@@ -106,19 +107,19 @@ every quoted CV line really in the CV?).
 uv run run_evals.py
 ```
 
-Our result over three scenarios, including a career changer:
+Our results over three scenarios with PDF CVs, including a career changer, across two runs:
 
 | Measure | Without skill | With skill |
 |---|---|---|
 | Duty phrases, weak openers, US spellings | 0 | 0 |
 | Numbers not on the CV | 0 | 0 |
 | Bullets not quoted from the CV | 0 | 0 |
-| **Job ad keywords used in the bullets** | **14%** | **46%** |
+| **Job ad keywords used in the bullets** | **14%** | **36% to 46%** |
 
 Day 2's honesty rules already kept the bullets clean, so the skill's real gain was matching
-the employer's language, over three times as often. That's what evaluations are for: they tell
+the employer's language: two and a half to three times as often. That's what evaluations are for: they tell
 you *where* a skill helps, so you don't keep rules that change nothing. Each scenario runs
-once per mode, so your numbers will vary a little.
+once per mode, so your numbers will vary a little, as ours did.
 
 ## 5. Give your own agent a skill
 
@@ -167,7 +168,7 @@ day-3/
 ├── skill-template/       copy this to make your own
 ├── agent/                prompt, schema, options (with or without the skill), hooks, run, report, shortlist
 ├── tools/                fetch_job_ad, check_tracker, save_to_tracker, check_cv_bullets (cv_check.py)
-├── examples/             two fictional CVs, three job ads, jobs.txt, scenarios.json, notes and an email
+├── examples/             two fictional PDF CVs (with text copies), three job ads, jobs.txt, scenarios.json, notes, an email
 └── typescript/           the same, in TypeScript
 ```
 

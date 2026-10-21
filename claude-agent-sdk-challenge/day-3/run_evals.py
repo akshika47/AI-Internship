@@ -3,7 +3,10 @@
 Usage:
     uv run run_evals.py [SCENARIOS]
 
-    SCENARIOS   a JSON list of {"name", "job", "cv"}; defaults to examples/scenarios.json
+    SCENARIOS   a JSON list of {"name", "job", "cv", "cv_text"}; defaults to examples/scenarios.json
+
+The agent reads "cv" (a PDF, like a real one). "cv_text" is the same CV as plain text, used
+only to check that every line the agent quotes is really in the CV.
 
 Scores come from the same checks as the check_cv_bullets tool (tools/cv_check.py), plus one
 honesty check: is every "from_cv" line really in the CV? Lower is better for problems.
@@ -11,6 +14,7 @@ Each scenario runs once per mode, so expect some variation between runs.
 """
 import argparse
 import asyncio
+import logging
 import json
 import sys
 from collections.abc import Callable
@@ -23,6 +27,8 @@ from agent.run import Run, StopRun, run_agent
 from tools.cv_check import missing_keywords, problems_in
 
 load_dotenv(find_dotenv())
+# Parallel runs make Python's asyncio log a harmless "exit status already read" warning. Hide it.
+logging.getLogger("asyncio").setLevel(logging.ERROR)
 
 AT_ONCE = 3
 
@@ -66,12 +72,14 @@ MEASURES = [
 class Scenario:
     name: str
     job: str
-    cv: str
+    cv: str       # what the agent reads
+    cv_text: str  # the same CV as text, for the honesty check
 
 
 def load_scenarios(path: str) -> list[Scenario]:
     folder = Path(path).parent
-    return [Scenario(s["name"], str(folder / s["job"]), str(folder / s["cv"])) for s in json.loads(Path(path).read_text())]
+    return [Scenario(s["name"], str(folder / s["job"]), str(folder / s["cv"]), str(folder / s.get("cv_text", s["cv"])))
+            for s in json.loads(Path(path).read_text())]
 
 
 async def run_one(scenario: Scenario, use_skill: bool, limit: asyncio.Semaphore) -> tuple[Scenario, bool, Run | None]:
@@ -90,7 +98,7 @@ def scores(run: Run | None, cv_path: str) -> list[float | None]:
 
 
 def table(results: list[tuple[Scenario, bool, Run | None]]) -> str:
-    by_mode = {mode: [scores(run, s.cv) for s, m, run in results if m == mode] for mode in (False, True)}
+    by_mode = {mode: [scores(run, s.cv_text) for s, m, run in results if m == mode] for mode in (False, True)}
     totals = {mode: [sum(row[i] or 0 for row in rows) for i in range(len(MEASURES))] for mode, rows in by_mode.items()}
     n = len(by_mode[True]) or 1
     rows = [f"| {m.name} | {fmt(m, totals[False][i], n)} | {fmt(m, totals[True][i], n)} | {m.better} is better |"

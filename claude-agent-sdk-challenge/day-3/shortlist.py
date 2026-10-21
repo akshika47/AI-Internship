@@ -7,12 +7,13 @@ Usage:
     CV          your CV (defaults to cv.md)
 
 Example:
-    uv run shortlist.py examples/jobs.txt examples/cv.md
+    uv run shortlist.py examples/jobs.txt examples/cv.pdf
 
 It writes shortlist.md (ranked), one report per job, and updates applications.csv.
 """
 import argparse
 import asyncio
+import logging
 import sys
 from pathlib import Path
 
@@ -22,6 +23,8 @@ from agent.run import StopRun, check_inputs
 from agent.shortlist import read_job_list, shortlist, to_markdown_table
 
 load_dotenv(find_dotenv())
+# Parallel runs make Python's asyncio log a harmless "exit status already read" warning. Hide it.
+logging.getLogger("asyncio").setLevel(logging.ERROR)
 
 
 def parse_args() -> argparse.Namespace:

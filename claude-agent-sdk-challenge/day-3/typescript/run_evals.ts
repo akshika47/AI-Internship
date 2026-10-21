@@ -3,7 +3,10 @@
 // Usage:
 //     npx tsx run_evals.ts [SCENARIOS]
 //
-//     SCENARIOS   a JSON list of {"name", "job", "cv"}; defaults to ../examples/scenarios.json
+//     SCENARIOS   a JSON list of {"name", "job", "cv", "cv_text"}; defaults to ../examples/scenarios.json
+//
+// The agent reads "cv" (a PDF, like a real one). "cv_text" is the same CV as plain text, used
+// only to check that every line the agent quotes is really in the CV.
 //
 // Scores come from the same checks as the check_cv_bullets tool (tools/cv_check.ts), plus one
 // honesty check: is every "from_cv" line really in the CV? Lower is better for problems.
@@ -61,7 +64,8 @@ class Scenario {
   constructor(
     readonly name: string,
     readonly job: string,
-    readonly cv: string,
+    readonly cv: string, // what the agent reads
+    readonly cvText: string, // the same CV as text, for the honesty check
   ) {}
 }
 
@@ -70,8 +74,8 @@ type Result = { scenario: Scenario; useSkill: boolean; run?: Run };
 // The job and CV paths in the JSON are relative to the JSON file itself.
 function loadScenarios(path: string): Scenario[] {
   const folder = dirname(path);
-  const list: { name: string; job: string; cv: string }[] = JSON.parse(readFileSync(path, "utf8"));
-  return list.map((s) => new Scenario(s.name, join(folder, s.job), join(folder, s.cv)));
+  const list: { name: string; job: string; cv: string; cv_text?: string }[] = JSON.parse(readFileSync(path, "utf8"));
+  return list.map((s) => new Scenario(s.name, join(folder, s.job), join(folder, s.cv), join(folder, s.cv_text ?? s.cv)));
 }
 
 async function runOne(scenario: Scenario, useSkill: boolean, limit: Semaphore): Promise<Result> {
@@ -97,7 +101,7 @@ function fmt(measure: Measure, total: number, n: number): string {
 
 function table(results: Result[]): string {
   const inMode = (mode: boolean) => results.filter((r) => r.useSkill === mode);
-  const byMode = MODES.map((mode) => inMode(mode).map((r) => scores(r.run, r.scenario.cv)));
+  const byMode = MODES.map((mode) => inMode(mode).map((r) => scores(r.run, r.scenario.cvText)));
   const totals = byMode.map((rows) => MEASURES.map((_, i) => rows.reduce((sum, row) => sum + (row[i] ?? 0), 0)));
   const n = byMode[1].length || 1;
   const rows = MEASURES.map(
