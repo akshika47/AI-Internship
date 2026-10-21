@@ -1,12 +1,11 @@
 ---
 name: reviewing-cvs
-description: Reviews a CV against a job ad the way a UK recruiter would, and rewrites CV bullets and a cover note opener for that job. Use when judging fit for a role, choosing which CV lines to lead with, or rewriting CV bullets.
+description: Reviews a CV against a job ad the way a UK recruiter would, and rewrites CV bullets and a cover note opener for that job. Use when the user has both a CV and a job ad and wants their fit judged, the CV lines to lead with, or the bullets rewritten. Don't use it for writing a full cover letter or CV from scratch, or for documents that aren't a CV.
 ---
 
 # Reviewing CVs (UK)
 
-Written by Dr Aki for the job-fit agent. These are my rules; the full list with sources is
-in [reference/uk-cv-rules.md](reference/uk-cv-rules.md).
+The full rule list, with sources, is in [reference/uk-cv-rules.md](reference/uk-cv-rules.md).
 
 ## Workflow
 

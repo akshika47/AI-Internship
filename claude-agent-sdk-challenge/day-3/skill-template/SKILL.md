@@ -1,6 +1,6 @@
 ---
 name: doing-your-task
-description: What this skill does, and when to use it, in one or two sentences. Write it in the third person, e.g. "Turns X into Y. Use when the user asks for Z." The agent reads only this line to decide whether to open the skill.
+description: What this skill does, when to use it, and when not to, in two or three sentences. Write it in the third person, e.g. "Turns X into Y. Use when the user asks for Z. Don't use it for W." The agent reads only this line to decide whether to open the skill.
 ---
 
 # Doing your task
