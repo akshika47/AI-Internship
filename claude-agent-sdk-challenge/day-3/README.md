@@ -137,11 +137,16 @@ Then make yours:
 
 1. Copy `skill-template/` into `.claude/skills/` and rename it, lowercase with hyphens, for
    example `writing-weekly-updates`. Use the same name in the `name:` line.
-2. Write the **description** first: what it does and when to use it. The agent decides whether
-   to open the skill from this line alone.
-3. Write 3 to 6 **rules**: what you know that a smart new colleague wouldn't. Skip the obvious.
-4. Add **one example**: a small input and the output you want. It teaches more than five rules.
-5. Run it with and without: `uv run starter_skill.py your-skill-name "your request"`.
+2. Write the **description** first: what it does, when to use it, and when **not** to
+   ("Don't use it for…"). The agent decides whether to open the skill from this line alone,
+   and the "not" part stops it opening your skill for look-alike tasks.
+3. **Test the description before anything else.** Paste just the `name` and `description` into
+   a fresh chat with Claude and ask: *"An agent will decide whether to load this skill from
+   this text alone. Give me 3 requests that should trigger it, 3 similar ones that shouldn't,
+   and tell me if the description is too broad."* If its answers surprise you, rewrite the line.
+4. Write 3 to 6 **rules**: what you know that a smart new colleague wouldn't. Skip the obvious.
+5. Add **one example**: a small input and the output you want. It teaches more than five rules.
+6. Run it with and without: `uv run starter_skill.py your-skill-name "your request"`.
 
 Plugging it into your own Day 2 agent takes four options, the same ones `agent/options.py` uses:
 
@@ -183,5 +188,14 @@ day-3/
 | Your evaluation shows no difference | That's useful: the rule isn't adding anything. Change it or drop it. |
 | `Couldn't read the job ad` | Save the ad's text as a file and put the file name in your list instead of the link. |
 
+## Further reading
+
+- Anthropic's [skill authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices):
+  the full reference this skill follows (short `SKILL.md`, reference files one level deep,
+  scripts for checks with a clear right answer, evaluations).
+- [Skills best practices](https://github.com/mgechev/skills-best-practices) by Minko Gechev:
+  a short, practical companion. The "test your description" step above and the negative
+  triggers in our descriptions come from its validation guide, which also covers stepping
+  through a skill to find where an agent would have to guess (we'll use that on Day 4).
+
 Sources for the CV rules are listed in `.claude/skills/reviewing-cvs/reference/uk-cv-rules.md`.
-The skill design follows Anthropic's [skill authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices).

@@ -1,6 +1,6 @@
 ---
 name: writing-research-briefs
-description: Writes a one-page research brief from articles or notes, with every claim tied to its source. Use when asked to summarise sources, research a topic or prepare a briefing.
+description: Writes a one-page research brief from articles or notes, with every claim tied to its source. Use when asked to summarise sources, research a topic or prepare a briefing. Don't use it for opinion pieces or when there are no sources to cite.
 ---
 
 # Writing research briefs

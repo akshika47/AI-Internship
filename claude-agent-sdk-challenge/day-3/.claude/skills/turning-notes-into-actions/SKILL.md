@@ -1,6 +1,6 @@
 ---
 name: turning-notes-into-actions
-description: Turns raw meeting notes into a clean list of actions, decisions and open questions. Use when given meeting notes, a call transcript or a stand-up summary.
+description: Turns raw meeting notes into a clean list of actions, decisions and open questions. Use when given meeting notes, a call transcript or a stand-up summary. Don't use it for writing minutes in full or summarising documents that aren't a meeting.
 ---
 
 # Turning notes into actions

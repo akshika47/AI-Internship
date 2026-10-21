@@ -1,6 +1,6 @@
 ---
 name: replying-to-emails
-description: Drafts a reply to an email thread in the user's voice. Use when asked to reply to, answer or follow up on an email or message thread.
+description: Drafts a reply to an email thread in the user's voice. Use when asked to reply to, answer or follow up on an email or message thread. Don't use it for writing a new email from scratch with no thread to reply to.
 ---
 
 # Replying to emails
