@@ -1,0 +1,46 @@
+# Agent evaluations for the Claude Agent SDK challenge. These call Claude, so they cost money
+# (about 25 cents a run) and need ANTHROPIC_API_KEY as a repository secret.
+# They never run on their own: start them from the Actions tab with "Run workflow".
+name: Agent SDK challenge · evaluations
+
+on:
+  workflow_dispatch:
+    inputs:
+      jury:
+        description: "Use a jury of three judge models instead of one"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  evaluate:
+    name: Day 4 evaluations
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: claude-agent-sdk-challenge/day-4
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked
+      - name: Check the judge on known cases
+        run: uv run check_judge.py ${{ inputs.jury && '--jury' || '' }}
+      - name: Evaluate the agent (fails if a pass mark is missed)
+        run: uv run run_evals.py ${{ inputs.jury && '--jury' || '' }}
+      - name: Add the results to the run summary
+        if: always()
+        run: cat eval-results.md >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || echo "No results file." >> "$GITHUB_STEP_SUMMARY"
+      - name: Keep the details
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-results
+          path: |
+            claude-agent-sdk-challenge/day-4/eval-results.md
+            claude-agent-sdk-challenge/day-4/eval-details.md
+          if-no-files-found: ignore
