@@ -1,0 +1,57 @@
+# Free checks for the Claude Agent SDK challenge. No API key, no cost: nothing here calls a model.
+# Runs on every pull request (and push to main) that touches the challenge folder.
+name: Agent SDK challenge · tests
+
+on:
+  pull_request:
+    paths: ["claude-agent-sdk-challenge/**", ".github/workflows/agent-sdk-challenge-tests.yml"]
+  push:
+    branches: [main]
+    paths: ["claude-agent-sdk-challenge/**"]
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    name: Python · day ${{ matrix.day }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        day: [1, 2, 3, 4]
+    defaults:
+      run:
+        working-directory: claude-agent-sdk-challenge/day-${{ matrix.day }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Install (from the lockfile, exactly)
+        run: uv sync --locked
+      - name: Every file compiles
+        run: uv run python -m compileall -q -x '\.venv' .
+      - name: Offline tests
+        if: hashFiles(format('claude-agent-sdk-challenge/day-{0}/tests/*.py', matrix.day)) != ''
+        run: uv run pytest -q
+
+  typescript:
+    name: TypeScript · day ${{ matrix.day }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        day: [1, 2, 3, 4]
+    defaults:
+      run:
+        working-directory: claude-agent-sdk-challenge/day-${{ matrix.day }}/typescript
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install (from the lockfile, exactly)
+        run: npm ci
+      - name: Type-check every entry point
+        run: |
+          npm install --no-save typescript@7.0.2 @types/node@26.6.5
+          npx tsc --noEmit --strict --module nodenext --moduleResolution nodenext --target es2022 --skipLibCheck *.ts
