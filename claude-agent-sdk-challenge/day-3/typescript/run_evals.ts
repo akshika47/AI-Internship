@@ -126,7 +126,13 @@ async function main(path: string): Promise<void> {
 }
 
 try {
-  await main(process.argv[2] ?? "../evals/scenarios.json");
+  const arg = process.argv[2];
+  if (arg?.startsWith("-")) {
+    // --help or any option: this script takes only a scenarios file, so show how to use it.
+    console.log("Usage: npx tsx run_evals.ts [SCENARIOS]\n\nSCENARIOS defaults to ../evals/scenarios.json");
+    process.exit(0);
+  }
+  await main(arg ?? "../evals/scenarios.json");
 } catch (error) {
   if (!(error instanceof StopRun)) throw error;
   console.error(`\n${error.message}`);
