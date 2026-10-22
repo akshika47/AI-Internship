@@ -3,7 +3,7 @@
 // Usage:
 //     npx tsx run_evals.ts [SCENARIOS]
 //
-//     SCENARIOS   a JSON list of {"name", "job", "cv", "cv_text"}; defaults to ../examples/scenarios.json
+//     SCENARIOS   a JSON list of {"name", "job", "cv", "cv_text"}; defaults to ../evals/scenarios.json
 //
 // The agent reads "cv" (a PDF, like a real one). "cv_text" is the same CV as plain text, used
 // only to check that every line the agent quotes is really in the CV.
@@ -126,7 +126,7 @@ async function main(path: string): Promise<void> {
 }
 
 try {
-  await main(process.argv[2] ?? "../examples/scenarios.json");
+  await main(process.argv[2] ?? "../evals/scenarios.json");
 } catch (error) {
   if (!(error instanceof StopRun)) throw error;
   console.error(`\n${error.message}`);

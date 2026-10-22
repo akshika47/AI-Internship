@@ -8,8 +8,8 @@ Usage:
     --no-skill  run Day 2's agent instead, to compare
 
 Examples:
-    uv run job_fit.py examples/job.md examples/cv-2.pdf
-    uv run job_fit.py examples/job.md examples/cv-2.pdf --no-skill
+    uv run job_fit.py examples/jobs/fernhill-automation-analyst.md examples/cvs/career-changer.pdf
+    uv run job_fit.py examples/jobs/fernhill-automation-analyst.md examples/cvs/career-changer.pdf --no-skill
 
 Where things live:
     .claude/skills/reviewing-cvs/   the skill: SKILL.md plus reference/ files it reads when needed

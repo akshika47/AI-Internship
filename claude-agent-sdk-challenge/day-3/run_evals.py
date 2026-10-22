@@ -3,7 +3,7 @@
 Usage:
     uv run run_evals.py [SCENARIOS]
 
-    SCENARIOS   a JSON list of {"name", "job", "cv", "cv_text"}; defaults to examples/scenarios.json
+    SCENARIOS   a JSON list of {"name", "job", "cv", "cv_text"}; defaults to evals/scenarios.json
 
 The agent reads "cv" (a PDF, like a real one). "cv_text" is the same CV as plain text, used
 only to check that every line the agent quotes is really in the CV.
@@ -128,7 +128,7 @@ async def main(path: str) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Measure the skill.", usage=__doc__)
-    parser.add_argument("scenarios", nargs="?", default="examples/scenarios.json")
+    parser.add_argument("scenarios", nargs="?", default="evals/scenarios.json")
     try:
         asyncio.run(main(parser.parse_args().scenarios))
     except StopRun as stop:

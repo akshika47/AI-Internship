@@ -1,0 +1,5 @@
+[
+  {"name": "Ops coordinator → automation analyst", "job": "../examples/jobs/fernhill-automation-analyst.md", "cv": "../examples/cvs/ops-coordinator.pdf", "cv_text": "../examples/cvs/ops-coordinator.md"},
+  {"name": "Ops coordinator → ops & AI associate", "job": "../examples/jobs/brightpath-ops-ai-associate.md", "cv": "../examples/cvs/ops-coordinator.pdf", "cv_text": "../examples/cvs/ops-coordinator.md"},
+  {"name": "Marketing analyst (career changer) → automation analyst", "job": "../examples/jobs/fernhill-automation-analyst.md", "cv": "../examples/cvs/career-changer.pdf", "cv_text": "../examples/cvs/career-changer.md"}
+]

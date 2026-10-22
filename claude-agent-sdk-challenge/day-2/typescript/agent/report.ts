@@ -26,7 +26,7 @@ export function toMarkdown(report: Report): string {
 
 // job-fit-fernhill-health-junior-ai-automation-analyst-cv.md: one report per job and CV.
 export function reportPath(role: string, cv: string): string {
-  const cvName = basename(cv, extname(cv)); // "../examples/cv.md" becomes "cv"
+  const cvName = basename(cv, extname(cv)); // "../examples/cvs/ops-coordinator.md" becomes "ops-coordinator"
   const slug = `${role} ${cvName}`.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
   return `job-fit-${slug || "report"}.md`;
 }

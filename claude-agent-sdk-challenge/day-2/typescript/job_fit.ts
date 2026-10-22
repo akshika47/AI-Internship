@@ -23,7 +23,7 @@ Usage:
     CV      your CV as a .md, .txt or .pdf file (optional, defaults to cv.md)
 
 Examples:
-    npx tsx job_fit.ts ../examples/job.md ../examples/cv.md
+    npx tsx job_fit.ts ../examples/jobs/fernhill-automation-analyst.md ../examples/cvs/ops-coordinator.md
     npx tsx job_fit.ts https://job-boards.greenhouse.io/company/jobs/123 cv.pdf
 `;
 
