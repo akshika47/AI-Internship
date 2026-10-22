@@ -63,22 +63,26 @@ The first time, uv downloads Python and the SDK, so give it a minute.
 ## 3. Run it on the sample files
 
 ```bash
-uv run job_fit.py examples/job.md examples/cv.md
+uv run job_fit.py examples/jobs/fernhill-automation-analyst.md examples/cvs/ops-coordinator.md
 ```
 
 You'll watch it work:
 
 ```
-  · reading cv.md
-  · reading job.md
+  · reading ops-coordinator.md
+  · reading fernhill-automation-analyst.md
   · writing up the report
 
-Saved job-fit-junior-ai-automation-analyst-fernhill-health-cv.md · 5 turns · $0.220
+Saved job-fit-junior-ai-automation-analyst-fernhill-health-ops-coordinator.md · 5 turns · $0.220
 ```
 
-Open that file. `examples/cv.md` and `examples/job.md` are made up, so have a look at
-both to see what the agent was given. `examples/cv.pdf` is the same CV as a PDF, if you
-want to see it read one: `uv run job_fit.py examples/job.md examples/cv.pdf`
+Open that file. The CV in `examples/cvs/` and the job ad in `examples/jobs/` are made up,
+so have a look at both to see what the agent was given. `examples/cvs/ops-coordinator.pdf`
+is the same CV as a PDF, if you want to see it read one:
+
+```bash
+uv run job_fit.py examples/jobs/fernhill-automation-analyst.md examples/cvs/ops-coordinator.pdf
+```
 
 ## 4. Run it on your own CV
 
@@ -109,7 +113,7 @@ The same agent is in [`typescript/`](typescript/). From this folder:
 ```bash
 cd typescript
 npm install
-npx tsx job_fit.ts ../examples/job.md ../examples/cv.md
+npx tsx job_fit.ts ../examples/jobs/fernhill-automation-analyst.md ../examples/cvs/ops-coordinator.md
 ```
 
 ## How it works

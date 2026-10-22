@@ -9,7 +9,14 @@
   {
     "question": "says only",
     "expected": true,
-    "note": "reordered, nothing added",
+    "note": "reworded, nothing added",
+    "claim": "Rebuilt the marketing dashboard in Looker Studio on BigQuery, which cut the Monday reporting job from about 4 hours to 30 minutes.",
+    "quote": "Rebuilt the marketing dashboard in Looker Studio on BigQuery; cut the Monday reporting job from about 4 hours to 30 minutes."
+  },
+  {
+    "question": "says only",
+    "expected": true,
+    "note": "links two facts the quote puts side by side",
     "claim": "Cut the Monday reporting job from about 4 hours to 30 minutes by rebuilding the marketing dashboard in Looker Studio on BigQuery.",
     "quote": "Rebuilt the marketing dashboard in Looker Studio on BigQuery; cut the Monday reporting job from about 4 hours to 30 minutes."
   },

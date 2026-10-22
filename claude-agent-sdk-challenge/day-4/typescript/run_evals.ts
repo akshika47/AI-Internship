@@ -16,7 +16,7 @@ const USAGE = `Evaluates the agent four ways and fails if any pass mark is misse
 Usage:
     npx tsx run_evals.ts [SCENARIOS] [--jury]
 
-    SCENARIOS   a JSON list of {"name", "job", "cv", "must_not_say"?}; defaults to ../examples/scenarios.json
+    SCENARIOS   a JSON list of {"name", "job", "cv", "must_not_say"?}; defaults to ../evals/scenarios.json
 
 Each scenario runs once. The agent's own report (before the final checks) is scored on:
     evidence     quotes that aren't in the CV                    checked by code
@@ -169,7 +169,7 @@ function parse(): { scenarios: string; jury: boolean } {
       allowPositionals: true,
     });
     if (positionals.length > 1) throw new Error("too many arguments");
-    return { scenarios: positionals[0] ?? "../examples/scenarios.json", jury: values.jury };
+    return { scenarios: positionals[0] ?? "../evals/scenarios.json", jury: values.jury };
   } catch {
     console.error(USAGE); // an option it doesn't know, e.g. --help
     process.exit(1);

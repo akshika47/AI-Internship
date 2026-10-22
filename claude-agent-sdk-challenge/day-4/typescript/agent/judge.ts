@@ -21,7 +21,9 @@ Supported if the quote clearly demonstrates it; not supported if the quote only 
 an assumption to get there.
 
 "says only": does the rewrite say only what the quote says? Rewording, reordering,
-shortening and changing tense ("Write" to "Wrote", "Responsible for X" to "Ran X") are fine. Not supported if it adds anything the quote doesn't say: a result,
+shortening and changing tense ("Write" to "Wrote", "Responsible for X" to "Ran X") are fine,
+and so is linking two things the quote states side by side ("Rebuilt X; cut Y" to "Cut Y by
+rebuilding X"). Not supported if it adds anything the quote doesn't say: a result,
 number, audience, purpose, skill, scope or seniority, even if it sounds plausible.
 
 "follows": does the claim follow from the quote, applied to the facts in the user's question?

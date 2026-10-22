@@ -31,7 +31,7 @@ export function toMarkdown(report: Report): string {
 // job-fit-junior-ai-automation-analyst-fernhill-health-cv.md: one report per job and CV.
 // suffix marks a variant, e.g. "no-skill", so a comparison run doesn't overwrite the real one.
 export function reportPath(role: string, cv: string, suffix = ""): string {
-  const cvName = basename(cv, extname(cv)); // "../examples/cv.md" becomes "cv"
+  const cvName = basename(cv, extname(cv)); // "../examples/cvs/ops-coordinator.md" becomes "ops-coordinator"
   const slug = `${role} ${cvName} ${suffix}`.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 90);
   return `job-fit-${slug || "report"}.md`;
 }

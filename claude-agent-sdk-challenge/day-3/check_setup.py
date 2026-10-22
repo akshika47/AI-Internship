@@ -68,4 +68,4 @@ if __name__ == "__main__":
     problems = sum(result.ok is False for result in results)
     if problems:
         sys.exit(f"\nFix the ✗ line{'s' * (problems > 1)} above, then run this again.")
-    print("\nAll set. Try: uv run job_fit.py examples/job.md examples/cv.md")
+    print("\nAll set. Try: uv run job_fit.py examples/jobs/fernhill-automation-analyst.md examples/cvs/ops-coordinator.md")

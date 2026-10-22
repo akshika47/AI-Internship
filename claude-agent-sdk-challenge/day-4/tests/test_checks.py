@@ -34,7 +34,7 @@ def test_bullet_checks(original, rewrite, expected):
 
 @pytest.fixture(scope="module")
 def daniel_cv() -> str:
-    return source_text(EXAMPLES / "cv-2.pdf")  # a two-column PDF, the hardest layout to read
+    return source_text(EXAMPLES / "cvs" / "career-changer.pdf")  # a two-column PDF, the hardest layout to read
 
 
 def test_real_quote_passes_even_from_a_two_column_pdf(daniel_cv):

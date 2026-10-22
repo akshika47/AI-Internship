@@ -13,7 +13,7 @@ Usage:
     npx tsx starter_tool.ts "your request"
 
 Example:
-    npx tsx starter_tool.ts "Read ../examples/job.md and save me three interview questions"
+    npx tsx starter_tool.ts "Read ../examples/jobs/fernhill-automation-analyst.md and save me three interview questions"
 
 As it stands, the agent can read files and has one tool of yours: save_note, which adds
 a line to notes.md. To make it yours, change three things:

@@ -7,7 +7,7 @@ Usage:
     CV          your CV (defaults to cv.md)
 
 Example:
-    uv run shortlist.py examples/jobs.txt examples/cv.pdf
+    uv run shortlist.py examples/jobs/this-week.txt examples/cvs/ops-coordinator.pdf
 
 It writes shortlist.md (ranked), one report per job, and updates applications.csv.
 """

@@ -3,7 +3,7 @@
 Usage:
     uv run run_evals.py [SCENARIOS] [--jury]
 
-    SCENARIOS   a JSON list of {"name", "job", "cv", "must_not_say"?}; defaults to examples/scenarios.json
+    SCENARIOS   a JSON list of {"name", "job", "cv", "must_not_say"?}; defaults to evals/scenarios.json
 
 Each scenario runs once. The agent's own report (before the final checks) is scored on:
     evidence     quotes that aren't in the CV                    checked by code
@@ -143,7 +143,7 @@ async def main(path: str, judges: list[str]) -> bool:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluate the agent.", usage=__doc__)
-    parser.add_argument("scenarios", nargs="?", default="examples/scenarios.json")
+    parser.add_argument("scenarios", nargs="?", default="evals/scenarios.json")
     parser.add_argument("--jury", action="store_true", help="three judge models vote on each claim")
     args = parser.parse_args()
     try:

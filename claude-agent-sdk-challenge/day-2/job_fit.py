@@ -7,7 +7,7 @@ Usage:
     CV      your CV as a .md, .txt or .pdf file (optional, defaults to cv.md)
 
 Examples:
-    uv run job_fit.py examples/job.md examples/cv.md
+    uv run job_fit.py examples/jobs/fernhill-automation-analyst.md examples/cvs/ops-coordinator.md
     uv run job_fit.py https://job-boards.greenhouse.io/company/jobs/123 cv.pdf
 
 Where things live:

@@ -48,13 +48,13 @@ Your key is already in `claude-agent-sdk-challenge/.env`. New here? Do steps 1 a
 ## 2. See the skill at work
 
 ```bash
-uv run job_fit.py examples/job.md examples/cv-2.pdf
+uv run job_fit.py examples/jobs/fernhill-automation-analyst.md examples/cvs/career-changer.pdf
 ```
 
 ```
   · opening your skill: reviewing-cvs
-  · reading cv-2.pdf
-  · reading job.md
+  · reading career-changer.pdf
+  · reading fernhill-automation-analyst.md
   · checking your tracker
   · checking 3 CV bullets
   · checking 3 CV bullets
@@ -62,7 +62,7 @@ uv run job_fit.py examples/job.md examples/cv-2.pdf
   · writing up the report
 ```
 
-`cv-2.pdf` is a two-column PDF CV from a marketing analyst moving into AI, with the kind of
+`career-changer.pdf` is a two-column PDF CV from a marketing analyst moving into AI, with the kind of
 lines most CVs have ("Responsible for…", "Helped…"). It opens the skill, drafts three CV bullets, runs `check_cv_bullets`, fixes what the
 checker flagged, and checks again. The report shows each rewrite with the CV line it came
 from, so you can see nothing was invented.
@@ -70,7 +70,7 @@ from, so you can see nothing was invented.
 Now the same job without the skill (this is Day 2's agent):
 
 ```bash
-uv run job_fit.py examples/job.md examples/cv-2.pdf --no-skill
+uv run job_fit.py examples/jobs/fernhill-automation-analyst.md examples/cvs/career-changer.pdf --no-skill
 ```
 
 Open both reports side by side.
@@ -78,10 +78,10 @@ Open both reports side by side.
 ## 3. The real task: your weekly shortlist
 
 Put this week's job ads in a text file, one link (or saved file) per line, like
-`examples/jobs.txt`. Then:
+`examples/jobs/this-week.txt`. Then:
 
 ```bash
-uv run shortlist.py examples/jobs.txt examples/cv.pdf
+uv run shortlist.py examples/jobs/this-week.txt examples/cvs/ops-coordinator.pdf
 ```
 
 It assesses three ads at a time, writes a report for each, adds them all to
@@ -99,7 +99,7 @@ In our tests that was three jobs in about 25 seconds for 11 to 13 cents. With yo
 ## 4. Measure it: does the skill actually help?
 
 Anthropic's advice for skills is to test with and without them and keep only what makes a
-difference. `run_evals.py` does that: it runs each scenario in `examples/scenarios.json` both
+difference. `run_evals.py` does that: it runs each scenario in `evals/scenarios.json` both
 ways and scores the results with the same checks the agent uses, plus an honesty check (is
 every quoted CV line really in the CV?).
 
@@ -126,8 +126,8 @@ once per mode, so your numbers will vary a little, as ours did.
 Try one of the example skills first, with and without:
 
 ```bash
-uv run starter_skill.py turning-notes-into-actions "Turn examples/meeting-notes.md into actions"
-uv run starter_skill.py turning-notes-into-actions "Turn examples/meeting-notes.md into actions" --no-skill
+uv run starter_skill.py turning-notes-into-actions "Turn examples/documents/meeting-notes.md into actions"
+uv run starter_skill.py turning-notes-into-actions "Turn examples/documents/meeting-notes.md into actions" --no-skill
 ```
 
 With the skill, every action gets an owner and a date, or "not stated" instead of a guess,
@@ -173,7 +173,11 @@ day-3/
 ├── skill-template/       copy this to make your own
 ├── agent/                prompt, schema, options (with or without the skill), hooks, run, report, shortlist
 ├── tools/                fetch_job_ad, check_tracker, save_to_tracker, check_cv_bullets (cv_check.py)
-├── examples/             two fictional PDF CVs (with text copies), three job ads, jobs.txt, scenarios.json, notes, an email
+├── examples/
+│   ├── cvs/              two fictional PDF CVs, with text copies
+│   ├── jobs/             three job ads and this-week.txt
+│   └── documents/        meeting notes and an email, for the starter
+├── evals/                scenarios.json: the test data for run_evals.py
 └── typescript/           the same, in TypeScript
 ```
 

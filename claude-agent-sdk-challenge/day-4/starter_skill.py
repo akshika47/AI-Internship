@@ -7,8 +7,8 @@ Usage:
     --no-skill  the same request without the skill, to compare
 
 Examples:
-    uv run starter_skill.py turning-notes-into-actions "Turn examples/meeting-notes.md into actions"
-    uv run starter_skill.py replying-to-emails "Draft a reply to examples/email-thread.md" --no-skill
+    uv run starter_skill.py turning-notes-into-actions "Turn examples/documents/meeting-notes.md into actions"
+    uv run starter_skill.py replying-to-emails "Draft a reply to examples/documents/email-thread.md" --no-skill
 
 To make your own: copy skill-template/ into .claude/skills/, rename it, write your rules, and
 run this with its name. No code changes needed.

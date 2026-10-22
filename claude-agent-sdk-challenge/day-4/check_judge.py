@@ -4,7 +4,7 @@ Usage:
     uv run check_judge.py [CASES] [--jury]
 
     CASES   a JSON list of {"question", "claim", "quote", "expected", "note", "user_question"?};
-            defaults to examples/judge-cases.json
+            defaults to evals/judge-cases.json
 
 A judge you haven't tested is just another opinion. Add a case every time it gets one wrong,
 and run this before you trust a change to its instructions. Costs about a cent.
@@ -43,7 +43,7 @@ async def main(path: str, models: list[str]) -> bool:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Check the judge on known cases.", usage=__doc__)
-    parser.add_argument("cases", nargs="?", default="examples/judge-cases.json")
+    parser.add_argument("cases", nargs="?", default="evals/judge-cases.json")
     parser.add_argument("--jury", action="store_true")
     args = parser.parse_args()
     sys.exit(0 if asyncio.run(main(args.cases, JURY if args.jury else JUDGE)) else 1)

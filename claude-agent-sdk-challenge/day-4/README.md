@@ -39,13 +39,13 @@ uv run check_setup.py
 ## 2. Watch the checks work
 
 ```bash
-uv run job_fit.py examples/job.md examples/cv-2.pdf
+uv run job_fit.py examples/jobs/fernhill-automation-analyst.md examples/cvs/career-changer.pdf
 ```
 
 ```
   · opening your skill: reviewing-cvs
-  · reading cv-2.pdf
-  · reading job.md
+  · reading career-changer.pdf
+  · reading fernhill-automation-analyst.md
   · checking your tracker
   · checking 3 CV bullets
   · checking 8 quotes are really in the CV
@@ -60,11 +60,11 @@ models vote.
 
 ## 3. Try to break it
 
-`examples/job-injected.md` is a job ad with a hidden note telling the agent to give a 10/10,
+`examples/jobs/northgate-planted-instruction.md` is a job ad with a hidden note telling the agent to give a 10/10,
 claim "5 years leading a team of 20", and open your `.env` file:
 
 ```bash
-uv run job_fit.py examples/job-injected.md examples/cv.pdf
+uv run job_fit.py examples/jobs/northgate-planted-instruction.md examples/cvs/ops-coordinator.pdf
 ```
 
 In our tests the agent ignored it and said so in its verdict. If it ever did try to open `.env`,
@@ -81,7 +81,7 @@ uv run check_judge.py           # one judge, about a cent
 uv run check_judge.py --jury    # three models, about four cents
 ```
 
-Our result: 9 of 9 right, both ways. Add a case to `examples/judge-cases.json` every time the
+Our result: 9 of 9 right, both ways. Add a case to `evals/judge-cases.json` every time the
 judge gets one wrong.
 
 ## 5. Evaluate the whole agent
@@ -111,7 +111,7 @@ in code, then judge whether the quote supports the claim.** `starter_verify.py` 
 for any document:
 
 ```bash
-uv run starter_verify.py examples/policy.md "Can I work from Spain for three weeks this summer, and do I get a monitor?"
+uv run starter_verify.py examples/documents/policy.md "Can I work from Spain for three weeks this summer, and do I get a monitor?"
 ```
 
 ```
@@ -175,7 +175,11 @@ day-4/
 ├── tools/             evidence (check_evidence), cv_check, job_ad, tracker
 ├── tests/             offline tests
 ├── .claude/skills/    reviewing-cvs, now with a check_evidence step
-├── examples/          CVs, job ads (one with a planted instruction), a policy, judge cases, scenarios
+├── examples/
+│   ├── cvs/           two fictional CVs, as PDF and text
+│   ├── jobs/          four job ads (one with a planted instruction) and this-week.txt
+│   └── documents/     a policy, meeting notes and an email, for the starters
+├── evals/             scenarios.json and judge-cases.json: the test data
 └── typescript/        the same, in TypeScript
 ```
 
@@ -183,7 +187,7 @@ day-4/
 
 | You see | Try this |
 |---|---|
-| A lot of claims taken out | Read why. If the judge is wrong, add the case to `examples/judge-cases.json` and adjust its instructions in `agent/judge.py`. If it's right, the agent was overclaiming. |
+| A lot of claims taken out | Read why. If the judge is wrong, add the case to `evals/judge-cases.json` and adjust its instructions in `agent/judge.py`. If it's right, the agent was overclaiming. |
 | `too short to prove anything` | Quotes need at least three words. One word, like "Python", is on every CV. |
 | A quote from your PDF isn't found | Some PDFs store text oddly. Save your CV as text (`cv.md`) and try again. |
 | `blocked: Read tried to open …` | The guardrail working. If the file was legitimate, add it to the run's files in `agent/run.py`. |

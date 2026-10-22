@@ -48,7 +48,9 @@ day-2/
 │   └── tracker.py      check_tracker and save_to_tracker
 ├── starter_tool.py     a one-tool agent to copy for your own idea
 ├── check_setup.py      checks your setup without spending anything
-├── examples/           a fictional CV (cv.md, cv.pdf) and two job ads
+├── examples/
+│   ├── cvs/            a fictional CV, as text and PDF
+│   └── jobs/           two fictional job ads
 └── typescript/         the same, in TypeScript
 ```
 
@@ -81,20 +83,20 @@ downloading the repo and creating `.env`), then come back.
 ## 2. Run the job-fit agent
 
 ```bash
-uv run job_fit.py examples/job.md examples/cv.md
-uv run job_fit.py examples/job-2.md examples/cv.md
+uv run job_fit.py examples/jobs/fernhill-automation-analyst.md examples/cvs/ops-coordinator.md
+uv run job_fit.py examples/jobs/ledgerly-ai-product-analyst.md examples/cvs/ops-coordinator.md
 ```
 
 You'll see the new steps:
 
 ```
-  · reading cv.md
-  · reading job-2.md
+  · reading ops-coordinator.md
+  · reading ledgerly-ai-product-analyst.md
   · checking your tracker
   · saving to your tracker: AI Product Analyst, Ledgerly, 3/10
   · writing up the report
 
-Saved job-fit-ai-product-analyst-ledgerly-cv.md · 6 turns · $0.022
+Saved job-fit-ai-product-analyst-ledgerly-ops-coordinator.md · 6 turns · $0.022
 ```
 
 Open `applications.csv`: one row per job. The second report ends with a line comparing
@@ -152,7 +154,7 @@ add it to `ALL_TOOLS`, and mention it in the prompt's rules. Nothing else change
 Try the starter first:
 
 ```bash
-uv run starter_tool.py "Read examples/job.md and save me three interview questions"
+uv run starter_tool.py "Read examples/jobs/fernhill-automation-analyst.md and save me three interview questions"
 ```
 
 It reads the file, calls `save_note` three times, and `notes.md` appears. Then copy
@@ -180,8 +182,8 @@ The same agent, tools and starter are in [`typescript/`](typescript/), in the sa
 ```bash
 cd typescript
 npm install
-npx tsx job_fit.ts ../examples/job.md ../examples/cv.md
-npx tsx starter_tool.ts "Read ../examples/job.md and save me three interview questions"
+npx tsx job_fit.ts ../examples/jobs/fernhill-automation-analyst.md ../examples/cvs/ops-coordinator.md
+npx tsx starter_tool.ts "Read ../examples/jobs/fernhill-automation-analyst.md and save me three interview questions"
 ```
 
 In TypeScript a tool is `tool(name, description, zodSchema, handler)`; see `tools/tracker.ts`.
