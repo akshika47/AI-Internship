@@ -19,8 +19,8 @@ Usage:
     --no-skill  the same request without the skill, to compare
 
 Examples:
-    npx tsx starter_skill.ts turning-notes-into-actions "Turn ../examples/meeting-notes.md into actions"
-    npx tsx starter_skill.ts replying-to-emails "Draft a reply to ../examples/email-thread.md" --no-skill
+    npx tsx starter_skill.ts turning-notes-into-actions "Turn ../examples/documents/meeting-notes.md into actions"
+    npx tsx starter_skill.ts replying-to-emails "Draft a reply to ../examples/documents/email-thread.md" --no-skill
 
 To make your own: copy ../skill-template/ into ../.claude/skills/, rename it, write your rules, and
 run this with its name. No code changes needed.

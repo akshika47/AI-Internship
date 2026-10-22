@@ -21,8 +21,8 @@ Usage:
     --jury       three judge models vote on each claim, instead of one
 
 Examples:
-    npx tsx job_fit.ts ../examples/job.md ../examples/cv-2.pdf
-    npx tsx job_fit.ts ../examples/job-injected.md ../examples/cv.pdf
+    npx tsx job_fit.ts ../examples/jobs/fernhill-automation-analyst.md ../examples/cvs/career-changer.pdf
+    npx tsx job_fit.ts ../examples/jobs/northgate-planted-instruction.md ../examples/cvs/ops-coordinator.pdf
 
 Where things live:
     ../.claude/skills/reviewing-cvs/   the skill: SKILL.md plus reference/ files it reads when needed

@@ -18,7 +18,7 @@ Usage:
     npx tsx starter_verify.ts SOURCE "your question" [--no-checks] [--jury]
 
 Example:
-    npx tsx starter_verify.ts ../examples/policy.md "Can I work from Spain for three weeks this summer?"
+    npx tsx starter_verify.ts ../examples/documents/policy.md "Can I work from Spain for three weeks this summer?"
 
 This is "no evidence, no pass" for any agent that answers from sources (a RAG assistant, a
 policy bot, a research helper). The agent must return each claim with an exact quote. Then:

@@ -9,8 +9,8 @@ Usage:
     --jury       three judge models vote on each claim, instead of one
 
 Examples:
-    uv run job_fit.py examples/job.md examples/cv-2.pdf
-    uv run job_fit.py examples/job-injected.md examples/cv.pdf
+    uv run job_fit.py examples/jobs/fernhill-automation-analyst.md examples/cvs/career-changer.pdf
+    uv run job_fit.py examples/jobs/northgate-planted-instruction.md examples/cvs/ops-coordinator.pdf
 
 Where things live:
     .claude/skills/reviewing-cvs/   the skill: SKILL.md plus reference/ files it reads when needed

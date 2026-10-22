@@ -4,7 +4,7 @@ Usage:
     uv run starter_verify.py SOURCE "your question" [--no-checks] [--jury]
 
 Example:
-    uv run starter_verify.py examples/policy.md "Can I work from Spain for three weeks this summer?"
+    uv run starter_verify.py examples/documents/policy.md "Can I work from Spain for three weeks this summer?"
 
 This is "no evidence, no pass" for any agent that answers from sources (a RAG assistant, a
 policy bot, a research helper). The agent must return each claim with an exact quote. Then:

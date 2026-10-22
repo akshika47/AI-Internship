@@ -14,7 +14,7 @@ Usage:
     npx tsx check_judge.ts [CASES] [--jury]
 
     CASES   a JSON list of {"question", "claim", "quote", "expected", "note", "user_question"?};
-            defaults to ../examples/judge-cases.json
+            defaults to ../evals/judge-cases.json
 
 A judge you haven't tested is just another opinion. Add a case every time it gets one wrong,
 and run this before you trust a change to its instructions. Costs about a cent.
@@ -51,7 +51,7 @@ function parse(): { cases: string; jury: boolean } {
       allowPositionals: true,
     });
     if (positionals.length > 1) throw new Error("too many arguments");
-    return { cases: positionals[0] ?? "../examples/judge-cases.json", jury: values.jury };
+    return { cases: positionals[0] ?? "../evals/judge-cases.json", jury: values.jury };
   } catch {
     console.error(USAGE); // an option it doesn't know, e.g. --help
     process.exit(1);
