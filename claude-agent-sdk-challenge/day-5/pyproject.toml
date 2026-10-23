@@ -1,0 +1,15 @@
+[project]
+name = "agent-sdk-challenge-day-5"
+version = "0.1.0"
+description = "Day 5 of the Claude Agent SDK challenge: ship it and show us"
+requires-python = ">=3.10"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest==8.3.5",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
