@@ -42,7 +42,7 @@ It reads your folder (Python or TypeScript), calls no model and costs nothing. E
 Ship check for day-4
 
   ✓ README with a run command: uv run check_setup.py
-  ✓ Sample input: examples/cvs/ops-coordinator.md
+  ✓ Sample input: examples/cvs/career-changer.md
   ✓ .env.example with a placeholder (claude-agent-sdk-challenge/.env.example)
   ✓ .env is ignored by git
   ✓ No API keys written in your files
