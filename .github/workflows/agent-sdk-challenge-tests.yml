@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        day: [1, 2, 3, 4]
+        day: [1, 2, 3, 4, 5]
     defaults:
       run:
         working-directory: claude-agent-sdk-challenge/day-${{ matrix.day }}
@@ -40,7 +40,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        day: [1, 2, 3, 4]
+        day: [1, 2, 3, 4, 5]
     defaults:
       run:
         working-directory: claude-agent-sdk-challenge/day-${{ matrix.day }}/typescript

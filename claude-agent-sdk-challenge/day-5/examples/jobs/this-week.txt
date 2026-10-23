@@ -1,0 +1,4 @@
+# One job ad per line: a link, or a file saved next to this list. Lines starting with # are skipped.
+fernhill-automation-analyst.md
+ledgerly-ai-product-analyst.md
+brightpath-ops-ai-associate.md

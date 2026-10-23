@@ -1,0 +1,13 @@
+# Your CV, job ads and reports stay on your machine
+/*cv*.*
+/*CV*.*
+/job.md
+/job-fit-*.md
+.env
+.venv/
+/applications.csv
+/notes.md
+/shortlist.md
+/eval-results.md
+/eval-details.md
+/logs/

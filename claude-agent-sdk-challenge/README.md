@@ -28,7 +28,7 @@ already write TypeScript, every day has a `typescript/` folder with the same age
 | 2 | Give it tools | Your agent calls one tool you wrote yourself | [`day-2/`](day-2/) |
 | 3 | Make it useful for a real task of yours | It does one real task from your week, the way you like it done | [`day-3/`](day-3/) |
 | 4 | Break it, fix it, add guardrails | You've found one way it goes wrong and stopped it | [`day-4/`](day-4/) |
-| 5 | Ship it and show us | You've posted a demo in the challenge thread | soon |
+| 5 | Debug it, test it, show us | You found a bug in its steps, turned it into a test, and posted a one-minute demo | [`day-5/`](day-5/) |
 
 Each folder has Dr Aki's worked example and, from Day 2, a small starter you can copy.
 Both are optional: any route that gets you to "done" counts.

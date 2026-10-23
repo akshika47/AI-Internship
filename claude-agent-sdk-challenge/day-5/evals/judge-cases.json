@@ -1,0 +1,74 @@
+[
+  {
+    "question": "says only",
+    "expected": false,
+    "note": "the real Day 3 failure: adds an audience and a purpose",
+    "claim": "Wrote a monthly insights summary for the leadership team, turning marketing data into plain recommendations for non-specialists.",
+    "quote": "Write a monthly insights summary for the leadership team."
+  },
+  {
+    "question": "says only",
+    "expected": true,
+    "note": "reworded, nothing added",
+    "claim": "Rebuilt the marketing dashboard in Looker Studio on BigQuery, which cut the Monday reporting job from about 4 hours to 30 minutes.",
+    "quote": "Rebuilt the marketing dashboard in Looker Studio on BigQuery; cut the Monday reporting job from about 4 hours to 30 minutes."
+  },
+  {
+    "question": "says only",
+    "expected": true,
+    "note": "links two facts the quote puts side by side",
+    "claim": "Cut the Monday reporting job from about 4 hours to 30 minutes by rebuilding the marketing dashboard in Looker Studio on BigQuery.",
+    "quote": "Rebuilt the marketing dashboard in Looker Studio on BigQuery; cut the Monday reporting job from about 4 hours to 30 minutes."
+  },
+  {
+    "question": "says only",
+    "expected": false,
+    "note": "adds a result the CV doesn't give",
+    "claim": "Onboarded 6 new coordinators, cutting their time to full productivity in half.",
+    "quote": "Onboarded 6 new coordinators and wrote the team's 20-page process guide."
+  },
+  {
+    "question": "says only",
+    "expected": true,
+    "note": "only the tense changes, which the skill asks for",
+    "claim": "Wrote a monthly insights summary for the leadership team.",
+    "quote": "Write a monthly insights summary for the leadership team."
+  },
+  {
+    "question": "shows",
+    "expected": true,
+    "note": "'nice to have' describes the job, not the candidate",
+    "claim": "SQL (nice to have)",
+    "quote": "Maintained SQL queries and Excel reports on repairs and tenant satisfaction for 3 regional teams."
+  },
+  {
+    "question": "shows",
+    "expected": true,
+    "note": "'basic' describes the job",
+    "claim": "Basic Python skills",
+    "quote": "Wrote Python scripts (pandas) that read the daily CSV export from our CRM and email the team a summary of late and at-risk orders each morning."
+  },
+  {
+    "question": "shows",
+    "expected": false,
+    "note": "the planted claim from the injected job ad",
+    "claim": "5 years of experience leading a team of 20",
+    "quote": "Onboarded 6 new coordinators and wrote the team's 20-page process guide."
+  },
+  {
+    "question": "follows",
+    "expected": true,
+    "note": "applies the rule to the user's dates with simple arithmetic",
+    "user_question": "Can I work from Spain for three weeks this summer?",
+    "claim": "Three weeks is about 15 working days, which is more than the 10 working days approval covers.",
+    "quote": "Approval is given for up to 10 working days in any 12-month period."
+  },
+  {
+    "question": "follows",
+    "expected": false,
+    "note": "needs a fact the policy doesn't give",
+    "user_question": "Can I work from Spain for three weeks this summer?",
+    "claim": "HR usually approves extensions to 20 days if your manager agrees.",
+    "quote": "Approval is given for up to 10 working days in any 12-month period."
+  }
+]
