@@ -35,6 +35,21 @@ What each day added:
 | 4 | Every claim quotes the CV; code and a judge check it; a guard on what it can open |
 | 5 | A step log, evals run more than once, and a real bug found and fixed (below) |
 
+### How it's built
+
+![The harness: your command, the options, the agent loop with the guard and tools, then the structured output, the final gate and the report](docs/harness.png)
+
+Everything around the model is the harness. In this agent:
+
+| Box | Here |
+|---|---|
+| Your command | `job_fit.py` or `shortlist.py` |
+| Options | `agent/options.py`: the prompt, the reviewing-cvs skill, the tools, the hooks, the JSON schema, `max_turns=25`, `max_budget_usd=1.00` |
+| PreToolUse hook | `agent/guard.py`, plus Day 5's step log (`agent/debug_log.py`) |
+| Tools | Read and Skill (built in); `fetch_job_ad`, `check_tracker`, `save_to_tracker`, `check_cv_bullets`, `check_evidence` (ours, in `tools/`) |
+| Final gate | `agent/verify.py`: the evidence check in code, then the judge (`agent/judge.py`) |
+| Around it | `run_evals.py`, `check_judge.py`, `starter_eval.py`, and `tests/` in CI |
+
 ## Where I stopped, and where you can take it
 
 Honest limits, each one seen in our own runs this week, and the next step for it:
