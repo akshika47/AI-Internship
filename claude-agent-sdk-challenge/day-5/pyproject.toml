@@ -1,9 +1,13 @@
 [project]
-name = "agent-sdk-challenge-day-5"
+name = "job-fit-agent-day-5"
 version = "0.1.0"
-description = "Day 5 of the Claude Agent SDK challenge: ship it and show us"
+description = "Day 5 of the Claude Agent SDK challenge: debug it, test it, show us"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "claude-agent-sdk==0.2.168",
+    "pypdf==5.4.0",
+    "python-dotenv>=1.0.0",
+]
 
 [dependency-groups]
 dev = [
@@ -11,5 +15,5 @@ dev = [
 ]
 
 [tool.pytest.ini_options]
-pythonpath = ["."]
+pythonpath = ["."]   # so tests can import agent/ and tools/
 testpaths = ["tests"]

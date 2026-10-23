@@ -1,0 +1,13 @@
+# Your CV, job ads, reports, tracker and notes stay on your machine
+node_modules/
+.env
+/*cv*.*
+/*CV*.*
+/job.md
+/job-fit-*.md
+/applications.csv
+/notes.md
+/shortlist.md
+/eval-results.md
+/eval-details.md
+logs/
