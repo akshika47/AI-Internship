@@ -1,19 +1,61 @@
-# Day 5: Debug it, test it, show us
+# Day 5: Ship it and show us
 
-**You're done when:** you've found one bug in your agent by reading its steps, turned it into a test, and
-posted a one-minute demo in the challenge thread. Any agent counts, whatever it does.
+**You're done when:** you've shown us your agent: what it does, a real run, and one piece of proof that it
+works. Any agent counts, whatever it does and however far you got.
 
-Day 4 checked the agent's *answers*. Today is about its *steps*: an agent bug rarely shows up as a crash. It
-shows up as a run that looks fine and quietly did one thing wrong in the middle. So:
+On Day 1 the promise was an agent that takes a task, uses tools, and gives you a result you'd actually use.
+Here's Dr Aki's, finished, as one product. Yours goes next to it in the challenge thread.
 
-1. **Watch it work:** log every step to a file.
-2. **Find the first wrong step:** read the log from the top.
-3. **Turn the bug into a test:** so it can't come back.
-4. **Run it more than once:** agents don't do the same thing every time.
-5. **Fix it and keep the test.**
-6. **Show us.**
+## The finished agent
 
-Dr Aki's agent is the worked example below, and the tools work for yours too.
+**A job-hunt helper.** In: a job ad and a CV. Out: an honest fit report, a row in your tracker, and a weekly
+shortlist. Every claim in the report quotes the CV, and anything the checks can't back up is taken out.
+
+```bash
+cd claude-agent-sdk-challenge/day-5
+uv run job_fit.py examples/jobs/brightpath-ops-ai-associate.md examples/cvs/ops-coordinator.md
+uv run shortlist.py examples/jobs/this-week.txt examples/cvs/ops-coordinator.md
+```
+
+A real shortlist from this code (3 jobs, $0.21 in total):
+
+| Role | Fit | Decision |
+|---|---|---|
+| Operations & AI Associate, Brightpath Logistics | 9/10 | Apply now |
+| Junior AI Automation Analyst, Fernhill Health | 7/10 | Apply now |
+| AI Product Analyst, Ledgerly | 3/10 | Skip this one |
+
+What each day added:
+
+| Day | What it added |
+|---|---|
+| 1 | Reads the ad and the CV, writes the report |
+| 2 | Its own tools: fetch a job ad, check and save the tracker |
+| 3 | A CV-review skill, measured with and without it |
+| 4 | Every claim quotes the CV; code and a judge check it; a guard on what it can open |
+| 5 | A step log, evals run more than once, and a real bug found and fixed (below) |
+
+## Where I stopped, and where you can take it
+
+Honest limits, each one seen in our own runs this week, and the next step for it:
+
+| Where it stops | What we saw | Where to take it |
+|---|---|---|
+| The fit score is an opinion | Brightpath scored 8/10 on an earlier run and 9/10 today, same job and CV | Add an outcome column (interview, no reply, rejected) and check the scores against it |
+| The tests are small | 4 eval scenarios, 3 eval cases, 10 judge cases | Turn every mistake into a case. Anthropic suggests starting with 20 to 50 |
+| The judge can be too strict | It took out "has used an LLM API" though the CV lists a RAG chatbot | A separate critic agent that reviews the whole report |
+| It only reads what you give it | Indeed refused our requests (401/403), and the guard blocks every other file or link on purpose | A helper agent that researches the company in parallel ([subagents](https://code.claude.com/docs/en/agent-sdk/subagents)) |
+| It runs only when you run it | About 5 to 8 cents and 30 seconds a job | A weekly run on a schedule with GitHub Actions |
+| It lives in a terminal | | Give it a face inside Claude: the next challenge |
+
+The same ladder works for any agent: it runs, it has tools, it knows your way of doing things, it checks
+itself, you can prove it works. Then pick one of the directions above.
+
+## Prove yours works
+
+"Ship it" here means "show it working", not hosting it. The proof that lands best is a bug you found and
+fixed, or a pass rate over several runs. The steps below are how we got ours, and they work for your agent
+too: log every step, find the first wrong one, turn it into a test, and run it more than once.
 
 ## Set up
 
@@ -169,7 +211,7 @@ every pull request, so a bug you've fixed once stays fixed.
 
 ## 6. Show us
 
-Post a one-minute demo in the challenge thread: a screen recording, a GIF, or three lines of text.
+Post your agent in the challenge thread: a screenshot, a short Loom or GIF, or three lines of text.
 
 1. Who it's for and the problem (10 s)
 2. A real run (30 s)
@@ -206,8 +248,17 @@ see `.github/workflows/agent-sdk-challenge-tests.yml` at the top of the repo.
 
 ## Further reading
 
-- Anthropic, [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents):
-  start with 20 to 50 tasks from real failures, prefer code checks, read the transcripts, run more than once.
+- Anthropic, [Harness design for long-running application development](https://www.anthropic.com/research/harness-design-long-running-apps)
+  (March 2026): they split the work across a planner, a builder and a separate evaluator, because "agents tend
+  to respond by confidently praising the work". Our Day 4 judge is the same idea.
+- Anthropic, [Demystifying evals for AI agents](https://www.anthropic.com/research/demystifying-evals-for-ai-agents)
+  (January 2026): start with 20 to 50 tasks from real failures, prefer code checks, read the transcripts, run
+  more than once.
+- Anthropic, [Writing effective tools for agents, with agents](https://www.anthropic.com/research/writing-tools-for-agents):
+  use Claude to test and improve your own tools. Our wrapped-quote fix was a tool fix.
+- [anthropics/claude-agent-sdk-demos](https://github.com/anthropics/claude-agent-sdk-demos): Anthropic's own
+  example apps (a multi-agent research system, an email assistant, a resume generator). Built for local use.
+- [Subagents in the Agent SDK](https://code.claude.com/docs/en/agent-sdk/subagents) and Anthropic's
+  [How we built our multi-agent research system](https://www.anthropic.com/research/multi-agent-research-system):
+  for turning your agent into a team.
 - [Hooks in the Agent SDK](https://code.claude.com/docs/en/agent-sdk/hooks): every event you can log or control.
-- Respan, [AI agent debugging](https://www.respan.ai/articles/agent-debugging): a trace-first way to find the bug,
-  and the common failure shapes.
