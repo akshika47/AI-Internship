@@ -1,0 +1,6 @@
+{
+  "name": "mcp-apps-day-2",
+  "main": "worker.ts",
+  "compatibility_date": "2026-09-01",
+  "rules": [{ "type": "Text", "globs": ["**/*.csv", "**/*.html"], "fallthrough": true }]
+}

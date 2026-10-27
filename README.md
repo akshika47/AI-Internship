@@ -18,6 +18,13 @@ A 5-day community challenge: build your first AI agent with the Claude Agent SDK
 - **Status:** Day 1 available (a job-fit agent)
 - **Get Started:** See [claude-agent-sdk-challenge/README.md](claude-agent-sdk-challenge/README.md)
 
+### MCP Apps Challenge
+A 4-day community challenge: build an MCP App that opens inside Claude, and find out if MCP is dead.
+
+- **Location:** `mcp-apps-challenge/`
+- **Status:** Days 1 and 2 available (a returns chart for a demo shop)
+- **Get Started:** See [mcp-apps-challenge/README.md](mcp-apps-challenge/README.md)
+
 ### AI Engineering Bootcamp v2
 Build typed LLM APIs with FastAPI, OpenAI structured output, guardrails, and cost visibility.
 
