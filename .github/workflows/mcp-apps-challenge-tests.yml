@@ -1,0 +1,43 @@
+# Free checks for the MCP Apps challenge. No API key, no cost: nothing here calls a model.
+# Runs on every pull request (and push to main) that touches the challenge folder.
+name: MCP Apps challenge · tests
+
+on:
+  pull_request:
+    paths: ["mcp-apps-challenge/**", ".github/workflows/mcp-apps-challenge-tests.yml"]
+  push:
+    branches: [main]
+    paths: ["mcp-apps-challenge/**"]
+
+permissions:
+  contents: read
+
+jobs:
+  node:
+    name: Day ${{ matrix.day }} · ${{ matrix.os }} · Node ${{ matrix.node }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        day: [2]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node: [20, 22]
+    defaults:
+      run:
+        working-directory: mcp-apps-challenge/day-${{ matrix.day }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install (from the lockfile, exactly)
+        run: npm ci
+      - name: Build the view and the test page
+        run: npm run build
+      - name: Type-check
+        run: npx tsc --noEmit
+      - name: Tests (the numbers, and the MCP contract over HTTP)
+        run: npx vitest run
+      - name: Bundle the Cloudflare Worker (no upload, no account needed)
+        if: matrix.os == 'ubuntu-latest' && matrix.node == 22
+        run: npx -y wrangler@4.127.1 deploy -c worker/wrangler.jsonc --dry-run --outdir ${{ runner.temp }}/worker
