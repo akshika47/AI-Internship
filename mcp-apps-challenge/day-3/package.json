@@ -1,0 +1,40 @@
+{
+  "name": "mcp-apps-challenge-day-3",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Day 3 of Build your first MCP App: Claude suggests, you approve, on your own CSV.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "build": "vite build view && vite build host",
+    "start": "npm run build && tsx start.ts",
+    "serve": "tsx start.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && vitest run",
+    "test:e2e": "npm run build && tsx scripts/e2e.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/client": "2.4.0",
+    "@modelcontextprotocol/ext-apps": "2.0.3",
+    "@modelcontextprotocol/node": "2.1.2",
+    "@modelcontextprotocol/server": "2.4.0",
+    "cors": "2.8.6",
+    "express": "5.3.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/cors": "2.8.19",
+    "@types/express": "5.0.6",
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vite": "8.3.5",
+    "vite-plugin-singlefile": "2.3.4",
+    "vitest": "4.1.12"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        day: [2]
+        day: [2, 3]
         os: [ubuntu-latest, macos-latest, windows-latest]
         node: [20, 22]
     defaults:
@@ -39,5 +39,5 @@ jobs:
       - name: Tests (the numbers, and the MCP contract over HTTP)
         run: npx vitest run
       - name: Bundle the Cloudflare Worker (no upload, no account needed)
-        if: matrix.os == 'ubuntu-latest' && matrix.node == 22
+        if: matrix.day == 2 && matrix.os == 'ubuntu-latest' && matrix.node == 22
         run: npx -y wrangler@4.127.1 deploy -c worker/wrangler.jsonc --dry-run --outdir ${{ runner.temp }}/worker

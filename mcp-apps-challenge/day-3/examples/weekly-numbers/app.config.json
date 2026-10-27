@@ -1,0 +1,13 @@
+{
+  "title": "Weekly numbers",
+  "csv": "numbers.csv",
+  "id": "metric",
+  "details": ["this_week", "last_week", "target"],
+  "approve": "Follow up",
+  "skip": "It's fine",
+  "ask": "For each number, say in one short sentence whether it needs a follow-up this week and why, comparing it with last week and the target.",
+  "sample": [
+    { "id": "Support tickets", "suggestion": "Follow up: up 57% on last week and well over target." },
+    { "id": "Refunds", "suggestion": "Fine: 7 is under the target of 10." }
+  ]
+}

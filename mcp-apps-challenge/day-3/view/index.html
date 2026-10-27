@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Board</title>
+    <style>
+      /* Every colour and size reads the HOST's CSS variable first (so the view matches Claude or ChatGPT),
+         and falls back to our own value when a host doesn't send one. */
+      :root {
+        color-scheme: light dark;
+        --bg: var(--color-background-primary, light-dark(#ffffff, #1a1a1a));
+        --panel: var(--color-background-secondary, light-dark(#f5f5f4, #262626));
+        --text: var(--color-text-primary, light-dark(#1c1917, #f5f5f4));
+        --muted: var(--color-text-secondary, light-dark(#57534e, #a8a29e));
+        --line: var(--color-border-primary, light-dark(#e7e5e4, #404040));
+        --good: var(--color-text-success, light-dark(#15803d, #4ade80));
+        --bad: var(--color-text-danger, light-dark(#b91c1c, #f87171));
+        --ring: var(--color-ring-primary, light-dark(#2563eb, #60a5fa));
+        --radius: var(--border-radius-md, 8px);
+        --font: var(--font-sans, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif);
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font); }
+      main { padding: 16px; max-width: 720px; }
+      .eyebrow { margin: 0; color: var(--muted); font-size: 13px; }
+      h1 { margin: 4px 0 2px; font-size: 22px; line-height: 1.2; font-weight: 600; }
+      .lede { margin: 0 0 16px; color: var(--muted); font-size: 15px; }
+
+      /* One card per row: name and status, the details, Claude's suggestion, then the buttons. */
+      #items { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+      .item { border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; display: grid; gap: 6px; }
+      .item.approved { border-left: 4px solid var(--good); }
+      .item.skipped { border-left: 4px solid var(--line); opacity: 0.75; }
+      .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+      .name { font-size: 15px; font-weight: 600; overflow-wrap: anywhere; }
+      .badge { font-size: 12px; color: var(--muted); white-space: nowrap; }
+      .approved .badge { color: var(--good); font-weight: 600; }
+      .details { margin: 0; font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+      .suggestion { margin: 0; font-size: 14px; padding: 6px 8px; border-radius: var(--radius); background: var(--panel); }
+      .suggestion b { font-weight: 600; }
+      .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+
+      button {
+        font: inherit; font-size: 14px; font-weight: 600; padding: 6px 12px; border-radius: var(--radius);
+        border: 1px solid var(--line); background: var(--panel); color: var(--text); cursor: pointer;
+      }
+      button:hover { border-color: var(--muted); }
+      button:focus-visible { outline: 2px solid var(--ring); outline-offset: 1px; }
+      button:disabled { opacity: 0.6; cursor: progress; }
+      button.yes { border-color: var(--good); color: var(--good); }
+      button.link { border: 0; background: none; padding: 6px 0; color: var(--muted); font-weight: 400; text-decoration: underline; }
+
+      footer { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+      .note { margin: 10px 0 0; font-size: 13px; color: var(--muted); }
+      .error { color: var(--bad); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">Claude suggests, you decide</p>
+      <h1 id="title">Waiting for suggestions…</h1>
+      <p class="lede" id="lede">Ask Claude to review your rows, and they appear here.</p>
+      <ol id="items"></ol>
+      <footer id="footer" hidden>
+        <button id="done" type="button">I'm done: tell Claude</button>
+        <p class="note" id="note" aria-live="polite"></p>
+      </footer>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
