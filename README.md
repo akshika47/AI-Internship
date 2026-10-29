@@ -22,7 +22,7 @@ A 5-day community challenge: build your first AI agent with the Claude Agent SDK
 A 4-day community challenge: build an MCP App that opens inside Claude, and find out if MCP is dead.
 
 - **Location:** `mcp-apps-challenge/`
-- **Status:** Days 1 and 2 available (a returns chart for a demo shop)
+- **Status:** Days 1 to 3 available (a returns chart, then a board where Claude suggests and you decide)
 - **Get Started:** See [mcp-apps-challenge/README.md](mcp-apps-challenge/README.md)
 
 ### AI Engineering Bootcamp v2
