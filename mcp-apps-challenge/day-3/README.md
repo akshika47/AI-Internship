@@ -40,7 +40,8 @@ Open **http://localhost:8080**, then:
 2. The board appears. Click **Apply** on one card and **Skip** on another.
 3. Look at **What the model now knows**: it lists what you decided. Open
    `examples/job-board/applications.csv`: there's a new `status` column with `approved` and `skipped` in it.
-4. Click **I'm done: tell Claude**. In Claude, that puts a message in the chat as you, and Claude replies to it.
+4. Click **I'm done: tell Claude**. In Claude, that puts a message in the chat box for you, and Claude replies once
+   you press Send.
 
 To run another example: `npm start -- examples/weekly-numbers`.
 
@@ -89,8 +90,9 @@ scored the same role twice, delete one of the two rows first: the id must be dif
    (`_meta.ui.resourceUri`), and the view draws a card per row with Claude's suggestion on it.
 3. **You decide.** A button calls `set_status`, the only tool that writes. Then `app.updateModelContext(...)`
    tells Claude what you decided. Claude reads that on your next message.
-4. **You hand back.** **I'm done** calls `app.sendMessage(...)`, which posts a message in the chat as you. Unlike
-   `updateModelContext`, it makes Claude reply.
+4. **You hand back.** **I'm done** calls `app.sendMessage(...)`, which hands the chat a message from you. Unlike
+   `updateModelContext`, it gets a reply. Claude.ai puts it in the message box with a warning and waits for you to
+   press Send: even a message from your own app needs your OK.
 
 ## The write is the part to get right
 

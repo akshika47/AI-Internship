@@ -117,7 +117,8 @@ async function decide(item: Item, status: Status) {
   }
 }
 
-// 4. The done button: sendMessage puts a message in the chat as you, so Claude replies straight away.
+// 4. The done button: sendMessage hands a message to the chat as you. Claude.ai puts it in the message box with a
+//    warning and waits for you to press Send: even a message from your own app needs your OK.
 $("done").addEventListener("click", async () => {
   if (!board) return;
   const button = $("done") as HTMLButtonElement;
@@ -129,7 +130,7 @@ $("done").addEventListener("click", async () => {
       : `I've finished reviewing "${board.title}" and didn't choose "${board.approve}" for any of them.`;
     const result = await app.sendMessage({ role: "user", content: [{ type: "text", text }] });
     if (result.isError) throw new Error("The chat didn't accept the message.");
-    note("Sent to the chat.");
+    note("Your message is in the chat box. Press Send if Claude asks you to.");
   } catch (error) {
     note(error instanceof Error ? error.message : String(error), true);
   } finally {

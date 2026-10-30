@@ -1,0 +1,13 @@
+{
+  "title": "Job applications",
+  "csv": "applications.csv",
+  "id": "role",
+  "details": ["fit_score", "decision", "notes"],
+  "approve": "Apply",
+  "skip": "Skip",
+  "ask": "For each role, suggest apply or skip in one short sentence, using the fit score and the notes.",
+  "sample": [
+    { "id": "Operations & AI Associate, Brightpath Logistics", "suggestion": "Apply: 9/10 and it's the automation work you want." },
+    { "id": "AI Product Analyst, Ledgerly", "suggestion": "Skip: it needs 5 years of fintech analytics." }
+  ]
+}
