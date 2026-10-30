@@ -14,7 +14,7 @@ Claude suggests, you decide in the app.
 | 1 | Is MCP dead? Read both sides, then try a real MCP server in Claude | You've asked Claude a question it answered with a connector | [`day-1/`](day-1/) |
 | 2 | Your first MCP App, on demo shop data | You've seen the chart in Claude, run it on your laptop and watched your click reach the model | [`day-2/`](day-2/) |
 | 3 | Claude suggests, you decide: your own CSV, and buttons that change it | Your CSV is in the app with Claude's suggestions, and you've approved or skipped a row | [`day-3/`](day-3/) |
-| 4 | Put it in Claude, check it's safe, and show us | Coming soon | |
+| 4 | Put it in Claude, next to Gmail, check it's safe, and show us | Claude has added rows from your email to your board, you've decided them, and Claude has acted on what you approved | [`day-4/`](day-4/) |
 
 ## What you need
 

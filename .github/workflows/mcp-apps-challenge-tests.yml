@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        day: [2, 3]
+        day: [2, 3, 4]
         os: [ubuntu-latest, macos-latest, windows-latest]
         node: [20, 22]
     defaults:

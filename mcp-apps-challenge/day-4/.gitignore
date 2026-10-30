@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.csv.bak
+*.csv.tmp
+# your own app folder holds your own data: keep it out of git
+my-app/
+.connector-secret

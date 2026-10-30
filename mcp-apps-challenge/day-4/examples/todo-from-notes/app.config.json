@@ -1,0 +1,13 @@
+{
+  "title": "To-dos from my notes",
+  "csv": "notes.csv",
+  "id": "note_id",
+  "details": ["date", "note"],
+  "approve": "Add to-do",
+  "skip": "No to-do",
+  "ask": "For each note, suggest one to-do in a few words, or say there's nothing to do.",
+  "sample": [
+    { "id": "n1", "suggestion": "To-do: send Priya the hiring plan before Friday." },
+    { "id": "n2", "suggestion": "Nothing to do." }
+  ]
+}

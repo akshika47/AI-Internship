@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Sandbox</title>
+    <!-- The sandbox proxy. It runs on its OWN port (another origin), so the view can never reach the test page.
+         serve.ts sends a Content-Security-Policy header with this file; the view inherits it, so it can't load
+         anything from the internet. Same idea as the official basic-host's sandbox. -->
+    <style>
+      html, body { margin: 0; height: 100%; background: transparent; }
+      iframe { display: block; width: 100%; height: 100%; border: 0; background: transparent; }
+    </style>
+  </head>
+  <body>
+    <script>
+      // Only work inside an iframe on a localhost page.
+      if (window.self === window.top) throw new Error("Open the test page, not this file.");
+      if (!/^http:\/\/localhost(:|\/|$)/.test(document.referrer)) throw new Error("Unexpected parent: " + document.referrer);
+      const HOST_ORIGIN = new URL(document.referrer).origin;
+      const OWN_ORIGIN = location.origin;
+
+      // The inner iframe holds the view's HTML.
+      const inner = document.createElement("iframe");
+      inner.setAttribute("sandbox", "allow-scripts allow-same-origin allow-forms");
+      document.body.appendChild(inner);
+
+      // Relay messages both ways: test page <-> this proxy <-> view.
+      window.addEventListener("message", (event) => {
+        if (event.source === window.parent) {
+          if (event.origin !== HOST_ORIGIN) return; // only the test page may talk to us
+          if (event.data && event.data.method === "ui/notifications/sandbox-resource-ready") {
+            // The host sends the view's HTML: write it into the inner iframe.
+            const doc = inner.contentDocument;
+            doc.open();
+            doc.write(event.data.params.html);
+            doc.close();
+          } else {
+            inner.contentWindow.postMessage(event.data, "*");
+          }
+        } else if (event.source === inner.contentWindow) {
+          if (event.origin !== OWN_ORIGIN) return;
+          window.parent.postMessage(event.data, HOST_ORIGIN);
+        }
+      });
+
+      // Tell the test page we're ready for the view's HTML.
+      window.parent.postMessage({ jsonrpc: "2.0", method: "ui/notifications/sandbox-proxy-ready", params: {} }, HOST_ORIGIN);
+    </script>
+  </body>
+</html>
