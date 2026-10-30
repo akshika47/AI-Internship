@@ -43,7 +43,7 @@ Open **http://localhost:8080**, then:
 4. Click **I'm done: tell Claude**. In Claude, that puts a message in the chat box for you, and Claude replies once
    you press Send.
 
-To run another example: `npm start -- examples/weekly-numbers`.
+To run another example: `npm start examples/weekly-numbers`.
 
 ## Make it yours
 
@@ -73,7 +73,7 @@ To run another example: `npm start -- examples/weekly-numbers`.
 | `ask` | What Claude should suggest for each row. This goes into the tool's description, so Claude reads it |
 | `sample` | Optional: example suggestions, so the test page has something to show |
 
-3. Run `npm start -- my-app`. If something's wrong, it tells you before anything starts: a missing column, an
+3. Run `npm start my-app`. If something's wrong, it tells you before anything starts: a missing column, an
    id that repeats, a CSV outside the folder.
 
 Your data goes in a column called `status` (change it with `"status": "..."` in the config). It's added the first
@@ -126,7 +126,7 @@ after each click. It needs Playwright: `npm install --no-save playwright-core &&
 
 | You see | Try this |
 |---|---|
-| `There's no app.config.json in my-app` | Run `npm start -- my-app` from the `day-3` folder, and check the folder name |
+| `There's no app.config.json in my-app` | Run `npm start my-app` from the `day-3` folder, and check the folder name |
 | `has no column called "..."` | The message lists your CSV's real columns. Copy the name exactly, including capitals |
 | `"..." appears twice in the "id" column` | Pick a column that's different on every row, or add one (a row number works) |
 | `Port 3001 is already in use` | Yesterday's `npm start` is still running. Stop it with Ctrl+C |

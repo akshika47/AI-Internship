@@ -1,7 +1,7 @@
 // `npm start` runs this after building: the MCP server on 3001 and the test page on 8080 (+ its sandbox on 8081).
-// `npm start -- examples/weekly-numbers` runs another app folder. With no folder, it runs examples/job-board.
-// `npm start -- my-app --share` also opens a Cloudflare tunnel, so Claude can reach your laptop, and prints the
-// connector URL to paste into Claude.
+// `npm start examples/weekly-numbers` runs another app folder. With no folder, it runs examples/job-board.
+// `npm run share my-app` also opens a Cloudflare tunnel, so Claude can reach your laptop, and prints the
+// connector URL to paste into Claude. Neither needs "--", which some editors turn into "–" when you paste.
 import { spawn } from "node:child_process";
 import fs from "node:fs";
 import type { AddressInfo } from "node:net";
@@ -9,9 +9,9 @@ import { startTestPage } from "./host/serve.js";
 import { connectorSecret, loadApp, startMcpServer, VIEW_FILE } from "./src/server.js";
 
 const HOST = "localhost"; // the same name everywhere, so IPv4/IPv6 can't split them
-const args = process.argv.slice(2);
+const args = process.argv.slice(2).map((a) => a.replace(/^[–—]/, "--")); // "–share" pasted from a post still works
 const share = args.includes("--share");
-const folder = args.find((a) => !a.startsWith("--")) ?? "examples/job-board";
+const folder = args.find((a) => !a.startsWith("-")) ?? "examples/job-board";
 
 if (!fs.existsSync(VIEW_FILE)) {
   console.error("The view isn't built yet. Run `npm start` (it builds first) or `npm run build`.");
@@ -26,7 +26,7 @@ try {
   console.log(`
   App          ${source.config.title} (${folder})
   Test page    ${page.url}   <- open this
-${share ? "" : "\n  To use it in Claude: stop this (Ctrl+C) and run  npm start -- " + folder + " --share\n"}
+${share ? "" : "\n  To use it in Claude: stop this (Ctrl+C) and run  npm run share " + folder + "\n"}
   Press Ctrl+C to stop.
 `);
   if (share) openTunnel(mcp.address() as AddressInfo, mcpPath);
@@ -68,7 +68,7 @@ function openTunnel(address: AddressInfo, mcpPath: string) {
       console.error(`  Can't find cloudflared, the program that opens the tunnel. Install it, then run this again:
     Mac      brew install cloudflared
     Windows  winget install --id Cloudflare.cloudflared
-    Linux    https://github.com/cloudflare/cloudflared/releases (the .deb or .rpm for your machine)
+    Linux    https://github.com/cloudflare/cloudflared/releases (see the Day 4 README for the commands)
   The test page above still works without it.
 `);
     } else console.error(`  The tunnel didn't start: ${error.message}`);

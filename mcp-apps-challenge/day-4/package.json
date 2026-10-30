@@ -10,6 +10,7 @@
   "scripts": {
     "build": "vite build view && vite build host",
     "start": "npm run build && tsx start.ts",
+    "share": "npm run build && tsx start.ts --share",
     "serve": "tsx start.ts",
     "typecheck": "tsc --noEmit",
     "test": "npm run build && vitest run",

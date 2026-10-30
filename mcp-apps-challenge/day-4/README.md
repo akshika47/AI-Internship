@@ -29,7 +29,12 @@ Claude can put things on your board. Only you can decide them. That split is the
 - **cloudflared**, which gives your laptop a temporary https address so Claude can reach it. No account needed.
   - Mac: `brew install cloudflared`
   - Windows: `winget install --id Cloudflare.cloudflared`
-  - Linux: the `.deb` or `.rpm` from [cloudflared releases](https://github.com/cloudflare/cloudflared/releases)
+  - Linux (any distro, 64-bit Intel/AMD; on ARM use `cloudflared-linux-arm64`):
+    ```bash
+    curl -L -o cloudflared https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
+    chmod +x cloudflared
+    sudo mv cloudflared /usr/local/bin/
+    ```
 - **Gmail connected in Claude** (Customize → Connectors → Gmail). No Gmail? Use web search instead: the prompt
   is below.
 - A Free Claude account allows one custom connector. Remove the Day 2 one first.
@@ -41,10 +46,10 @@ cd AI-Internship
 git pull
 cd mcp-apps-challenge/day-4
 npm install
-npm start -- examples/job-board --share
+npm run share
 ```
 
-Use `my-app` instead of `examples/job-board` if you made your own on Day 3 (copy it from `day-3/my-app`).
+Made your own app on Day 3? Copy `day-3/my-app` into `day-4` and run `npm run share my-app` instead.
 It prints:
 
 ```
