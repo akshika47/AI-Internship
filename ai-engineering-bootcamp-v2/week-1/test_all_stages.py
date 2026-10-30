@@ -22,7 +22,9 @@ def free_port() -> int:
 def start_server(module: str, port: int) -> subprocess.Popen:
     return subprocess.Popen(
         [
-            str(WORKDIR / ".venv/bin/uvicorn"),
+            sys.executable,
+            "-m",
+            "uvicorn",
             f"{module}:app",
             "--host",
             "127.0.0.1",
