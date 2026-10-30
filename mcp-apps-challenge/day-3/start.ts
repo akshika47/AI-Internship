@@ -1,11 +1,12 @@
 // `npm start` runs this after building: the MCP server on 3001 and the test page on 8080 (+ its sandbox on 8081).
-// `npm start -- examples/weekly-numbers` runs another app folder. With no folder, it runs examples/job-board.
+// `npm start examples/weekly-numbers` runs another app folder. With no folder, it runs examples/job-board.
+// Anything starting with a dash is skipped: some editors turn a pasted "--" into "–".
 import fs from "node:fs";
 import { startTestPage } from "./host/serve.js";
 import { loadApp, startMcpServer, VIEW_FILE } from "./src/server.js";
 
 const HOST = "localhost"; // the same name everywhere, so IPv4/IPv6 can't split them
-const folder = process.argv[2] ?? "examples/job-board";
+const folder = process.argv.slice(2).find((a) => !/^[-–—]/.test(a)) ?? "examples/job-board";
 
 if (!fs.existsSync(VIEW_FILE)) {
   console.error("The view isn't built yet. Run `npm start` (it builds first) or `npm run build`.");
