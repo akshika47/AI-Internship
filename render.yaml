@@ -1,0 +1,29 @@
+# Render Blueprint for ai-engineering-bootcamp-v2/week-1v2: the /ask API + the Streamlit UI.
+# Secrets use `sync: false`, so Render asks for them in the dashboard and they never live in git.
+services:
+  - type: web
+    name: week1-ask-api
+    runtime: python
+    plan: free
+    rootDir: ai-engineering-bootcamp-v2/week-1v2
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: OPENAI_API_KEY
+        sync: false
+
+  - type: web
+    name: week1-ask-ui
+    runtime: python
+    plan: free
+    rootDir: ai-engineering-bootcamp-v2/week-1v2
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run demo_page.py --server.address 0.0.0.0 --server.port $PORT --server.headless true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: API_BASE_URL
+        sync: false # the API's public URL, e.g. https://week1-ask-api.onrender.com

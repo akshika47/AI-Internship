@@ -5,6 +5,7 @@ Run:
 """
 
 import json
+import os
 
 import httpx
 import streamlit as st
@@ -95,7 +96,9 @@ st.caption(
     "One final demo endpoint. The separate `stages/` files show how this grows step by step."
 )
 
-base_url = st.sidebar.text_input("API base URL", "http://127.0.0.1:8000")
+base_url = st.sidebar.text_input(
+    "API base URL", os.getenv("API_BASE_URL", "http://127.0.0.1:8000")
+)
 st.sidebar.markdown("### Start the API")
 st.sidebar.code(
     f"cd {WORKDIR_CMD}\n"
