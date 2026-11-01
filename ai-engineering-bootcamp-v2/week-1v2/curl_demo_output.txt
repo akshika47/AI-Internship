@@ -1,0 +1,217 @@
+### GET https://week2-rag-api-0gcm.onrender.com/health  (free Render services can take ~1 min to wake up)
+{
+    "status": "ok"
+}
+
+### POST /ingest  (sample_docs/northwind_handbook.md)
+{
+    "document_id": "northwind-handbook",
+    "chunks_upserted": 4,
+    "chunk_ids": [
+        "northwind-handbook::chunk-000",
+        "northwind-handbook::chunk-001",
+        "northwind-handbook::chunk-002",
+        "northwind-handbook::chunk-003"
+    ],
+    "chunk_size": 800,
+    "chunk_overlap": 120,
+    "embedding_model": "text-embedding-3-small",
+    "embedding_tokens": 516,
+    "latency_ms": 2295,
+    "cost_usd": 1e-05
+}
+
+### POST /retrieve  (retrieval only, no LLM)
+{
+    "question": "What is the daily meal allowance when traveling internationally?",
+    "top_k": 3,
+    "chunks": [
+        {
+            "chunk_id": "northwind-handbook::chunk-002",
+            "document_id": "northwind-handbook",
+            "score": 0.481,
+            "text": "For travel, economy class is required on flights under six hours. Flights of six hours or longer may be booked in premium economy. The daily meal allowance while traveling is $85 in the United States and $110 internationally. Hotel bookings must go through the company travel portal, Navan.\n\n## Equipment and Security\n\nEvery employee receives a laptop on their first day: engineers get a 16-inch MacBook Pro, everyone else gets a 14-inch MacBook Air. Laptops are refreshed every three years. Lost or stolen devices must be reported to the IT help desk at it-help@northwind.example within 24 hours.",
+            "metadata": {
+                "document_id": "northwind-handbook",
+                "chunk_index": 2,
+                "source": "northwind_handbook.md",
+                "chunk_count": 4
+            }
+        },
+        {
+            "chunk_id": "northwind-handbook::chunk-001",
+            "document_id": "northwind-handbook",
+            "score": 0.2917,
+            "text": "## Remote Work\n\nEmployees may work remotely up to three days per week. Tuesdays and Thursdays are \"anchor days\" when everyone on a team is expected in the office. Fully remote arrangements require written approval from a department VP and are reviewed every six months.\n\nNorthwind provides a one-time home office stipend of $600 for new hires, plus $50 per month toward internet costs for anyone who works remotely at least two days per week.\n\n## Expenses and Travel\n\nBusiness expenses under $75 can be submitted without a receipt. Anything at or above $75 needs an itemized receipt uploaded to the Expensify app within 30 days of purchase. Reimbursements are paid out with the next regular payroll.",
+            "metadata": {
+                "document_id": "northwind-handbook",
+                "chunk_count": 4,
+                "chunk_index": 1,
+                "source": "northwind_handbook.md"
+            }
+        },
+        {
+            "chunk_id": "northwind-handbook::chunk-003",
+            "document_id": "northwind-handbook",
+            "score": 0.2076,
+            "text": "Two-factor authentication is mandatory on all company accounts. Passwords must be at least 14 characters and are stored in the company 1Password vault. Security awareness training is required every year by March 31.\n\n## Learning and Development\n\nEach employee has an annual learning budget of $1,500 for courses, books, and conferences. Unused learning budget does not roll over. Employees may also spend up to four hours per week of work time on approved learning, called \"Lab Hours.\"",
+            "metadata": {
+                "chunk_index": 3,
+                "source": "northwind_handbook.md",
+                "document_id": "northwind-handbook",
+                "chunk_count": 4
+            }
+        }
+    ],
+    "latency_ms": 517
+}
+
+### POST /ask  -> cited answer
+{
+    "answer": {
+        "answer": "The daily meal allowance while traveling internationally is $110.",
+        "citations": [
+            "northwind-handbook::chunk-002"
+        ],
+        "refused": false,
+        "confidence": 1.0
+    },
+    "retrieved_chunks": [
+        {
+            "chunk_id": "northwind-handbook::chunk-002",
+            "document_id": "northwind-handbook",
+            "score": 0.481,
+            "text": "For travel, economy class is required on flights under six hours. Flights of six hours or longer may be booked in premium economy. The daily meal allowance while traveling is $85 in the United States and $110 internationally. Hotel bookings must go through the company travel portal, Navan.\n\n## Equipment and Security\n\nEvery employee receives a laptop on their first day: engineers get a 16-inch MacBook Pro, everyone else gets a 14-inch MacBook Air. Laptops are refreshed every three years. Lost or stolen devices must be reported to the IT help desk at it-help@northwind.example within 24 hours.",
+            "metadata": {
+                "chunk_count": 4,
+                "chunk_index": 2,
+                "document_id": "northwind-handbook",
+                "source": "northwind_handbook.md"
+            }
+        },
+        {
+            "chunk_id": "northwind-handbook::chunk-001",
+            "document_id": "northwind-handbook",
+            "score": 0.2917,
+            "text": "## Remote Work\n\nEmployees may work remotely up to three days per week. Tuesdays and Thursdays are \"anchor days\" when everyone on a team is expected in the office. Fully remote arrangements require written approval from a department VP and are reviewed every six months.\n\nNorthwind provides a one-time home office stipend of $600 for new hires, plus $50 per month toward internet costs for anyone who works remotely at least two days per week.\n\n## Expenses and Travel\n\nBusiness expenses under $75 can be submitted without a receipt. Anything at or above $75 needs an itemized receipt uploaded to the Expensify app within 30 days of purchase. Reimbursements are paid out with the next regular payroll.",
+            "metadata": {
+                "document_id": "northwind-handbook",
+                "source": "northwind_handbook.md",
+                "chunk_index": 1,
+                "chunk_count": 4
+            }
+        },
+        {
+            "chunk_id": "northwind-handbook::chunk-003",
+            "document_id": "northwind-handbook",
+            "score": 0.2076,
+            "text": "Two-factor authentication is mandatory on all company accounts. Passwords must be at least 14 characters and are stored in the company 1Password vault. Security awareness training is required every year by March 31.\n\n## Learning and Development\n\nEach employee has an annual learning budget of $1,500 for courses, books, and conferences. Unused learning budget does not roll over. Employees may also spend up to four hours per week of work time on approved learning, called \"Lab Hours.\"",
+            "metadata": {
+                "chunk_count": 4,
+                "document_id": "northwind-handbook",
+                "source": "northwind_handbook.md",
+                "chunk_index": 3
+            }
+        },
+        {
+            "chunk_id": "northwind-handbook::chunk-000",
+            "document_id": "northwind-handbook",
+            "score": 0.1376,
+            "text": "# Northwind Robotics Employee Handbook (fictional sample for the RAG demo)\n\n## Paid Time Off\n\nFull-time employees accrue 1.5 days of paid time off (PTO) per month, for a total of 18 days per year. Unused PTO rolls over, but the balance is capped at 25 days; anything above the cap is forfeited on January 1. PTO requests of three or more consecutive days must be submitted in the HR portal at least two weeks in advance and approved by your direct manager.\n\nNorthwind observes 11 company holidays per year. The office also closes for a \"Recharge Week\" between December 26 and December 31, which does not count against PTO.\n\n## Remote Work",
+            "metadata": {
+                "source": "northwind_handbook.md",
+                "document_id": "northwind-handbook",
+                "chunk_index": 0,
+                "chunk_count": 4
+            }
+        }
+    ],
+    "tokens_used": 828,
+    "model": "gpt-4o-mini",
+    "latency_ms": 1322,
+    "cost_usd": 0.000139,
+    "attempts": [
+        {
+            "attempt": 1,
+            "step": "structured_output",
+            "ok": true,
+            "message": "Grounded answer citing northwind-handbook::chunk-002.",
+            "raw_output": null,
+            "validation_error": null
+        }
+    ]
+}
+
+### POST /ask  -> refusal (the handbook has no parental leave policy)
+{
+    "answer": {
+        "answer": "I don't know. The ingested documents don't contain the answer to that question.",
+        "citations": [],
+        "refused": true,
+        "confidence": 0.0
+    },
+    "retrieved_chunks": [
+        {
+            "chunk_id": "northwind-handbook::chunk-000",
+            "document_id": "northwind-handbook",
+            "score": 0.3698,
+            "text": "# Northwind Robotics Employee Handbook (fictional sample for the RAG demo)\n\n## Paid Time Off\n\nFull-time employees accrue 1.5 days of paid time off (PTO) per month, for a total of 18 days per year. Unused PTO rolls over, but the balance is capped at 25 days; anything above the cap is forfeited on January 1. PTO requests of three or more consecutive days must be submitted in the HR portal at least two weeks in advance and approved by your direct manager.\n\nNorthwind observes 11 company holidays per year. The office also closes for a \"Recharge Week\" between December 26 and December 31, which does not count against PTO.\n\n## Remote Work",
+            "metadata": {
+                "chunk_index": 0,
+                "chunk_count": 4,
+                "document_id": "northwind-handbook",
+                "source": "northwind_handbook.md"
+            }
+        },
+        {
+            "chunk_id": "northwind-handbook::chunk-003",
+            "document_id": "northwind-handbook",
+            "score": 0.287,
+            "text": "Two-factor authentication is mandatory on all company accounts. Passwords must be at least 14 characters and are stored in the company 1Password vault. Security awareness training is required every year by March 31.\n\n## Learning and Development\n\nEach employee has an annual learning budget of $1,500 for courses, books, and conferences. Unused learning budget does not roll over. Employees may also spend up to four hours per week of work time on approved learning, called \"Lab Hours.\"",
+            "metadata": {
+                "chunk_index": 3,
+                "source": "northwind_handbook.md",
+                "chunk_count": 4,
+                "document_id": "northwind-handbook"
+            }
+        },
+        {
+            "chunk_id": "northwind-handbook::chunk-001",
+            "document_id": "northwind-handbook",
+            "score": 0.2614,
+            "text": "## Remote Work\n\nEmployees may work remotely up to three days per week. Tuesdays and Thursdays are \"anchor days\" when everyone on a team is expected in the office. Fully remote arrangements require written approval from a department VP and are reviewed every six months.\n\nNorthwind provides a one-time home office stipend of $600 for new hires, plus $50 per month toward internet costs for anyone who works remotely at least two days per week.\n\n## Expenses and Travel\n\nBusiness expenses under $75 can be submitted without a receipt. Anything at or above $75 needs an itemized receipt uploaded to the Expensify app within 30 days of purchase. Reimbursements are paid out with the next regular payroll.",
+            "metadata": {
+                "chunk_index": 1,
+                "source": "northwind_handbook.md",
+                "document_id": "northwind-handbook",
+                "chunk_count": 4
+            }
+        },
+        {
+            "chunk_id": "northwind-handbook::chunk-002",
+            "document_id": "northwind-handbook",
+            "score": 0.2296,
+            "text": "For travel, economy class is required on flights under six hours. Flights of six hours or longer may be booked in premium economy. The daily meal allowance while traveling is $85 in the United States and $110 internationally. Hotel bookings must go through the company travel portal, Navan.\n\n## Equipment and Security\n\nEvery employee receives a laptop on their first day: engineers get a 16-inch MacBook Pro, everyone else gets a 14-inch MacBook Air. Laptops are refreshed every three years. Lost or stolen devices must be reported to the IT help desk at it-help@northwind.example within 24 hours.",
+            "metadata": {
+                "chunk_index": 2,
+                "document_id": "northwind-handbook",
+                "chunk_count": 4,
+                "source": "northwind_handbook.md"
+            }
+        }
+    ],
+    "tokens_used": 818,
+    "model": "gpt-4o-mini",
+    "latency_ms": 1752,
+    "cost_usd": 0.000136,
+    "attempts": [
+        {
+            "attempt": 1,
+            "step": "structured_output",
+            "ok": true,
+            "message": "Model refused: the retrieved context does not contain the answer.",
+            "raw_output": null,
+            "validation_error": null
+        }
+    ]
+}
