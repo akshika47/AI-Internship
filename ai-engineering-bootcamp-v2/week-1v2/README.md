@@ -18,6 +18,38 @@ A typed FastAPI endpoint that accepts a question and returns:
 The main idea: an LLM call becomes more useful in software when it has a predictable
 request shape, a predictable response shape, and observable runtime metadata.
 
+## Week 2: RAG on top of `/ask`
+
+The Week 1 service is extended, not rebuilt: a vector store, ingest, and retrieval now sit in
+front of the same `/ask` handler (structured output, validate + retry, cost tracking).
+
+| Endpoint | What it does |
+|----------|--------------|
+| `POST /ingest` | `document_id` + `text` → chunk with overlap (800 / 120 chars) → embed (`text-embedding-3-small`) → upsert into Chroma with metadata. Re-ingesting a `document_id` replaces it. |
+| `POST /retrieve` | Question → top-k chunks + cosine scores. No LLM, so you can check retrieval on its own. |
+| `POST /ask` | Retrieve → refuse right away if the best score is below `RAG_MIN_SCORE` (0.25) → otherwise answer from the context only, cite chunk IDs, refuse when the answer isn't there. Citations that don't match a retrieved chunk fail validation and trigger the retry. |
+| `GET /documents` | Documents and chunk counts currently in the store. |
+
+Code: `rag.py` (chunk, embed, Chroma store, retrieval) and `main.py` (endpoints + grounding).
+Sample doc: `sample_docs/northwind_handbook.md` (a fictional handbook, so the model can't
+answer from its training data).
+
+Prove it end to end with curl (saves `curl_demo_output.txt`):
+
+```bash
+./curl_demo.sh http://127.0.0.1:8000
+./curl_demo.sh https://week1-ask-api.onrender.com   # live Render URL
+```
+
+The script ingests the handbook, runs retrieval, then asks one question the handbook answers
+(cited answer) and one it doesn't (refusal).
+
+**Storage on Render:** by default Chroma writes to `./chroma_db`. The free Render plan wipes
+the disk on every deploy and restart, and after ~15 minutes idle, so ingest again before you ask
+(the Streamlit Ingest tab or `curl_demo.sh` does this). For storage that persists, create a free
+Chroma Cloud database and set `CHROMA_API_KEY`, `CHROMA_TENANT`, `CHROMA_DATABASE` on the API
+service. `rag.py` switches to Chroma Cloud automatically when `CHROMA_API_KEY` is set.
+
 ## Quick Start
 
 Run these commands from this `week-1v2` folder:
@@ -81,12 +113,12 @@ LLM output at the boundary of your application.
 
 ## Test With Curl
 
-Normal request:
+Ingest a document first (or run `./curl_demo.sh`), then a normal request:
 
 ```bash
 curl -s -X POST http://127.0.0.1:8000/ask \
   -H "Content-Type: application/json" \
-  -d '{"question": "What is Retrieval-Augmented Generation in one sentence?", "model": "gpt-4o-mini"}'
+  -d '{"question": "What is the daily meal allowance when traveling internationally?", "model": "gpt-4o-mini"}'
 ```
 
 Validation and retry demo:
@@ -94,7 +126,7 @@ Validation and retry demo:
 ```bash
 curl -s -X POST http://127.0.0.1:8000/ask \
   -H "Content-Type: application/json" \
-  -d '{"question": "What is a vector database?", "model": "gpt-4o-mini", "force_bad": true}'
+  -d '{"question": "How much is the home office stipend?", "model": "gpt-4o-mini", "force_bad": true}'
 ```
 
 ## Instructor Flow
@@ -130,8 +162,11 @@ python smoke_test.py
 ```text
 week-1v2/
 ├── README.md
-├── main.py                         # Final API used by students
-├── demo_page.py                    # Streamlit UI for the final API
+├── main.py                         # API: /ingest, /retrieve, grounded /ask
+├── rag.py                          # Chunking, embeddings, Chroma vector store
+├── demo_page.py                    # Streamlit UI: Ingest / Retrieve / Ask tabs
+├── curl_demo.sh                    # curl proof of ingest + cited answer + refusal
+├── sample_docs/northwind_handbook.md
 ├── smoke_test.py                   # No-token API startup check
 ├── requirements.txt
 ├── .env.example

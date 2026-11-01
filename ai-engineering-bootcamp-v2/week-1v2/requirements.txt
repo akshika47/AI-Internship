@@ -3,3 +3,5 @@ httpx
 openai
 python-dotenv
 streamlit
+chromadb
+langchain-text-splitters

@@ -1,4 +1,5 @@
-# Render Blueprint for ai-engineering-bootcamp-v2/week-1v2: the /ask API + the Streamlit UI.
+# Render Blueprint for ai-engineering-bootcamp-v2/week-1v2: the RAG API (/ingest, /retrieve, /ask)
+# + the Streamlit UI.
 # Secrets use `sync: false`, so Render asks for them in the dashboard and they never live in git.
 services:
   - type: web
@@ -14,6 +15,8 @@ services:
         value: 3.12.7
       - key: OPENAI_API_KEY
         sync: false
+      # The free plan's disk is wiped on restart, so local Chroma data is lost. For storage that
+      # persists, add CHROMA_API_KEY / CHROMA_TENANT / CHROMA_DATABASE (Chroma Cloud) in the dashboard.
 
   - type: web
     name: week1-ask-ui

@@ -10,3 +10,6 @@ __pycache__/
 venv/
 .venv/
 env/
+
+# Local vector store
+chroma_db/
