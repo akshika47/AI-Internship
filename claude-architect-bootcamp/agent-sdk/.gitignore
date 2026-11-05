@@ -1,0 +1,4 @@
+.env
+.venv/
+scratchpad.md
+__pycache__/
