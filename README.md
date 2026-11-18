@@ -25,6 +25,13 @@ A 4-day community challenge: build an MCP App that opens inside Claude, and find
 - **Status:** All 4 days available (a returns chart, a board where Claude suggests and you decide, then that board in Claude next to Gmail)
 - **Get Started:** See [mcp-apps-challenge/README.md](mcp-apps-challenge/README.md)
 
+### One Job Off Your Plate Challenge
+A 4-day community challenge: hand one repetitive job to Claude as a Skill that drafts and never sends, then put it on a schedule. No code needed.
+
+- **Location:** `one-job-challenge/`
+- **Status:** All 4 days available, with a practice inbox and a worked example (an inbox desk)
+- **Get Started:** See [one-job-challenge/README.md](one-job-challenge/README.md)
+
 ### AI Engineering Bootcamp v2
 Build typed LLM APIs with FastAPI, OpenAI structured output, guardrails, and cost visibility.
 
