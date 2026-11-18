@@ -40,8 +40,8 @@ Ten jobs that fit. Pick one of these or bring your own.
 - **Overdue invoice reminders:** a freelance photographer who knows exactly who owes them money and puts off the "just checking in" email another week.
 - **Release notes:** a developer who has to explain a sprint's merged pull requests to customers who have never seen a pull request.
 
-No job in mind yet? Use the practice inbox this week and pick your own job after. Rather not connect your real inbox yet? Use our **practice inbox**: 36 emails to a
-fictional bike and kayak hire shop, with its FAQ. It's in [`../practice-inbox/`](../practice-inbox/). The worked
+No job in mind yet, or rather not connect your real inbox? Use our **practice inbox**: 36 emails to a fictional
+bike and kayak hire shop, with its FAQ. It's in [`../practice-inbox/`](../practice-inbox/). The worked
 example all week is the inbox desk on that inbox.
 
 ## 2. Write down how you do it today (10 minutes)
@@ -91,15 +91,15 @@ Connectors. Claude asks before it drafts or sends anything in Gmail, so read tho
 connector off again in the same place, any time. If you'd rather not
 connect a real account this week, the practice inbox works for every day of the challenge.
 
+## 4. Post in the challenge thread
+
+- The job you picked and roughly how many minutes a week it takes
+- One thing Claude got right, and one thing it got wrong or wasn't sure about
+
 ## Go further (optional)
 
 Give the same input and prompt to two models, for example Sonnet and Haiku (in Claude Code, or in the app if
 your plan lets you choose), and put their tables side by side. Every row where they disagree is a place your
 Skill will need a clear rule tomorrow.
-
-## 4. Post in the challenge thread
-
-- The job you picked and roughly how many minutes a week it takes
-- One thing Claude got right, and one thing it got wrong or wasn't sure about
 
 Tomorrow: [Day 2, turn it into a Skill](../day-2/).
