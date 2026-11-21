@@ -1,5 +1,7 @@
 fastapi[standard]
 httpx
+langchain-text-splitters
 openai
+pinecone>=10,<11
 python-dotenv
 streamlit

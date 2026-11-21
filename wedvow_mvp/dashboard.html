@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f1c2e">
+  <meta name="robots" content="noindex">
+  <title>Host dashboard — WedVow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/invite.css">
+</head>
+<body class="dash-body">
+  <div class="dash-shell">
+    <header class="dash-header">
+      <div>
+        <p class="eyebrow">Host workspace · demo</p>
+        <h1 id="dashTitle">Your celebration at a glance</h1>
+        <p id="dashSubtitle">RSVPs are stored in this browser only.</p>
+      </div>
+      <a class="btn secondary small" href="index.html">← View invitation</a>
+    </header>
+
+    <section class="dash-gate" id="dashGate">
+      <p class="eyebrow">Private access</p>
+      <h2 class="display" style="font-size:1.6rem;margin:0">Enter host PIN</h2>
+      <p style="color:var(--parchment-dim);font-size:0.9rem;margin:10px 0 0">
+        Demo PIN is in <code style="color:var(--champagne)">event-config.js</code> (<span id="pinHint">····</span>).
+      </p>
+      <form class="pin-form" id="pinForm">
+        <label for="pinInput">PIN</label>
+        <input id="pinInput" name="pin" type="password" inputmode="numeric" maxlength="8" autocomplete="current-password" required>
+        <button class="btn full" type="submit">Unlock dashboard</button>
+        <div class="pin-error" id="pinError" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section class="dash-panel hidden" id="dashPanel">
+      <p class="eyebrow" id="eventSlug">maya-turns-30</p>
+      <h2 class="display" style="font-size:1.75rem;margin:0" id="panelHeading">RSVP overview</h2>
+
+      <div class="dash-stats">
+        <div class="stat"><span>Responses</span><strong id="statResponses">0</strong></div>
+        <div class="stat"><span>Accepting</span><strong id="statYes">0</strong></div>
+        <div class="stat"><span>Guests attending</span><strong id="statGuests">0</strong></div>
+      </div>
+
+      <div class="dash-toolbar">
+        <strong>Guest list</strong>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn secondary small" type="button" id="exportCsv">Export CSV</button>
+          <button class="btn secondary small" type="button" id="clearData">Clear demo data</button>
+        </div>
+      </div>
+
+      <div class="guest-list" id="guestList">
+        <div class="guest-row"><span>No responses yet.</span><span>—</span></div>
+      </div>
+
+      <p class="dash-note">
+        Demo only: data stays in this browser's local storage and is not synced across devices.
+        Production will use secure accounts and server storage.
+      </p>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="js/event-config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

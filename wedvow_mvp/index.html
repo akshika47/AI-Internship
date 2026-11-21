@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="Surprise Birthday Party — Celebrating Washy's Golden Jubilee">
+  <title>Washy's Golden Jubilee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Great+Vibes&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/invite.css">
+</head>
+<body>
+  <div class="envelope" id="envelope" role="dialog" aria-modal="true" aria-label="Open invitation">
+    <p class="envelope-eyebrow">Join us for a</p>
+    <div
+      class="envelope-card"
+      id="envelopeCard"
+      tabindex="0"
+      role="button"
+      aria-label="Tap to open the invitation"
+    >
+      <div class="seal" id="sealMonogram">W</div>
+    </div>
+    <h2 id="envelopeName">Washy</h2>
+    <p id="envelopeSub">Tap the envelope to open</p>
+    <p class="envelope-hint">A golden surprise awaits</p>
+  </div>
+
+  <main class="invite" id="invite" hidden>
+    <section class="section hero" id="hero" aria-labelledby="heroTitle">
+      <div class="hero-texture" id="heroTexture" aria-hidden="true"></div>
+      <div class="decor leaf leaf-tl" aria-hidden="true"></div>
+      <div class="decor leaf leaf-br" aria-hidden="true"></div>
+      <div class="decor confetti" aria-hidden="true"></div>
+      <div class="section-inner reveal">
+        <p class="eyebrow" id="heroEyebrow">Join us for a</p>
+        <div class="portrait-wrap">
+          <img id="portraitImg" class="portrait" src="assets/washy-main.jpg" alt="Washy" width="200" height="200">
+        </div>
+        <h1 class="surprise-title" id="heroTitle">
+          <span class="surprise-word">Surprise</span>
+          <span class="script-word">Birthday Party</span>
+        </h1>
+        <p class="hero-age" id="heroAge">Celebrating Washy's Golden Jubilee!</p>
+        <div class="date-banner" id="dateBanner">28 November 2026</div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true">Scroll</div>
+    </section>
+
+    <section class="section story" aria-labelledby="storyTitle">
+      <div class="section-inner reveal">
+        <p class="eyebrow">The invitation</p>
+        <h2 class="display" id="storyTitle">Join us for a surprise celebration of fifty golden years.</h2>
+        <img id="storyImg" class="story-photo" src="assets/washy-main.jpg" alt="Washington" width="480" height="600">
+      </div>
+    </section>
+
+    <section class="section details" id="details" aria-labelledby="detailsTitle">
+      <div class="section-inner reveal">
+        <p class="eyebrow">The details</p>
+        <h2 class="display" id="detailsTitle">When &amp; where</h2>
+        <dl class="detail-grid">
+          <div class="detail-card">
+            <dt>Date</dt>
+            <dd id="detailDate">28 November 2026</dd>
+          </div>
+          <div class="detail-card">
+            <dt>Time</dt>
+            <dd id="detailTime">13:00</dd>
+          </div>
+          <div class="detail-card">
+            <dt>Venue</dt>
+            <dd id="detailVenue">Greekish Restaurant</dd>
+          </div>
+          <div class="detail-card">
+            <dt>Dress code</dt>
+            <dd id="detailDress">Black with a touch of gold</dd>
+          </div>
+          <div class="detail-card span-2">
+            <dt>Address</dt>
+            <dd id="detailAddress">Westlake Eco Estate, Modderfontein</dd>
+          </div>
+        </dl>
+        <p class="adults-note" id="adultsNote">NB: No kids allowed</p>
+        <p class="meal-note" id="mealNote">Kindly note: each guest will cover their own meal.</p>
+      </div>
+    </section>
+
+    <section class="section location" id="location" aria-labelledby="locationTitle">
+      <div class="section-inner reveal">
+        <p class="eyebrow">Find us</p>
+        <h2 class="display" id="locationTitle">Location</h2>
+        <p class="lede" id="locationLede">Greekish Restaurant · Westlake Eco Estate, Modderfontein</p>
+        <div class="map-frame">
+          <iframe
+            id="mapsEmbed"
+            title="Map to Greekish Restaurant, Modderfontein"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+            src="https://maps.google.com/maps?q=Greekish+Restaurant+Westlake+Eco+Estate+Modderfontein&z=15&output=embed"
+          ></iframe>
+        </div>
+        <a class="btn" id="mapsLink" href="https://www.google.com/maps/search/?api=1&query=Greekish+Restaurant+Westlake+Eco+Estate+Modderfontein" target="_blank" rel="noopener noreferrer">
+          Open in Google Maps
+        </a>
+      </div>
+    </section>
+
+    <section class="section rsvp" id="rsvp" aria-labelledby="rsvpTitle">
+      <div class="section-inner reveal">
+        <p class="eyebrow">RSVP</p>
+        <h2 class="display" id="rsvpTitle">Please let us know</h2>
+        <p class="rsvp-deadline" id="rsvpDeadline">RSVP by 5 November 2026</p>
+        <p class="lede rsvp-hint">Tap a number below to call or WhatsApp Mamsie or Khanyi.</p>
+        <div class="rsvp-contacts" id="rsvpContacts"></div>
+        <p class="gift-inline" id="giftNote"></p>
+      </div>
+    </section>
+
+    <section class="section close-section" aria-labelledby="closeTitle">
+      <div class="section-inner reveal">
+        <p class="eyebrow" id="hostLabel">With love from the family</p>
+        <h2 class="display" id="closeTitle">Keep the secret — and come ready to celebrate.</h2>
+        <p class="credit" id="brandCredit">Bespoke design · WedVow</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/event-config.js"></script>
+  <script src="js/invite.js"></script>
+</body>
+</html>
