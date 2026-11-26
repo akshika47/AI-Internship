@@ -1,0 +1,83 @@
+{
+  "company": "NetBay, Inc.",
+  "ticker": "NETB",
+  "note": "Fictional company and filings, written for the TAI Labs AI FDE course. Page numbers are the printed page numbers you cite.",
+  "documents": [
+    {
+      "filing_id": "netbay-10q-q3-2026",
+      "form_type": "10-Q",
+      "fiscal_period": "2026-Q3",
+      "period_end": "2026-09-30",
+      "as_of": "2026-10-28",
+      "markdown": "data/filings/netbay-10q-q3-2026.md",
+      "pdf": "data/filings/netbay-10q-q3-2026.pdf",
+      "visible_to": [
+        "northgate-capital",
+        "riverside-partners"
+      ]
+    },
+    {
+      "filing_id": "netbay-10q-q2-2026",
+      "form_type": "10-Q",
+      "fiscal_period": "2026-Q2",
+      "period_end": "2026-06-30",
+      "as_of": "2026-07-29",
+      "markdown": "data/filings/netbay-10q-q2-2026.md",
+      "pdf": "data/filings/netbay-10q-q2-2026.pdf",
+      "visible_to": [
+        "northgate-capital",
+        "riverside-partners"
+      ]
+    },
+    {
+      "filing_id": "netbay-10k-2025",
+      "form_type": "10-K",
+      "fiscal_period": "2025-FY",
+      "period_end": "2025-12-31",
+      "as_of": "2026-02-18",
+      "markdown": "data/filings/netbay-10k-2025.md",
+      "pdf": "data/filings/netbay-10k-2025.pdf",
+      "visible_to": [
+        "northgate-capital",
+        "riverside-partners"
+      ]
+    },
+    {
+      "filing_id": "netbay-earnings-release-q3-2026",
+      "form_type": "8-K Ex. 99.1",
+      "fiscal_period": "2026-Q3",
+      "period_end": "2026-09-30",
+      "as_of": "2026-10-07",
+      "markdown": "data/filings/netbay-earnings-release-q3-2026.md",
+      "pdf": "data/filings/netbay-earnings-release-q3-2026.pdf",
+      "visible_to": [
+        "northgate-capital",
+        "riverside-partners"
+      ]
+    },
+    {
+      "filing_id": "northgate-capital-saved-notes",
+      "form_type": "saved-note",
+      "fiscal_period": "2026-Q3",
+      "period_end": null,
+      "as_of": "2026-10-30",
+      "markdown": "data/tenants/northgate-capital/saved-notes.md",
+      "pdf": null,
+      "visible_to": [
+        "northgate-capital"
+      ]
+    },
+    {
+      "filing_id": "riverside-partners-saved-notes",
+      "form_type": "saved-note",
+      "fiscal_period": "2026-Q3",
+      "period_end": null,
+      "as_of": "2026-10-29",
+      "markdown": "data/tenants/riverside-partners/saved-notes.md",
+      "pdf": null,
+      "visible_to": [
+        "riverside-partners"
+      ]
+    }
+  ]
+}
