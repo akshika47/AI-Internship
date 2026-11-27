@@ -32,6 +32,13 @@ A 4-day community challenge: hand one repetitive job to Claude as a Skill that d
 - **Status:** All 4 days available, with a practice inbox and a worked example (an inbox desk)
 - **Get Started:** See [one-job-challenge/README.md](one-job-challenge/README.md)
 
+### AI Forward Deployed Engineer
+Build production AI systems the way a forward deployed engineer does, for a client with real constraints.
+
+- **Location:** `ai-fde-bootcamp/`
+- **Status:** Week 2 Filings Copilot starter and dataset available
+- **Get Started:** See [ai-fde-bootcamp/week-2/filings-copilot-starter/README.md](ai-fde-bootcamp/week-2/filings-copilot-starter/README.md)
+
 ### AI Engineering Bootcamp v2
 Build typed LLM APIs with FastAPI, OpenAI structured output, guardrails, and cost visibility.
 

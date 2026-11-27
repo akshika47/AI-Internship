@@ -1,0 +1,9 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+python-dotenv>=1.0
+httpx>=0.27
+pypdf>=5.0
+
+# Add what you choose during the guided build, for example:
+# openai, anthropic, qdrant-client, psycopg[binary] + pgvector, rank-bm25, cohere

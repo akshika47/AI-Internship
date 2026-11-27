@@ -1,0 +1,221 @@
+{
+  "rule": "Set superseded_by on every chunk from an 'old' section, pointing at the chunk id your chunker gives the 'new' section. Drop superseded chunks at retrieval time unless the query asks about the old period. The earnings release is NOT superseded by the 10-Q: when the two disagree, that is the conflicting case.",
+  "superseded": [
+    {
+      "old": {
+        "filing_id": "netbay-10k-2025",
+        "heading": "Hosting Services",
+        "page": 42
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Hosting Services",
+        "page": 47
+      }
+    },
+    {
+      "old": {
+        "filing_id": "netbay-10q-q2-2026",
+        "heading": "Hosting Services",
+        "page": 44
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Hosting Services",
+        "page": 47
+      }
+    },
+    {
+      "old": {
+        "filing_id": "netbay-10k-2025",
+        "heading": "Managed Platform",
+        "page": 42
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Managed Platform",
+        "page": 47
+      }
+    },
+    {
+      "old": {
+        "filing_id": "netbay-10q-q2-2026",
+        "heading": "Managed Platform",
+        "page": 44
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Managed Platform",
+        "page": 47
+      }
+    },
+    {
+      "old": {
+        "filing_id": "netbay-10k-2025",
+        "heading": "Professional Services",
+        "page": 42
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Professional Services",
+        "page": 47
+      }
+    },
+    {
+      "old": {
+        "filing_id": "netbay-10q-q2-2026",
+        "heading": "Professional Services",
+        "page": 44
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Professional Services",
+        "page": 47
+      }
+    },
+    {
+      "old": {
+        "filing_id": "netbay-10k-2025",
+        "heading": "Liquidity and Capital Resources",
+        "page": 47
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Liquidity and Capital Resources",
+        "page": 47
+      }
+    },
+    {
+      "old": {
+        "filing_id": "netbay-10q-q2-2026",
+        "heading": "Liquidity and Capital Resources",
+        "page": 44
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Liquidity and Capital Resources",
+        "page": 47
+      }
+    },
+    {
+      "old": {
+        "filing_id": "netbay-10k-2025",
+        "heading": "Overview",
+        "page": 38
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Overview",
+        "page": 39
+      }
+    },
+    {
+      "old": {
+        "filing_id": "netbay-10q-q2-2026",
+        "heading": "Overview",
+        "page": 37
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Overview",
+        "page": 39
+      }
+    },
+    {
+      "old": {
+        "filing_id": "netbay-10q-q2-2026",
+        "heading": "Note 4. Segment Revenue",
+        "page": 5
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Note 4. Segment Revenue",
+        "page": 5
+      }
+    },
+    {
+      "old": {
+        "filing_id": "netbay-10q-q2-2026",
+        "heading": "Note 12. Deferred Revenue",
+        "page": 17
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Note 12. Deferred Revenue",
+        "page": 18
+      }
+    },
+    {
+      "old": {
+        "filing_id": "netbay-10k-2025",
+        "heading": "Note 16. Deferred Revenue",
+        "page": 76
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Note 12. Deferred Revenue",
+        "page": 18
+      }
+    },
+    {
+      "old": {
+        "filing_id": "netbay-10k-2025",
+        "heading": "Concentration of Cloud Hosting Revenue",
+        "page": 14
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Concentration of Cloud Hosting Revenue",
+        "page": 27
+      }
+    },
+    {
+      "old": {
+        "filing_id": "netbay-10q-q2-2026",
+        "heading": "Concentration of Cloud Hosting Revenue",
+        "page": 26
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Concentration of Cloud Hosting Revenue",
+        "page": 27
+      }
+    },
+    {
+      "old": {
+        "filing_id": "netbay-10k-2025",
+        "heading": "Dependence on Third-Party Data Centers",
+        "page": 14
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Dependence on Third-Party Data Centers",
+        "page": 27
+      }
+    },
+    {
+      "old": {
+        "filing_id": "netbay-10q-q2-2026",
+        "heading": "Dependence on Third-Party Data Centers",
+        "page": 26
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Dependence on Third-Party Data Centers",
+        "page": 27
+      }
+    },
+    {
+      "old": {
+        "filing_id": "netbay-10k-2025",
+        "heading": "Facilities",
+        "page": 4
+      },
+      "new": {
+        "filing_id": "netbay-10q-q3-2026",
+        "heading": "Dependence on Third-Party Data Centers",
+        "page": 27
+      }
+    }
+  ]
+}
